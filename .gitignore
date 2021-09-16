@@ -12,6 +12,7 @@
 !/app/etc/config.php
 !/app/i18n/**
 !/auth.json
+auth.json
 !/build_options.ini
 !/composer.json
 !/composer.lock
@@ -23,3 +24,13 @@
 !/update/.htaccess
 !/README.md
 !/op-exclude.txt
+
+# Human Element Specific
+!/Gruntfile.js
+!/grunt-config.json
+!/local-themes.js
+!/package.json
+!/package-lock.json
+!/packages
+!/packages/artifacts
+!/packages/artifacts/**

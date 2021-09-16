@@ -74,6 +74,11 @@
             "tinymce/tinymce": "lib/web/tiny_mce_4"
         },
         "magento-force": true,
+        "magento-deploy-ignore": {
+                "*": [
+                        "/.gitignore"
+                ]
+        },
         "magento-deploystrategy": "copy"
     },
     "scripts": {
