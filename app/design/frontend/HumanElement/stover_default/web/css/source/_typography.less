@@ -1,0 +1,143 @@
+//  Variables
+//  _____________________________________________
+@font-family-name__InterRegular: 'Inter-Regular';
+@font-family-name__InterMedium: 'Inter-Medium';
+@font-family-name__InterRegular: 'Inter-Regular';
+@font-family-name__InterLight: 'Inter-Light';
+@font-family-name__InterMedium: 'Inter-Medium';
+@font-family-name__EBGaramondRegular: 'EBGaramond-Regular';
+@font-family-name__EBGaramondBold: 'EBGaramond-Bold';
+@font-family__base: @font-family-name__InterRegular;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .lib-font-face(
+        @family-name,
+        @font-path,
+        @font-weight: normal,
+        @font-style: normal,
+        @font-display: swap
+    ) {
+        @font-face {
+            font-family: @family-name;
+            src: url('@{font-path}.ttf') format('truetype');
+            font-weight: @font-weight;
+            font-style: @font-style;
+            font-display: @font-display;
+            font-family: @family-name;
+        }
+    }
+
+    .lib-font-face(
+        @family-name: @font-family-name__InterBlack,
+        @font-path: '@{baseDir}fonts/Inter/Inter-Black',
+        @font-weight: @font-weight__heavier,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__InterBold,
+        @font-path: '@{baseDir}fonts/Inter/Inter-Bold',
+        @font-weight: @font-weight__heavier,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__InterRegular,
+        @font-path: '@{baseDir}fonts/Inter/Inter-Regular',
+        @font-weight: @font-weight__regular,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__InterMedium,
+        @font-path: '@{baseDir}fonts/Inter/Inter-Medium',
+        @font-weight: @font-weight__regular,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__InterLight,
+        @font-path: '@{baseDir}fonts/Inter/Inter-Light',
+        @font-weight: @font-weight__light,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__EBGaramondRegular,
+        @font-path: '@{baseDir}fonts/EBGaramond/EBGaramond-Regular',
+        @font-weight: @font-weight__regular,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__EBGaramondBold,
+        @font-path: '@{baseDir}fonts/EBGaramond/EBGaramond-Medium',
+        @font-weight: @font-weight__heavier,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__FontAwesome5Brands,
+        @font-path: '@{baseDir}fonts/FontAwesome5/Brands/fa-brands-400',
+        @font-weight: @font-weight__regular,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+    .lib-font-face(
+        @family-name: @font-family-name__FontAwesome5Solid,
+        @font-path: '@{baseDir}fonts/FontAwesome5/Solid/fa-solid-900',
+        @font-weight: @font-weight__regular,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+    .lib-font-face(
+        @family-name: @font-family-name__FontAwesome5,
+        @font-path: '@{baseDir}fonts/FontAwesome5/Regular/fa-regular-400',
+        @font-weight: @font-weight__regular,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+    .large {
+        .lib-css(font-size, @font-size__l);
+    }
+
+    a {
+        &:focus {
+            outline: 1px solid @stover-primary-blue-stone;
+            outline-offset: 3px;
+        }
+    }
+
+    .items {
+        .lib-list-reset-styles();
+    }
+
+    h1 {
+        text-transform: lowercase;
+    }
+
+    h2 {
+        text-transform: lowercase;
+    }
+    h3 {
+        letter-spacing: 0.25em;
+    }
+    h4 {
+        letter-spacing: 0.25em;
+    }
+    h5 {
+        letter-spacing: 0.25em;
+    }
+}

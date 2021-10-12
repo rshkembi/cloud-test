@@ -1,0 +1,21 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .product.data.items {
+        > .item.title {
+            a {
+                text-transform: uppercase;
+                &:focus {
+                    outline: none;
+                }
+            }
+            &.active {
+                a {
+                    font-family: @font-family-name__InterBold;
+                }
+              }
+        }
+    }
+}

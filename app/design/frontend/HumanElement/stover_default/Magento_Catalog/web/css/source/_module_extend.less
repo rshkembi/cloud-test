@@ -1,0 +1,77 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .product.actions {
+        .actions-primary {
+            width: 100%;
+            display: block;
+            .action.tocart {
+                border-radius: 20px;
+                width: 100%;
+            }
+        }
+    }
+    .product-item-actions {
+        .action {
+            &.tocompare {
+                color: @stover-primary-elm;
+                &:before {
+                    content: @icon-compare-full;
+                }
+            }
+            &.towishlist {
+                color: @stover-primary-elm;
+                &:before {
+                    content: @icon-wishlist-full;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+}
+
+//
+//  Desktop large
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+}
