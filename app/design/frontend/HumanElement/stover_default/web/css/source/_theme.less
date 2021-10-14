@@ -1,0 +1,163 @@
+//
+//  Stover Default theme overrides
+//  _____________________________________________
+
+//  Theme file should contain declarations (overrides) ONLY OF EXISTING variables
+//  Otherwise this theme won't be available for parent nesting
+//  All new variables should be placed in local theme lib or local theme files
+
+//
+//  Typography
+//  ---------------------------------------------
+
+//  Fonts
+@font-size-ratio__base: 1.6;
+@font-family-name__EBGaramondBold: 'EBGaramond-Bold';
+@font-family-name__EBGaramondRegular: 'EBGaramond-Regular';
+@font-family-name__InterBold: 'Inter-Bold';
+@font-family-name__InterBlack: 'Inter-Black';
+@font-family-name__InterRegular: 'Inter-Regular';
+
+@font-family-name__FontAwesome5Brands: 'Font Awesome 5 Brands';
+@font-family-name__FontAwesome5Solid: 'Font Awesome 5 Solid';
+@font-family-name__FontAwesome5: 'Font Awesome 5 Regular';
+
+@icons__font-path: '@{baseDir}fonts/Luma-Icons';
+@icons__font-name: 'luma-icons';
+
+// Color variables
+@copyright__background-color: transparent;
+//Primary Colors
+@stover-primary-elm: #1C8276;
+@stover-primary-blue-stone: #006661;
+@stover-primary-aqua-haze: #E8F3F2;
+@stover-primary-brilliant-rose: #Ef509D;
+@stover-primary-dark-gray: @color-black;
+@stover-primary-gray:  @color-gray20;
+@stover-primary-light-gray: @color-gray46;
+@stover-secondary-pale-gray:  @color-gray-light0;
+
+// Messaging Colors
+@stover-success-color-dark: #006400;
+@stover-success-color-light: #E5EFE5;
+@stover-warning-color-dark: #C07600;
+@stover-warning-color-light: #FDF0D5;
+@stover-error-color-dark: #E02B27;
+@stover-error-color-light: #FAE5E5;
+
+//  Color nesting
+@primary__color: @stover-primary-elm;
+@theme__color__primary: @primary__color;
+@theme__color__primary-alt: @stover-primary-blue-stone;
+@text__color: @stover-primary-dark-gray;
+@border-color__base: @stover-primary-light-gray;
+@error__color: @stover-error-color-dark;
+@form-field-label-asterisk__color: @stover-error-color-dark;
+
+@button-border__hover-color: @stover-primary-blue-stone;
+
+//  Links
+@link__color: @stover-primary-elm;
+@link__hover__color: @stover-primary-blue-stone;
+@link__hover__text-decoration: underline;
+@link__active__color: @link__hover__color;
+@link__text-decoration: none;
+@link__visited__color: @link__color;
+@link__visited__text-decoration: @link__text-decoration;
+
+// Font Base Values
+@font-size__base: 16px;
+@font-weight__thin: 100;
+@font-weight__extralight: 200;
+@font-weight__medium: @font-weight__heavier;
+@font-weight__black: 900;
+
+//  Headings
+@heading__color__base: @stover-primary-dark-gray;
+@h1__font-size-desktop: 50px;
+@h1__font-size: 50px;
+@h1__line-height: 50px;
+@h1__font-style: @font-style__base;
+@h1__font-weight: @font-weight__heavier;
+@h1__font-family: @font-family-name__EBGaramondBold;
+@h1__text-transform: lowercase;
+
+@h2__font-weight: @font-weight__regular;
+@h2__font-size: 44px;
+@h2__line-height: 44px;
+@h2__font-family: @font-family-name__EBGaramondRegular;
+@h2__text-transform: lowercase;
+
+@h3__font-weight: @font-weight__heavier;
+@h3__font-family: @font-family-name__InterBold;
+@h3__font-size: 24px;
+@h3__line-height: 24px;
+@h3__letter-spacing: 0.25em;
+@h3__text-transform: uppercase;
+
+@h4__font-weight: @font-weight__regular;
+@h4__font-family: @font-family-name__InterRegular;
+@h4__font-size: 20px;
+@h4__line-height: 20px;
+@h4__letter-spacing: 0.25em;
+@h4__text-transform: uppercase;
+
+@h5__font-weight: @font-weight__heavier;
+@h5__font-family: @font-family-name__InterBlack;
+@h5__font-size: 16px;
+@h5__line-height: 16px;
+@h5__letter-spacing: 0.25em;
+@h5__text-transform: uppercase;
+
+//
+//  Messages
+//  ---------------------------------------------
+
+@message-info__color: @stover-warning-color-dark;
+@message-info__background: @stover-warning-color-light;
+@message-error__color: @stover-error-color-dark;
+@message-error__background: @stover-error-color-light;
+@message-warning__color: @stover-warning-color-dark;
+@message-warning__background: @stover-warning-color-light;
+@message-icon__font-size: 18px;
+@message-success-icon: @icon-comment-reflected;
+@message-error-icon: @icon-compare-empty;
+
+//
+//  Form elements inputs default variables
+//  ---------------------------------------------
+
+@form-element-input__border-color: @stover-primary-light-gray;
+@form-element-input__disabled__opacity: .6;
+@form-element-input__disabled__background: #E5E5E5;
+@form-element-input__disabled__color: @color-black;
+
+@form-element-input__focus__border: 2px solid @stover-primary-blue-stone;
+@focus__box-shadow: none;
+
+//
+//  Tabs
+//  ---------------------------------------------
+@tab-control__font-family: @font-family-name__InterRegular;
+@tab-control__active__font-family: @font-family-name__InterBold;
+@tab-control__active__background-color: @color-white;
+@tab-control__background-color: @stover-secondary-pale-gray;
+@tab-control__color: @stover-primary-light-gray;
+@tab-control__active__color: @stover-primary-elm;
+
+
+//
+//  Breadcrumbs
+//  ---------------------------------------------
+
+@breadcrumbs__font-size: 12px;
+@breadcrumbs-link__text-decoration: underline;
+
+@breadcrumbs-icon__font-size: 12px;
+@breadcrumbs-icon__font-margin: 0 5px;
+
+@breadcrumbs-current__color: @stover-primary-dark-gray;
+@breadcrumbs-link__color: @link__color;
+@breadcrumbs-link__visited__color: @breadcrumbs-link__color;
+@breadcrumbs-link__hover__color: @stover-primary-elm;
+@breadcrumbs-link__active__color: @stover-primary-blue-stone;

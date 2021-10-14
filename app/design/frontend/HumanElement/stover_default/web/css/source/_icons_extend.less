@@ -1,0 +1,64 @@
+//
+// Variables
+//  _____________________________________________
+
+@icon-font__size: 18px;
+
+@fa-var-facebook-f: "\f39e";
+@fa-var-twitter: "\f099";
+@fa-var-pinterest-p: "\f231";
+@fa-var-linkedin: "\f0e1";
+@fa-var-instagram-square: "\f16d";
+@fa-var-youtube: "\f167";
+
+@fa-var-arrow-right: "\f061";
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .facebook,
+    .twitter,
+    .linked-in,
+    .instagram,
+    .pinterest,
+    .youtube {
+        font-family: @font-family-name__FontAwesome5Brands;
+        color: @text__color;
+
+        &.large {
+            font-size: 48px;
+            margin-right: 20px;
+        }
+    }
+    .facebook {
+        &:before {
+            content: @fa-var-facebook-f;
+        }
+    }
+    .twitter {
+        &:before {
+            content: @fa-var-twitter;
+        }
+    }
+    .pinterest {
+        &:before {
+            content: @fa-var-pinterest-p;
+        }
+    }
+    .instagram {
+        &:before {
+            content: @fa-var-instagram-square;
+        }
+    }
+    .linked-in {
+        &:before {
+            content: @fa-var-linkedin;
+        }
+    }
+    .youtube {
+        &:before {
+            content: @fa-var-youtube;
+        }
+    }
+}
