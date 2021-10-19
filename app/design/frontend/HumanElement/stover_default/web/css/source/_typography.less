@@ -9,6 +9,8 @@
 @font-family-name__EBGaramondBold: 'EBGaramond-Bold';
 @font-family__base: @font-family-name__InterRegular;
 
+@font-size__l: 18px;
+
 //
 //  Common
 //  _____________________________________________
@@ -111,6 +113,30 @@
 
     .large {
         .lib-css(font-size, @font-size__l);
+        line-height: 28px;
+        p &, div & {
+            p, div {
+                margin-bottom: 28px;
+            }
+        }
+    }
+
+    .regular {
+        line-height: 26px;
+        p &, div & {
+            p, div {
+                margin-bottom: 26px;
+            }
+        }
+    }
+
+    .small {
+        line-height: 24px;
+        p &, div & {
+            p, div {
+                margin-bottom: 24px;
+            }
+        }
     }
 
     a {
@@ -133,11 +159,14 @@
     }
     h3 {
         letter-spacing: 0.25em;
+        text-transform: uppercase;
     }
     h4 {
         letter-spacing: 0.25em;
+        text-transform: uppercase;
     }
     h5 {
         letter-spacing: 0.25em;
+        text-transform: uppercase;
     }
 }

@@ -7,25 +7,81 @@
 @button__border-radius: 20px;
 @button-icon__color: @color-white;
 
-@button__color: @stover-primary-elm;
+//  Default (Secondary) buttons
 @button__background: transparent;
-@button__border: 2px solid @stover-primary-elm;
+@button__border: 1px solid @stover-primary-elm;
+@button__color: @stover-primary-elm;
 
-@button__hover__color: @color-white;
-@button__hover__background: @stover-primary-blue-stone;
-@button__hover__border: 2px solid @stover-primary-blue-stone;
-
-// Outline & Offset
-@stover-button-focus-outline-color: @stover-primary-blue-stone;
-@stover-button-focus-outline: 2px solid @stover-primary-blue-stone;
-@stover-button-focus-offset: 3px;
+@button__hover__background: transparent;
+@button__hover__border: 1px solid @stover-primary-blue-stone;
+@button__hover__color: @stover-primary-blue-stone;
 
 //  Primary button
 @button-primary__background: @stover-primary-elm;
-@button-primary__border: 1px solid @stover-primary-elm;
+@button-primary__border: none;
 @button-primary__color: @color-white;
 
 @button-primary__hover__background: @stover-primary-blue-stone;
-@button-primary__hover__border: 1px solid @stover-primary-blue-stone;
+@button-primary__hover__border: 2px solid @stover-primary-blue-stone;
 @button-primary__hover__color: @button-primary__color;
 
+button {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    outline-offset: 10px;
+    &.action.primary {
+        border: 2px solid transparent;
+        &:active, &:hover, &:focus {
+            border: 2px solid @stover-primary-blue-stone;
+        }
+        &:focus {
+            outline: 1px solid @stover-primary-blue-stone;
+            outline-offset: 10px;
+        }
+    }
+    &.secondary {
+        &:focus {
+            outline: 1px solid @stover-primary-blue-stone;
+            outline-offset: 10px;
+        }
+    }
+    &.dark-bg {
+        border: 2px solid @color-white;
+        color: @color-white;
+        &:active, &:hover, &:focus {
+            border: 2px solid @stover-darkbg_green;
+            background: transparent;
+            color: @stover-darkbg_green;
+        }
+        &:focus {
+            outline: 1px solid @stover-darkbg_green;
+            outline-offset: 10px;
+        }
+        &.disabled {
+            border: 2px solid @color-white;
+            color: @color-white;
+            &.icon {
+                border: 2px solid @color-white;
+                color: @color-white;
+            }
+        }
+    }
+    &.link {
+        border-bottom: 2px solid @stover-primary-elm;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+        padding-left: 0;
+        padding-right: 0;
+        color: @stover-primary-elm;
+        &:active, &:hover, &:focus {
+            border-bottom: 2px solid @stover-primary-blue-stone;
+            color: @stover-primary-blue-stone;
+        }
+        &:focus {
+            outline: 1px solid @stover-primary-blue-stone;
+            outline-offset: 10px;
+        }
+    }
+}
