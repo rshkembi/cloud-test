@@ -111,9 +111,34 @@
 
     .large {
         .lib-css(font-size, @font-size__l);
+        line-height: 28px;
+        p &, div & {
+            p, div {
+                margin-bottom: 28px;
+            }
+        }
+    }
+
+    .regular {
+        line-height: 26px;
+        p &, div & {
+            p, div {
+                margin-bottom: 26px;
+            }
+        }
+    }
+
+    .small {
+        line-height: 24px;
+        p &, div & {
+            p, div {
+                margin-bottom: 24px;
+            }
+        }
     }
 
     a {
+        font-family: @font-family-name__InterBold;
         &:focus {
             outline: 1px solid @stover-primary-blue-stone;
             outline-offset: 3px;
@@ -131,13 +156,8 @@
     h2 {
         text-transform: lowercase;
     }
-    h3 {
+    h3, h4, h5 {
         letter-spacing: 0.25em;
-    }
-    h4 {
-        letter-spacing: 0.25em;
-    }
-    h5 {
-        letter-spacing: 0.25em;
+        text-transform: uppercase;
     }
 }
