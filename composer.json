@@ -20,6 +20,7 @@
     },
     "require": {
         "firebear/importexport": "^3.7",
+        "firebear/importexport-msi": "^1.1",
         "magento/composer-root-update-plugin": "~1.1",
         "magento/magento-cloud-metapackage": ">=2.4.3 <2.4.4"
     },
