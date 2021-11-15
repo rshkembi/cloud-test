@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af34760e1dc52a88275dea6adf98ff1e",
+    "content-hash": "4ff275317af350a6731ec3cc8ab32f7b",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -21785,6 +21785,436 @@
             "time": "2020-12-02T21:12:59+00:00"
         },
         {
+            "name": "mageworx/module-htmlsitemap",
+            "version": "2.4.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-htmlsitemap/mageworx-module-htmlsitemap-2.4.2.zip"
+            },
+            "require": {
+                "magento/framework": ">=101.0.0 <104",
+                "magento/module-catalog": ">=102.0.0 <105",
+                "magento/module-cms": ">=102.0.0 <105",
+                "magento/module-store": ">=100.2.0 <102",
+                "magento/module-theme": ">=100.2.0 <102",
+                "mageworx/module-seoall": ">=2.9.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\HtmlSitemap\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "HTML sitemap module for Magento 2"
+        },
+        {
+            "name": "mageworx/module-info",
+            "version": "1.1.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-info/mageworx-module-info-1.1.1.zip"
+            },
+            "require": {
+                "magento/module-catalog": ">=100.0.0 <105",
+                "magento/module-cms": ">=100.0.0 <105"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\Info\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "MageWorx Notifications & Extensions List"
+        },
+        {
+            "name": "mageworx/module-seoall",
+            "version": "2.10.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seoall/mageworx-module-seoall-2.10.0.zip"
+            },
+            "require": {
+                "magento/module-catalog": ">=102.0.0 <105",
+                "magento/module-cms": ">=102.0.0 <105"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoAll\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "SEO All for Magento 2"
+        },
+        {
+            "name": "mageworx/module-seobase",
+            "version": "2.13.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seobase/mageworx-module-seobase-2.13.2.zip"
+            },
+            "require": {
+                "magento/framework": ">=101.0.0 <104",
+                "magento/module-catalog": ">=102.0.0 <105",
+                "magento/module-cms": ">=102.0.0 <105",
+                "magento/module-eav": ">=101.0.0 <103",
+                "magento/module-layered-navigation": ">=100.2.0 <101",
+                "magento/module-store": ">=100.2.0 <102",
+                "magento/module-theme": ">=100.2.0 <102",
+                "magento/module-ui": ">=101.0.0 <102",
+                "mageworx/module-seoall": ">=2.10.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoBase\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "SEO module for Magento 2"
+        },
+        {
+            "name": "mageworx/module-seobreadcrumbs",
+            "version": "2.2.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seobreadcrumbs/mageworx-module-seobreadcrumbs-2.2.1.zip"
+            },
+            "require": {
+                "magento/framework": ">=100.0.0 <104",
+                "mageworx/module-seoall": ">=2.9.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoBreadcrumbs\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "SEO Breadcrumbs module for Magento 2"
+        },
+        {
+            "name": "mageworx/module-seocategorygrid",
+            "version": "2.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seocategorygrid/mageworx-module-seocategorygrid-2.1.0.zip"
+            },
+            "require": {
+                "magento/framework": ">=100.0.0 <104",
+                "magento/module-catalog": ">=100.0.0 <105",
+                "magento/module-ui": ">=100.0.0 <102",
+                "mageworx/module-seoall": ">=2.9.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoCategoryGrid\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "SEO Category Grid module for Magento 2"
+        },
+        {
+            "name": "mageworx/module-seocrosslinks",
+            "version": "2.5.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seocrosslinks/mageworx-module-seocrosslinks-2.5.3.zip"
+            },
+            "require": {
+                "magento/framework": ">=101.0.0 <104",
+                "magento/module-catalog": ">=102.0.0 <105",
+                "magento/module-cms": ">=102.0.0 <105",
+                "magento/module-store": ">=100.2.0 <102",
+                "magento/module-ui": ">=101.0.0 <102",
+                "mageworx/module-seoall": ">=2.9.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoCrossLinks\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "SEO Cross Links creator"
+        },
+        {
+            "name": "mageworx/module-seoextended",
+            "version": "2.7.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seoextended/mageworx-module-seoextended-2.7.0.zip"
+            },
+            "require": {
+                "magento/framework": ">=100.0.0 <104",
+                "magento/module-catalog": ">=100.0.0 <105",
+                "magento/module-layered-navigation": ">=100.0.0 <101",
+                "magento/module-store": ">=100.0.0 <102",
+                "mageworx/module-seoall": ">=2.10.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoExtended\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "SEO Extended module for Magento 2"
+        },
+        {
+            "name": "mageworx/module-seomarkup",
+            "version": "2.8.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seomarkup/mageworx-module-seomarkup-2.8.2.zip"
+            },
+            "require": {
+                "magento/framework": ">=101.0.0 <104",
+                "magento/module-catalog": ">=102.0.0 <105",
+                "magento/module-cms": ">=102.0.0 <105",
+                "magento/module-eav": ">=101.0.0 <103",
+                "magento/module-store": ">=100.2.0 <102",
+                "magento/module-ui": ">=101.0.0 <102",
+                "mageworx/module-seoall": ">=2.10.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoMarkup\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "SEO Markup extension for Magento 2"
+        },
+        {
+            "name": "mageworx/module-seoredirects",
+            "version": "2.6.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seoredirects/mageworx-module-seoredirects-2.6.4.zip"
+            },
+            "require": {
+                "magento/framework": ">=100.0.0 <104",
+                "magento/module-catalog": ">=100.0.0 <105",
+                "magento/module-store": ">=100.0.0 <102",
+                "magento/module-ui": ">=100.0.0 <102",
+                "mageworx/module-seoall": ">=2.9.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoRedirects\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "SEO Redirects extension for Magento 2"
+        },
+        {
+            "name": "mageworx/module-seoreports",
+            "version": "1.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seoreports/mageworx-module-seoreports-1.1.0.zip"
+            },
+            "require": {
+                "magento/framework": ">=100.0.0 <104",
+                "magento/module-catalog": ">=100.0.0 <105",
+                "magento/module-ui": ">=100.0.0 <103",
+                "mageworx/module-seoall": ">=2.9.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoReports\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "MageWorx SEO Reports extension"
+        },
+        {
+            "name": "mageworx/module-seosuiteultimate",
+            "version": "2.35.4",
+            "dist": {
+                "type": "zip",
+                "url": "/mw-modules/MageWorx_SeoSuiteUltimate_v2.35.4.zip",
+                "shasum": "47dc7b78a230ef4f273794d5c64d6d72a009a80b"
+            },
+            "require": {
+                "mageworx/module-htmlsitemap": "2.4.2",
+                "mageworx/module-info": ">=1.0.0",
+                "mageworx/module-seoall": "2.10.0",
+                "mageworx/module-seobase": "2.13.2",
+                "mageworx/module-seobreadcrumbs": "2.2.1",
+                "mageworx/module-seocategorygrid": "2.1.0",
+                "mageworx/module-seocrosslinks": "2.5.3",
+                "mageworx/module-seoextended": "2.7.0",
+                "mageworx/module-seomarkup": "2.8.2",
+                "mageworx/module-seoredirects": "2.6.4",
+                "mageworx/module-seoreports": "1.1.0",
+                "mageworx/module-seourls": "2.4.2",
+                "mageworx/module-seoxtemplates": "2.13.6",
+                "mageworx/module-xmlsitemap": "3.3.5"
+            },
+            "type": "metapackage"
+        },
+        {
+            "name": "mageworx/module-seourls",
+            "version": "2.4.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seourls/mageworx-module-seourls-2.4.2.zip"
+            },
+            "require": {
+                "magento/framework": ">=100.0.0 <104",
+                "magento/module-catalog": ">=100.0.0 <105",
+                "magento/module-layered-navigation": ">=100.0.0 <101",
+                "mageworx/module-seoall": ">=2.9.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoUrls\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "SEO Friendly URLs"
+        },
+        {
+            "name": "mageworx/module-seoxtemplates",
+            "version": "2.13.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seoxtemplates/mageworx-module-seoxtemplates-2.13.6.zip"
+            },
+            "require": {
+                "magento/framework": ">=101.0.0 <104",
+                "magento/module-catalog": ">=102.0.0 <105",
+                "magento/module-catalog-url-rewrite": ">=100.0.0 <101",
+                "magento/module-eav": ">=101.0.0 <103",
+                "magento/module-store": ">=100.2.0 <102",
+                "magento/module-ui": ">=101.0.0 <102",
+                "mageworx/module-seoall": ">=2.9.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\SeoXTemplates\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "SEO Extended Templates"
+        },
+        {
+            "name": "mageworx/module-xmlsitemap",
+            "version": "3.3.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.mageworx.com//dist/mageworx/module-xmlsitemap/mageworx-module-xmlsitemap-3.3.5.zip"
+            },
+            "require": {
+                "magento/framework": ">=101.0.0 <104",
+                "magento/module-catalog": ">=102.0.0 <105",
+                "magento/module-cms": ">=102.0.0 <105",
+                "magento/module-sitemap": ">=100.2.2 <101",
+                "mageworx/module-seoall": ">=2.10.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "MageWorx\\XmlSitemap\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "XML sitemap module for Magento 2"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.26.1",
             "source": {
@@ -27619,5 +28049,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.1.0"
 }

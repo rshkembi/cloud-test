@@ -12,11 +12,16 @@
         "repo": {
             "type": "composer",
             "url": "https://repo.magento.com"
+        },
+        "mageworx": {
+            "type": "composer",
+            "url": "https://packages.mageworx.com/"
         }
     },
     "require": {
+        "magento/composer-root-update-plugin": "~1.1",
         "magento/magento-cloud-metapackage": ">=2.4.3 <2.4.4",
-        "magento/composer-root-update-plugin": "~1.1"
+        "mageworx/module-seosuiteultimate": "^2.35"
     },
     "suggest": {
         "ext-pcntl": "Need for run processes in parallel mode"
