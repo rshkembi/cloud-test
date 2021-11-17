@@ -1,3 +1,4 @@
+#DEPLOY
 # Magento 2.4.3 Magento Commerce Cloud
 
 This repository contains a sample Magento Commerce (on-premise) version 2.4.3 instance for you to deploy in the cloud. You must have an active Magento Commerce Cloud user license to use the example in this repository.
