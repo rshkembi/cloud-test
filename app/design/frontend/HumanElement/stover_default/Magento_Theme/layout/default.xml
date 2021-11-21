@@ -9,6 +9,9 @@
     <update handle="default_head_blocks"/>
     <body>
         <referenceBlock name="footer_links" remove="true"/>
+        <referenceContainer name="page.bottom">
+            <block class="Magento\Framework\View\Element\Template" name="social-icons" template="Magento_Theme::html/social-icons.phtml"/>
+        </referenceContainer>
         <referenceContainer name="footer">
             <container name="custom-footer-links" htmlTag="div" htmlClass="custom-footer-links">
                 <block class="Magento\Cms\Block\Block" name="contact.information">
@@ -33,5 +36,7 @@
                 </block>
             </container>
         </referenceContainer>
+
+        <move element="form.subscribe" destination="page.bottom" after="-"/>
     </body>
 </page>
