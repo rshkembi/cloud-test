@@ -1,0 +1,52 @@
+//
+//  Variables
+//  _____________________________________________
+@copyright__background-color: @color-white-dark-smoke;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .copyright {
+        &-inner {
+            max-width: 1280px;
+            margin: auto;
+            width: 100%;
+        }
+        &-links {
+            a {
+                color: @color-black;
+                font-family: @font-family-name__InterRegular;
+                vertical-align: sub;
+                &:before {
+                    content: '|';
+                    padding: 0 15px;
+                }
+            }
+            span {
+                vertical-align: sub;
+            }
+        }
+
+        .payment-icons {
+            .icon {
+                font-size: 24px;
+                padding: 0 10px;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .copyright {
+        &-inner {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

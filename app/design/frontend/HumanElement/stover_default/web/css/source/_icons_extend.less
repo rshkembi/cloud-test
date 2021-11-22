@@ -22,7 +22,14 @@
     .linked-in,
     .instagram,
     .pinterest,
-    .youtube {
+    .youtube,
+    .visa,
+    .mastercard,
+    .discover,
+    .americanExpress,
+    .applePay,
+    .amazonPay,
+    .payPal{
         font-family: @font-family-name__FontAwesome5Brands;
         color: @text__color;
 
@@ -59,6 +66,47 @@
     .youtube {
         &:before {
             content: @fa-var-youtube;
+        }
+    }
+    .visa {
+        &:before {
+            content: '\f1f0';
+        }
+    }
+
+    .mastercard {
+        &:before {
+            content: '\f1f1';
+        }
+    }
+
+    .discover {
+        &:before {
+            content: '\f1f2';
+        }
+    }
+
+    .americanExpress {
+        &:before {
+            content: '\f1f3';
+        }
+    }
+
+    .applePay {
+        &:before {
+            content: '\f415';
+        }
+    }
+
+    .amazonPay {
+        &:before {
+            content: '\f42c';
+        }
+    }
+
+    .payPal {
+        &:before {
+            content: '\f1f4';
         }
     }
 }
