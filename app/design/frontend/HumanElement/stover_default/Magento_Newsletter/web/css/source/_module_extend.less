@@ -16,24 +16,30 @@
                 }
                 input {
                     font-size: 14px;
+                    height: 34px;
+                    margin-top: -1px;
                 }
+            }
+        }
+        .title {
+            display: block;
+            strong {
+                content: "Stay Updated";
+                color: @color-white;
+                font-family: @font-family-name__InterBold;
+                font-size: @font-size__base;
+                display: block;
             }
         }
 
         .action.subscribe {
             &.primary {
                 padding: 6px 20px;
+                border: 1px solid @color-white;
             }
         }
+        margin-bottom: 25px;
     }
-}
-
-//
-//  Desktop
-//  _____________________________________________
-
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-
 }
 
 //
@@ -41,5 +47,41 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block.newsletter {
+        float: left;
+        width: 100%;
+        .title {
+            float: none;
+            strong {
+                margin: 0 0 20px 0;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xxs) {
 
 }
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block.newsletter {
+        width: 100%;
+
+        .title {
+            strong {
+                margin: 0;
+            }
+        }
+        .form.subscribe {
+            > .field {
+                width: 60%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
