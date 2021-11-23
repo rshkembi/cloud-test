@@ -40,6 +40,7 @@
     .page-footer {
         box-shadow: 0px 3px 6px #00000029;
         margin-bottom: 5px;
+        padding-bottom: 0;
     }
     .custom-footer-links {
         .title {
@@ -72,6 +73,7 @@
         > .page-bottom {
             .title {
                 float: left;
+                padding-top: 10px;
             }
             .social-icons {
                 float: right;
@@ -102,6 +104,7 @@
             .social-icons {
                 display: block;
                 width: 100%;
+                float: unset;
             }
         }
     }
@@ -143,8 +146,15 @@
         [data-content-type='row'][data-appearance='contained'] {
             display: inline-block;
             width: 50%;
-            padding-bottom: 50px;
+
         }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
+    .social-icons,
+    .block.newsletter .content{
+        padding-right: 15px;
     }
 }
 
