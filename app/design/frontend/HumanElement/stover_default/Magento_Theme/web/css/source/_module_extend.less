@@ -8,6 +8,17 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    .header {
+        &.content {
+            .customer-name,
+            .authorization-link.no-li a{
+                &:before {
+                    content: '\f007';
+                    font-family: @font-family-name__FontAwesome5;
+                }
+            }
+        }
+    }
     .copyright {
         &-inner {
             max-width: 1280px;
