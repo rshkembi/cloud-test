@@ -8,12 +8,22 @@
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="default_head_blocks"/>
     <body>
-        <block class="Magento\Cms\Block\Block" name="promo.bar" before="top.links">
-            <arguments>
-                <argument name="block_id" xsi:type="string">promo</argument>
-            </arguments>
-        </block>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="promo.bar" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">promo</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="top.links" remove="true"/>
+        <referenceBlock name="header.links" remove="true"/>
+
         <referenceContainer name="header-wrapper">
+            <block class="Magento\Cms\Block\Block" name="header.static.links" after="logo">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_static_links</argument>
+                </arguments>
+            </block>
             <block class="Magento\Customer\Block\Account\AuthorizationLink" name="header-authorization-link-login" template="Magento_Customer::account/link/authorization-no-li.phtml" />
         </referenceContainer>
 

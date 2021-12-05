@@ -13,12 +13,26 @@
             .customer-name,
             .authorization-link.no-li a{
                 &:before {
-                    content: '\f007';
+                    content: @fa-var-user;
                     font-family: @font-family-name__FontAwesome5;
                 }
             }
+
+            a {
+                &.pagebuilder-button-link {
+                    color: @theme__color__primary;
+                    font-family: @font-family-name__InterBold;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &.panel {
+            margin-top: 11px;
         }
     }
+
     .copyright {
         &-inner {
             max-width: 1280px;
@@ -49,8 +63,30 @@
     }
 }
 
+// Mobile 1024px and below
+
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
 
+}
+
+// Desktop 768px and above
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-header {
+        .panel {
+            &.header {
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+    }
+
+    .page-wrapper {
+        .header {
+            &.content {
+                display: flex;
+            }
+        }
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
