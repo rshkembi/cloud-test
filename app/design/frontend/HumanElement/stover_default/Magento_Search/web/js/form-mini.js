@@ -44,7 +44,6 @@ define([
                 '</li>',
             submitBtn: 'button[type="submit"]',
             searchLabel: '[data-role=minisearch-label]',
-            searchButton: '[data-role=minisearch-button]',
             isExpandable: null,
             suggestionDelay: 300
         },

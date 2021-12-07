@@ -56,7 +56,7 @@
                 @_icon-font-color-active: @header-icons-color-hover,
                 @_icon-font-text-hide: true
             );
-            display: inline-block;
+            display: none;
             float: right;
 
             &.active {
@@ -76,6 +76,8 @@
             clear: both;
             margin: 0 -@layout__width-xs-indent -1px;
             padding: 0 @layout__width-xs-indent;
+            width: 50%;
+            margin: auto;
         }
 
         input {
