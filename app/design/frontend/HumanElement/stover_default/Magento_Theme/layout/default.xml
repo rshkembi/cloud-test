@@ -27,8 +27,14 @@
             <block class="Magento\Customer\Block\Account\AuthorizationLink" name="header-authorization-link-login" template="Magento_Customer::account/link/authorization-no-li.phtml" />
         </referenceContainer>
 
-        <move element="customer" destination="header-wrapper"  before="top.search"/>
-        <move element="header-authorization-link-login" destination="header-wrapper" before="top.search"/>
+        <referenceContainer name="header.container">
+            <container name="header.search" after="-" htmlClass="header-search" htmlTag="div"> </container>
+        </referenceContainer>
+
+        <move element="top.search" destination="header.search"/>
+        <move element="minicart" destination="header-wrapper" before="minicart"/>
+        <move element="customer" destination="header-wrapper"  before="minicart" />
+        <move element="header-authorization-link-login" destination="header-wrapper" before="minicart"/>
 
         <referenceBlock name="footer_links" remove="true"/>
         <referenceContainer name="page.bottom">
