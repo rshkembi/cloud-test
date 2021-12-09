@@ -10,6 +10,8 @@ define([
                 function (){
                     $('.form.minisearch').toggleClass('active');
                     $('.field.search .label').toggleClass('active');
+                    $('.header-search').toggleClass('active');
+                    $(this).toggleClass('active');
                 }
             );
         }

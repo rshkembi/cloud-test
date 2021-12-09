@@ -12,12 +12,9 @@
         &.content {
             .customer-name,
             .authorization-link.no-li a{
+                margin-right: 10px;
                 &:before {
-                    content: @fa-var-user;
-                    font-family: @font-family-name__FontAwesome5;
-                    color: @color-black;
-                    font-size: 22px;
-                    line-height: 30px;
+                    content: url("../images/icon_account.png");
                 }
             }
 
@@ -29,6 +26,12 @@
                     font-size: 14px;
                 }
             }
+        }
+    }
+
+    .promo {
+        strong {
+            font-family: @font-family-name__InterBold;
         }
     }
 
@@ -62,13 +65,25 @@
     }
 }
 
-// Mobile 1024px and below
-
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
-
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-header {
+        border-bottom: none;
+        .panel {
+            &.header {
+                padding: 0;
+            }
+        }
+    }
 }
 
-// Desktop 768px and above
+// Normal Magento Media Query isn't working for this break point
+@media screen and (max-width: 1024px){
+    .header-static-links {
+        display: none !important;
+    }
+}
+
+
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .page-header {
         .panel {
@@ -84,6 +99,13 @@
             &.content {
                 display: flex;
             }
+        }
+    }
+
+    .ammenu-header-container {
+        .header.content {
+            padding: 20px 22px 20px;
+            margin-bottom: 0;
         }
     }
 }

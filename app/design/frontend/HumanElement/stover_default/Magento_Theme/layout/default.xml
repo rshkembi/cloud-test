@@ -19,19 +19,19 @@
         <referenceBlock name="header.links" remove="true"/>
 
         <referenceContainer name="header-wrapper">
-            <block class="Magento\Cms\Block\Block" name="header.static.links" after="logo">
+            <block class="Magento\Cms\Block\Block" name="header.static.links" after="ammenu.logo">
                 <arguments>
                     <argument name="block_id" xsi:type="string">header_static_links</argument>
                 </arguments>
             </block>
             <block class="Magento\Customer\Block\Account\AuthorizationLink" name="header-authorization-link-login" template="Magento_Customer::account/link/authorization-no-li.phtml" />
-            <block class="Magento\Framework\View\Element\Template" name="top.search.button" as="topSearchButton" template="Magento_Search::form.mini.button.phtml">
+            <block class="Magento\Framework\View\Element\Template" name="top.search.button" as="topSearchButton" template="Magento_Search::form.mini.button.phtml" after="header.static.links">
                 <arguments>
                     <argument name="configProvider" xsi:type="object">Magento\Search\ViewModel\ConfigProvider</argument>
                 </arguments>
             </block>
         </referenceContainer>
-
+        <move element="ammenu.logo" destination="header-wrapper" before="header.static.links"/>
         <referenceContainer name="header.container">
             <container name="header.search" after="-" htmlClass="header-search" htmlTag="div"> </container>
         </referenceContainer>
@@ -40,6 +40,15 @@
         <move element="minicart" destination="header-wrapper" before="minicart"/>
         <move element="customer" destination="header-wrapper"  before="minicart" />
         <move element="header-authorization-link-login" destination="header-wrapper" before="minicart"/>
+
+<!--        <referenceBlock name="store.menu">-->
+<!--            <block class="Magento\Cms\Block\Block" name="header-static-links-mobile">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_id" xsi:type="string">header_static_links</argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--        </referenceBlock>-->
+
 
         <referenceBlock name="footer_links" remove="true"/>
         <referenceContainer name="page.bottom">
