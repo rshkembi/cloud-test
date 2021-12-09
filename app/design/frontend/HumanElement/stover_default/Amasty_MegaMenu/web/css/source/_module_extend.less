@@ -32,11 +32,41 @@
             }
             &.-mobile {
                 position: unset;
+                height: auto;
             }
         }
 
         a.pagebuilder-button-link {
             font-family: @font-family-name__InterRegular;
+        }
+
+        &-item {
+            &.nav{
+                &-6,&-7,&-8,&-9 {
+                    a {
+                        color: @theme__color__primary !important;
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: @theme__color__primary-alt !important;
+                        }
+                    }
+                }
+            }
+        }
+        &-button.-hamburger {
+            order: 4;
+            margin: 0px 0px 8px 10px;
+
+            &:before {
+                content: url("../images/icon_menu.png");
+                border: none;
+            }
+            .ammenu-line,
+            &:after
+            {
+                border: none;
+            }
         }
     }
 
