@@ -16,13 +16,7 @@ define([
             );
 
             $('.ammenu-button.-hamburger').click(function (){
-                if($(this).hasClass('active')){
-                    $(this).removeClass('active');
-                }
-
-                if(!$(this).hasClass('active')){
-                    $(this).addClass('active');
-                }
+                $(this).toggleClass('active');
             });
         }
     }
