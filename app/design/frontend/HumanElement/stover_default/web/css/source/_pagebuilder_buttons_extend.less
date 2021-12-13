@@ -42,20 +42,33 @@
             font-weight: @font-weight__regular;
             font-family: @font-family-name__InterRegular;
             text-transform: uppercase;
+            text-decoration: underline;
         }
 
         &.pagebuilder-button-primary {
             .lib-button-s();
             font-weight: @font-weight__regular;
-            font-family: @font-family-name__InterRegular;
+            //font-family: @font-family-name__InterRegular;
             text-transform: uppercase;
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-width: 1px;
+            }
         }
 
         &.pagebuilder-button-secondary {
             .lib-button-s();
             font-weight: @font-weight__regular;
-            font-family: @font-family-name__InterRegular;
+            //font-family: @font-family-name__InterRegular;
             text-transform: uppercase;
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-width: 1px;
+            }
         }
     }
 }
