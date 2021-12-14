@@ -28,6 +28,8 @@
         "firebear/importexport-msi": "^1.1",
         "magento/composer-root-update-plugin": "~1.1",
         "magento/magento-cloud-metapackage": ">=2.4.3 <2.4.4",
+        "magento/module-page-builder-product-recommendations": "^1.2",
+        "magento/product-recommendations": "^3.3",
         "mageworx/module-seosuiteultimate": "^2.35"
     },
     "suggest": {
