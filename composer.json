@@ -28,7 +28,8 @@
         "firebear/importexport-msi": "^1.1",
         "magento/composer-root-update-plugin": "~1.1",
         "magento/magento-cloud-metapackage": ">=2.4.3 <2.4.4",
-        "mageworx/module-seosuiteultimate": "^2.35"
+        "mageworx/module-seosuiteultimate": "^2.35",
+        "shipperhq/module-shipper": "^20.45"
     },
     "suggest": {
         "ext-pcntl": "Need for run processes in parallel mode"
