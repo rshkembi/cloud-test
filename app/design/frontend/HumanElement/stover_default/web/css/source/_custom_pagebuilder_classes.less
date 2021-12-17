@@ -1,0 +1,110 @@
+//
+//  Variables
+//  _____________________________________________
+@green-top-border: 5px solid @theme__color__primary;
+@pink-top-border: 5px solid @stover-primary-brilliant-rose;
+@black-top-border: 5px solid @color-black;
+
+//
+//  Default appearance styles
+//  _____________________________________________
+
+& when (@media-common = true) {
+    div[data-appearance='collage-left'],
+    div[data-appearance='collage-center'],
+    div[data-appearance='collage-right'] {
+
+        &.green-border {
+            .pagebuilder-overlay {
+                border-top: @green-top-border;
+            }
+        }
+
+        &.pink-border {
+            .pagebuilder-overlay {
+                border-top: @pink-top-border;
+            }
+        }
+
+        &.black-border {
+            .pagebuilder-overlay {
+                border-top: @black-top-border;
+            }
+        }
+
+        .pagebuilder-overlay {
+            p {
+                font-family: @font-family-name__InterRegular;
+            }
+        }
+    }
+
+    .font-eb-garamond-regular {
+        font-family: @font-family-name__EBGaramondRegular;
+    }
+
+    figure {
+        &.pink-border {
+            img {
+                border-bottom: @pink-top-border;
+            }
+        }
+
+        &.black-border {
+            img {
+                border-bottom: @black-top-border;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .collage-left {
+        .pagebuilder-overlay {
+            top: 80px;
+            margin: 0 15px !important;
+        }
+    }
+
+    div[data-appearance='collage-left'],
+    div[data-appearance='collage-center'],
+    div[data-appearance='collage-right'] {
+        &.mobile-450-height {
+
+            .pagebuilder-banner-wrapper {
+                min-height: 450px !important;
+            }
+        }
+    }
+
+
+    .mobile-2-col {
+        .pagebuilder-column-group {
+            display: unset !important;
+            .pagebuilder-column {
+                width: 49% !important;
+                display: inline-block !important;
+                vertical-align: top;
+
+                &:nth-of-type(odd) {
+                    margin-right: 10px !important;
+                }
+            }
+        }
+    }
+    .pagebuilder-column-group {
+        .pagebuilder-column {
+            margin: 0 !important;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .collage-left {
+        .pagebuilder-overlay {
+            top: 100px;
+            left: 20px;
+        }
+    }
+}
