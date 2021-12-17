@@ -36,7 +36,8 @@
         "magento/magento-cloud-metapackage": ">=2.4.3 <2.4.4",
         "magento/module-page-builder-product-recommendations": "^1.2",
         "magento/product-recommendations": "^3.3",
-        "mageworx/module-seosuiteultimate": "^2.35"
+        "mageworx/module-seosuiteultimate": "^2.35",
+        "shipperhq/module-shipper": "^20.45"
     },
     "suggest": {
         "ext-pcntl": "Need for run processes in parallel mode"
