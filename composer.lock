@@ -10265,6 +10265,40 @@
             "description": "Catalog Staging Page Builder module"
         },
         {
+            "name": "magento/module-catalog-sync-admin",
+            "version": "1.0.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-catalog-sync-admin/magento-module-catalog-sync-admin-1.0.4.0.zip",
+                "shasum": "667c32821eedea30fe44f27d3d1621a077d4343f"
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "guzzlehttp/psr7": "~1.0",
+                "magento/framework": ">=102.0.0 <104.0.0",
+                "magento/module-backend": ">=101.0.0 <103.0.0",
+                "magento/module-catalog": ">=103.0.0 <105.0.0",
+                "magento/module-services-id": "~2.2",
+                "magento/module-store": ">=101.0.0 <101.2.0",
+                "magento/saas-export": "~101.1",
+                "php": "~7.2.0||~7.3.0||~7.4.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\CatalogSyncAdmin\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Catalog sync status interface"
+        },
+        {
             "name": "magento/module-catalog-url-rewrite",
             "version": "100.4.3",
             "dist": {
@@ -11701,6 +11735,100 @@
         {
             "name": "magento/module-data-exporter",
             "version": "101.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-data-exporter/magento-module-data-exporter-101.0.0.0.zip",
+                "shasum": "fc2c996d8d5fafc12ffc250e4058f9587b566151"
+            },
+            "require": {
+                "magento/framework": ">=102.0.2",
+                "magento/module-analytics": ">=100.3.2",
+                "magento/module-query-xml": "self.version",
+                "php": "~7.1.3||~7.2.0||~7.3.0||~7.4.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\DataExporter\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Magento 2 Data Exporter module exports necessary data to Magento cloud services that rely on it"
+        },
+        {
+            "name": "magento/module-data-services",
+            "version": "7.0.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-data-services/magento-module-data-services-7.0.4.0.zip",
+                "shasum": "27f0ef643e30d2836a85e8df95d8df57ec64490e"
+            },
+            "require": {
+                "magento/framework": ">=102.0.0 <104.0.0",
+                "magento/module-catalog": ">=103.0.0 <105.0.0",
+                "magento/module-checkout": ">=100.3.0 <100.5.0",
+                "magento/module-config": ">=101.1.0 <101.3.0",
+                "magento/module-customer": ">=102.0.0 <104.0.0",
+                "magento/module-quote": ">=101.1.0 <101.3.0",
+                "magento/module-services-id": "~2.2",
+                "magento/module-store": ">=101.0.0 <101.2.0",
+                "magento/saas-export": "~101.1",
+                "php": "~7.2.0||~7.3.0||~7.4.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\DataServices\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Data Services base module"
+        },
+        {
+            "name": "magento/module-data-services-multishipping",
+            "version": "7.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-data-services-multishipping/magento-module-data-services-multishipping-7.0.0.0.zip",
+                "shasum": "01e152c9a50473ecca24074cd2dec027b1bc8250"
+            },
+            "require": {
+                "magento/framework": ">102.0.0",
+                "magento/module-customer": ">=102.0.0 <104.0.0",
+                "magento/module-data-services": "~7.0",
+                "magento/module-multishipping": ">=100.3.0 <100.5.0",
+                "php": "~7.2.0||~7.3.0||~7.4.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\DataServicesMultishipping\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Data Services Multishipping module"
+        },
+        {
+            "name": "magento/module-deploy",
+            "version": "100.4.3",
             "dist": {
                 "type": "zip",
                 "url": "https://repo.magento.com/archives/magento/module-data-exporter/magento-module-data-exporter-101.0.0.0.zip",
@@ -17910,6 +18038,38 @@
             "description": "Page Builder Analytics module"
         },
         {
+            "name": "magento/module-page-builder-product-recommendations",
+            "version": "1.2.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-page-builder-product-recommendations/magento-module-page-builder-product-recommendations-1.2.3.0.zip",
+                "shasum": "f5df4c011aeffe18e806aa498dc0446efc0800f0"
+            },
+            "require": {
+                "magento/framework": ">=102.0.0 <104.0.0",
+                "magento/module-catalog": ">=103.0.0 <105.0.0",
+                "magento/module-product-recommendations-admin": "~3.0",
+                "magento/module-product-recommendations-layout": "~3.2",
+                "magento/module-store": ">=101.0.0 <101.2.0",
+                "magento/page-builder-commerce": "~1.0",
+                "php": "~7.2.0||~7.3.0||~7.4.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\PageBuilderProductRecommendations\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "PageBuilder Product Recommendations module"
+        },
+        {
             "name": "magento/module-page-cache",
             "version": "100.4.3",
             "dist": {
@@ -18366,6 +18526,170 @@
                 "AFL-3.0"
             ],
             "description": "Product prices exporter"
+        },
+        {
+            "name": "magento/module-product-variant-data-exporter",
+            "version": "101.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-product-variant-data-exporter/magento-module-product-variant-data-exporter-101.0.0.0.zip",
+                "shasum": "5f1d22fe36bdb2b14c71fb9072071233adcca882"
+            },
+            "require": {
+                "magento/framework": ">=102.0.2",
+                "magento/module-data-exporter": "self.version",
+                "php": "~7.1.3||~7.2.0||~7.3.0||~7.4.0"
+            },
+            "suggest": {
+                "magento/module-catalog": ">=103.0.2"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\ProductVariantDataExporter\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Product Variant Data Exporter"
+        },
+        {
+            "name": "magento/module-product-video",
+            "version": "100.4.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-product-override-data-exporter/magento-module-product-override-data-exporter-101.0.0.0.zip",
+                "shasum": "f9119784df4996e1e1ea80d9cb426065c0bf42b7"
+            },
+            "require": {
+                "magento/framework": ">=102.0.2",
+                "magento/module-catalog-data-exporter": "self.version",
+                "magento/module-catalog-permissions": ">=100.3.2",
+                "magento/module-data-exporter": "self.version",
+                "magento/module-query-xml": "self.version",
+                "php": "~7.1.3||~7.2.0||~7.3.0||~7.4.0"
+            },
+            "suggest": {
+                "magento/module-catalog-permissions": "Catalog permissions module is needed for B2B permissions support",
+                "magento/module-configurable-product": "Configurable product module is required for proper module functioning",
+                "magento/module-configurable-product-data-exporter": "Configurable product exporter needed",
+                "magento/module-customer": "Customer module is needed for B2B prices support",
+                "magento/module-store": "Store module is needed for B2B prices support"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\ProductOverrideDataExporter\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Product prices exporter"
+        },
+        {
+            "name": "magento/module-product-recommendations-admin",
+            "version": "3.0.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-product-recommendations-admin/magento-module-product-recommendations-admin-3.0.4.0.zip",
+                "shasum": "0cbb561830e7444aeed36f5c69387d9335b20a00"
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "guzzlehttp/psr7": "~1.0",
+                "magento/framework": ">=102.0.0 <104.0.0",
+                "magento/module-backend": ">=101.0.0 <103.0.0",
+                "magento/module-catalog": ">=103.0.0 <105.0.0",
+                "magento/module-services-id": "~2.2",
+                "magento/module-store": ">=101.0.0 <101.2.0",
+                "php": "~7.2.0||~7.3.0||~7.4.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\ProductRecommendationsAdmin\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Product Recommendations admin interface."
+        },
+        {
+            "name": "magento/module-product-recommendations-layout",
+            "version": "3.3.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-product-recommendations-layout/magento-module-product-recommendations-layout-3.3.1.0.zip",
+                "shasum": "8119e8cc6ed4ec22356571990a0d3610974618bc"
+            },
+            "require": {
+                "magento/data-services": "~7.0",
+                "magento/framework": ">=102.0.0 <104.0.0",
+                "magento/module-catalog": ">=103.0.0 <105.0.0",
+                "magento/module-product-recommendations-admin": "~3.0",
+                "magento/module-store": ">=101.0.0 <101.2.0",
+                "php": "~7.2.0||~7.3.0||~7.4.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\ProductRecommendationsLayout\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Product Recommendations storefront layout."
+        },
+        {
+            "name": "magento/module-product-recommendations-sync-admin",
+            "version": "1.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-product-recommendations-sync-admin/magento-module-product-recommendations-sync-admin-1.0.1.0.zip",
+                "shasum": "239e795b675b2d514455fd4aa457364a8caa2260"
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "guzzlehttp/psr7": "~1.0",
+                "magento/framework": ">=102.0.0 <104.0.0",
+                "magento/module-backend": ">=101.0.0 <103.0.0",
+                "magento/module-catalog-sync-admin": "~1.0",
+                "php": "~7.2.0||~7.3.0||~7.4.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\ProductRecommendationsSyncAdmin\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Product Recommendations sync status interface"
         },
         {
             "name": "magento/module-product-variant-data-exporter",
@@ -23320,6 +23644,74 @@
                 "proprietary"
             ],
             "description": "eCommerce Platform for Growth (Enterprise Edition)"
+        },
+        {
+            "name": "magento/product-recommendations",
+            "version": "3.3.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/product-recommendations/magento-product-recommendations-3.3.5.0.zip",
+                "shasum": "6f1e0833dec25682de3b18ebed6b6c41423a1ceb"
+            },
+            "require": {
+                "magento/data-services": "^7.0.4",
+                "magento/framework": ">=102.0.0 <104.0.0",
+                "magento/module-bundle-product-data-exporter": "^101.0.0",
+                "magento/module-catalog-data-exporter": "^101.0.0",
+                "magento/module-catalog-inventory-data-exporter": "^101.0.0",
+                "magento/module-catalog-url-rewrite-data-exporter": "^101.0.0",
+                "magento/module-configurable-product-data-exporter": "^101.0.0",
+                "magento/module-data-exporter": "^101.0.0",
+                "magento/module-parent-product-data-exporter": "^101.0.0",
+                "magento/module-product-override-data-exporter": "^101.0.0",
+                "magento/module-product-recommendations-layout": "3.3.1",
+                "magento/module-query-xml": "^101.0.0",
+                "magento/module-services-id": "^2.2.2",
+                "magento/product-recommendations-admin": "^3.0.5",
+                "magento/saas-export": "^101.1.0",
+                "php": "~7.2.0||~7.3.0||~7.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.5.0"
+            },
+            "suggest": {
+                "magento/module-page-builder-product-recommendations": "Enable Product Recommendations for PageBuilder. Supported in Magento Commerce 2.3.1 and later.",
+                "magento/module-visual-product-recommendations": "Enable Visual Product Recommendations."
+            },
+            "type": "metapackage",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Product Recommendations metapackage"
+        },
+        {
+            "name": "magento/product-recommendations-admin",
+            "version": "3.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/product-recommendations-admin/magento-product-recommendations-admin-3.0.5.0.zip",
+                "shasum": "215edaa83b31f80d0d03a74f1faab6c468c86103"
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "guzzlehttp/psr7": "~1.0",
+                "magento/framework": ">=102.0.0 <104.0.0",
+                "magento/module-catalog-sync-admin": "~1.0",
+                "magento/module-product-recommendations-admin": "3.0.4",
+                "magento/module-product-recommendations-sync-admin": "1.0.1",
+                "magento/module-services-id": "~2.2",
+                "php": "~7.2.0||~7.3.0||~7.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.5.0"
+            },
+            "type": "metapackage",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Product Recommendations Admin metapackage"
         },
         {
             "name": "magento/quality-patches",
