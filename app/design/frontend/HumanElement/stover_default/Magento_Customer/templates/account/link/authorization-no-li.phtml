@@ -1,0 +1,21 @@
+<?php
+/**
+ * ADA Changes
+ * add alt text to login link
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Customer\Block\Account\AuthorizationLink $block */
+
+$dataPostParam = '';
+if ($block->isLoggedIn()) {
+    $dataPostParam = sprintf(" data-post='%s'", $block->getPostParams());
+}
+?>
+<?php if (!$block->isLoggedIn()) :?>
+    <div class="authorization-link no-li">
+        <a <?= /* @noEscape */ $block->getLinkAttributes() ?><?= /* @noEscape */ $dataPostParam ?> alt="Account Login">
+        </a>
+    </div>
+<?php endif;?>

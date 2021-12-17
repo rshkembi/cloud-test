@@ -8,6 +8,33 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    .header {
+        &.content {
+            .customer-name,
+            .authorization-link.no-li a{
+                margin-right: 10px;
+                &:before {
+                    content: url("../images/icon_account.png");
+                }
+            }
+
+            a {
+                &.pagebuilder-button-link {
+                    color: @theme__color__primary;
+                    font-family: @font-family-name__InterBold;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .promo {
+        strong {
+            font-family: @font-family-name__InterBold;
+        }
+    }
+
     .copyright {
         &-inner {
             max-width: 1280px;
@@ -38,8 +65,59 @@
     }
 }
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-header {
+        border-bottom: none;
+        .panel {
+            &.header {
+                padding: 0;
+            }
+        }
+    }
+    .customer-name,
+    .authorization-link.no-li {
+        display: none;
+    }
 
+    .ammenu-header-container {
+        .header.content {
+            align-items: end;
+        }
+    }
+}
+
+// Normal Magento Media Query isn't working for this break point
+@media screen and (max-width: 1024px){
+    .header-static-links {
+        display: none !important;
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-header {
+        .panel {
+            &.header {
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+    }
+
+    .page-wrapper {
+        .header {
+            &.content {
+                display: flex;
+            }
+        }
+    }
+
+    .ammenu-header-container {
+        .header.content {
+            padding: 20px 22px 20px;
+            margin-bottom: 0;
+        }
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {

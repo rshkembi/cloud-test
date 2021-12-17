@@ -8,6 +8,64 @@
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="default_head_blocks"/>
     <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="promo.bar" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">promo</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="top.links" remove="true"/>
+        <referenceBlock name="header.links" remove="true"/>
+
+        <referenceContainer name="header-wrapper">
+            <referenceBlock name="ammenu.logo" remove="true"/>
+            <block class="Magento\Theme\Block\Html\Header\Logo"
+                   name="ammenu.logo.updated"
+                   template="Amasty_MegaMenuLite::components/logo.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">
+                        Amasty\MegaMenuLite\ViewModel\Header\Logo
+                    </argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Cms\Block\Block" name="header.static.links">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_static_links</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Framework\View\Element\Template" name="top.search.button" as="topSearchButton" template="Magento_Search::form.mini.button.phtml">
+                <arguments>
+                    <argument name="configProvider" xsi:type="object">Magento\Search\ViewModel\ConfigProvider</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Customer\Block\Account\AuthorizationLink"
+                   name="header-authorization-link-login"
+                   template="Magento_Customer::account/link/authorization-no-li.phtml"
+            />
+
+            <referenceBlock name="amasty.menu.toggle" remove="true"/>
+            <block class="Amasty\MegaMenuLite\Block\Container"
+                   name="amasty.menu.toggle.updated"
+                   template="Amasty_MegaMenuLite::components/toggle.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">
+                        Amasty\MegaMenuLite\ViewModel\Store\Menu
+                    </argument>
+                </arguments>
+            </block>
+
+        </referenceContainer>
+
+        <referenceContainer name="header.container">
+            <container name="header.search" after="-" htmlClass="header-search" htmlTag="div"> </container>
+        </referenceContainer>
+        <move element="top.search" destination="header.search"/>
+        <move element="customer" destination="header-wrapper"  before="minicart" />
+
         <referenceBlock name="footer_links" remove="true"/>
         <referenceContainer name="page.bottom">
             <block class="Magento\Framework\View\Element\Template" name="social-icons" template="Magento_Theme::html/social-icons.phtml"/>
