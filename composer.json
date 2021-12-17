@@ -27,7 +27,7 @@
         }
     },
     "require": {
-        "aheadworks/module-blog": "^2.10",
+        "aheadworks/module-blog": "^2.11",
         "amasty/mega-menu": "^2.1",
         "firebear/importexport": "^3.7",
         "firebear/importexport-msi": "^1.1",
