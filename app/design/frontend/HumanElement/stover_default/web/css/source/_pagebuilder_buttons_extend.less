@@ -1,4 +1,7 @@
 //  */
+//  Small button
+@button__font-size__s: 14px;
+@button__padding__s: @button__padding;
 
 //
 //  Default appearance styles
@@ -8,10 +11,64 @@
     a,
     button,
     div {
+        &.pagebuilder {
+            &-button-link {
+                font-size: @font-size__base;
+                color: @color-black;
+                font-weight: 300;
+            }
+
+            &-button-primary {
+
+            }
+        }
+    }
+
+    .green-link {
+        a,
+        button,
+        div {
+            &.pagebuilder-button-link {
+                color: @theme__color__primary;
+            }
+        }
+    }
+
+    a,
+    button,
+    div {
         &.pagebuilder-button-link {
-            font-size: @font-size__base;
-            color: @color-black;
-            font-weight: 300;
+            .lib-button-s();
+            font-weight: @font-weight__regular;
+            font-family: @font-family-name__InterRegular;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+
+        &.pagebuilder-button-primary {
+            .lib-button-s();
+            font-weight: @font-weight__regular;
+            //font-family: @font-family-name__InterRegular;
+            text-transform: uppercase;
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-width: 1px;
+            }
+        }
+
+        &.pagebuilder-button-secondary {
+            .lib-button-s();
+            font-weight: @font-weight__regular;
+            //font-family: @font-family-name__InterRegular;
+            text-transform: uppercase;
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-width: 1px;
+            }
         }
     }
 }

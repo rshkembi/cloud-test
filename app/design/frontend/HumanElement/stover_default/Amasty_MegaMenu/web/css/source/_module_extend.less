@@ -1,0 +1,151 @@
+//
+//  Variables
+//  _____________________________________________
+@ammenu-nav-border: 1px solid @color-gray76;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .ammenu {
+        &-menu-wrapper {
+            .ammenu-menu-overlay {
+                position: unset;
+            }
+        }
+        &-submenu-block {
+            &.-root {
+                box-shadow: none;
+                border-bottom: @ammenu-nav-border;
+            }
+        }
+
+        &-nav-sections {
+            border-bottom: @ammenu-nav-border;
+            max-width: unset;
+            &.-topmenu {
+                .ammenu-items {
+                    justify-content: space-between;
+                    text-transform: uppercase;
+                }
+            }
+            &.-mobile {
+                position: unset;
+                height: auto;
+                &.-opened {
+                    margin-right: 0;
+                    max-width: unset;
+                }
+                &.-drill {
+                    .ammenu-active-level {
+                        .ammenu-head {
+                            display: unset;
+                            padding: 0;
+                            .ammenu-text-block {
+                                width: 100%;
+                                color: @theme__color__primary;
+                                text-align: center;
+                                font-family: @font-family-name__InterBold;
+                            }
+
+                            .ammenu-text {
+                                margin: 12px auto;
+                            }
+                        }
+
+                        .ammenu-button.-prev {
+                            display: block;
+                            width: 100%;
+                            text-align: left;
+                            padding-left: 10px;
+                            border-top: 1px solid @color-gray76;
+                            border-bottom: 1px solid @color-gray76;
+                            
+                            .ammenu-icon.-arrow {
+                                display: none;
+                            }
+                            &:before {
+                                content: @icon-prev;
+                                font-family: @icons__font-name;
+                                color: @theme__color__primary;
+                            }
+                            &:after {
+                                content: 'Back';
+                                color: @theme__color__primary;
+                                font-family: @font-family-name__InterRegular;
+                            }
+                        }
+                    }
+                }
+
+                .ammenu-link {
+                    padding: 0;
+                }
+            }
+        }
+
+        a.pagebuilder-button-link {
+            font-family: @font-family-name__InterRegular;
+        }
+
+        &-item {
+            &.nav{
+                &-6,&-7,&-8,&-9 {
+                    a {
+                        color: @theme__color__primary !important;
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: @theme__color__primary-alt !important;
+                        }
+                    }
+                }
+            }
+        }
+        &-button{
+            &.-hamburger {
+                order: 4;
+                margin: 0px 0px 8px 10px;
+
+                &:before {
+                    content: url("../images/icon_menu.png");
+                    border: none;
+                }
+                .ammenu-line,
+                &:after
+                {
+                    border: none;
+                }
+
+                &.active {
+                    &:before {
+                        content: url("../images/icon_close.png");
+                    }
+                }
+            }
+
+            &.-go-main{
+                display: none !important;
+            }
+        }
+    }
+
+    .stover-link-color {
+        a.pagebuilder-button-link {
+            color: @stover-primary-elm;
+            text-decoration: underline;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: @stover-primary-blue-stone;
+            }
+        }
+    }
+    .ammenu-nav-sections.-mobile:not(.-has-icons) {
+        .ammenu-items.-root > .ammenu-item > .ammenu-link:before {
+            border: none;
+        }
+    }
+}
