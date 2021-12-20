@@ -24,6 +24,10 @@
         "amasty": {
             "type": "composer",
             "url": "https://composer.amasty.com/enterprise/"
+        },
+        "amasty1": {
+            "type": "composer",
+            "url": "https://composer1.amasty.com/enterprise/"
         }
     },
     "require": {
