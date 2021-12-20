@@ -9,6 +9,10 @@
         "sort-packages": true
     },
     "repositories": {
+        "amasty": {
+            "type": "composer",
+            "url": "https://composer.amasty.com/enterprise/"
+        },
         "repo": {
             "type": "composer",
             "url": "https://repo.magento.com"
@@ -20,10 +24,6 @@
         "firebear": {
             "type": "composer",
             "url": "https://firebearstudio.com/composer/download/package/type/ee/user/494111ec78ffe63d098f8fa69465daf8/password/ca4863eebf527c0e2651fe7f484bc7d8/"
-        },
-        "amasty": {
-            "type": "composer",
-            "url": "https://composer.amasty.com/enterprise/"
         }
     },
     "require": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90758555942304127c7f654c8504ede4",
+    "content-hash": "2537a78379b28d13afc09c8b859cc5b1",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -53,11 +53,11 @@
         },
         {
             "name": "aheadworks/module-blog",
-            "version": "2.11.0",
+            "version": "2.10.1",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/aheadworks/module-blog/aheadworks-module-blog-2.11.0.0.zip",
-                "shasum": "7b26870ab7cf9b9d15eb2a2c48e6c90c8f2b2b32"
+                "url": "https://repo.magento.com/archives/aheadworks/module-blog/aheadworks-module-blog-2.10.1.0.zip",
+                "shasum": "752cbe124847220ea4131443c4bf7c13827c8cc1"
             },
             "require": {
                 "magento/framework": ">100.0",
