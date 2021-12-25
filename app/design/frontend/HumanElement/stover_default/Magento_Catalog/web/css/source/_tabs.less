@@ -1,0 +1,40 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .product.info.detailed {
+        .product {
+            &.data.items {
+
+                > .item.title {
+                    > .switch {
+                        color: @stover-primary-light-gray;
+                        background-color: @color-white;
+                        border: none;
+                        font-size: 22px;
+                        padding: 25px 40px;
+
+                        .counter {
+                            color: @stover-primary-light-gray;
+                        }
+                    }
+
+                    &.active {
+                        > .switch {
+                            color: @color-black;
+                            background-color: @color-white-dark-smoke;
+                            border: none;
+                        }
+                    }
+                }
+
+                .item.content {
+                    background-color: @color-white-dark-smoke;
+                    border: none;
+                    margin-top: 72px;
+                }
+            }
+        }
+    }
+}
