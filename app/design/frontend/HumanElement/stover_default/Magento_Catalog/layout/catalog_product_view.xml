@@ -10,14 +10,19 @@
         <referenceBlock name="view.addto.compare" remove="true"/>
 
         <referenceContainer name="content">
+            <container name="main.content.wrap" htmlTag="div" htmlClass="top-content-wrap" before="-"></container>
+            <container name="details.full.bleed" htmlTag="div" htmlClass="details-full-bleed" after="main.content.wrap"></container>
             <block class="Magento\Catalog\Block\Product\View" name="product.attribute.details.template" template="Magento_Catalog::product/view/attribute.phtml">
                 <arguments>
                     <argument name="at_call" xsi:type="string">getproduct_details_template</argument>
                     <argument name="at_code" xsi:type="string">product_details_template</argument>
-                    <argument name="at_label" xsi:type="string">Product Details Template</argument>
                     <argument name="css_class" xsi:type="string">details-template</argument>
                 </arguments>
             </block>
         </referenceContainer>
+        <move element="product.info.main" destination="main.content.wrap"/>
+        <move element="product.info.media" destination="main.content.wrap" after="product.info.main"/>
+        <move element="product.info.details" destination="details.full.bleed"/>
+        <referenceBlock name="product.info.sku" remove="true"/>
     </body>
 </page>

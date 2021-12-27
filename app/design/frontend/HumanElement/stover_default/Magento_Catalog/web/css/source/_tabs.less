@@ -3,7 +3,12 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    .details-full-bleed {
+        background-color: @color-white-dark-smoke;
+    }
     .product.info.detailed {
+        max-width: 1280px;
+        margin: auto;
         .product {
             &.data.items {
 
@@ -14,7 +19,7 @@
                         border: none;
                         font-size: 22px;
                         padding: 25px 40px;
-
+                        font-family: @font-family-name__InterBold;
                         .counter {
                             color: @stover-primary-light-gray;
                         }

@@ -10,6 +10,11 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    .top-content-wrap {
+        max-width: 1280px;
+        margin: auto;
+        overflow: auto;
+    }
     .product.actions {
         .actions-primary {
             width: 100%;
@@ -99,6 +104,20 @@
                     color: @stover-primary-gray;
                 }
             }
+        }
+
+        &.media {
+            .fotorama__active {
+                .fotorama__dot {
+                    background-color: @theme__color__primary;
+                    border-color: @theme__color__primary;
+                }
+            }
+        }
+    }
+    .product-info-stock-sku {
+        .stock {
+            display: none;
         }
     }
 }
