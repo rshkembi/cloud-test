@@ -1,0 +1,34 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .fotorama {
+        .fotorama__arr {
+            height: 80px;
+            top: 50%;
+
+            &--next {
+                .fotorama__arr__arr {
+                    background-image: url("../images/PDP_Arrow_Right.png");
+                    background-position: initial;
+                }
+            }
+
+            &--prev {
+                .fotorama__arr__arr {
+                    background-image: url("../images/PDP_Arrow_Left.png");
+                    background-position: initial;
+                }
+            }
+        }
+
+        &__nav {
+            text-align: center;
+        }
+
+        .fotorama__thumb-border {
+            border-color: @theme__color__primary;
+        }
+    }
+}

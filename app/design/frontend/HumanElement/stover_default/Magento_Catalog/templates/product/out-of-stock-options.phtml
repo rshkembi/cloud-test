@@ -1,0 +1,15 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /* @var $block \Magento\Catalog\Block\Product\Attributes */?>
+<?php
+$_product = $block->getProduct();
+$attrData = $_product->getData('out_of_stock_suggestions');
+?>
+
+<?php if (!$_product->isAvailable()) :?>
+    <?php echo $attrData;?>
+<?php endif; ?>
