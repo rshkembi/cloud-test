@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2537a78379b28d13afc09c8b859cc5b1",
+    "content-hash": "49cf646fa62c7a73fedfcfb938cb330e",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -6320,18 +6320,16 @@
         },
         {
             "name": "magento/composer-root-update-plugin",
-            "version": "1.1.2",
+            "version": "2.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/composer-root-update-plugin/magento-composer-root-update-plugin-1.1.2.0.zip",
-                "shasum": "530c345bf02e17456d42e3c919fd0430649866d8"
+                "url": "https://repo.magento.com/archives/magento/composer-root-update-plugin/magento-composer-root-update-plugin-2.0.0.0.zip",
+                "shasum": "ed91cff1ef172e448c6a67507dacd96cd2d4f3e3"
             },
             "require": {
                 "composer-plugin-api": "^1.0 || ^2.0",
-                "composer/composer": "<=1.11 || >=2.0.0 <=2.1"
-            },
-            "suggest": {
-                "magento/framework": "Enables the Magento Composer Root Update Plugin's functionality for the Web Setup Wizard"
+                "composer/composer": "^1.0 || ^2.0",
+                "php": "~7.3.0||~7.4.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -6340,16 +6338,13 @@
             "autoload": {
                 "psr-4": {
                     "Magento\\ComposerRootUpdatePlugin\\": ""
-                },
-                "files": [
-                    "registration.php"
-                ]
+                }
             },
             "license": [
                 "OSL-3.0",
                 "AFL-3.0"
             ],
-            "description": "Plugin to look ahead for Magento project root changes when running composer update for new Magento versions"
+            "description": "Plugin to look ahead for Magento Open Source or Adobe Commerce project root changes when running composer update for new magento/product or magento/magento-cloud metapackage versions"
         },
         {
             "name": "magento/data-services",
@@ -31090,5 +31085,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "1.1.0"
 }
