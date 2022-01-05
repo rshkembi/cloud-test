@@ -53,11 +53,11 @@
         },
         {
             "name": "aheadworks/module-blog",
-            "version": "2.10.1",
+            "version": "2.12.0",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/aheadworks/module-blog/aheadworks-module-blog-2.10.1.0.zip",
-                "shasum": "752cbe124847220ea4131443c4bf7c13827c8cc1"
+                "url": "https://repo.magento.com/archives/aheadworks/module-blog/aheadworks-module-blog-2.12.0.0.zip",
+                "shasum": "b582fbf3d1867902a7a704f7dada9625c5e4ffd7"
             },
             "require": {
                 "magento/framework": ">100.0",
