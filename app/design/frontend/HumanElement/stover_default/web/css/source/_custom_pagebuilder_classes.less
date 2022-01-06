@@ -34,13 +34,17 @@
 
         .pagebuilder-overlay {
             p {
-                font-family: @font-family-name__InterRegular;
+                font-family: @font-family__base;
             }
         }
     }
 
     .font-eb-garamond-regular {
-        font-family: @font-family-name__EBGaramondRegular;
+        font-family: @font-family-name__EBGaramond;
+    }
+    .font-eb-garamond-italic {
+        font-family: @font-family-name__EBGaramond;
+        font-style: @font-style__emphasis;
     }
 
     figure {
@@ -89,7 +93,7 @@
         .pagebuilder-column-group {
             display: unset !important;
             .pagebuilder-column {
-                width: 49% !important;
+                width: 48% !important;
                 display: inline-block !important;
                 vertical-align: top;
 
@@ -111,6 +115,14 @@
         .pagebuilder-overlay {
             top: 100px;
             left: 20px;
+        }
+    }
+
+    .width-400 {
+        .pagebuilder-banner-wrapper {
+            .pagebuilder-overlay:not(.pagebuilder-poster-overlay) {
+                max-width: 400px;
+            }
         }
     }
 }

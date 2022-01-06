@@ -32,9 +32,15 @@
                 </block>
             </container>
         </referenceContainer>
-        <move element="product.info.main" destination="main.content.wrap"/>
-        <move element="product.info.media" destination="main.content.wrap" after="product.info.main"/>
+        <move element="product.info.media" destination="main.content.wrap" before="product.info.main"/>
+        <move element="product.info.main" destination="main.content.wrap" after="product.info.media"/>
         <move element="product.info.details" destination="details.full.bleed"/>
         <referenceBlock name="product.info.sku" remove="true"/>
+
+        <referenceBlock name="product.info.description">
+            <arguments>
+                <argument name="title" translate="true" xsi:type="string">Description</argument>
+            </arguments>
+        </referenceBlock>
     </body>
 </page>

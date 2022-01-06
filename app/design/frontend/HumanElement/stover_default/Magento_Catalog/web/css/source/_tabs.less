@@ -10,11 +10,9 @@
                 > .item.title {
                     > .switch {
                         color: @stover-primary-light-gray;
-                        background-color: @color-white;
-                        border: none;
                         font-size: 22px;
                         padding: 25px 40px;
-                        font-family: @font-family-name__InterBold;
+                        font-weight: @font-weight__bold;
                         .counter {
                             color: @stover-primary-light-gray;
                         }
@@ -23,8 +21,6 @@
                     &.active {
                         > .switch {
                             color: @color-black;
-                            background-color: @color-white-dark-smoke;
-                            border: none;
                         }
                         a {
                             &:after {
@@ -35,6 +31,7 @@
                     a {
                         &:after {
                             content: @icon-expand;
+                            top: 40px;
                         }
                     }
                 }
@@ -52,7 +49,22 @@
     .product.info.detailed {
         .product {
             &.data.items {
-                .item.content {
+                border-bottom: none;
+                > .item.title {
+                    > .switch {
+                        background-color: @color-white;
+                        border-color: @color-gray76;
+                    }
+
+                    &.active {
+                        > .switch {
+                            background-color: @color-white;
+                        }
+                    }
+                }
+
+                .data.item.content {
+                    background-color: @color-white;
                     margin-bottom: 0px;
                     margin-top: -6px;
                 }
@@ -71,6 +83,19 @@
 
         .product {
             &.data.items {
+                > .item.title {
+                    > .switch {
+                        background-color: @color-white;
+                        border: none;
+                    }
+
+                    &.active {
+                        > .switch {
+                            background-color: @color-white-dark-smoke;
+                            border: none;
+                        }
+                    }
+                }
                 .item.content {
                     margin-top: 72px;
                 }

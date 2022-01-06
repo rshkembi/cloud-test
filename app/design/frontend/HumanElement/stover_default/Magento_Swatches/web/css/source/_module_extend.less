@@ -24,4 +24,19 @@
             display: none;
         }
     }
+
+    .swatch-option {
+        &.disabled {
+            &:after {
+                background: rgb(185,185,185);
+                background: linear-gradient(158deg, rgba(185,185,185,0) 48%, rgba(224,43,39,1) 50%, rgba(224,43,39,1) 52%, rgba(185,185,185,0) 54%);
+            }
+        }
+    }
+
+    .swatch-attribute.size {
+        .swatch-option {
+            font-weight: @font-weight__regular;
+        }
+    }
 }

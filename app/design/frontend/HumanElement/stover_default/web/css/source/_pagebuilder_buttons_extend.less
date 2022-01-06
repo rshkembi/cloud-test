@@ -30,6 +30,7 @@
         div {
             &.pagebuilder-button-link {
                 color: @theme__color__primary;
+                font-weight: @font-weight__semibold;
             }
         }
     }
@@ -40,7 +41,7 @@
         &.pagebuilder-button-link {
             .lib-button-s();
             font-weight: @font-weight__regular;
-            font-family: @font-family-name__InterRegular;
+            font-family: @font-family__base;
             text-transform: uppercase;
             text-decoration: underline;
         }
@@ -48,7 +49,6 @@
         &.pagebuilder-button-primary {
             .lib-button-s();
             font-weight: @font-weight__regular;
-            //font-family: @font-family-name__InterRegular;
             text-transform: uppercase;
 
             &:hover,
@@ -61,7 +61,6 @@
         &.pagebuilder-button-secondary {
             .lib-button-s();
             font-weight: @font-weight__regular;
-            //font-family: @font-family-name__InterRegular;
             text-transform: uppercase;
 
             &:hover,
