@@ -31,6 +31,20 @@
             &.pagebuilder-button-link {
                 color: @theme__color__primary;
                 font-weight: @font-weight__semibold;
+                border: none;
+                border-bottom: 2px solid @stover-primary-elm;
+                text-decoration: none;
+                letter-spacing: 0.15em;
+                &:active, &:hover, &:focus {
+                    border-bottom: 2px solid @stover-primary-blue-stone;
+                    color: @stover-primary-blue-stone;
+                    text-decoration: none;
+                }
+                &:focus {
+                    outline: 1px solid @stover-primary-blue-stone;
+                    outline-offset: 10px;
+                    text-decoration: none;
+                }
             }
         }
     }

@@ -35,6 +35,7 @@
         .pagebuilder-overlay {
             p {
                 font-family: @font-family__base;
+                font-weight: @font-weight__regular;
             }
         }
     }
@@ -108,6 +109,24 @@
             margin: 0 !important;
         }
     }
+
+    .heading-3 {
+        .lib-heading(h3);
+
+        a,
+        button,
+        div {
+            &.pagebuilder {
+                &-button-link {
+                    .lib-heading(h3);
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
@@ -124,5 +143,14 @@
                 max-width: 400px;
             }
         }
+    }
+
+    .desktop-width-66 {
+        width: 66%;
+        margin: auto;
+    }
+
+    .pagebuilder-mobile-only {
+        display: none !important;
     }
 }
