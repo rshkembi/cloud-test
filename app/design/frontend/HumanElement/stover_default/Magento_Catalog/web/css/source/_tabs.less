@@ -1,0 +1,105 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .product.info.detailed {
+        .product {
+            &.data.items {
+
+                > .item.title {
+                    > .switch {
+                        color: @stover-primary-light-gray;
+                        font-size: 22px;
+                        padding: 25px 40px;
+                        font-weight: @font-weight__bold;
+                        .counter {
+                            color: @stover-primary-light-gray;
+                        }
+                    }
+
+                    &.active {
+                        > .switch {
+                            color: @color-black;
+                        }
+                        a {
+                            &:after {
+                                content: @icon-collapse;
+                            }
+                        }
+                    }
+                    a {
+                        &:after {
+                            content: @icon-expand;
+                            top: 40px;
+                        }
+                    }
+                }
+
+                .item.content {
+                    background-color: @color-white-dark-smoke;
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .product.info.detailed {
+        .product {
+            &.data.items {
+                border-bottom: none;
+                > .item.title {
+                    > .switch {
+                        background-color: @color-white;
+                        border-color: @color-gray76;
+                    }
+
+                    &.active {
+                        > .switch {
+                            background-color: @color-white;
+                        }
+                    }
+                }
+
+                .data.item.content {
+                    background-color: @color-white;
+                    margin-bottom: 0px;
+                    margin-top: -6px;
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .details-full-bleed {
+        background-color: @color-white-dark-smoke;
+    }
+    .product.info.detailed {
+        max-width: 1280px;
+        margin: auto;
+
+        .product {
+            &.data.items {
+                > .item.title {
+                    > .switch {
+                        background-color: @color-white;
+                        border: none;
+                    }
+
+                    &.active {
+                        > .switch {
+                            background-color: @color-white-dark-smoke;
+                            border: none;
+                        }
+                    }
+                }
+                .item.content {
+                    margin-top: 72px;
+                }
+            }
+        }
+    }
+}

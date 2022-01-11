@@ -1,14 +1,8 @@
 //  Variables
 //  _____________________________________________
-@font-family-name__InterRegular: 'Inter-Regular';
-@font-family-name__InterMedium: 'Inter-Medium';
-@font-family-name__InterRegular: 'Inter-Regular';
-@font-family-name__InterLight: 'Inter-Light';
-@font-family-name__InterMedium: 'Inter-Medium';
-@font-family-name__InterBold: 'Inter-Bold';
-@font-family-name__EBGaramondRegular: 'EBGaramond-Regular';
-@font-family-name__EBGaramondBold: 'EBGaramond-Bold';
-@font-family__base: @font-family-name__InterRegular;
+@font-family-name__Inter: 'Inter-Regular';
+@font-family-name__EBGaramond: 'EBGaramond-Regular';
+@font-family__base: @font-family-name__Inter, @font-family__sans-serif;
 
 //
 //  Common
@@ -33,23 +27,7 @@
     }
 
     .lib-font-face(
-        @family-name: @font-family-name__InterBlack,
-        @font-path: '@{baseDir}fonts/Inter/Inter-Black',
-        @font-weight: @font-weight__heavier,
-        @font-style: @font-style__base,
-        @font-display: swap
-    );
-
-    .lib-font-face(
-        @family-name: @font-family-name__InterBold,
-        @font-path: '@{baseDir}fonts/Inter/Inter-Bold',
-        @font-weight: @font-weight__heavier,
-        @font-style: @font-style__base,
-        @font-display: swap
-    );
-
-    .lib-font-face(
-        @family-name: @font-family-name__InterRegular,
+        @family-name: @font-family-name__Inter,
         @font-path: '@{baseDir}fonts/Inter/Inter-Regular',
         @font-weight: @font-weight__regular,
         @font-style: @font-style__base,
@@ -57,15 +35,35 @@
     );
 
     .lib-font-face(
-        @family-name: @font-family-name__InterMedium,
+        @family-name: @font-family-name__Inter,
         @font-path: '@{baseDir}fonts/Inter/Inter-Medium',
-        @font-weight: @font-weight__regular,
+        @font-weight: @font-weight__heavier,
         @font-style: @font-style__base,
         @font-display: swap
     );
 
+
     .lib-font-face(
-        @family-name: @font-family-name__InterLight,
+        @family-name: @font-family-name__Inter,
+        @font-path: '@{baseDir}fonts/Inter/Inter-Bold',
+        @font-weight: @font-weight__bold,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+
+    .lib-font-face(
+        @family-name: @font-family-name__Inter,
+        @font-path: '@{baseDir}fonts/Inter/Inter-Black',
+        @font-weight: @font-weight__heavy,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+
+
+    .lib-font-face(
+        @family-name: @font-family-name__Inter,
         @font-path: '@{baseDir}fonts/Inter/Inter-Light',
         @font-weight: @font-weight__light,
         @font-style: @font-style__base,
@@ -73,7 +71,7 @@
     );
 
     .lib-font-face(
-        @family-name: @font-family-name__EBGaramondRegular,
+        @family-name: @font-family-name__EBGaramond,
         @font-path: '@{baseDir}fonts/EBGaramond/EBGaramond-Regular',
         @font-weight: @font-weight__regular,
         @font-style: @font-style__base,
@@ -81,10 +79,42 @@
     );
 
     .lib-font-face(
-        @family-name: @font-family-name__EBGaramondBold,
+        @family-name: @font-family-name__EBGaramond,
+        @font-path: '@{baseDir}fonts/EBGaramond/EBGaramond-Italic',
+        @font-weight: @font-weight__regular,
+        @font-style: @font-style__emphasis,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__EBGaramond,
         @font-path: '@{baseDir}fonts/EBGaramond/EBGaramond-Medium',
         @font-weight: @font-weight__heavier,
         @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__EBGaramond,
+        @font-path: '@{baseDir}fonts/EBGaramond/EBGaramond-MediumItalic',
+        @font-weight: @font-weight__heavier,
+        @font-style: @font-style__emphasis,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__EBGaramond,
+        @font-path: '@{baseDir}fonts/EBGaramond/EBGaramond-Bold',
+        @font-weight: @font-weight__bold,
+        @font-style: @font-style__base,
+        @font-display: swap
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__EBGaramond,
+        @font-path: '@{baseDir}fonts/EBGaramond/EBGaramond-BoldItalic',
+        @font-weight: @font-weight__bold,
+        @font-style: @font-style__emphasis,
         @font-display: swap
     );
 
@@ -117,7 +147,8 @@
     }
 
     a {
-        font-family: @font-family-name__InterBold;
+        font-family: @font-family__base;
+        font-weight: @font-weight__bold;
         &:focus {
             outline: 1px solid @stover-primary-blue-stone;
             outline-offset: 3px;
@@ -138,5 +169,29 @@
     h3, h4, h5 {
         letter-spacing: 0.15em;
         text-transform: uppercase;
+    }
+}
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    h1 {
+        .lib-css(font-size, @h1__font-size-desktop);
+    }
+
+    h2 {
+        .lib-css(font-size, @h2__font-size-desktop);
+    }
+
+    h3 {
+        .lib-css(font-size, @h3__font-size-desktop);
+    }
+
+    h4 {
+        .lib-css(font-size, @h4__font-size-desktop);
+    }
+    h5 {
+        .lib-css(font-size, @h5__font-size-desktop);
     }
 }
