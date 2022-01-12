@@ -1,0 +1,75 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .dietary-considerations {
+        border-top: 1px solid @color-black;
+        &-inner {
+            margin: auto;
+            text-align: center;
+        }
+    }
+
+    .dietary-icon {
+        height: 80px;
+        width: 80px;
+        display: inline-block;
+        background-size: 250%;
+        background-position: top;
+
+        &.dairy-free {
+            background-image: url("../images/icon_dairy_free.svg");
+        }
+        &.gluten-free {
+            background-image: url("../images/icon_gluten_free.svg");
+        }
+        &.kosher {
+            background-image: url("../images/icon_kosher.svg");
+        }
+        &.kosher-dairy {
+            background-image: url("../images/icon_kosher.svg");
+        }
+        &.non-gmo {
+            background-image: url("../images/icon_non-gmo.svg");
+        }
+
+        &.peanut-free {
+            background-image: url("../images/icon_peanut_free.svg");
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .dietary-considerations-inner {
+        padding-bottom: 90px;
+    }
+    .dietary-icon {
+        margin-right: 20px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+//
+//  Dekstop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .dietary-considerations-inner {
+        max-width: 1280px;
+        padding-bottom: 100px;
+    }
+
+    .dietary-icon {
+        margin-right: 25px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
