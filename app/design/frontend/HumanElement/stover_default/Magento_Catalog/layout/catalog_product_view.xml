@@ -23,6 +23,15 @@
                 </arguments>
             </block>
         </referenceContainer>
+        <referenceBlock name="product.info.options.wrapper.bottom">
+            <block class="Magento\Catalog\Block\Product\View" name="product.attribute.cold.pack" template="Magento_Catalog::product/view/attribute.phtml" before="product.info.addtocart">
+                <arguments>
+                    <argument name="at_call" xsi:type="string">getcold_pack</argument>
+                    <argument name="at_code" xsi:type="string">cold_pack</argument>
+                    <argument name="css_class" xsi:type="string">cold-pack-template</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
         <referenceContainer name="content.aside">
             <container name="pdp.sub.footer" htmlTag="div" htmlClass="sub-footer" after="-">
                 <block class="Magento\Cms\Block\Block" name="pdp_sub_footer">
