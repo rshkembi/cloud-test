@@ -7,22 +7,7 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-   .page-layout-1column {
-       .page-main {
-           max-width: unset;
-           padding: 0;
-       }
-   }
 
-    .cms-home {
-        .page-main {
-            .page-title-wrapper {
-                .page-title {
-                    display: none;
-                }
-            }
-        }
-    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
@@ -30,5 +15,13 @@
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-
+    .cms-home,
+    .cms-page-view,
+    .catalog-product-view
+    {
+        .page-main {
+            max-width: unset;
+            padding: 0;
+        }
+    }
 }

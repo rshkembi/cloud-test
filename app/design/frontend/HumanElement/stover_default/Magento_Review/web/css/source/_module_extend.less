@@ -1,0 +1,38 @@
+//
+//  Variables
+//  _____________________________________________
+@reviews-font-size: 14px;
+@rating-icon__font-size: 20px;
+@rating-icon__letter-spacing: 0px;
+
+//
+//  Default appearance styles
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .product-reviews-summary {
+        .reviews-actions {
+            font-size: @reviews-font-size;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .product-reviews-summary {
+        .reviews-actions {
+            font-size: @reviews-font-size;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+//
+//  Variables
+//  _____________________________________________
+
+
+//  Size and Manufacturer attributes
+@attr-swatch-option__background: @color-white;
+@attr-swatch-option__color: @color-black;
+
+@attr-swatch-option__selected__background: @stover-primary-blue-stone;
+@attr-swatch-option__selected__border: @border-width__base solid @stover-primary-blue-stone;
+@attr-swatch-option__selected__color: @color-white;
+
+@swatch-option__selected__outline: @stover-primary-blue-stone;
+@swatch-option__disabled__background: @stover-error-color-dark;
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-product-configurable {
+        .swatch-attribute-label,
+        .swatch-attribute-selected-option {
+            display: none;
+        }
+    }
+
+    .swatch-option {
+        &.disabled {
+            &:after {
+                background: rgb(185,185,185);
+                background: linear-gradient(158deg, rgba(185,185,185,0) 48%, rgba(224,43,39,1) 50%, rgba(224,43,39,1) 52%, rgba(185,185,185,0) 54%);
+            }
+        }
+    }
+
+    .swatch-attribute.size {
+        .swatch-option {
+            font-weight: @font-weight__regular;
+        }
+    }
+}

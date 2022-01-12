@@ -96,5 +96,6 @@
         </referenceContainer>
 
         <move element="form.subscribe" destination="page.bottom" after="-"/>
+        <referenceBlock name="page.main.title" remove="true"/>
     </body>
 </page>

@@ -3,11 +3,18 @@
 //  * See COPYING.txt for license details.
 //  */
 
+@product-info-price: @color-gray20;
+
 //
 //  Common
 //  _____________________________________________
 
 & when (@media-common = true) {
+    .top-content-wrap {
+        max-width: 1280px;
+        margin: auto;
+        overflow: auto;
+    }
     .product.actions {
         .actions-primary {
             width: 100%;
@@ -20,14 +27,9 @@
     }
     .product-item-actions {
         .action {
-            &.tocompare {
-                color: @stover-primary-elm;
-                &:before {
-                    content: @icon-compare-full;
-                }
-            }
             &.towishlist {
                 color: @stover-primary-elm;
+                font-weight: @font-weight__regular;
                 &:before {
                     content: @icon-wishlist-full;
                 }
@@ -56,6 +58,100 @@
             }
         }
     }
+
+    .product {
+        &-info-main {
+            .product-add-form {
+                padding-top: 0;
+            }
+
+            .box-tocart {
+                margin-bottom: 0;
+            }
+
+            .product-info-price {
+                .price-box {
+                    display: block;
+                }
+            }
+        }
+        &-options-bottom {
+            .field {
+                &.qty {
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid @color-black;
+                    .label {
+                        font-family: @font-family__base;
+                        font-weight: @font-weight__light;
+                    }
+                }
+            }
+
+            .actions {
+                border-top: 1px solid @color-black;
+                padding-top: 20px;
+                .action.primary {
+                    .lib-button-revert-secondary-size();
+                    width: 100%;
+                }
+            }
+        }
+
+        &-social-links {
+            .action {
+                &.towishlist{
+                    text-transform: capitalize;
+                    font-family: @font-family__base;
+                    font-size: 14px;
+                    color: @stover-primary-gray;
+                }
+            }
+        }
+
+        &.media {
+            .fotorama__active {
+                .fotorama__dot {
+                    background-color: @theme__color__primary;
+                    border-color: @theme__color__primary;
+                }
+            }
+        }
+
+        &-info-price {
+            .price-box {
+                .price-container {
+                    .price {
+                        font-weight: @font-weight__regular;
+                    }
+                }
+                .normal-price.special-price {
+                    display: inline-block;
+                    margin-left: 20px;
+                }
+                .old-price {
+                    float: left;
+                    color: @stover-primary-light-gray;
+                    text-decoration: line-through;
+
+                    .price-wrapper {
+                        .price {
+                            font-size: 26px;
+                        }
+                    }
+                    .price-container {
+                        .price-label {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .product-info-stock-sku {
+        .stock {
+            display: none;
+        }
+    }
 }
 
 //
@@ -66,12 +162,15 @@
 
 }
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
-
-}
-
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .product-item-info {
+        margin: auto;
+    }
 
+    .product.attribute.details-template,
+    .sub-footer{
+        margin: 0 -15px;
+    }
 }
 
 //
@@ -79,16 +178,13 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-
+    .product {
+        &-social-links {
+            text-align: center;
+        }
+    }
 }
 
-//
-//  Common
-//  _____________________________________________
-
-& when (@media-common = true) {
-
-}
 
 //
 //  Desktop large

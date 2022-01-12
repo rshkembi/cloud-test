@@ -34,13 +34,18 @@
 
         .pagebuilder-overlay {
             p {
-                font-family: @font-family-name__InterRegular;
+                font-family: @font-family__base;
+                font-weight: @font-weight__regular;
             }
         }
     }
 
     .font-eb-garamond-regular {
-        font-family: @font-family-name__EBGaramondRegular;
+        font-family: @font-family-name__EBGaramond;
+    }
+    .font-eb-garamond-italic {
+        font-family: @font-family-name__EBGaramond;
+        font-style: @font-style__emphasis;
     }
 
     figure {
@@ -54,6 +59,12 @@
             img {
                 border-bottom: @black-top-border;
             }
+        }
+    }
+
+    .pagebuilder-overlay {
+        .pagebuilder-button-link {
+            padding-left: 0;
         }
     }
 }
@@ -83,7 +94,7 @@
         .pagebuilder-column-group {
             display: unset !important;
             .pagebuilder-column {
-                width: 49% !important;
+                width: 48% !important;
                 display: inline-block !important;
                 vertical-align: top;
 
@@ -98,6 +109,24 @@
             margin: 0 !important;
         }
     }
+
+    .heading-3 {
+        .lib-heading(h3);
+
+        a,
+        button,
+        div {
+            &.pagebuilder {
+                &-button-link {
+                    .lib-heading(h3);
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
@@ -106,5 +135,22 @@
             top: 100px;
             left: 20px;
         }
+    }
+
+    .width-400 {
+        .pagebuilder-banner-wrapper {
+            .pagebuilder-overlay:not(.pagebuilder-poster-overlay) {
+                max-width: 400px;
+            }
+        }
+    }
+
+    .desktop-width-66 {
+        width: 66%;
+        margin: auto;
+    }
+
+    .pagebuilder-mobile-only {
+        display: none !important;
     }
 }
