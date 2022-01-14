@@ -15,11 +15,22 @@
             &-button-link {
                 font-size: @font-size__base;
                 color: @color-black;
-                font-weight: 300;
+                font-weight: @font-weight__regular;
+                text-decoration: none;
+                text-transform: capitalize;
             }
+        }
+    }
 
-            &-button-primary {
-
+    .footer {
+        a,
+        button,
+        div {
+            &.pagebuilder {
+                &-button-link {
+                    text-decoration: none;
+                    text-transform: capitalize;
+                }
             }
         }
     }
@@ -74,7 +85,7 @@
         &.pagebuilder-button-secondary {
             .lib-button-s();
             text-transform: uppercase;
-
+            border-width: 0px;
             &:hover,
             &:active,
             &:focus {
