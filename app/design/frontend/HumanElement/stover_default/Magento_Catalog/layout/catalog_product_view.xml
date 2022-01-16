@@ -20,6 +20,7 @@
                 </arguments>
             </block>
         </referenceContainer>
+
         <referenceContainer name="content.aside">
             <container name="pdp.sub.footer" htmlTag="div" htmlClass="sub-footer" after="-">
                 <block class="Magento\Cms\Block\Block" name="pdp_sub_footer">
@@ -29,9 +30,13 @@
                 </block>
             </container>
         </referenceContainer>
+
         <move element="product.info.media" destination="main.content.wrap" before="product.info.main"/>
         <move element="product.info.main" destination="main.content.wrap" after="product.info.media"/>
         <move element="product.info.details" destination="details.full.bleed"/>
+        <move element="view.addto.wishlist" destination="product.info.main" after="-"/>
+        <move element="product.info.extrahint" destination="product.info.main" before="product.info.price" after="product.price.tier"/>
+
         <referenceBlock name="product.info.sku" remove="true"/>
 
         <referenceBlock name="product.info.description">
