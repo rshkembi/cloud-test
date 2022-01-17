@@ -63,6 +63,7 @@
         &-info-main {
             .product-add-form {
                 padding-top: 0;
+                border-top: 1px solid @border-color__base;
             }
 
             .box-tocart {
@@ -79,7 +80,6 @@
             .field {
                 &.qty {
                     padding-bottom: 20px;
-                    border-bottom: 1px solid @color-black;
                     .label {
                         font-family: @font-family__base;
                         font-weight: @font-weight__light;
@@ -181,6 +181,16 @@
     .product {
         &-social-links {
             text-align: center;
+        }
+        &-info-main {
+            .product-add-form {
+                padding-top: 0;
+            }
+        }
+    }
+    .page-main {
+        .block.widget {
+            margin-bottom: 0;
         }
     }
 }

@@ -10,9 +10,6 @@
         <referenceBlock name="view.addto.compare" remove="true"/>
 
         <referenceContainer name="content">
-            <container name="stock.suggestions" htmlTag="div" htmlClass="stock-suggestions" before="-">
-                <block name="stock.suggestions.cms" class="Magento\Catalog\Block\Product\View" template="Magento_Catalog::product/out-of-stock-options.phtml"/>
-            </container>
             <container name="main.content.wrap" htmlTag="div" htmlClass="top-content-wrap" after="stock.suggestions"></container>
             <container name="details.full.bleed" htmlTag="div" htmlClass="details-full-bleed" after="main.content.wrap"></container>
             <block class="Magento\Catalog\Block\Product\View" name="product.attribute.details.template" template="Magento_Catalog::product/view/attribute.phtml">
@@ -23,6 +20,7 @@
                 </arguments>
             </block>
         </referenceContainer>
+
         <referenceContainer name="content.aside">
             <container name="pdp.sub.footer" htmlTag="div" htmlClass="sub-footer" after="-">
                 <block class="Magento\Cms\Block\Block" name="pdp_sub_footer">
@@ -32,9 +30,13 @@
                 </block>
             </container>
         </referenceContainer>
+
         <move element="product.info.media" destination="main.content.wrap" before="product.info.main"/>
         <move element="product.info.main" destination="main.content.wrap" after="product.info.media"/>
         <move element="product.info.details" destination="details.full.bleed"/>
+        <move element="view.addto.wishlist" destination="product.info.main" after="-"/>
+        <move element="product.info.extrahint" destination="product.info.main" before="product.info.price" after="product.price.tier"/>
+
         <referenceBlock name="product.info.sku" remove="true"/>
 
         <referenceBlock name="product.info.description">
