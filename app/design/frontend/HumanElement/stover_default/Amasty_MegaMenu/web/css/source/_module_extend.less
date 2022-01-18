@@ -17,19 +17,29 @@
         &-submenu-block {
             &.-root {
                 box-shadow: none;
-                border-bottom: @ammenu-nav-border;
+                border-bottom: none;
             }
+        }
+        &-submenu-wrapper {
+            padding-top: 0;
         }
 
         &-nav-sections {
             border-bottom: @ammenu-nav-border;
             max-width: unset;
+
             &.-topmenu {
+
                 .ammenu-items {
                     justify-content: space-between;
                     text-transform: uppercase;
                 }
+
+                .ammenu-submenu-wrapper {
+                    border-radius: 0;
+                }
             }
+
             &.-mobile {
                 position: unset;
                 height: auto;

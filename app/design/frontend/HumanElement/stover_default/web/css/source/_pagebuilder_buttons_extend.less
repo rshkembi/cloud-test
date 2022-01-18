@@ -8,22 +8,6 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-    a,
-    button,
-    div {
-        &.pagebuilder {
-            &-button-link {
-                font-size: @font-size__base;
-                color: @color-black;
-                font-weight: 300;
-            }
-
-            &-button-primary {
-
-            }
-        }
-    }
-
     .green-link {
         a,
         button,
@@ -56,8 +40,8 @@
             .lib-button-s();
             font-weight: @font-weight__regular;
             font-family: @font-family__base;
-            text-transform: uppercase;
-            text-decoration: underline;
+            color: @color-black;
+            text-decoration: none;
         }
 
         &.pagebuilder-button-primary {
