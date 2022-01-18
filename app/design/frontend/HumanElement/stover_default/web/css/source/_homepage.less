@@ -11,7 +11,21 @@
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .cms-home,
+    .cms-page-view {
+        .page-main {
+            padding: 0;
+            margin-top: -2px;
+        }
+    }
 
+    .page-layout-1column {
+        .columns {
+            .column.main {
+                padding-bottom: 0;
+            }
+        }
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
