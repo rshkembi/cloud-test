@@ -94,6 +94,7 @@ return [
         'Magento_CmsUrlRewrite' => 1,
         'Magento_CmsUrlRewriteGraphQl' => 1,
         'Magento_CompareListGraphQl' => 1,
+        'Magento_ComposerRootUpdatePlugin' => 1,
         'Magento_Integration' => 1,
         'Magento_ConfigurableImportExport' => 1,
         'Magento_CatalogRuleConfigurable' => 1,
@@ -477,6 +478,7 @@ return [
         'Fastly_Cdn' => 1,
         'Firebear_ImportExport' => 1,
         'Firebear_ImportExportMsi' => 1,
+        'Yotpo_Yotpo' => 1,
         'Klarna_Core' => 1,
         'Klarna_Ordermanagement' => 1,
         'Klarna_Kp' => 1,
@@ -508,6 +510,6 @@ return [
         'Vertex_RequestLogging' => 1,
         'Vertex_AddressValidation' => 1,
         'Vertex_TaxStaging' => 1,
-        'Yotpo_Yotpo' => 1
+        'HumanElement_CSP' => 1
     ]
 ];
