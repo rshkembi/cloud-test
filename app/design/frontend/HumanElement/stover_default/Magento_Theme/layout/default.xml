@@ -26,11 +26,13 @@
         </referenceContainer>
 
         <referenceContainer name="header-wrapper">
-            <block class="Magento\Cms\Block\Block" name="header.static.links">
-                <arguments>
-                    <argument name="block_id" xsi:type="string">header_static_links</argument>
-                </arguments>
-            </block>
+            <container name="header.static.links.container" htmlTag="div" htmlClass="header-static-links">
+                <block class="Magento\Cms\Block\Block" name="header.static.links">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header_static_links</argument>
+                    </arguments>
+                </block>
+            </container>
 
             <block class="Magento\Framework\View\Element\Template" name="top.search.button" as="topSearchButton" template="Magento_Search::form.mini.button.phtml">
                 <arguments>
