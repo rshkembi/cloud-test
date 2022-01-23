@@ -6,9 +6,31 @@
     .ammenu-nav-sections {
         &.-mobile.-drill {
             .ammenu-items.-drill {
+                .category-item{
+                    .ammenu-link {
+                        text-transform: uppercase;
+                    }
+                }
                 .ammenu-link {
                     padding: 17px;
                     margin: 0;
+                }
+
+                .ammenu-item {
+                    .ammenu-text-block {
+                        color: @color-black !important;
+                        font-size: @font-size__base;
+                    }
+                }
+            }
+
+            .ammenu-current-title {
+                .ammenu-text {
+                    font-size: @font-size__base;
+                    color: @theme__color__primary !important;
+                    text-align: center !important;
+                    text-transform: uppercase;
+                    margin: auto;
                 }
             }
 
