@@ -38,6 +38,7 @@
         "amasty/mega-menu": "^2.1",
         "amasty/mega-menu-graphql": "^1.0",
         "amasty/mega-menu-page-builder": "^1.0",
+        "auctane/api": "^2.2",
         "firebear/importexport": "^3.7",
         "firebear/importexport-msi": "^1.1",
         "magento/composer-root-update-plugin": "~2.0",

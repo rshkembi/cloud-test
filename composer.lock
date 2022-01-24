@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d7f863dda947f04d9646f4cf8801fb0",
+    "content-hash": "56ea5af732a7d1d505ebdc90e14f238b",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -453,6 +453,29 @@
                 "source": "https://github.com/adobe/stock-api-libphp/tree/master"
             },
             "time": "2020-04-20T17:47:06+00:00"
+        },
+        {
+            "name": "auctane/api",
+            "version": "2.2.9",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/auctane/api/auctane-api-2.2.9.0.zip",
+                "shasum": "4539ad167985e5378933e801cd3df61c6d341e70"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Auctane\\Api\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "ShipStation is a web-based shipping solution that is integrated with the Magento API for retrieving order information and updating shipping details."
         },
         {
             "name": "aws/aws-sdk-php",
