@@ -1,0 +1,19 @@
+{
+    "name": "humanelement/csp",
+    "description": "CSP whitelist for ford",
+    "type": "magento2-module",
+    "version": "0.1.0",
+    "require": {
+        "php": "7.3",
+        "magento/framework": "100.0.*",
+        "ext-soap": "^7.3"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "HumanElement\\CSP": ""
+        }
+    }
+}

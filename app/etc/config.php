@@ -94,6 +94,7 @@ return [
         'Magento_CmsUrlRewrite' => 1,
         'Magento_CmsUrlRewriteGraphQl' => 1,
         'Magento_CompareListGraphQl' => 1,
+        'Magento_ComposerRootUpdatePlugin' => 1,
         'Magento_Integration' => 1,
         'Magento_ConfigurableImportExport' => 1,
         'Magento_CatalogRuleConfigurable' => 1,
@@ -468,15 +469,18 @@ return [
         'Amazon_Core' => 1,
         'Amazon_Login' => 1,
         'Amazon_Payment' => 1,
+        'Auctane_Api' => 1,
         'Dotdigitalgroup_Email' => 1,
         'Dotdigitalgroup_Chat' => 1,
         'Dotdigitalgroup_ChatGraphQl' => 1,
         'Dotdigitalgroup_EmailGraphQl' => 1,
         'Dotdigitalgroup_Enterprise' => 1,
         'Dotdigitalgroup_Sms' => 1,
+        'Ebizmarts_MailChimp' => 1,
         'Fastly_Cdn' => 1,
         'Firebear_ImportExport' => 1,
         'Firebear_ImportExportMsi' => 1,
+        'Yotpo_Yotpo' => 1,
         'Klarna_Core' => 1,
         'Klarna_Ordermanagement' => 1,
         'Klarna_Kp' => 1,
@@ -496,6 +500,8 @@ return [
         'MageWorx_SeoUrls' => 1,
         'MageWorx_SeoXTemplates' => 1,
         'MageWorx_XmlSitemap' => 1,
+        'Magenest_Core' => 1,
+        'Magenest_Popup' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'ShipperHQ_Common' => 1,
@@ -508,6 +514,6 @@ return [
         'Vertex_RequestLogging' => 1,
         'Vertex_AddressValidation' => 1,
         'Vertex_TaxStaging' => 1,
-        'Yotpo_Yotpo' => 1
+        'HumanElement_CSP' => 1
     ]
 ];
