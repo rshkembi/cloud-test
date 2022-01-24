@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d7f863dda947f04d9646f4cf8801fb0",
+    "content-hash": "7c62fc10bc77f25ec62626917c5a03a8",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -2157,6 +2157,55 @@
                 "MIT"
             ],
             "description": "Engagement Cloud for Magento 2: SMS module"
+        },
+        {
+            "name": "ebizmarts/mailchimp-lib",
+            "version": "3.0.34",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ebizmarts/mailchimp-lib.git",
+                "reference": "ef10ed1ad6d951f6a8a27b95b290de4de40c15a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ebizmarts/mailchimp-lib/zipball/ef10ed1ad6d951f6a8a27b95b290de4de40c15a4",
+                "reference": "ef10ed1ad6d951f6a8a27b95b290de4de40c15a4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mailchimp": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ebizmarts Corp.",
+                    "email": "info@ebizmarts.com",
+                    "homepage": "http://ebizmarts.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "API client library for the MailChimp",
+            "homepage": "https://github.com/ebizmarts/mailchimp-lib",
+            "keywords": [
+                "api",
+                "email",
+                "mailchimp"
+            ],
+            "support": {
+                "issues": "https://github.com/ebizmarts/mailchimp-lib/issues",
+                "source": "https://github.com/ebizmarts/mailchimp-lib/tree/3.0.34"
+            },
+            "time": "2020-11-12T17:11:56+00:00"
         },
         {
             "name": "elasticsearch/elasticsearch",
@@ -6306,6 +6355,66 @@
                 "source": "https://github.com/thephpleague/oauth2-client/tree/2.6.0"
             },
             "time": "2020-10-28T02:03:40+00:00"
+        },
+        {
+            "name": "magenest/core",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magenest-dev/module-core.git",
+                "reference": "1bf028edb6558ae7c7bce41a02253e9d8e5508af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magenest-dev/module-core/zipball/1bf028edb6558ae7c7bce41a02253e9d8e5508af",
+                "reference": "1bf028edb6558ae7c7bce41a02253e9d8e5508af",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magenest\\Core\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "Magenest Core",
+            "support": {
+                "issues": "https://github.com/magenest-dev/module-core/issues",
+                "source": "https://github.com/magenest-dev/module-core/tree/master"
+            },
+            "time": "2020-06-29T04:19:21+00:00"
+        },
+        {
+            "name": "magenest/module-popup",
+            "version": "1.2.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magenest/module-popup/magenest-module-popup-1.2.1.0.zip",
+                "shasum": "a1be7d0b75245c72e99c90422ad8e68176b1caaf"
+            },
+            "require": {
+                "magenest/core": ">=1.2.1"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magenest\\Popup\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "proprietary"
+            ],
+            "description": "Popup extension by Magenest"
         },
         {
             "name": "magento/adobe-ims",
@@ -24345,6 +24454,41 @@
                 "AFL-3.0"
             ],
             "description": "XML sitemap module for Magento 2"
+        },
+        {
+            "name": "mailchimp/mc-magento2",
+            "version": "103.4.44",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/mailchimp/mc-magento2/mailchimp-mc-magento2-103.4.44.0.zip",
+                "shasum": "1c62faac96866912d642ee75fa36e94006661244"
+            },
+            "require": {
+                "ebizmarts/mailchimp-lib": ">=3.0.27",
+                "ext-json": "*",
+                "magento/framework": "103.0.*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "psr-4": {
+                    "Ebizmarts\\MailChimp\\": ""
+                },
+                "files": [
+                    "registration.php"
+                ]
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ebizmarts Corp",
+                    "email": "mailchimp@ebizmarts-desk.zendesk.com",
+                    "homepage": "http://ebizmarts.com"
+                }
+            ],
+            "description": "Connect MailChimp with Magento"
         },
         {
             "name": "microsoft/microsoft-graph",

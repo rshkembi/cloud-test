@@ -40,12 +40,14 @@
         "amasty/mega-menu-page-builder": "^1.0",
         "firebear/importexport": "^3.7",
         "firebear/importexport-msi": "^1.1",
+        "magenest/module-popup": "^1.2",
         "magento/composer-root-update-plugin": "~2.0",
         "magento/live-search": "^1.3",
         "magento/magento-cloud-metapackage": ">=2.4.3 <2.4.4",
         "magento/module-page-builder-product-recommendations": "^1.2",
         "magento/product-recommendations": "^3.3",
         "mageworx/module-seosuiteultimate": "^2.35",
+        "mailchimp/mc-magento2": "^103.4",
         "shipperhq/module-shipper": "^20.45"
     },
     "suggest": {
