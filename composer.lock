@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df7e8427bf8bcaad432ad868552a1404",
+    "content-hash": "b943e1d20fc752b0f8375357b95cb11c",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -26871,6 +26871,52 @@
                 "source": "https://github.com/shipperhq/library-ws/tree/20.5.0"
             },
             "time": "2021-03-30T09:30:34+00:00"
+        },
+        {
+            "name": "shipperhq/module-address-autocomplete",
+            "version": "20.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shipperhq/module-address-autocomplete.git",
+                "reference": "823209f80cb59730fe024a52941adb185c2659a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shipperhq/module-address-autocomplete/zipball/823209f80cb59730fe024a52941adb185c2659a6",
+                "reference": "823209f80cb59730fe024a52941adb185c2659a6",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "src/registration.php"
+                ],
+                "psr-4": {
+                    "ShipperHQ\\AddressAutocomplete\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "ShipperHQ",
+                    "email": "sales@shipperhq.com",
+                    "homepage": "http://www.Shipperhq.com"
+                },
+                {
+                    "name": "Zowta LLC"
+                }
+            ],
+            "description": "ShipperHQ Address Autocomplete Tool",
+            "support": {
+                "documentation": "http://docs.shipperhq.com",
+                "issues": "https://github.com/shipperhq/module-address-autocomplete/issues",
+                "source": "https://github.com/shipperhq/module-address-autocomplete/tree/20.6.0"
+            },
+            "time": "2022-01-24T10:40:48+00:00"
         },
         {
             "name": "shipperhq/module-common",
