@@ -1,0 +1,23 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .products-grid {
+        .product-item-actions {
+            text-align: center;
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .products-grid {
+        .product-item-actions {
+            text-align: center;
+        }
+    }
+}

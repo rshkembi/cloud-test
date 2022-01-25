@@ -25,17 +25,7 @@
             }
         }
     }
-    .product-item-actions {
-        .action {
-            &.towishlist {
-                color: @stover-primary-elm;
-                font-weight: @font-weight__regular;
-                &:before {
-                    content: @icon-wishlist-full;
-                }
-            }
-        }
-    }
+
 
     .minicart-wrapper {
         order: 1;
@@ -142,6 +132,18 @@
                         .price-label {
                             display: none;
                         }
+                    }
+                }
+            }
+        }
+
+        .product-item-actions {
+            .action {
+                &.towishlist {
+                    color: @stover-primary-elm;
+                    font-weight: @font-weight__regular;
+                    &:before {
+                        content: @icon-wishlist-full;
                     }
                 }
             }
