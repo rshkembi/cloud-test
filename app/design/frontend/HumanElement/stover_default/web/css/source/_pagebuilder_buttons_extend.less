@@ -16,13 +16,19 @@
                 color: @theme__color__primary;
                 font-weight: @font-weight__semibold;
                 border: none;
-                border-bottom: 2px solid @stover-primary-elm;
                 text-decoration: none;
                 letter-spacing: 0.15em;
+                span {
+                    border-bottom: 2px solid @stover-primary-elm;
+                    line-height: 1.6;
+                }
                 &:active, &:hover, &:focus {
-                    border-bottom: 2px solid @stover-primary-blue-stone;
-                    color: @stover-primary-blue-stone;
-                    text-decoration: none;
+                    color: @stover-primary-blue-stone !important;
+                    text-decoration: none !important;
+
+                    span {
+                        border-bottom: 2px solid @stover-primary-blue-stone;
+                    }
                 }
                 &:focus {
                     outline: 1px solid @stover-primary-blue-stone;

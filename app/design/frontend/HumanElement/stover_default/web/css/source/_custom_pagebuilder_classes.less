@@ -67,6 +67,24 @@
             padding-left: 0;
         }
     }
+
+    .heading-3 {
+        .lib-heading(h3);
+
+        a,
+        button,
+        div {
+            &.pagebuilder {
+                &-button-link {
+                    .lib-heading(h3);
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
@@ -109,21 +127,13 @@
             margin: 0 !important;
         }
     }
-
-    .heading-3 {
-        .lib-heading(h3);
-
-        a,
-        button,
-        div {
-            &.pagebuilder {
-                &-button-link {
-                    .lib-heading(h3);
-                    text-decoration: none;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
+    .mobile-padding-reset {
+        .pagebuilder-column {
+            h3,
+            [data-content-type="text"],
+            [data-content-type="buttons"]{
+                padding-left: 15px !important;
+                padding-right: 15px !important;
             }
         }
     }

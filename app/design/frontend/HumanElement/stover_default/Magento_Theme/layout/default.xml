@@ -17,24 +17,22 @@
         </referenceContainer>
         <referenceBlock name="top.links" remove="true"/>
         <referenceBlock name="header.links" remove="true"/>
+        <referenceBlock name="top.search" remove="true"/>
+
+        <referenceContainer name="header.container">
+            <container name="header.search.container" htmlTag="div" htmlClass="header-search" after="-">
+                <block class="Magento\LiveSearchStorefrontPopover\Block\Frontend\Index" name="top.search.new" as="topSearchNew" template="Magento_LiveSearchStorefrontPopover::search_as_you_type.phtml" />
+            </container>
+        </referenceContainer>
 
         <referenceContainer name="header-wrapper">
-            <referenceBlock name="ammenu.logo" remove="true"/>
-            <block class="Magento\Theme\Block\Html\Header\Logo"
-                   name="ammenu.logo.updated"
-                   template="Amasty_MegaMenuLite::components/logo.phtml">
-                <arguments>
-                    <argument name="view_model" xsi:type="object">
-                        Amasty\MegaMenuLite\ViewModel\Header\Logo
-                    </argument>
-                </arguments>
-            </block>
-
-            <block class="Magento\Cms\Block\Block" name="header.static.links">
-                <arguments>
-                    <argument name="block_id" xsi:type="string">header_static_links</argument>
-                </arguments>
-            </block>
+            <container name="header.static.links.container" htmlTag="div" htmlClass="header-static-links">
+                <block class="Magento\Cms\Block\Block" name="header.static.links">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header_static_links</argument>
+                    </arguments>
+                </block>
+            </container>
 
             <block class="Magento\Framework\View\Element\Template" name="top.search.button" as="topSearchButton" template="Magento_Search::form.mini.button.phtml">
                 <arguments>
@@ -57,13 +55,7 @@
                     </argument>
                 </arguments>
             </block>
-
         </referenceContainer>
-
-        <referenceContainer name="header.container">
-            <container name="header.search" after="-" htmlClass="header-search" htmlTag="div"> </container>
-        </referenceContainer>
-        <move element="top.search" destination="header.search"/>
         <move element="customer" destination="header-wrapper"  before="minicart" />
 
         <referenceBlock name="footer_links" remove="true"/>
