@@ -1,0 +1,88 @@
+& when (@media-common = true) {
+    .qtystepper {
+        .control {
+            display: flex;
+        }
+    }
+    // not nested due to element existing in multiple locations
+    .action {
+        &.secondary {
+            &.minusQty,
+            &.addQty {
+                font-size: 30px;
+                height: 32px;
+                width: 32px;
+                padding: 0;
+                line-height: 28px;
+                letter-spacing: 0;
+                font-weight: 300;
+                justify-content: center;
+                display: inline-flex;
+                &:hover {
+                    background-color: @stover-primary-elm;
+                    color: @color-white;
+                }
+            }
+            &.minusQty {
+                margin-right: 5px;
+            }
+            &.addQty {
+                margin-left: 5px;
+            }
+            &:focus {
+                outline-offset: 0;
+            }
+        }
+    }
+    .minicart-items {
+        .update-cart-item {
+            position: relative;
+            top: -3px;
+        }
+    }
+    .cart {
+        &.table-wrapper {
+            .col {
+                &.qty {
+                    .input-text {
+                        width: 50px;
+                    }
+                }
+            }
+            .action {
+                &.minusQty {
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+// 768px and below
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .minicart{
+        &-items {
+            .details-qty.qty {
+                .update-cart-item {
+                    position: relative;
+                    top: 5px;
+                }
+            }
+            .product-item {
+                .product {
+                    .product-item-details {
+                        .product-item-pricing {
+                            .details-qty {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
