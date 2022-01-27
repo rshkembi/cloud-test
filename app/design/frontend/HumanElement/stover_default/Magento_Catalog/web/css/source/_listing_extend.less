@@ -3,9 +3,69 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+
+    .sidebar-main  {
+        .block-content {
+            .block-subtitle {
+                text-transform: uppercase;
+                font-weight: @font-weight__black;
+                padding-left: 0;
+                font-size: 1.6rem;
+            }
+
+            .filter-options {
+                &-title {
+                    text-transform: capitalize;
+                    color: @color-black;
+                }
+
+                &-content {
+                    a, .count {
+                        font-weight: @font-weight__regular;
+                        color: @color-black;
+                    }
+                }
+            }
+        }
+    }
+
+    .block-wishlist {
+        .block-title {
+            strong {
+                .lib-heading(h5);
+                font-size: 1.6rem;
+            }
+        }
+    }
+
     .products-grid {
         .product-item-actions {
             text-align: center;
+        }
+    }
+
+    .pages {
+        a.page {
+            color: @color-black;
+            font-weight: @font-weight__regular;
+            font-size: @font-size__base;
+        }
+
+        .item.current {
+            background-color: @stover-secondary-pale-gray;
+
+            span {
+                color: @color-black;
+                font-size: @font-size__base;
+            }
+        }
+
+        .action.next {
+            &:before {
+                font-size: 18px;
+                margin: 5px 0 0 0;
+                color: @color-black;
+            }
         }
     }
 }
