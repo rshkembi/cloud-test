@@ -8,4 +8,23 @@
             color: @stover-primary-dark-gray;
         }
     }
+
+    .limiter {
+        .control {
+            position: relative;
+            &:after {
+                content: @icon-down;
+                position: absolute;
+                z-index: 10;
+                display: block;
+                top: 6px;
+                right: 80px;
+                font-family: ;
+            }
+
+            select {
+                padding: 5.5px 20px 4px 11px;
+            }
+        }
+    }
 }
