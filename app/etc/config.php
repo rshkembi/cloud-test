@@ -481,6 +481,7 @@ return [
         'Fastly_Cdn' => 1,
         'Firebear_ImportExport' => 1,
         'Firebear_ImportExportMsi' => 1,
+        'HumanElement_QtyStepper' => 1,
         'Yotpo_Yotpo' => 1,
         'Klarna_Core' => 1,
         'Klarna_Ordermanagement' => 1,
