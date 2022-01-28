@@ -21,9 +21,10 @@
                                min="0"
                                value="<?= $block->getProductDefaultQty() * 1 ?>"
                                title="<?= $block->escapeHtmlAttr(__('Qty')) ?>"
-                               class="input-text qty"
+                               class="input-text qty plusMinusQty"
                                data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
                         />
+                        <div id="custom-error-message-container"></div>
                     </div>
                 </div>
             <?php endif; ?>
