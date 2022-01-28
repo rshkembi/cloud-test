@@ -477,6 +477,7 @@ return [
         'Dotdigitalgroup_Enterprise' => 1,
         'Dotdigitalgroup_Sms' => 1,
         'Ebizmarts_MailChimp' => 1,
+        'Facebook_BusinessExtension' => 1,
         'Fastly_Cdn' => 1,
         'Firebear_ImportExport' => 1,
         'Firebear_ImportExportMsi' => 1,
