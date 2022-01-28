@@ -515,6 +515,8 @@ return [
         'Vertex_RequestLogging' => 1,
         'Vertex_AddressValidation' => 1,
         'Vertex_TaxStaging' => 1,
+        'WeltPixel_Backend' => 1,
+        'WeltPixel_SocialLogin' => 1,
         'HumanElement_CSP' => 1
     ]
 ];
