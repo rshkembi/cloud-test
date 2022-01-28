@@ -10,7 +10,9 @@
                 text-transform: uppercase;
                 font-weight: @font-weight__black;
                 padding-left: 0;
-                font-size: 1.6rem;
+                padding-right: 0;
+                letter-spacing: 1px;
+                font-size: @font-size__base;
             }
 
             .filter-options {
@@ -31,9 +33,12 @@
 
     .block-wishlist {
         .block-title {
+            margin-bottom: 15px;
             strong {
                 .lib-heading(h5);
-                font-size: 1.6rem;
+                font-size: @font-size__base;
+                text-transform: uppercase;
+                letter-spacing: 1px;
             }
         }
     }
@@ -70,9 +75,83 @@
 
         .action.next {
             &:before {
-                font-size: 18px;
-                margin: 5px 0 0 0;
+                font-size: @font-size__base;
+                margin: 7px 0 0 0;
                 color: @color-black;
+            }
+        }
+    }
+
+    // Product Recommendations on PDP
+    .catalog-product-view {
+        .block-products-list.grid {
+            margin-top: 0;
+            background-color: @stover-secondary-pale-gray;
+            padding-top: 13px;
+            padding-bottom: 23px;
+            .block-title {
+                .lib-heading(h2);
+                text-align: center;
+                text-transform: lowercase;
+
+                b {
+                    font-weight: @font-weight__regular;
+                }
+            }
+        }
+    }
+
+    .block-products-list.grid {
+        .products-grid {
+            .product-items {
+                .product-item {
+                    background-color: @color-white;
+                    padding: 10px;
+
+                    .tocart {
+                        border-radius: 20px;
+                    }
+                    &-details {
+                        .product-item-name {
+                            a {
+                                font-weight: @font-weight__regular;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .product-item-details {
+                text-align: center;
+            }
+        }
+    }
+
+    .products-grid {
+        .product-item {
+            .price-box {
+                margin-bottom: 25px;
+            }
+            &-actions {
+                text-align: center;
+                .action.towishlist {
+                    width: auto;
+
+                    &:before {
+                        content: @icon-wishlist-empty;
+                        color: @theme__color__primary;
+                        font-family: @icons-blank__font-name;
+                        font-size: 40px;
+                        width: auto;
+                    }
+
+                    &:hover:before {
+                        content: @icon-wishlist-full;
+                    }
+                }
+            }
+            &-name {
+                min-height: 60px;
             }
         }
     }
@@ -86,6 +165,19 @@
     .products-grid {
         .product-item-actions {
             text-align: center;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block-products-list.grid {
+        .block-content {
+            max-width: 1280px;
+            margin: auto;
         }
     }
 }
