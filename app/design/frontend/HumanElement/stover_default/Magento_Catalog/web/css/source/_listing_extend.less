@@ -4,7 +4,7 @@
 
 & when (@media-common = true) {
 
-    .sidebar-main  {
+    .sidebar-main {
         .block-content {
             .block-subtitle {
                 text-transform: uppercase;
@@ -34,6 +34,7 @@
     .block-wishlist {
         .block-title {
             margin-bottom: 15px;
+
             strong {
                 .lib-heading(h5);
                 font-size: @font-size__base;
@@ -43,13 +44,9 @@
         }
     }
 
-    .products-grid {
-        .product-item-actions {
-            text-align: center;
-        }
-    }
     .product-item {
         text-align: center;
+
         .price-container {
             .price {
                 font-size: @font-size__base;
@@ -89,6 +86,7 @@
             background-color: @stover-secondary-pale-gray;
             padding-top: 13px;
             padding-bottom: 23px;
+
             .block-title {
                 .lib-heading(h2);
                 text-align: center;
@@ -107,10 +105,12 @@
                 .product-item {
                     background-color: @color-white;
                     padding: 10px;
-
+                    margin-bottom: 22px;
+                    text-align: center;
                     .tocart {
                         border-radius: 20px;
                     }
+
                     &-details {
                         .product-item-name {
                             a {
@@ -132,8 +132,11 @@
             .price-box {
                 margin-bottom: 25px;
             }
+
             &-actions {
                 text-align: center;
+                margin-bottom: 0;
+
                 .action.towishlist {
                     width: auto;
 
@@ -150,6 +153,7 @@
                     }
                 }
             }
+
             &-name {
                 min-height: 60px;
             }
@@ -161,10 +165,33 @@
 //  Mobile
 //  _____________________________________________
 
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-    .products-grid {
-        .product-item-actions {
-            text-align: center;
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-products {
+        .products-grid {
+            .product-items {
+                .product-item {
+                    width: 48%;
+                }
+            }
+            .product-item-actions {
+                text-align: center;
+
+                .tocart {
+                    white-space: initial;
+                }
+            }
+        }
+    }
+
+    .sidebar-main {
+        .filter-title {
+            strong {
+                .lib-button-primary();
+                right: 0;
+                border-radius: 20px;
+                text-transform: uppercase;
+                box-shadow: none;
+            }
         }
     }
 }
