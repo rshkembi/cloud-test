@@ -64,6 +64,7 @@
     .minisearch.button {
         margin-right: 10px;
     }
+
     .block-search {
         margin-top: 0;
     }
@@ -86,3 +87,10 @@
         margin-right: 20px;
     }
 }
+
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+    .minisearch.button {
+        line-height: 40px;
+    }
+}}
