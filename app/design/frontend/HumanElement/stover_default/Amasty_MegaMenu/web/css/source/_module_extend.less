@@ -27,25 +27,28 @@
         &-submenu-wrapper {
             padding-top: 0;
 
-            a, button, div {
-                &.pagebuilder-button-link {
-                    font-size: 1.6rem;
+            .green-link {
+                a, button, div {
+                    &.pagebuilder-button-link {
+                        font-size: 1.4rem;
+                    }
                 }
             }
         }
 
         &-nav-sections {
-
             max-width: unset;
 
             &.-topmenu{
 
                 .ammenu-items {
                     justify-content: space-between;
-                    text-transform: uppercase;
 
-                    .ammenu-link {
-                        letter-spacing: 1px;
+                    .category-item {
+                        .ammenu-link {
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                        }
                     }
                 }
 
@@ -171,7 +174,14 @@
             }
 
             &.-go-main {
-                display: none !important;
+                padding-left: 10px;
+                color: @theme__color__primary;
+                &:before {
+                    content: @icon-prev;
+                    font-family: @icons__font-name;
+                    color: @theme__color__primary;
+                    padding-right: 5px;
+                }
             }
         }
 

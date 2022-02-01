@@ -1,0 +1,217 @@
+& when (@media-common = true) {
+  .addQty.action.secondary {
+    margin-left: -5px;
+  }
+  .action {
+    &.secondary {
+      &.minusQty,
+      &.addQty {
+        font-size: 26px;
+        height: 32px;
+        width: 32px;
+        padding: 0;
+        line-height: 15px;
+      }
+      &.minusQty {
+        margin-right: -4px;
+      }
+      &.addQty {
+        margin-left: -5px;
+      }
+    }
+  }
+
+  .box-tocart {
+    .input-text {
+      &.qty {
+        &.plusMinusQty {
+          vertical-align: bottom;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  .cart {
+    &.table-wrapper {
+      .col {
+        &.qty {
+          padding: 15px 5px 12.5px;
+          text-align: center;
+
+          .input-text {
+            &.plusMinusQty {
+              height: 32px;
+              vertical-align: bottom;
+              border-radius: 0;
+            }
+          }
+        }
+      }
+      .cart {
+        thead {
+          tr {
+            th {
+              &.col {
+                &.qty {
+                  width: 130px;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+      .action {
+        &.minusQty {
+          margin-right: -4px;
+        }
+        &.addQty {
+          margin-right: 0;
+        }
+      }
+    }
+    .action {
+      &.secondary {
+        &.addQty {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .table {
+    &.grouped {
+      .col {
+        &.item {
+          width: 70%;
+        }
+        &.qty {
+          width: 30%;
+          padding: 11px 5px;
+          text-align: center;
+
+          .control {
+            &.qty {
+              .qty {
+                height: 32px;
+                vertical-align: bottom;
+                border-radius: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .fieldset-bundle-options {
+    .action {
+      &.secondary {
+        &.minusQty {
+          margin-right: 0;
+          vertical-align: top;
+        }
+        &.addQty {
+          margin-left: 0;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+
+  .bundle-options-container {
+    .block-bundle-summary {
+      .box-tocart {
+        .action {
+          &.secondary {
+            &.minusQty,
+            &.addQty {
+              font-size: 26px;
+              height: 32px;
+              width: 32px;
+              padding: 0;
+              line-height: 15px;
+              vertical-align: top;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .minicart-items {
+    .product-item {
+      .product {
+        .product-item-details {
+          .product-item-pricing {
+            .label {
+              display: none;
+            }
+            .details-qty {
+              .action {
+                &.secondary {
+                  &.minusQty,
+                  &.addQty {
+                    vertical-align: top;
+                  }
+                }
+              }
+              .item-qty {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+// 768px and below
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .minicart{
+    &-wrapper {
+      .product {
+        .actions {
+          > .secondary:not(:last-child){
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    &-items {
+      .product-item {
+        .product {
+          .product-item-details {
+            .product-item-pricing {
+              .details-qty {
+                margin-right: 50px;
+                .item-qty {
+                  margin: 0;
+                  position: unset;
+                }
+              }
+            }
+          }
+        }
+      }
+      .action{
+        &.edit:before,
+        &.delete:before {
+          line-height: 20px;
+          margin-top: -11px;
+        }
+
+        &.edit {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
