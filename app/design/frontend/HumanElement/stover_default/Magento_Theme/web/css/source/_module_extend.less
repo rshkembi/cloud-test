@@ -140,3 +140,112 @@
         }
     }
 }
+
+//
+//  Variables
+//  _____________________________________________
+@ammenu-search-border: 1px solid @color-gray76;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .header-search {
+        border-top: @ammenu-search-border;
+        &.active {
+            border-bottom: @ammenu-search-border;
+        }
+    }
+
+    .minisearch.button {
+        &:before {
+            content: url("../images/icon_search.png");
+            height: 25px;
+            width: 25px;
+            display: inline-block;
+        }
+        &.active {
+            &:before {
+                content: url("../images/icon_close.png");
+                line-height: 30px;
+                height: 25px;
+                width: 25px;
+                display: inline-block;
+                text-align: center;
+            }
+        }
+    }
+
+    .block-search {
+        input {
+            font-size: 14px;
+        }
+
+        .control {
+            position: relative;
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .ammenu-header-container {
+        .block-search {
+            .minisearch {
+                .control {
+                    position: unset;
+                    width: auto;
+                }
+            }
+        }
+    }
+    .minisearch.button {
+        margin-right: 10px;
+    }
+
+    .block-search {
+        margin-top: 0;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .header-search {
+        .block-search {
+            max-width: 1280px;
+            margin: auto;
+            padding: 0 22px;
+        }
+    }
+
+    .minisearch.button {
+        margin-right: 20px;
+    }
+}
+
+
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+
+    @media screen and (max-width: 768px) {
+        .action.showcart {
+            margin-top: 10px;
+        }
+    }
+}}
+
+
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+    .minisearch.button:before {
+        margin-top: 3px;
+    }
+}}
