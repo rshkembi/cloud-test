@@ -25,9 +25,8 @@
                     <argument name="css_class" xsi:type="string">details-template</argument>
                 </arguments>
             </block>
-
         </referenceContainer>
-
+        <move element="catalog.product.related" destination="content" before="main.content.wrap" />
         <referenceContainer name="content.aside">
             <container name="pdp.sub.footer" htmlTag="div" htmlClass="sub-footer" after="-">
                 <block class="Magento\Cms\Block\Block" name="pdp_sub_footer">
@@ -51,6 +50,6 @@
                 <argument name="title" translate="true" xsi:type="string">Description</argument>
             </arguments>
         </referenceBlock>
-
+        <referenceBlock name="related.product.addto" remove="true"/>
     </body>
 </page>

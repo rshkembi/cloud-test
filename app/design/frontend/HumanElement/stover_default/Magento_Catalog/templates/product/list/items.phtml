@@ -20,7 +20,7 @@ switch ($type = $block->getType()) {
             $class = $type;
 
             $image = 'related_products_list';
-            $title = __('Related Products');
+            $title = __('similar items');
             $items = $block->getAllItems();
             $limit = $block->getPositionLimit();
             $shuffle = (int) $block->isShuffled();
@@ -41,7 +41,7 @@ switch ($type = $block->getType()) {
             $class = $type;
 
             $image = 'related_products_list';
-            $title = __('Related Products');
+            $title = __('similar items');
             $items = $block->getItems();
             $limit = 0;
             $shuffle = 0;
@@ -177,6 +177,7 @@ $_item = null;
         <?php else:?>
         <div class="block <?= $block->escapeHtmlAttr($class) ?>">
             <?php endif; ?>
+            <p>Test</p>
             <div class="block-title title">
                 <strong id="block-<?= $block->escapeHtmlAttr($class) ?>-heading" role="heading"
                         aria-level="2"><?= $block->escapeHtml($title) ?></strong>
