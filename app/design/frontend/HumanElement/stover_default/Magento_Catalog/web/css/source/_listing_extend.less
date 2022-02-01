@@ -107,6 +107,7 @@
                     padding: 10px;
                     margin-bottom: 22px;
                     text-align: center;
+
                     .tocart {
                         border-radius: 20px;
                     }
@@ -173,6 +174,7 @@
                     width: 48%;
                 }
             }
+
             .product-item-actions {
                 text-align: center;
 
@@ -199,6 +201,34 @@
 //
 //  Desktop
 //  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .abs-visually-hidden-desktop-s,
+    .products-grid {
+        .product-item {
+            &-info:not(:hover):not(.active) {
+                .product-item-inner {
+                    visibility: hidden;
+                    border: 0;
+                    clip: unset;
+                    height: auto;
+                    margin: auto;
+                    overflow: auto;
+                    padding: 0;
+                    position: unset;
+                    width: auto;
+                }
+            }
+        }
+
+        &-inner {
+            position: unset;
+            box-shadow: none;
+            border: none;
+        }
+    }
+}
+
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .block-products-list.grid {
