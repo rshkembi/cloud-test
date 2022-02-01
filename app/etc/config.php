@@ -477,9 +477,11 @@ return [
         'Dotdigitalgroup_Enterprise' => 1,
         'Dotdigitalgroup_Sms' => 1,
         'Ebizmarts_MailChimp' => 1,
+        'Facebook_BusinessExtension' => 1,
         'Fastly_Cdn' => 1,
         'Firebear_ImportExport' => 1,
         'Firebear_ImportExportMsi' => 1,
+        'HumanElement_QtyStepper' => 1,
         'Yotpo_Yotpo' => 1,
         'Klarna_Core' => 1,
         'Klarna_Ordermanagement' => 1,
@@ -504,6 +506,7 @@ return [
         'Magenest_Popup' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
+        'ShipperHQ_AddressAutocomplete' => 1,
         'ShipperHQ_Common' => 1,
         'ShipperHQ_Logger' => 1,
         'ShipperHQ_Shipper' => 1,
@@ -514,6 +517,8 @@ return [
         'Vertex_RequestLogging' => 1,
         'Vertex_AddressValidation' => 1,
         'Vertex_TaxStaging' => 1,
+        'WeltPixel_Backend' => 1,
+        'WeltPixel_SocialLogin' => 1,
         'HumanElement_CSP' => 1
     ]
 ];

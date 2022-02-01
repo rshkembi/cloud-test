@@ -1,0 +1,28 @@
+{
+  "name": "human-element/module-qty-stepper",
+  "description": "Human-Element Qty Stepper",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "require": {
+    "magento/framework": "101.*|102.*",
+    "human-element/module-base": "*"
+  },
+  "authors": [
+    {
+      "email": "smckinley@human-element.com",
+      "name": "Shawn McKinley"
+    },
+    {
+      "email": "sdaugherty@human-element.com",
+      "name": "Seth Daugherty"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "HumanElement\\QtyStepper\\": ""
+    }
+  }
+}
