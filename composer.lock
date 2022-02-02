@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6349989a615336e5222a78df2a59088b",
+    "content-hash": "2e44ceb02775c423cf5936f41c55d938",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -107,6 +107,31 @@
                 "Commercial"
             ],
             "description": "Amasty Base"
+        },
+        {
+            "name": "amasty/cron-schedule-list",
+            "version": "1.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/cron-schedule-list-1.0.5-ee.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.12.19",
+                "php": "7.0.2|7.0.4|~7.0.6|^7.1.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\CronScheduleList\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Cron Schedule List by Amasty"
         },
         {
             "name": "amasty/mega-menu",
@@ -222,6 +247,32 @@
             ],
             "description": "Mega Menu Lite by Amasty",
             "homepage": "https://amasty.com/"
+        },
+        {
+            "name": "amasty/xnotif",
+            "version": "1.13.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/xnotif-1.13.5-ee.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.12.19",
+                "amasty/cron-schedule-list": ">=1.0.5",
+                "php": "^7.3.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\Xnotif\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Out Of Stock Notification by Amasty"
         },
         {
             "name": "amzn/amazon-pay-and-login-magento-2-module",
