@@ -51,5 +51,8 @@
             </arguments>
         </referenceBlock>
         <referenceBlock name="related.product.addto" remove="true"/>
+        <referenceBlock name="content">
+            <block class="Magento\Catalog\Block\Product\View" name="out.of.stock.title" template="Magento_Catalog::product/out-of-stock-title.phtml" before="-"/>
+        </referenceBlock>
     </body>
 </page>

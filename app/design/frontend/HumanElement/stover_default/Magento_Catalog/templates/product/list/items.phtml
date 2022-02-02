@@ -28,7 +28,7 @@ switch ($type = $block->getType()) {
             $canItemsAddToCart = $block->canItemsAddToCart();
 
             $showAddTo = true;
-            $showCart = false;
+            $showCart = true;
             $templateType = null;
             $description = false;
         }
@@ -49,7 +49,7 @@ switch ($type = $block->getType()) {
             $canItemsAddToCart = $block->canItemsAddToCart();
 
             $showAddTo = true;
-            $showCart = false;
+            $showCart = true;
             $templateType = null;
             $description = false;
         }
@@ -177,7 +177,6 @@ $_item = null;
         <?php else:?>
         <div class="block <?= $block->escapeHtmlAttr($class) ?>">
             <?php endif; ?>
-            <p>Test</p>
             <div class="block-title title">
                 <strong id="block-<?= $block->escapeHtmlAttr($class) ?>-heading" role="heading"
                         aria-level="2"><?= $block->escapeHtml($title) ?></strong>
@@ -211,9 +210,9 @@ $_item = null;
                                 </a>
                                 <div class="product details product-item-details">
                                     <strong class="product name product-item-name"><a
-                                            class="product-item-link"
-                                            title="<?= $block->escapeHtmlAttr($_item->getName()) ?>"
-                                            href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>">
+                                                class="product-item-link"
+                                                title="<?= $block->escapeHtmlAttr($_item->getName()) ?>"
+                                                href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>">
                                             <?= $block->escapeHtml($_item->getName()) ?></a>
                                     </strong>
 
@@ -223,24 +222,6 @@ $_item = null;
                                         <?= $block->getReviewsSummaryHtml($_item, $templateType) ?>
                                     <?php endif; ?>
 
-                                    <?php if ($canItemsAddToCart && !$_item->isComposite() && $_item->isSaleable()
-                                        && $type == 'related'):?>
-                                        <?php if (!$_item->getRequiredOptions()):?>
-                                            <div class="field choice related">
-                                                <input
-                                                    type="checkbox"
-                                                    class="checkbox related"
-                                                    id="related-checkbox<?= $block->escapeHtmlAttr($_item->getId()) ?>"
-                                                    name="related_products[]"
-                                                    value="<?= $block->escapeHtmlAttr($_item->getId()) ?>" />
-                                                <label class="label"
-                                                       for="related-checkbox<?= $block->escapeHtmlAttr($_item->getId())
-                                                       ?>"><span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
-                                                </label>
-                                            </div>
-                                        <?php endif; ?>
-                                    <?php endif; ?>
-
                                     <?php if ($showAddTo || $showCart):?>
                                         <?php // phpcs:disable ?>
                                         <div class="product actions product-item-actions">
@@ -248,10 +229,9 @@ $_item = null;
                                                 <div class="actions-primary">
                                                     <?php if ($_item->isSaleable()):?>
                                                         <?php if (!$_item->getTypeInstance()->isPossibleBuyFromList($_item)):?>
-                                                            <?php echo $_item->getTypeId();?>
                                                             <button
-                                                                class="action tocart primary"
-                                                                data-mage-init='{"redirectUrl": {"url": "<?= $block->escapeUrl($block->getAddToCartUrl($_item)) ?>"}}' type="button" title="<?= $block->escapeHtmlAttr(__('Add to Cart')) ?>">
+                                                                    class="action tocart primary"
+                                                                    data-mage-init='{"redirectUrl": {"url": "<?= $block->escapeUrl($block->getAddToCartUrl($_item)) ?>"}}' type="button" title="<?= $block->escapeHtmlAttr(__('Add to Cart')) ?>">
                                                                 <span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
                                                             </button>
                                                         <?php else :?>
