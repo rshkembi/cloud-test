@@ -26,7 +26,7 @@
                 </arguments>
             </block>
         </referenceContainer>
-        <move element="catalog.product.related" destination="content" before="main.content.wrap" />
+
         <referenceContainer name="content.aside">
             <container name="pdp.sub.footer" htmlTag="div" htmlClass="sub-footer" after="-">
                 <block class="Magento\Cms\Block\Block" name="pdp_sub_footer">
@@ -51,8 +51,7 @@
             </arguments>
         </referenceBlock>
         <referenceBlock name="related.product.addto" remove="true"/>
-        <referenceBlock name="content">
-            <block class="Magento\Catalog\Block\Product\View" name="out.of.stock.title" template="Magento_Catalog::product/out-of-stock-title.phtml" before="-"/>
-        </referenceBlock>
+
+        <referenceBlock name="catalog.product.related" remove="true" />
     </body>
 </page>

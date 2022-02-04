@@ -13,6 +13,7 @@ $stockInfo = $inventoryHelper->getStockInfo($_product);
 ?>
 <?php if (!$stockInfo->getIsAvailable()): ?>
     <div class="out-of-stock-recommendations">
-        <p>Test Check</p>
+        <?php echo $this->getLayout()->createBlock("Magento\Catalog\Block\Product\View")->setTemplate("Magento_Catalog::product/out-of-stock-title.phtml")->toHtml();?>
+        <?= ($this->getChildHtml('stock.catalog.product.related')) ?>
     </div>
 <?php endif; ?>
