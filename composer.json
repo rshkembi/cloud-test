@@ -42,6 +42,7 @@
         "amasty/mega-menu": "^2.1",
         "amasty/mega-menu-graphql": "^1.0",
         "amasty/mega-menu-page-builder": "^1.0",
+        "amasty/xnotif": "^1.13",
         "auctane/api": "^2.2",
         "facebook/facebook-for-magento2": "^1.4",
         "firebear/importexport": "^3.7",
