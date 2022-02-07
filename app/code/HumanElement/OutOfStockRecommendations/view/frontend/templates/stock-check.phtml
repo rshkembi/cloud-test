@@ -4,14 +4,16 @@
  * See COPYING.txt for license details.
  */
 ?>
-<?php /* @var $block \Magento\Catalog\Block\Product\View\AbstractView */?>
+<?php /* @var $block \Magento\Catalog\Block\Product\View */?>
 <?php $_product = $block->getProduct() ?>
 <?php
 /** @var \HumanElement\OutOfStockRecommendations\Helper\Inventory $inventoryHelper */
 $inventoryHelper = $this->helper(\HumanElement\OutOfStockRecommendations\Helper\Inventory::class);
 $stockInfo = $inventoryHelper->getStockInfo($_product);
+
+$relatedCount = count($_product->getRelatedProducts()??[]);
 ?>
-<?php if (!$stockInfo->getIsAvailable()): ?>
+<?php if (!$stockInfo->getIsAvailable() && $relatedCount != 0): ?>
     <div class="out-of-stock-recommendations">
         <?php echo $this->getLayout()->createBlock("Magento\Catalog\Block\Product\View")->setTemplate("Magento_Catalog::product/out-of-stock-title.phtml")->toHtml();?>
         <?= ($this->getChildHtml('stock.catalog.product.related')) ?>
