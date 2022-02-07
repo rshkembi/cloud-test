@@ -8,7 +8,7 @@
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block name="out.of.stock.recommendations" class="Magento\Catalog\Block\Product\View\AbstractView" template="HumanElement_OutOfStockRecommendations::stock-check.phtml" before="-">
+            <block name="out.of.stock.recommendations" class="Magento\Catalog\Block\Product\View" template="HumanElement_OutOfStockRecommendations::stock-check.phtml" before="-">
                 <block class="Magento\Catalog\Block\Product\ProductList\Related" name="stock.catalog.product.related" template="Magento_Catalog::product/list/items.phtml">
                     <arguments>
                         <argument name="type" xsi:type="string">related</argument>
