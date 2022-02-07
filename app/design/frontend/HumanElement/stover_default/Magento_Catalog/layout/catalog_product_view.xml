@@ -51,6 +51,13 @@
                 <argument name="title" translate="true" xsi:type="string">Description</argument>
             </arguments>
         </referenceBlock>
-
+        <referenceBlock name="product.info.details">
+            <block class="Yotpo\Yotpo\Block\Yotpo" name="yotpo_widget_div" template="Yotpo_Yotpo::widget_div.phtml" group="detailed_info">
+                <arguments>
+                    <argument name="title" translate="true" xsi:type="string">Reviews</argument>
+                    <argument name="sort_order" xsi:type="string">30</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
     </body>
 </page>
