@@ -6,11 +6,13 @@
 
 $item = $block->getData('item');
 $isIconsAvailable = $block->getData('isIconsAvailable');
+
+$url = $escaper->escapeHtml($item['url']) ? $escaper->escapeHtml($item['url']) : '#';
 ?>
 
 <a if="item.isVisible"
    class="ammenu-link"
-   href="<?= $escaper->escapeHtml($item['url']) ?>"
+   href="<?= $url ?>"
    data-bind="
         event: {
             mouseenter: onMouseenter,
