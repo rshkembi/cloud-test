@@ -42,10 +42,15 @@
     a.green-link {
         text-transform: uppercase;
         border-bottom: 2px solid @stover-primary-elm;
+        font-weight: @font-weight__semibold;
         letter-spacing: 0.15em;
+        text-transform: uppercase;
+        line-height: 1.6;
 
-        &:hover, &:active, &:focus {
-            text-decoration: none;
+        &:active, &:hover, &:focus {
+            color: @stover-primary-blue-stone !important;
+            text-decoration: none !important;
+            border-bottom: 2px solid @stover-primary-blue-stone;
         }
         &:focus {
             outline: 1px solid @stover-primary-blue-stone;
