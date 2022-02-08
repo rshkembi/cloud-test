@@ -38,6 +38,21 @@
                 font-weight: @font-weight__regular;
             }
         }
+        .pagebuilder-banner-button {
+            .lib-button-as-link();
+            border-radius: 0;
+            border-bottom: 2px solid @stover-primary-elm;
+
+            &:hover, &:active, &:focus {
+                border-bottom: 2px solid @stover-primary-blue-stone;
+            }
+
+            &:focus {
+                outline: 1px solid @stover-primary-blue-stone;
+                outline-offset: 10px;
+                text-decoration: none;
+            }
+        }
     }
 
     .font-eb-garamond-regular {
@@ -46,6 +61,7 @@
     .font-eb-garamond-italic {
         font-family: @font-family-name__EBGaramond;
         font-style: @font-style__emphasis;
+        font-weight: @font-weight__regular;
     }
 
     figure {
@@ -58,6 +74,12 @@
         &.black-border {
             img {
                 border-bottom: @black-top-border;
+            }
+        }
+
+        &.green-border {
+            img {
+                border-bottom: @green-top-border;
             }
         }
     }
@@ -137,6 +159,14 @@
             [data-content-type="buttons"]{
                 padding-left: 15px !important;
                 padding-right: 15px !important;
+            }
+        }
+    }
+
+    .mobile-column-bottom-spacing {
+        .pagebuilder-column-group {
+            .pagebuilder-column {
+                margin-bottom: 50px !important;
             }
         }
     }

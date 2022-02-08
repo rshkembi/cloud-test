@@ -8,29 +8,55 @@
             display: none;
         }
 
-        .product-item {
-            .price-box {
-                .price {
-                    font-weight: @font-weight__regular;
+        .block-products-list.grid {
+            .products-grid {
+                .product-items {
+                    .product-item {
+                        padding: inherit;
+                    }
                 }
-            }
 
-            &-name {
-                > a {
-                    color: @theme__color__primary;
-                }
-            }
+                .product-item {
+                    .price-box {
+                        .price {
+                            font-weight: @font-weight__regular;
+                        }
+                    }
 
-            &-actions {
-                .actions-secondary {
-                    display: none;
-                }
-            }
+                    &-name {
+                        min-height: unset;
 
-            &-inner {
-                button.tocart {
-                    .lib-button();
-                    border-radius: @button__border-radius;
+                        > a {
+                            color: @theme__color__primary;
+                            font-weight: @font-weight__heavier;
+                            visibility: collapse;
+                            &:before {
+                                content: "Cold Pack";
+                                color: @theme__color__primary;
+                                font-weight: @font-weight__heavier;
+                                display: block;
+                                visibility: initial;
+                                margin-bottom: -20px;
+                            }
+                        }
+                    }
+
+                    &-actions {
+                        .actions-secondary {
+                            display: none;
+                        }
+                    }
+
+                    &-inner {
+                        button.tocart {
+                            .lib-button();
+                            border-radius: @button__border-radius;
+                        }
+                    }
+
+                    &-details {
+                        text-align: left;
+                    }
                 }
             }
         }
@@ -39,6 +65,7 @@
             &:before {
                 content: "Add Cold Packing";
             }
+
             span {
                 display: none;
             }
@@ -48,9 +75,18 @@
     .cold-pack-icon {
         p {
             padding-bottom: 15px;
+
             img {
                 float: left;
                 margin-right: 10px;
+            }
+        }
+    }
+
+    .catalog-product-view {
+        .cold-pack-container {
+            .block-products-list.grid {
+                background-color: transparent;
             }
         }
     }
@@ -72,6 +108,16 @@
                         margin-bottom: 10px;
                     }
                 }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .cold-pack-container {
+        .products-grid {
+            .product-item-actions {
+                text-align: left;
             }
         }
     }
@@ -107,7 +153,7 @@
                             .product-item-actions {
                                 margin: 0;
                                 position: absolute;
-                                top: -70px;
+                                top: -74px;
                                 right: 10px;
                             }
                         }
@@ -123,6 +169,7 @@
                                     width: auto;
                                     border: none;
                                     box-shadow: none;
+                                    visibility: initial;
                                 }
                             }
                         }
