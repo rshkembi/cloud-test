@@ -1,0 +1,19 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /* @var $block \Magento\Catalog\Block\Product\View\Attributes */?>
+<?php
+$_product = $block->getProduct();
+$_inStock = $_product->getIsInStock();
+?>
+<?php if (!$_inStock) : ?>
+    <div class="out-of-stock">
+        <h5 class="title">
+            <?php echo $_product->getName();?>
+        </h5>
+        <p>Is temporarily <span class="button">out of stock</span></p>
+    </div>
+<?php endif; ?>
