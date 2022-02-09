@@ -4,20 +4,25 @@
 
 & when (@media-common = true) {
     .cold-pack-container {
+        border-bottom: 1px solid @color-gray20;
+        padding-top: 20px;
         .product-item-photo {
             display: none;
         }
-
         .block-products-list.grid {
+            padding-top: 0!important;
             .products-grid {
                 .product-items {
                     .product-item {
                         padding: inherit;
+                        margin-bottom: 0;
                     }
                 }
 
                 .product-item {
                     .price-box {
+                        margin-top: 10px;
+                        margin-bottom: 20px;
                         .price {
                             font-weight: @font-weight__regular;
                         }
@@ -56,6 +61,7 @@
 
                     &-details {
                         text-align: left;
+                        margin-left: 45px;
                     }
                 }
             }
@@ -79,6 +85,9 @@
             img {
                 float: left;
                 margin-right: 10px;
+            }
+            > span {
+                overflow: hidden;
             }
         }
     }
@@ -153,7 +162,7 @@
                             .product-item-actions {
                                 margin: 0;
                                 position: absolute;
-                                top: -74px;
+                                top: -64px;
                                 right: 10px;
                             }
                         }

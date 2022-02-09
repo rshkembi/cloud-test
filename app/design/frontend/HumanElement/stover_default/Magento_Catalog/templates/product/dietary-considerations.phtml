@@ -14,8 +14,9 @@ $kosherDairy = $_product->getData('kosher_dairy');
 $nonGMO = $_product->getData('non_gmo');
 $peanutFree = $_product->getData('peanut_free');
 ?>
+<?php if($dairyFree || $glutenFree || $kosher || $kosherDairy || $nonGMO || $peanutFree):?>
 <div class="dietary-considerations-inner">
-    <h2>dietary considerations</h2>
+        <h2>dietary considerations</h2>
     <?php if($dairyFree): ?>
     <div class="dietary-icon dairy-free"></div>
     <?php endif;?>
@@ -40,3 +41,4 @@ $peanutFree = $_product->getData('peanut_free');
         <div class="dietary-icon peanut-free"></div>
     <?php endif;?>
 </div>
+<?php endif;?>

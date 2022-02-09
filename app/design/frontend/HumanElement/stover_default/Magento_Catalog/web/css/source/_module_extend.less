@@ -13,7 +13,8 @@
     .top-content-wrap {
         max-width: 1280px;
         margin: auto;
-        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     .product.actions {
@@ -80,6 +81,9 @@
                     font-family: @icons__font-name;
                     padding-right: 10px;
                 }
+            }
+            .product-info-price {
+                border-color: @stover-primary-gray;
             }
         }
 
