@@ -76,6 +76,14 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .details-full-bleed {
         background-color: @color-white-dark-smoke;
+        &:before {
+            content: "";
+            height: 71px;
+            display: block;
+            position: absolute;
+            background-color: @color-white;
+            width: 100%;
+        }
     }
     .product.info.detailed {
         max-width: 1280px;
