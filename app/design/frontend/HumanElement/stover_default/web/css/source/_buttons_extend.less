@@ -24,6 +24,11 @@
 @button-primary__hover__border: 2px solid @stover-primary-blue-stone;
 @button-primary__hover__color: @button-primary__color;
 
+//  Large button - Resetting to correct button sizing issues
+@button__font-size__l: @button__font-size;
+@button__line-height__l: @button__font-size;
+@button__padding__l: @button__padding;
+
 button {
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -84,3 +89,13 @@ button {
 }
 
 
+
+//
+//  Large button
+//  ---------------------------------------------
+
+& when (@media-common = true) {
+    .abs-button-l {
+        .lib-button-size();
+    }
+}
