@@ -5,7 +5,6 @@
 & when (@media-common = true) {
     .block {
         &.related {
-            background-color: @color-white-dark-smoke;
             .block-title {
                 text-align: center;
                 padding-top: 50px;
@@ -16,6 +15,27 @@
 
             .product-item-link {
                 font-family: @font-family__base;
+            }
+            .products-grid {
+                .product-item {
+                    &-info {
+                        width: auto;
+                        background-color: @color-white;
+                        padding: 10px;
+                        border: 1px solid transparent;
+                    }
+
+                    &-inner {
+                        box-shadow: none;
+                        border: none;
+                        padding: inherit;
+                        position: unset;
+                    }
+
+                    .tocart {
+                        white-space: unset;
+                    }
+                }
             }
         }
         &-content.content {
@@ -28,9 +48,63 @@
 //
 //  Mobile
 //  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .block.related {
+        .products-grid {
+            .product-item {
+                margin-bottom: 22px;
+            }
+        }
+    }
+}
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-    .block.related {
+    .out-of-stock-recommendations {
         margin: 0 -15px;
+        padding: 0 15px;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .block.related {
+        .products-grid {
+            .product-item {
+                margin-left: 1%;
+                &:first-of-type {
+                    margin-left: 0;
+                }
+
+                &-info {
+                    &:hover,
+                    &:active {
+                        margin: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+   .out-of-stock {
+       padding: 0 15px;
+   }
+    .block.related {
+        .block-title {
+            padding: 0 15px;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .block.related {
+        .products-grid {
+            .product-item {
+                width: 19%;
+            }
+        }
     }
 }

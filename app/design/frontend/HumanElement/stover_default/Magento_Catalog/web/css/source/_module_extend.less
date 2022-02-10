@@ -13,7 +13,8 @@
     .top-content-wrap {
         max-width: 1280px;
         margin: auto;
-        overflow: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     .product.actions {
@@ -56,7 +57,6 @@
         &-info-main {
             .product-add-form {
                 padding-top: 0;
-                border-top: 1px solid @border-color__base;
             }
 
             .box-tocart {
@@ -81,6 +81,9 @@
                     font-family: @icons__font-name;
                     padding-right: 10px;
                 }
+            }
+            .product-info-price {
+                border-color: @stover-primary-gray;
             }
         }
 
@@ -169,6 +172,11 @@
     .category-columns {
         .pagebuilder-column {
             margin-bottom: 20px !important;
+        }
+    }
+    .catalog-product-view {
+        .breadcrumbs {
+            margin-bottom: 0;
         }
     }
 }
@@ -264,11 +272,3 @@
     }
 }
 
-
-//
-//  Desktop large
-//  _____________________________________________
-
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
-
-}
