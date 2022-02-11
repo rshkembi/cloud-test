@@ -11,6 +11,8 @@ define([
                     $('.form.minisearch').toggleClass('active');
                     $('.field.search .label').toggleClass('active');
                     $('.header-search').toggleClass('active');
+                    $('.header.content').toggleClass('search-active');
+                    $('.ammenu-main-container').toggleClass('search-active');
                     $(this).toggleClass('active');
                 }
             );
