@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e44ceb02775c423cf5936f41c55d938",
+    "content-hash": "7ddfe0dc817e7bdd2e86c31ca00deead",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -132,6 +132,31 @@
                 "Commercial"
             ],
             "description": "Cron Schedule List by Amasty"
+        },
+        {
+            "name": "amasty/instagram-feed",
+            "version": "2.1.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/instagram-feed-2.1.4-ee.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.12.19",
+                "php": "^7.1.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\InstagramFeed\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Instagram Feed By Amasty"
         },
         {
             "name": "amasty/mega-menu",
@@ -19674,6 +19699,12 @@
             "license": [
                 "OSL-3.0"
             ],
+            "authors": [
+                {
+                    "name": "Riccardo Tempesta",
+                    "email": "riccardo.tempesta@magespecialist.it"
+                }
+            ],
             "description": "Google reCAPTCHA integration for Magento2"
         },
         {
@@ -21440,6 +21471,12 @@
             "license": [
                 "OSL-3.0",
                 "AFL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kalpesh Mehta",
+                    "email": "k@lpe.sh"
+                }
             ],
             "description": "Security.txt file for Magento 2 websites"
         },
@@ -24734,10 +24771,6 @@
                 "mobile detector",
                 "php mobile detect"
             ],
-            "support": {
-                "issues": "https://github.com/serbanghita/Mobile-Detect/issues",
-                "source": "https://github.com/serbanghita/Mobile-Detect/tree/2.8.37"
-            },
             "funding": [
                 {
                     "url": "https://github.com/serbanghita",
@@ -31525,5 +31558,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "1.1.0"
 }
