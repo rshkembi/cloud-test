@@ -171,6 +171,14 @@
                         content: url("../images/icon_close.png");
                     }
                 }
+                &.loading {
+                    &:before {
+                        content: url("../images/menu_loader.gif");
+                        margin: 0;
+                        position: relative;
+                        top: 2px;
+                    }
+                }
             }
 
             &.-go-main {
@@ -270,6 +278,18 @@
                     }
                 }
             }
+            &.-sticky {
+                .header.content {
+                    padding-bottom: 10px;
+                }
+                .header-search {
+                    position: fixed;
+                    width: 100%;
+                    z-index: 9;
+                    top: 60px;
+                    border-top: @ammenu-search-border;
+                }
+            }
         }
 
         &-menu-title {
@@ -295,7 +315,6 @@
     .block-search {
         margin-top: 0;
     }
-
 }
 
 //
@@ -310,7 +329,7 @@
             border-top: @ammenu-search-border;
             border-bottom: @ammenu-search-border;
             &.search-active {
-                top: 155px; 
+                top: 155px;
             }
         }
     }
