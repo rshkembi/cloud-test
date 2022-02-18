@@ -3,19 +3,31 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-    .minicart-wrapper {
-        .action.showcart {
-            .counter.qty {
-                position: absolute;
-                top: -16px;
-                right: -9px;
-                background-color: @theme__color__primary;
-                border-radius: 11px;
-                font-size: 12px;
-                font-weight: @font-weight__regular;
-                height: 20px;
-                line-height: 21px;
-                padding: 0px 1px;
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .customer-welcome {
+        display: none;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .customer-welcome{
+        .action.switch {
+            &:after {
+                color: @color-black;
+            }
+            &:hover {
+                &:after {
+                    color: @color-black;
+                }
             }
         }
     }
