@@ -336,10 +336,21 @@
     .ammenu-header-container.-sticky {
         top: 49px;
         z-index: 10;
+        position: relative;
         .header-search {
             position: fixed;
             width: 100%;
             background: @color-white;
+        }
+        .header-stickywrapper {
+            width: 100%;
+            position: fixed;
+            height: 95px;
+            top: 0;
+            background-color: @color-white;
+            .header.content {
+                max-width: 1280px;
+            }
         }
     }
 
