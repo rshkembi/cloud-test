@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85b5df1791c00454823e3d8f7051e5fb",
+    "content-hash": "2e5dddf2867750c7fba10fc5ad8ff6cc",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -2687,25 +2687,25 @@
         },
         {
             "name": "fastly/magento2",
-            "version": "1.2.163",
+            "version": "1.2.179",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fastly/fastly-magento2.git",
-                "reference": "86e0fa7c4253ffdcdba9e95765286e54ab277ddb"
+                "reference": "43d5ae1efc4331fc52b289194858e8609e7a6d75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fastly/fastly-magento2/zipball/86e0fa7c4253ffdcdba9e95765286e54ab277ddb",
-                "reference": "86e0fa7c4253ffdcdba9e95765286e54ab277ddb",
+                "url": "https://api.github.com/repos/fastly/fastly-magento2/zipball/43d5ae1efc4331fc52b289194858e8609e7a6d75",
+                "reference": "43d5ae1efc4331fc52b289194858e8609e7a6d75",
                 "shasum": ""
             },
             "require": {
-                "magento/framework": ">=101.0.0",
-                "magento/module-cache-invalidate": ">=100.0.0",
-                "magento/module-config": ">=100.0.0",
-                "magento/module-page-cache": ">=100.0.0",
-                "magento/module-store": ">=100.0.0",
-                "php": "~7.0.0|~7.1.0|~7.2.0|~7.3.0|~7.4.0",
+                "magento/framework": ">=102.0.0",
+                "magento/module-cache-invalidate": ">=100.3.0",
+                "magento/module-config": ">=101.1.0",
+                "magento/module-page-cache": ">=100.3.0",
+                "magento/module-store": ">=101.0.0",
+                "php": "~7.1.3|~7.2.0|~7.3.0|~7.4.0|~8.0.0|~8.1.0",
                 "zordius/lightncandy": "^1.2"
             },
             "type": "magento2-module",
@@ -2721,12 +2721,12 @@
             "license": [
                 "BSD-3-Clause"
             ],
-            "description": "Fastly CDN Module for Magento 2.x",
+            "description": "Fastly CDN Module for Magento 2.3.x | 2.4.x",
             "support": {
                 "issues": "https://github.com/fastly/fastly-magento2/issues",
-                "source": "https://github.com/fastly/fastly-magento2/tree/1.2.163"
+                "source": "https://github.com/fastly/fastly-magento2/tree/1.2.179"
             },
-            "time": "2021-08-04T15:42:41+00:00"
+            "time": "2022-02-14T15:12:42+00:00"
         },
         {
             "name": "fgrosse/phpasn1",
@@ -33155,5 +33155,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.2.0"
 }
