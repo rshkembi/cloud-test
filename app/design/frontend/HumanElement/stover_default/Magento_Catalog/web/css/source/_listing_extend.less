@@ -166,6 +166,17 @@
             }
         }
     }
+
+    .product-item-name {
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        -webkit-hyphens: none;
+    }
+    a.product-item-photo {
+        &:focus {
+            outline: none;
+        }
+    }
 }
 
 //
@@ -177,8 +188,23 @@
         .products-grid {
             .product-items {
                 .product-item {
-                    width: 48%;
+                    width: 49%;
+
+                    &-info {
+                        width: auto;
+                        padding: 10px;
+                    }
+
+                    &:hover {
+                        .product-item-info {
+                            margin: auto;
+                        }
+                    }
                 }
+            }
+
+            .product-item-info {
+                border: 1px solid transparent;
             }
 
             .product-item-actions {
