@@ -87,5 +87,7 @@
         </referenceContainer>
 
         <move element="form.subscribe" destination="page.bottom" after="-"/>
+
+        <referenceBlock name="b2blinks" remove="true"/>
     </body>
 </page>
