@@ -374,3 +374,40 @@
         margin-top: 7px;
     }
 }}
+
+// added separately for container override for disabling mobile detect and moving back to viewport
+// Don't add anything to these entries if at all possible to keep technical debt manageable
+
+//
+//  Desktop +
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .ammenu {
+        &-button {
+            &.-hamburger {
+                display: none;
+            }
+        }
+    }
+    .ammenu-main-container {
+        display: block;
+    }
+}
+
+//
+//  Desktop -
+//  _____________________________________________
+
+@media screen and (max-width: 1023px){
+    .ammenu {
+        &-button {
+            &.-hamburger {
+                display: block;
+            }
+        }
+    }
+    .ammenu-main-container {
+        display: none!important;
+    }
+}
