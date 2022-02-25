@@ -500,6 +500,7 @@ return [
         'Magento_WishlistGiftCardGraphQl' => 1,
         'Magento_GiftCardRequisitionListGraphQl' => 1,
         'Aheadworks_Blog' => 1,
+        'Aheadworks_Popup' => 1,
         'Amasty_Base' => 1,
         'Amasty_CronScheduleList' => 1,
         'Amasty_InstagramFeed' => 1,
