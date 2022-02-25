@@ -546,8 +546,6 @@ return [
         'MageWorx_SeoUrls' => 1,
         'MageWorx_SeoXTemplates' => 1,
         'MageWorx_XmlSitemap' => 1,
-        'Magenest_Core' => 1,
-        'Magenest_Popup' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
         'ShipperHQ_AddressAutocomplete' => 1,
