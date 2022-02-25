@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b17b6983876f90d87fa109ada7d91bec",
+    "content-hash": "e1406a7285f3d1cb585bee79c57470c1",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -83,6 +83,32 @@
                 "proprietary"
             ],
             "description": "Blog module by Aheadworks"
+        },
+        {
+            "name": "aheadworks/module-popup",
+            "version": "1.2.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://dist.aheadworks.com/packages/aheadworks/module-popup/module-popup-1.2.4.zip"
+            },
+            "require": {
+                "magento/framework": ">100.0",
+                "magento/module-backend": ">100.0",
+                "magento/module-store": ">100.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Aheadworks\\Popup\\": ""
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "Popup by Aheadworks"
         },
         {
             "name": "amasty/base",

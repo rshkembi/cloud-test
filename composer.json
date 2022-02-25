@@ -35,10 +35,15 @@
         "artifacts": {
             "type": "artifact",
             "url": "./packages/artifacts/"
+        },
+        "aheadworks": {
+            "type": "composer",
+            "url": "https://dist.aheadworks.com/"
         }
     },
     "require": {
         "aheadworks/module-blog": "^2.1",
+        "aheadworks/module-popup": "^1.2",
         "amasty/instagram-feed": "^2.1",
         "amasty/mega-menu": "^2.1",
         "amasty/mega-menu-graphql": "^1.0",
