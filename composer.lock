@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e5dddf2867750c7fba10fc5ad8ff6cc",
+    "content-hash": "e1406a7285f3d1cb585bee79c57470c1",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -83,6 +83,32 @@
                 "proprietary"
             ],
             "description": "Blog module by Aheadworks"
+        },
+        {
+            "name": "aheadworks/module-popup",
+            "version": "1.2.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://dist.aheadworks.com/packages/aheadworks/module-popup/module-popup-1.2.4.zip"
+            },
+            "require": {
+                "magento/framework": ">100.0",
+                "magento/module-backend": ">100.0",
+                "magento/module-store": ">100.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Aheadworks\\Popup\\": ""
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "Popup by Aheadworks"
         },
         {
             "name": "amasty/base",
@@ -6582,66 +6608,6 @@
                 "source": "https://github.com/thephpleague/oauth2-client/tree/2.6.0"
             },
             "time": "2020-10-28T02:03:40+00:00"
-        },
-        {
-            "name": "magenest/core",
-            "version": "1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/magenest-dev/module-core.git",
-                "reference": "1bf028edb6558ae7c7bce41a02253e9d8e5508af"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/magenest-dev/module-core/zipball/1bf028edb6558ae7c7bce41a02253e9d8e5508af",
-                "reference": "1bf028edb6558ae7c7bce41a02253e9d8e5508af",
-                "shasum": ""
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Magenest\\Core\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "OSL-3.0"
-            ],
-            "description": "Magenest Core",
-            "support": {
-                "issues": "https://github.com/magenest-dev/module-core/issues",
-                "source": "https://github.com/magenest-dev/module-core/tree/master"
-            },
-            "time": "2020-06-29T04:19:21+00:00"
-        },
-        {
-            "name": "magenest/module-popup",
-            "version": "1.2.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://repo.magento.com/archives/magenest/module-popup/magenest-module-popup-1.2.1.0.zip",
-                "shasum": "a1be7d0b75245c72e99c90422ad8e68176b1caaf"
-            },
-            "require": {
-                "magenest/core": ">=1.2.1"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Magenest\\Popup\\": ""
-                }
-            },
-            "license": [
-                "OSL-3.0",
-                "proprietary"
-            ],
-            "description": "Popup extension by Magenest"
         },
         {
             "name": "magento/adobe-ims",
