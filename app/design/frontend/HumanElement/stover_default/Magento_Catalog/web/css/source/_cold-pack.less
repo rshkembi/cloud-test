@@ -5,7 +5,6 @@
 & when (@media-common = true) {
     .cold-pack-container {
         border-bottom: 1px solid @color-gray20;
-        padding-top: 20px;
         .product-item-photo {
             display: none;
         }
@@ -21,8 +20,10 @@
 
                 .product-item {
                     .price-box {
-                        margin-top: 10px;
-                        margin-bottom: 20px;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        position: relative;
+                        top: -20px;
                         .price {
                             font-weight: @font-weight__regular;
                         }
@@ -85,6 +86,7 @@
             img {
                 float: left;
                 margin-right: 10px;
+                margin-top: 3px;
             }
             > span {
                 overflow: hidden;
@@ -162,7 +164,7 @@
                             .product-item-actions {
                                 margin: 0;
                                 position: absolute;
-                                top: -64px;
+                                top: -70px;
                                 right: 10px;
                             }
                         }

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <container name="header-stickywrapper" label="Page Header Sticky Wrapper" as="header-stickywrapper" htmlTag="div" htmlClass="header-stickywrapper"/>
+        <move element="header-stickywrapper" destination="header.container" before="header.search.container" />
+        <move element="header-wrapper" destination="header-stickywrapper" before="-" />
+    </body>
+</layout>

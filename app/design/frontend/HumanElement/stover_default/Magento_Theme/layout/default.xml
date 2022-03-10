@@ -15,7 +15,6 @@
                 </arguments>
             </block>
         </referenceContainer>
-        <referenceBlock name="top.links" remove="true"/>
         <referenceBlock name="header.links" remove="true"/>
         <referenceBlock name="top.search" remove="true"/>
 
@@ -56,7 +55,7 @@
                 </arguments>
             </block>
         </referenceContainer>
-        <move element="customer" destination="header-wrapper"  before="minicart" />
+        <move element="customer" destination="header-wrapper"  after="header.static.links.container" before="minicart"  />
 
         <referenceBlock name="footer_links" remove="true"/>
         <referenceContainer name="page.bottom">
@@ -88,5 +87,7 @@
         </referenceContainer>
 
         <move element="form.subscribe" destination="page.bottom" after="-"/>
+
+        <referenceBlock name="b2blinks" remove="true"/>
     </body>
 </page>

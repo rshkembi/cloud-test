@@ -64,7 +64,7 @@
 
             &.-sticky {
                 .ammenu-submenu-wrapper {
-                    top: 68px;
+                    top: 57px;
                 }
             }
 
@@ -171,6 +171,14 @@
                         content: url("../images/icon_close.png");
                     }
                 }
+                &.loading {
+                    &:before {
+                        content: url("../images/menu_loader.gif");
+                        margin: 0;
+                        position: relative;
+                        top: 2px;
+                    }
+                }
             }
 
             &.-go-main {
@@ -270,6 +278,18 @@
                     }
                 }
             }
+            &.-sticky {
+                .header.content {
+                    padding-bottom: 10px;
+                }
+                .header-search {
+                    position: fixed;
+                    width: 100%;
+                    z-index: 9;
+                    top: 60px;
+                    border-top: @ammenu-search-border;
+                }
+            }
         }
 
         &-menu-title {
@@ -295,7 +315,6 @@
     .block-search {
         margin-top: 0;
     }
-
 }
 
 //
@@ -303,6 +322,38 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    .ammenu-nav-sections.-topmenu.-sticky {
+        .ammenu-main-container {
+            top: 95px;
+            border-top: @ammenu-search-border;
+            border-bottom: @ammenu-search-border;
+            &.search-active {
+                top: 155px;
+            }
+        }
+    }
+    .ammenu-header-container.-sticky {
+        top: 49px;
+        z-index: 10;
+        position: relative;
+        .header-search {
+            position: fixed;
+            width: 100%;
+            background: @color-white;
+        }
+        .header-stickywrapper {
+            width: 100%;
+            position: fixed;
+            height: 95px;
+            top: 0;
+            background-color: @color-white;
+            .header.content {
+                max-width: 1280px;
+            }
+        }
+    }
+
     .header-search {
         .block-search {
             max-width: 1280px;
@@ -323,3 +374,40 @@
         margin-top: 7px;
     }
 }}
+
+// added separately for container override for disabling mobile detect and moving back to viewport
+// Don't add anything to these entries if at all possible to keep technical debt manageable
+
+//
+//  Desktop +
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .ammenu {
+        &-button {
+            &.-hamburger {
+                display: none;
+            }
+        }
+    }
+    .ammenu-main-container {
+        display: block;
+    }
+}
+
+//
+//  Desktop -
+//  _____________________________________________
+
+@media screen and (max-width: 1023px){
+    .ammenu {
+        &-button {
+            &.-hamburger {
+                display: block;
+            }
+        }
+    }
+    .ammenu-main-container {
+        display: none!important;
+    }
+}
