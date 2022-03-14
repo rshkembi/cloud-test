@@ -36,3 +36,4 @@ auth.json
 !/packages/artifacts/**
 .DS_Store
 !/pub/errors/default/*
+!/pub/errors/enterprise/*
