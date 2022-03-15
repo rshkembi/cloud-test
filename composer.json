@@ -39,6 +39,10 @@
         "aheadworks": {
             "type": "composer",
             "url": "https://dist.aheadworks.com/"
+        },
+        "shipperhq": {
+            "type": "composer",
+            "url": "https://packages.shipperhq.com"
         }
     },
     "require": {
@@ -63,6 +67,8 @@
         "mageworx/module-seosuiteultimate": "^2.35",
         "mailchimp/mc-magento2": "^103.4",
         "shipperhq/module-address-autocomplete": "^20.6",
+        "shipperhq/module-option": "^20.5",
+        "shipperhq/module-pickup": "^22.4",
         "shipperhq/module-shipper": "^20.45",
         "weltpixel/m2-social-login": "^1.10"
     },
