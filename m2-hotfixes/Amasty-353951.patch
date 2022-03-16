@@ -1,7 +1,7 @@
-diff --git a/view/adminhtml/ui_component/amasty_megamenu_link_form.xml b/view/adminhtml/ui_component/amasty_megamenu_link_form.xml
+diff --git a/vendor/amasty/module-mega-menu-lite/view/adminhtml/ui_component/amasty_megamenu_link_form.xml b/vendor/amasty/module-mega-menu-lite/view/adminhtml/ui_component/amasty_megamenu_link_form.xml
 index 9e04ca5..10ccac8 100644
---- a/view/adminhtml/ui_component/amasty_megamenu_link_form.xml
-+++ b/view/adminhtml/ui_component/amasty_megamenu_link_form.xml
+--- a/vendor/amasty/module-mega-menu-lite/view/adminhtml/ui_component/amasty_megamenu_link_form.xml
++++ b/vendor/amasty/module-mega-menu-lite/view/adminhtml/ui_component/amasty_megamenu_link_form.xml
 @@ -245,9 +245,9 @@
                      <item name="source" xsi:type="string">mega_menu_link</item>
                      <item name="dataScope" xsi:type="string">link</item>
