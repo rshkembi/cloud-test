@@ -230,17 +230,30 @@
             }
 
             .heading-3 {
-                width: 69%;
+                width: 100%;
                 text-align: left !important;
+                [data-content-type='button-item']{
+                    width: 100%;
+                }
                 a.pagebuilder-button-link {
                     text-align: left !important;
                     position: relative;
-                    margin-top: 20px !important;
                     margin-left: 10px !important;
                     text-transform: uppercase;
                     display: block;
                     font-size: 14px;
                     line-height: 19px;
+                    min-height: 65px;
+                    width: 100%;
+                    z-index: 2;
+                    span {
+                        display: block;
+                        padding: 23px 0;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
                 }
                 &:after {
                     content: @icon-next;
