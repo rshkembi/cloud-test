@@ -3,7 +3,23 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    .first-sign-in {
+        padding-bottom: 20px;
+        div[data-content-type='text'] {
+            color: @stover-primary-elm;
+            text-transform: uppercase;
+            font-size: @font-size__base;
+            font-weight: @font-weight__medium;
 
+            &:before {
+                content: @icon-warning;
+                font-size: @font-size__base;
+                font-family: 'luma-icons';
+                float: left;
+                margin-right: 10px;
+            }
+        }
+    }
 }
 
 //
