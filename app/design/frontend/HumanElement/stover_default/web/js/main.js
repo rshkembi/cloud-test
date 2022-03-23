@@ -6,7 +6,7 @@ define([
 
     var helpers = {
         domReady: function () {
-            $('.minisearch.button').click(
+            $('div.minisearch.button').click(
                 function (){
                     $('.form.minisearch').toggleClass('active');
                     $('.field.search .label').toggleClass('active');
@@ -14,6 +14,16 @@ define([
                     $('.header.content').toggleClass('search-active');
                     $('.ammenu-main-container').toggleClass('search-active');
                     $(this).toggleClass('active');
+                }
+            );
+
+            $('.minisearch button.search').on('click', function (){
+                    if ($('.minisearch.button').hasClass('active')) {
+                        $('.minisearch.button').removeClass('active');
+                    }
+                    if ($('.header-search').hasClass('active')) {
+                        $('.header-search').removeClass('active');
+                    }
                 }
             );
 
