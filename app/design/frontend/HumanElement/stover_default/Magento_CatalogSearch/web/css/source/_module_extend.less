@@ -11,12 +11,14 @@
 
     .header-search {
         border-top: @ammenu-search-border;
+        display: none;
         &.active {
             border-bottom: @ammenu-search-border;
+            display: block;
         }
     }
 
-    .minisearch.button {
+    div.minisearch.button {
         &:before {
             content: url("../images/icon_search.png");
             height: 25px;
@@ -59,6 +61,10 @@
                     width: 25px;
                     display: inline-block;
                 }
+
+                span {
+                    display: none; // to reduce the size of the button
+                }
             }
         }
     }
@@ -79,7 +85,7 @@
             }
         }
     }
-    .minisearch.button {
+    div.minisearch.button {
         margin-right: 10px;
     }
 
@@ -113,7 +119,7 @@
                     right: 0;
                     width: fit-content;
                     margin: auto;
-                    left: 500px;
+                    left: 580px;
                 }
 
                 .action.search {
@@ -123,7 +129,7 @@
         }
     }
 
-    .minisearch.button {
+    div.minisearch.button {
         margin-right: 20px;
     }
 }
