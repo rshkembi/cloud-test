@@ -526,6 +526,7 @@ return [
         'Yotpo_Yotpo' => 1,
         'HumanElement_OutOfStockRecommendations' => 1,
         'HumanElement_QtyStepper' => 1,
+        'HumanElement_RemoveGiftCard' => 1,
         'Klarna_Core' => 1,
         'Klarna_Ordermanagement' => 1,
         'Klarna_Kp' => 1,
