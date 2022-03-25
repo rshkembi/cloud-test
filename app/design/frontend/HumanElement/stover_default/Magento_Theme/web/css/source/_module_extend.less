@@ -73,6 +73,10 @@
         .panel {
             &.header {
                 padding: 0;
+
+                [data-content-type='row'] {
+                    min-height: 67px; // to keep mobile search button correctly positioned
+                }
             }
         }
     }
@@ -185,7 +189,7 @@
         }
     }
 
-    .minisearch.button {
+    div.minisearch.button {
         &:before {
             content: url("../images/icon_search.png");
             height: 25px;
@@ -230,7 +234,7 @@
             }
         }
     }
-    .minisearch.button {
+    div.minisearch.button {
         margin-right: 10px;
     }
 
@@ -252,7 +256,7 @@
         }
     }
 
-    .minisearch.button {
+    div.minisearch.button {
         margin-right: 20px;
     }
 }

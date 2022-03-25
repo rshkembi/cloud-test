@@ -10,13 +10,15 @@
 & when (@media-common = true) {
 
     .header-search {
+        display: none;
         z-index: -1;
         &.active {
             border-top: @ammenu-search-border;
+            display: block;
         }
     }
 
-    .minisearch.button {
+    div.minisearch.button {
         &:before {
             content: url("../images/icon_search.png");
             height: 25px;
@@ -44,6 +46,27 @@
         .control {
             position: relative;
         }
+        .minisearch.active {
+            .actions {
+                position: absolute;
+            }
+            .action.search {
+                display: block;
+                border: none;
+                color: transparent;
+                background-color: transparent;
+                &:after {
+                    content: url("../images/icon_search.png");
+                    height: 25px;
+                    width: 25px;
+                    display: inline-block;
+                }
+
+                span {
+                    display: none; // to reduce the size of the button
+                }
+            }
+        }
     }
 }
 
@@ -62,12 +85,21 @@
             }
         }
     }
-    .minisearch.button {
+    div.minisearch.button {
         margin-right: 10px;
     }
 
     .block-search {
         margin-top: 0;
+        .minisearch.active {
+            .actions {
+                top: 140px;
+                right: 10px;
+            }
+        }
+    }
+    #search_autocomplete {
+        display: none!important;
     }
 }
 
@@ -81,10 +113,23 @@
             max-width: 1280px;
             margin: auto;
             padding: 0 22px;
+            .minisearch.active {
+                .actions {
+                    top: 150px;
+                    right: 0;
+                    width: fit-content;
+                    margin: auto;
+                    left: 580px;
+                }
+
+                .action.search {
+                    float: right;
+                }
+            }
         }
     }
 
-    .minisearch.button {
+    div.minisearch.button {
         margin-right: 20px;
     }
 }
