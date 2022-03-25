@@ -10,9 +10,9 @@
 & when (@media-common = true) {
 
     .header-search {
-        border-top: @ammenu-search-border;
+        z-index: -1;
         &.active {
-            border-bottom: @ammenu-search-border;
+            border-top: @ammenu-search-border;
         }
     }
 

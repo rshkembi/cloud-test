@@ -3,6 +3,17 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    .minicart-wrapper {
+        .action.close:before {
+            content: '';
+        }
+
+        .active {
+            .block-minicart {
+                z-index: 11;
+            }
+        }
+    }
     .minicart-items {
         .product-item-details {
             text-align: left;
