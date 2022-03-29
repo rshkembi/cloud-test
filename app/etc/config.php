@@ -548,6 +548,8 @@ return [
         'MageWorx_XmlSitemap' => 1,
         'PayPal_Braintree' => 1,
         'PayPal_BraintreeGraphQl' => 1,
+        'Scommerce_Core' => 1,
+        'Scommerce_GoogleTagManagerPro' => 1,
         'ShipperHQ_AddressAutocomplete' => 1,
         'ShipperHQ_Common' => 1,
         'ShipperHQ_Calendar' => 1,
