@@ -160,6 +160,32 @@
             "description": "Cron Schedule List by Amasty"
         },
         {
+            "name": "amasty/feed",
+            "version": "2.6.19",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/feed-2.6.19-ee.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.12.18",
+                "amasty/cron-schedule-list": ">=1.0.5",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\Feed\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Product Feed by Amasty"
+        },
+        {
             "name": "amasty/instagram-feed",
             "version": "2.1.5",
             "dist": {
