@@ -1,0 +1,144 @@
+diff --git a/vendor/magento/module-quick-order/Plugin/AdvancedCheckout/AddExtraDataToCartItemForQuickOrderPlugin.php b/vendor/magento/module-quick-order/Plugin/AdvancedCheckout/AddExtraDataToCartItemForQuickOrderPlugin.php
+index 8204156867..9fdc0da1da 100644
+--- a/vendor/magento/module-quick-order/Plugin/AdvancedCheckout/AddExtraDataToCartItemForQuickOrderPlugin.php
++++ b/vendor/magento/module-quick-order/Plugin/AdvancedCheckout/AddExtraDataToCartItemForQuickOrderPlugin.php
+@@ -3,20 +3,23 @@
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
++
+ namespace Magento\QuickOrder\Plugin\AdvancedCheckout;
+ 
+-use Laminas\I18n\Validator\IsFloat;
+ use Magento\AdvancedCheckout\Helper\Data;
+ use Magento\AdvancedCheckout\Model\Cart;
+ use Magento\Catalog\Api\Data\ProductInterface;
+ use Magento\Catalog\Helper\Image;
++use Magento\Framework\Exception\LocalizedException;
+ use Magento\Framework\Locale\FormatInterface;
+ use Magento\Framework\Pricing\PriceCurrencyInterface;
++use Magento\Framework\Validator\FloatUtils as FloatValidator;
+ use Magento\QuickOrder\Model\CatalogPermissions\Permissions;
+ use Magento\QuickOrder\Model\Config;
+ 
+ /**
+- * Plugin class for add extra data to items in QuickOrder.
++ * Plugin class for add extra data to items in QuickOrder
++ *
+  * @see \Magento\Checkout\Model\Cart\CartInterface
+  */
+ class AddExtraDataToCartItemForQuickOrderPlugin
+@@ -47,16 +50,16 @@ class AddExtraDataToCartItemForQuickOrderPlugin
+     private $permissions;
+ 
+     /**
+-     * @var IsFloat
++     * @var FloatValidator
+      */
+-    private $float;
++    private $floatValidator;
+ 
+     /**
+      * @param PriceCurrencyInterface $priceCurrency
+      * @param Image $imageHelper
+      * @param FormatInterface $localeFormat
+      * @param Config $quickOrderConfig
+-     * @param IsFloat $float
++     * @param FloatValidator $floatValidator
+      * @param Permissions $permissions
+      */
+     public function __construct(
+@@ -64,14 +67,14 @@ class AddExtraDataToCartItemForQuickOrderPlugin
+         Image $imageHelper,
+         FormatInterface $localeFormat,
+         Config $quickOrderConfig,
+-        IsFloat $float,
++        FloatValidator $floatValidator,
+         Permissions $permissions
+     ) {
+         $this->priceCurrency = $priceCurrency;
+         $this->imageHelper = $imageHelper;
+         $this->localeFormat = $localeFormat;
+         $this->quickOrderConfig = $quickOrderConfig;
+-        $this->float = $float;
++        $this->floatValidator = $floatValidator;
+         $this->permissions = $permissions;
+     }
+ 
+@@ -83,9 +86,8 @@ class AddExtraDataToCartItemForQuickOrderPlugin
+      * @param string $qty
+      * @param array $config
+      * @return array
+-     *
++     * @throws LocalizedException
+      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+-     * @throws \Magento\Framework\Exception\LocalizedException
+      */
+     public function beforeCheckItem(
+         Cart $subject,
+@@ -94,7 +96,6 @@ class AddExtraDataToCartItemForQuickOrderPlugin
+         array $config = []
+     ): array {
+         if ($this->quickOrderConfig->isActive()) {
+-            $item = null;
+             if (isset($config['__item'])) {
+                 $item = $config['__item'];
+                 $item['qty'] = !empty($item['qty'])
+@@ -103,6 +104,7 @@ class AddExtraDataToCartItemForQuickOrderPlugin
+             } else {
+                 $item = $this->getValidatedItem($sku, $qty);
+             }
++
+             if (null !== $item && isset($config['product']) && null !== $config['product']) {
+                 if (!$this->permissions->isProductPermissionsValid($config['product'])) {
+                     $item['code'] = Data::ADD_ITEM_STATUS_FAILED_SKU;
+@@ -115,7 +117,7 @@ class AddExtraDataToCartItemForQuickOrderPlugin
+     }
+ 
+     /**
+-     * Add extra data to product item.
++     * Add extra data to product item
+      *
+      * @param array $item
+      * @param ProductInterface $product
+@@ -130,6 +132,7 @@ class AddExtraDataToCartItemForQuickOrderPlugin
+         $item['price'] = $this->retrieveProductPrice($product, $item['qty']);
+         $item['thumbnail_url'] = $this->getProductThumbnailUrl($product);
+         $item['url'] = $product->getProductUrl();
++
+         if (!$product->isVisibleInSiteVisibility()) {
+             $item['not_visible_in_site'] = true;
+         }
+@@ -138,14 +141,16 @@ class AddExtraDataToCartItemForQuickOrderPlugin
+     }
+ 
+     /**
+-     * Retrieve product price.
++     * Retrieve product price
+      *
+      * @param ProductInterface $product
+      * @param string|null $qty
+      * @return string
+      */
+-    private function retrieveProductPrice(ProductInterface $product, $qty): string
+-    {
++    private function retrieveProductPrice(
++        ProductInterface $product,
++        ?string $qty
++    ): string {
+         $store = $product->getStore();
+ 
+         return $this->priceCurrency->convertAndFormat(
+@@ -178,10 +183,11 @@ class AddExtraDataToCartItemForQuickOrderPlugin
+     private function getValidatedItem($sku, $qty): array
+     {
+         $code = Data::ADD_ITEM_STATUS_SUCCESS;
++
+         if ($sku === '') {
+             $code = Data::ADD_ITEM_STATUS_FAILED_EMPTY;
+         } else {
+-            if (!$this->float->isValid($qty)) {
++            if (!$this->floatValidator->isValid($qty)) {
+                 $code = Data::ADD_ITEM_STATUS_FAILED_QTY_INVALID_NUMBER;
+             } else {
+                 $qty = $this->localeFormat->getNumber($qty);

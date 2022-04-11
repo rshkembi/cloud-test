@@ -47,14 +47,13 @@
             position: relative;
         }
         .minisearch.active {
-            .actions {
-                position: absolute;
-            }
+
             .action.search {
                 display: block;
                 border: none;
                 color: transparent;
                 background-color: transparent;
+
                 &:after {
                     content: url("../images/icon_search.png");
                     height: 25px;
@@ -93,8 +92,13 @@
         margin-top: 0;
         .minisearch.active {
             .actions {
-                top: 140px;
+                margin-top: -50px;
                 right: 10px;
+                position: relative;
+            }
+
+            .action.search {
+                float: right;
             }
         }
     }
@@ -115,6 +119,7 @@
             padding: 0 22px;
             .minisearch.active {
                 .actions {
+                    position: absolute;
                     top: 150px;
                     right: 0;
                     width: fit-content;
