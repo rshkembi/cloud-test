@@ -568,5 +568,22 @@ return [
         'WeltPixel_Backend' => 1,
         'WeltPixel_SocialLogin' => 1,
         'HumanElement_CSP' => 1
+    ],
+    'system' => [
+        'default' => [
+            'dev' => [
+                'js' => [
+                    'minify_files' => '1',
+                    'enable_js_bundling' => '1',
+                    'merge_files' => '0'
+                ],
+                'static' => [
+                    'sign' => '1'
+                ],
+                'css' => [
+                    'minify_files' => '1'
+                ]
+            ]
+        ]
     ]
 ];
