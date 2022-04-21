@@ -573,8 +573,6 @@ return [
         'default' => [
             'dev' => [
                 'js' => [
-                    'minify_files' => '1',
-                    'enable_js_bundling' => '1',
                     'merge_files' => '0'
                 ],
                 'static' => [
