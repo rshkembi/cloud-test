@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4f3ccd2170e6621bbbbf37c031cdd07",
+    "content-hash": "a88eba761b6a9a627ccf1f5387046e22",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -2885,6 +2885,27 @@
                 ],
                 "psr-4": {
                     "Firebear\\ImportExport\\": ""
+                }
+            }
+        },
+        {
+            "name": "firebear/importexport-msi",
+            "version": "1.1.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://firebearstudio.com/composer/download/package/user/494111ec78ffe63d098f8fa69465daf8/password/ca4863eebf527c0e2651fe7f484bc7d8/module/importexport-msi/type/ee/v/1.1.2/"
+            },
+            "require": {
+                "firebear/importexport": ">=3.0.0",
+                "magento/module-inventory-import-export": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Firebear\\ImportExportMsi\\": ""
                 }
             }
         },
