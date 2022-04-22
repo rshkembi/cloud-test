@@ -524,6 +524,8 @@ return [
         'Ebizmarts_MailChimp' => 1,
         'Facebook_BusinessExtension' => 1,
         'Fastly_Cdn' => 1,
+        'Firebear_ImportExport' => 1,
+        'Firebear_ImportExportMsi' => 1,
         'Yotpo_Yotpo' => 1,
         'HumanElement_OutOfStockRecommendations' => 1,
         'HumanElement_QtyStepper' => 1,
