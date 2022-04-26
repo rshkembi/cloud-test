@@ -18,12 +18,6 @@
         <referenceBlock name="header.links" remove="true"/>
         <referenceBlock name="top.search" remove="true"/>
 
-        <referenceContainer name="header.container">
-            <container name="header.search.container" htmlTag="div" htmlClass="header-search" after="-">
-                <block class="Magento\LiveSearchStorefrontPopover\Block\Frontend\Index" name="top.search.new" as="topSearchNew" template="Magento_LiveSearchStorefrontPopover::search_as_you_type.phtml" />
-            </container>
-        </referenceContainer>
-
         <referenceContainer name="header-wrapper">
             <container name="header.static.links.container" htmlTag="div" htmlClass="header-static-links">
                 <block class="Magento\Cms\Block\Block" name="header.static.links">
