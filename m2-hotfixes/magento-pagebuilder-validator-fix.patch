@@ -1,0 +1,13 @@
+diff --git a/vendor/magento/module-page-builder/view/adminhtml/web/js/form/element/validator-rules-mixin.js b/vendor/magento/module-page-builder/view/adminhtml/web/js/form/element/validator-rules-mixin.js
+index 7833588e..7cc826eb 100644
+--- a/vendor/magento/module-page-builder/view/adminhtml/web/js/form/element/validator-rules-mixin.js
++++ b/vendor/magento/module-page-builder/view/adminhtml/web/js/form/element/validator-rules-mixin.js
+@@ -234,7 +234,7 @@ define([
+                 var allFilled;
+
+                 // Validation only for margins and paddings
+-                if (typeof value === 'object' && !!(value.padding || value.margin)) {
++                if (typeof value === 'object' && value !== null && !!(value.padding || value.margin)) {
+                     allFilled = true;
+
+                     _.flatten(_.map(value, _.values)).forEach(function (val) {

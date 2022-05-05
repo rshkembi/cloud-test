@@ -20,7 +20,7 @@
 
         <referenceContainer name="header.container">
             <container name="header.search.container" htmlTag="div" htmlClass="header-search" after="-">
-                <block class="Magento\LiveSearchStorefrontPopover\Block\Frontend\Index" name="top.search.new" as="topSearchNew" template="Magento_LiveSearchStorefrontPopover::search_as_you_type.phtml" />
+                <block class="Magento\LiveSearchStorefrontPopover\Block\Frontend\SaaSContext" name="top.search.new" as="topSearchNew" template="Magento_LiveSearchStorefrontPopover::search_as_you_type.phtml" />
             </container>
         </referenceContainer>
 
