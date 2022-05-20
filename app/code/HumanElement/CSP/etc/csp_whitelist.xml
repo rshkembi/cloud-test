@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp/etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="connect-src">
+            <values>
+                <value id="data" type="host">data:</value>
+                <value id="blob" type="host">blob:</value>
+                <value id="magento" type="host">*.magento.com</value>
+                <value id="adobedtm" type="host">*.adobedtm.com</value>
+                <value id="adobedc" type="host">*.adobedc.net</value>
+                <value id="adobe" type="host">*.adobe.io</value>
+                <value id="google-analytics" type="host">*.google-analytics.com</value>
+                <value id="doubleclick" type="host">*.doubleclick.net</value>
+                <value id="paypal" type="host">*.paypal.com</value>
+                <value id="ksearchnet" type="host">*.ksearchnet.com</value>
+                <value id="cybersource" type="host">*.cybersource.com</value>
+                <value id="onetrust" type="host">*.onetrust.com</value>
+                <value id="cookielaw" type="host">*.cookielaw.org</value>
+                <value id="optimizely-com" type="host">*.optimizely.com</value>
+                <value id="hotjar" type="host">*.hotjar.com</value>
+                <value id="hotjar-io" type="host">*.hotjar.io</value>
+                <value id="bing" type="host">*.bing.com</value>
+                <value id="facebook" type="host">*.facebook.com</value>
+                <value id="instagram-com" type="host">*.instagram.com</value>
+                <value id="newrelic-nr-data" type="host">*.nr-data.net</value>
+            </values>
+        </policy>
+        <policy id="font-src">
+            <values>
+                <value id="data" type="host">data:</value>
+                <value id="blob" type="host">blob:</value>
+                <value id="gstatic" type="host">*.gstatic.com</value>
+                <value id="klevu" type="host">*.klevu.com</value>
+                <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+            </values>
+        </policy>
+        <policy id="form-action">
+            <values>
+                <value id="data" type="host">data:</value>
+                <value id="blob" type="host">blob:</value>
+                <value id="paypal" type="host">*.paypal.com</value>
+                <value id="cybersource" type="host">*.cybersource.com</value>
+                <value id="facebook" type="host">*.facebook.com</value>
+                <value id="cookielaw" type="host">*.cookielaw.org</value>
+            </values>
+        </policy>
+        <policy id="frame-src">
+            <values>
+                <value id="data" type="host">data:</value>
+                <value id="blob" type="host">blob:</value>
+                <value id="paypal" type="host">*.paypal.com</value>
+                <value id="cybersource" type="host">*.cybersource.com</value>
+                <value id="youtube" type="host">*.youtube.com</value>
+                <value id="facebook" type="host">*.facebook.com</value>
+                <value id="cookielaw" type="host">*.cookielaw.org</value>
+                <value id="hotjar" type="host">*.hotjar.com</value>
+                <value id="braintreegateway" type="host">*.braintreegateway.com</value>
+                <value id="kaptcha" type="host">*.kaptcha.com</value>
+                <value id="klarna" type="host">*.klarna.com</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="data" type="host">data:</value>
+                <value id="blob" type="host">blob:</value>
+                <value id="magentocommerce" type="host">*.magentocommerce.com</value>
+                <value id="googleadservices" type="host">*.googleadservices.com</value>
+                <value id="google-analytics" type="host">*.google-analytics.com</value>
+                <value id="googletagmanager" type="host">*.googletagmanager.com</value>
+                <value id="google-ae" type="host">*.google.ae</value>
+                <value id="google-as" type="host">*.google.as</value>
+                <value id="google-at" type="host">*.google.at</value>
+                <value id="google-ca" type="host">*.google.ca</value>
+                <value id="google-co-id" type="host">*.google.co.id</value>
+                <value id="google-co-ke" type="host">*.google.co.ke</value>
+                <value id="google-co-uk" type="host">*.google.co.uk</value>
+                <value id="google-co-zm" type="host">*.google.co.zm</value>
+                <value id="google-com" type="host">*.google.com</value>
+                <value id="google-de" type="host">*.google.de</value>
+                <value id="google-fr" type="host">*.google.fr</value>
+                <value id="google-hu" type="host">*.google.hu</value>
+                <value id="google-iq" type="host">*.google.iq</value>
+                <value id="google-it" type="host">*.google.it</value>
+                <value id="google-jo" type="host">*.google.jo</value>
+                <value id="google-kz" type="host">*.google.kz</value>
+                <value id="google-se" type="host">*.google.se</value>
+                <value id="google-tt" type="host">*.google.tt</value>
+                <value id="google-com-au" type="host">*.google.com.au</value>
+                <value id="google-com-br" type="host">*.google.com.br</value>
+                <value id="google-com-co" type="host">*.google.com.co</value>
+                <value id="google-com-mx" type="host">*.google.com.mx</value>
+                <value id="google-com-my" type="host">*.google.com.my</value>
+                <value id="google-com-pa" type="host">*.google.com.pa</value>
+                <value id="google-com-ph" type="host">*.google.com.ph</value>
+                <value id="google-com-pr" type="host">*.google.com.pr</value>
+                <value id="google-com-sg" type="host">*.google.com.sg</value>
+                <value id="google-com-tr" type="host">*.google.com.tr</value>
+                <value id="cookielaw-org" type="host">*.cookielaw.org</value>
+                <value id="addthis-com" type="host">*.addthis.com</value>
+                <value id="doubleclick" type="host">*.doubleclick.net</value>
+                <value id="hellobar-com" type="host">*.hellobar.com</value>
+                <value id="rubiconproject-com" type="host">*.rubiconproject.com</value>
+                <value id="paypal" type="host">*.paypal.com</value>
+                <value id="paypalobjects" type="host">*.paypalobjects.com</value>
+                <value id="vimeocdn" type="host">*.vimeocdn.com</value>
+                <value id="klevu" type="host">*.klevu.com</value>
+                <value id="hestage" type="host">*.hestage.com</value>
+                <value id="cybersource" type="host">*.cybersource.com</value>
+                <value id="facebook" type="host">*.facebook.com</value>
+                <value id="bing" type="host">*.bing.com</value>
+                <value id="linkedin" type="host">*.linkedin.com</value>
+                <value id="twitter" type="host">*.twitter.com</value>
+                <value id="instagram-com" type="host">*.instagram.com</value>
+                <value id="prfct" type="host">*.prfct.co</value>
+                <value id="adsymptotic" type="host">*.adsymptotic.com</value>
+                <value id="adnxs" type="host">*.adnxs.com</value>
+                <value id="openx" type="host">*.openx.net</value>
+                <value id="prfct" type="host">*.prfct.co</value>
+                <value id="yahoo" type="host">*.yahoo.com</value>
+                <value id="newrelic-nr-data" type="host">*.nr-data.net</value>
+                <value id="payments-amazon" type="host">*.payments-amazon.com</value>
+                <value id="bigcommerce" type="host">*.bigcommerce.com</value>
+                <value id="stovercompany" type="host">*.stovercompany.com</value>
+            </values>
+        </policy>
+        <policy id="script-src">
+            <values>
+                <value id="data" type="host">data:</value>
+                <value id="blob" type="host">blob:</value>
+                <value id="fontawesome" type="host">*.fontawesome.com</value>
+                <value id="googletagmanager" type="host">*.googletagmanager.com</value>
+                <value id="googleadservices" type="host">*.googleadservices.com</value>
+                <value id="google-analytics" type="host">*.google-analytics.com</value>
+                <value id="googleapis" type="host">*.googleapis.com</value>
+                <value id="adobe" type="host">*.adobe.io</value>
+                <value id="adobedc-net" type="host">*.adobedc.net</value>
+                <value id="adobedtm-net" type="host">*.adobedtm.net</value>
+                <value id="adobedtm-com" type="host">*.adobedtm.com</value>
+                <value id="authorize" type="host">*.authorize.net</value>
+                <value id="paypal" type="host">*.paypal.com</value>
+                <value id="braintreegateway" type="host">*.braintreegateway.com</value>
+                <value id="google" type="host">*.google.com</value>
+                <value id="vimeo" type="host">*.vimeo.com</value>
+                <value id="signifyd" type="host">*.signifyd.com</value>
+                <value id="youtube" type="host">*.youtube.com</value>
+                <value id="gstatic" type="host">*.gstatic.com</value>
+                <value id="doubleclick" type="host">*.doubleclick.net</value>
+                <value id="hellobar" type="host">*.hellobar.com</value>
+                <value id="klevu" type="host">*.klevu.com</value>
+                <value id="cybersource" type="host">*.cybersource.com</value>
+                <value id="windows" type="host">*.windows.net</value>
+                <value id="jquery" type="host">*.jquery.com</value>
+                <value id="facebook" type="host">*.facebook.net</value>
+                <value id="onetrust" type="host">*.onetrust.com</value>
+                <value id="cookielaw" type="host">*.cookielaw.org</value>
+                <value id="snaplicdn" type="host">*.licdn.com</value>
+                <value id="hotjar" type="host">*.hotjar.com</value>
+                <value id="bing" type="host">*.bing.com</value>
+                <value id="marisnsm" type="host">*.marinsm.com</value>
+                <value id="optimizely" type="host">*.optimizely.com</value>
+                <value id="bronto" type="host">*.bronto.com</value>
+                <value id="prfct" type="host">*.prfct.co</value>
+                <value id="licdn" type="host">*.licdn.com</value>
+                <value id="hotjar" type="host">*.hotjar.com</value>
+                <value id="hotjar-io" type="host">*.hotjar.io</value>
+                <value id="newrelic" type="host">*.newrelic.com</value>
+                <value id="newrelic-nr-data" type="host">*.nr-data.net</value>
+                <value id="klaviyo" type="host">*.klaviyo.com</value>
+            </values>
+        </policy>
+        <policy id="style-src">
+            <values>
+                <value id="data" type="host">data:</value>
+                <value id="blob" type="host">blob:</value>
+                <value id="googleapis" type="host">*.googleapis.com</value>
+                <value id="klevu" type="host">*.klevu.com</value>
+                <value id="windows-style" type="host">*.windows.net</value>
+                <value id="facebook" type="host">*.facebook.net</value>
+                <value id="cookielaw" type="host">*.cookielaw.org</value>
+                <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

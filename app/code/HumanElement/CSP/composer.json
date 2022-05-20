@@ -1,6 +1,6 @@
 {
     "name": "humanelement/csp",
-    "description": "CSP whitelist for ford",
+    "description": "CSP whitelist for Stover Company",
     "type": "magento2-module",
     "version": "0.1.0",
     "require": {
