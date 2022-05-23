@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab9a0cc8769e9db60808363efb897c73",
+    "content-hash": "32a4e9b3dc7c37d0a35f7601a97d6d4f",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -13513,6 +13513,37 @@
                 ],
                 "psr-4": {
                     "Magento\\ElasticsearchCatalogPermissions\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "N/A"
+        },
+        {
+            "name": "magento/module-elasticsearch-catalog-permissions-graph-ql",
+            "version": "100.4.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://repo.magento.com/archives/magento/module-elasticsearch-catalog-permissions-graph-ql/magento-module-elasticsearch-catalog-permissions-graph-ql-100.4.0.0.zip",
+                "shasum": "111daea515d5f06f0253a988d45dfe2a04cdb2c7"
+            },
+            "require": {
+                "magento/framework": "103.0.*",
+                "magento/module-catalog-graph-ql": "100.4.*",
+                "magento/module-catalog-permissions": "100.4.*",
+                "magento/module-elasticsearch": "101.0.*",
+                "magento/module-graph-ql": "100.4.*",
+                "php": "~7.4.0||~8.1.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magento\\ElasticsearchCatalogPermissionsGraphQl\\": ""
                 }
             },
             "license": [

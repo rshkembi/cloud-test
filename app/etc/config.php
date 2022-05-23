@@ -154,6 +154,7 @@ return [
         'Magento_Elasticsearch6' => 1,
         'Magento_Elasticsearch7' => 1,
         'Magento_CatalogPermissions' => 1,
+        'Magento_ElasticsearchCatalogPermissionsGraphQl' => 1,
         'Magento_Email' => 1,
         'Magento_EncryptionKey' => 1,
         'Magento_Enterprise' => 1,
