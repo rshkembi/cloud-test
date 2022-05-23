@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a88eba761b6a9a627ccf1f5387046e22",
+    "content-hash": "ab9a0cc8769e9db60808363efb897c73",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -2908,71 +2908,6 @@
                     "Firebear\\ImportExportMsi\\": ""
                 }
             }
-        },
-        {
-            "name": "gmostafa/php-graphql-client",
-            "version": "v1.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mghoneimy/php-graphql-client.git",
-                "reference": "caadeba3e8af0d3d5cf6481e393cf933f3a83f3c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mghoneimy/php-graphql-client/zipball/caadeba3e8af0d3d5cf6481e393cf933f3a83f3c",
-                "reference": "caadeba3e8af0d3d5cf6481e393cf933f3a83f3c",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "guzzlehttp/guzzle": "^6.3|^7.0.1",
-                "php": "^7.1 || ^8.0",
-                "psr/http-client": "^1.0",
-                "psr/http-message": "^1.0"
-            },
-            "conflict": {
-                "guzzlehttp/psr7": "< 1.7.0"
-            },
-            "require-dev": {
-                "aws/aws-sdk-php": "^3.186",
-                "codacy/coverage": "^1.4",
-                "phpunit/phpunit": "^7.5|^8.0|^9.0"
-            },
-            "suggest": {
-                "aws/aws-sdk-php": "Move this package to require section to use AWS IAM authorization",
-                "gmostafa/php-graphql-oqm": "To have object-to-query mapping support"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "GraphQL\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mostafa Ghoneimy",
-                    "email": "emostafagh@gmail.com"
-                }
-            ],
-            "description": "GraphQL client and query builder.",
-            "keywords": [
-                "builder",
-                "client",
-                "graph-ql",
-                "graphql",
-                "php",
-                "query",
-                "query-builder"
-            ],
-            "support": {
-                "issues": "https://github.com/mghoneimy/php-graphql-client/issues",
-                "source": "https://github.com/mghoneimy/php-graphql-client/tree/v1.13"
-            },
-            "time": "2021-08-10T12:39:57+00:00"
         },
         {
             "name": "google/apiclient",
@@ -7415,39 +7350,6 @@
                 "AFL-3.0"
             ],
             "description": "Chinese (China) language"
-        },
-        {
-            "name": "magento/live-search",
-            "version": "2.0.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/live-search/magento-live-search-2.0.1.0.zip",
-                "shasum": "27ff3f0eb9b8631d46a2c2683547bd6672935297"
-            },
-            "require": {
-                "magento/data-services": "^7.0.6",
-                "magento/framework": "~103.0.0",
-                "magento/module-bundle-product-data-exporter": "^101.1.0",
-                "magento/module-catalog-data-exporter": "^101.1.0",
-                "magento/module-catalog-inventory-data-exporter": "^101.1.0",
-                "magento/module-catalog-url-rewrite-data-exporter": "^101.1.0",
-                "magento/module-configurable-product-data-exporter": "^101.1.0",
-                "magento/module-data-exporter": "^101.1.0",
-                "magento/module-live-search": "2.0.1",
-                "magento/module-live-search-adapter": "2.0.1",
-                "magento/module-live-search-metrics": "2.0.1",
-                "magento/module-live-search-storefront-popover": "2.0.1",
-                "magento/module-live-search-terms": "2.0.1",
-                "magento/module-parent-product-data-exporter": "^101.1.0",
-                "magento/module-saas-catalog": "^101.1.0",
-                "magento/module-services-id": "^2.2.3",
-                "php": "~7.3.0||~7.4.0||~8.1.0"
-            },
-            "type": "metapackage",
-            "license": [
-                "proprietary"
-            ],
-            "description": "Live Search Metapackage"
         },
         {
             "name": "magento/magento-cloud-components",
@@ -17476,160 +17378,6 @@
                 "proprietary"
             ],
             "description": "N/A"
-        },
-        {
-            "name": "magento/module-live-search",
-            "version": "2.0.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/module-live-search/magento-module-live-search-2.0.1.0.zip",
-                "shasum": "2086ae5015047b95415afe95a91d56f72b5e3e00"
-            },
-            "require": {
-                "ext-json": "*",
-                "magento/framework": ">=102.0.2",
-                "magento/module-backend": "^102.0.0",
-                "magento/module-config": ">=101.1.2",
-                "magento/module-services-id": "^2.2.3",
-                "magento/module-store": ">=101.0.2",
-                "magento/services-connector": "1.2.1",
-                "php": "~7.3.0||~7.4.0||~8.1.0"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Magento\\LiveSearch\\": ""
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "description": "A module to manage search configuration"
-        },
-        {
-            "name": "magento/module-live-search-adapter",
-            "version": "2.0.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/module-live-search-adapter/magento-module-live-search-adapter-2.0.1.0.zip",
-                "shasum": "06183a44415bba731650466bc241d1480bc3cb7d"
-            },
-            "require": {
-                "gmostafa/php-graphql-client": "^1.8",
-                "magento/framework": ">=102.0.2",
-                "magento/module-catalog": ">=103.0.2",
-                "magento/module-catalog-search": ">=102.0.0",
-                "magento/module-eav": ">=102.0.2",
-                "magento/module-live-search": "2.0.1",
-                "magento/module-search": "^101.0.0",
-                "magento/module-store": ">=101.0.2",
-                "php": "~7.3.0||~7.4.0||~8.1.0"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Magento\\LiveSearchAdapter\\": ""
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "description": "PHP adapter for live search"
-        },
-        {
-            "name": "magento/module-live-search-metrics",
-            "version": "2.0.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/module-live-search-metrics/magento-module-live-search-metrics-2.0.1.0.zip",
-                "shasum": "1e32d865d2ec5b736b2c753fc452e3498ce3d0ef"
-            },
-            "require": {
-                "ext-json": "*",
-                "magento/framework": ">=102.0.2",
-                "magento/module-backend": "^102.0.0",
-                "magento/module-catalog": "^104.0.0",
-                "magento/module-live-search": "2.0.1",
-                "magento/module-live-search-adapter": "2.0.1",
-                "magento/module-store": ">=101.0.2",
-                "php": "~7.3.0||~7.4.0||~8.1.0"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Magento\\LiveSearchMetrics\\": ""
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "description": "LiveSearch metrics"
-        },
-        {
-            "name": "magento/module-live-search-storefront-popover",
-            "version": "2.0.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/module-live-search-storefront-popover/magento-module-live-search-storefront-popover-2.0.1.0.zip",
-                "shasum": "9d6c45f42cc850285817ecff67243aa0871cf13c"
-            },
-            "require": {
-                "ext-json": "*",
-                "magento/framework": ">=102.0.2",
-                "magento/module-live-search": "2.0.1",
-                "magento/module-search": "^101.0.0",
-                "magento/module-store": ">=101.0.2",
-                "php": "~7.3.0||~7.4.0||~8.1.0"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Magento\\LiveSearchStorefrontPopover\\": ""
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "description": "Live Search storefront popover"
-        },
-        {
-            "name": "magento/module-live-search-terms",
-            "version": "2.0.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/module-live-search-terms/magento-module-live-search-terms-2.0.1.0.zip",
-                "shasum": "7ad5fe1cdff13621f00bb6f2b963dc8bb8de5244"
-            },
-            "require": {
-                "magento/framework": ">=102.0.2",
-                "magento/module-search": "^101.0.0",
-                "php": "~7.3.0||~7.4.0||~8.1.0"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Magento\\LiveSearchTerms\\": ""
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "description": "Live Search Popular Terms"
         },
         {
             "name": "magento/module-logging",
