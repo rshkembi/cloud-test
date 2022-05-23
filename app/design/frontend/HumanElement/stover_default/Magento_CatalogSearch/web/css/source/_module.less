@@ -58,14 +58,6 @@
             );
             display: none;
             float: right;
-
-            &.active {
-                + .control {
-                    input {
-                        position: static;
-                    }
-                }
-            }
         }
 
         .action.search {
@@ -78,6 +70,9 @@
             padding: 0 @layout__width-xs-indent;
             width: 640px;
             margin: auto;
+            input {
+                position: static;
+            }
         }
 
         input {
@@ -97,7 +92,7 @@
         margin-top: -15px;
         overflow: hidden;
         position: absolute;
-        z-index: 3;
+        z-index: 31;
         &:extend(.abs-add-box-sizing all);
 
         ul {
