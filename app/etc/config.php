@@ -150,9 +150,9 @@ return [
         'Magento_TargetRule' => 1,
         'Magento_AdvancedRule' => 1,
         'Magento_BundleGraphQl' => 1,
-        'Magento_Elasticsearch' => 0,
-        'Magento_Elasticsearch6' => 0,
-        'Magento_Elasticsearch7' => 0,
+        'Magento_Elasticsearch' => 1,
+        'Magento_Elasticsearch6' => 1,
+        'Magento_Elasticsearch7' => 1,
         'Magento_CatalogPermissions' => 1,
         'Magento_Email' => 1,
         'Magento_EncryptionKey' => 1,
@@ -221,7 +221,7 @@ return [
         'Magento_InventoryDistanceBasedSourceSelection' => 1,
         'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 1,
         'Magento_InventoryDistanceBasedSourceSelectionApi' => 1,
-        'Magento_InventoryElasticsearch' => 0,
+        'Magento_InventoryElasticsearch' => 1,
         'Magento_InventoryExportStockApi' => 1,
         'Magento_InventoryIndexer' => 1,
         'Magento_InventorySalesApi' => 1,
@@ -272,11 +272,6 @@ return [
         'Magento_JwtFrameworkAdapter' => 1,
         'Magento_LayeredNavigation' => 1,
         'Magento_LayeredNavigationStaging' => 1,
-        'Magento_LiveSearch' => 1,
-        'Magento_LiveSearchAdapter' => 1,
-        'Magento_LiveSearchMetrics' => 1,
-        'Magento_LiveSearchStorefrontPopover' => 1,
-        'Magento_LiveSearchTerms' => 1,
         'Magento_Logging' => 1,
         'Magento_LoginAsCustomer' => 1,
         'Magento_LoginAsCustomerAdminUi' => 1,
@@ -491,7 +486,7 @@ return [
         'Magento_InventoryInStorePickupWebapiExtension' => 1,
         'Magento_WebapiAsync' => 1,
         'Magento_WebapiSecurity' => 1,
-        'Magento_ElasticsearchCatalogPermissions' => 0,
+        'Magento_ElasticsearchCatalogPermissions' => 1,
         'Magento_BundleStaging' => 1,
         'Magento_WeeeGraphQl' => 1,
         'Magento_WeeeStaging' => 1,
@@ -575,6 +570,8 @@ return [
         'default' => [
             'dev' => [
                 'js' => [
+                    'minify_files' => '1',
+                    'enable_js_bundling' => '1',
                     'merge_files' => '0'
                 ],
                 'static' => [
