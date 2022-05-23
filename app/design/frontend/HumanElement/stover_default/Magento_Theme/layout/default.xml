@@ -20,7 +20,11 @@
 
         <referenceContainer name="header.container">
             <container name="header.search.container" htmlTag="div" htmlClass="header-search" after="-">
-                <block class="Magento\LiveSearchStorefrontPopover\Block\Frontend\SaaSContext" name="top.search.new" as="topSearchNew" template="Magento_LiveSearchStorefrontPopover::search_as_you_type.phtml" />
+                <block class="Magento\Framework\View\Element\Template" name="top.search.redeclared" as="topSearchRedeclared" template="Magento_Search::form.mini.phtml">
+                    <arguments>
+                        <argument name="configProvider" xsi:type="object">Magento\Search\ViewModel\ConfigProvider</argument>
+                    </arguments>
+                </block>
             </container>
         </referenceContainer>
 
@@ -87,7 +91,6 @@
         </referenceContainer>
 
         <move element="form.subscribe" destination="page.bottom" after="-"/>
-
         <referenceBlock name="b2blinks" remove="true"/>
     </body>
 </page>
