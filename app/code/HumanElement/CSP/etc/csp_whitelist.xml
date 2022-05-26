@@ -17,12 +17,16 @@
                 <value id="onetrust" type="host">*.onetrust.com</value>
                 <value id="cookielaw" type="host">*.cookielaw.org</value>
                 <value id="optimizely-com" type="host">*.optimizely.com</value>
-                <value id="hotjar" type="host">*.hotjar.com</value>
-                <value id="hotjar-io" type="host">*.hotjar.io</value>
+                <value id="hotjar" type="host">http://*.hotjar.com:*</value>
+                <value id="hotjar-https" type="host">https://*.hotjar.com:*</value>
+                <value id="hotjar-io" type="host">http://*.hotjar.io</value>
+                <value id="hotjar-io-https" type="host">https://*.hotjar.io</value>
+                <value id="hotjar-wss" type="host">wss://*.hotjar.com</value>
                 <value id="bing" type="host">*.bing.com</value>
                 <value id="facebook" type="host">*.facebook.com</value>
                 <value id="instagram-com" type="host">*.instagram.com</value>
                 <value id="newrelic-nr-data" type="host">*.nr-data.net</value>
+                <value id="acsbapp" type="host">*.acsbapp.com</value>
             </values>
         </policy>
         <policy id="font-src">
@@ -166,6 +170,7 @@
                 <value id="newrelic" type="host">*.newrelic.com</value>
                 <value id="newrelic-nr-data" type="host">*.nr-data.net</value>
                 <value id="klaviyo" type="host">*.klaviyo.com</value>
+                <value id="acsbapp" type="host">*.acsbapp.com</value>
             </values>
         </policy>
         <policy id="style-src">
