@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "185b461f892fa83b0fa218044fad6766",
+    "content-hash": "96a28ae00b3260a759da46e1fbdb9c5c",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -27896,7 +27896,7 @@
             "dist": {
                 "type": "zip",
                 "url": "./packages/artifacts/scommerce-googletagmanagerpro-3.0.0.zip",
-                "shasum": "5341ad46c28068e6a702348607a86d45c8a71e3c"
+                "shasum": "9860133aa31d5b57624546595a16f152db8926d4"
             },
             "require": {
                 "php": ">=7.2.0",
@@ -27929,7 +27929,7 @@
             "dist": {
                 "type": "zip",
                 "url": "./packages/artifacts/scommerce-trackingbase-2.0.3.zip",
-                "shasum": "08cec3be26df33b40ab5f036ee0d6c4b3b4167c3"
+                "shasum": "15deae00cd7f8989e00b6772e4fb451923f4dfda"
             },
             "require": {
                 "php": ">=7.2.0",
@@ -32610,11 +32610,11 @@
         },
         {
             "name": "weltpixel/m2-social-login",
-            "version": "1.10.17",
+            "version": "1.11.1",
             "dist": {
                 "type": "zip",
-                "url": "./packages/artifacts/weltpixel-m2-social-login-1.10.17.zip",
-                "shasum": "fb0413221e56ddd8d2095c982b41be9c0dc1d79e"
+                "url": "./packages/artifacts/weltpixel-m2-social-login-1.11.1.zip",
+                "shasum": "1dcbbefa778e5ec5d2aa481672685689ae1b0762"
             },
             "require": {
                 "magento/module-admin-notification": "*",
@@ -32637,11 +32637,11 @@
         },
         {
             "name": "weltpixel/m2-weltpixel-backend",
-            "version": "1.10.17",
+            "version": "1.11.1",
             "dist": {
                 "type": "zip",
-                "url": "./packages/artifacts/weltpixel-m2-weltpixel-backend-1.10.17.zip",
-                "shasum": "8ffc668f5b297c3d80b300b5c9320544a3713eb8"
+                "url": "./packages/artifacts/weltpixel-m2-weltpixel-backend-1.11.1.zip",
+                "shasum": "7b259bfeffbe467cb3845a69654eb5ce75182c5a"
             },
             "require": {
                 "magento/module-admin-notification": "*"

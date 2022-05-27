@@ -71,7 +71,7 @@
         "shipperhq/module-option": "^20.5",
         "shipperhq/module-pickup": "^22.4",
         "shipperhq/module-shipper": "^20.45",
-        "weltpixel/m2-social-login": "^1.10"
+        "weltpixel/m2-social-login": "^1.11"
     },
     "suggest": {
         "ext-pcntl": "Need for run processes in parallel mode"
