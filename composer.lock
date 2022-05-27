@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32a4e9b3dc7c37d0a35f7601a97d6d4f",
+    "content-hash": "71257965879aa0ebe06524f9509f4f1f",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -28311,20 +28311,20 @@
         },
         {
             "name": "scommerce/core",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scommercemage/m2_core.git",
-                "reference": "b74f83557f19abef2906e113793e685684da889b"
+                "reference": "0ea2907a1a3f650e1c6a354d87be9029d0c335da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scommercemage/m2_core/zipball/b74f83557f19abef2906e113793e685684da889b",
-                "reference": "b74f83557f19abef2906e113793e685684da889b",
+                "url": "https://api.github.com/repos/scommercemage/m2_core/zipball/0ea2907a1a3f650e1c6a354d87be9029d0c335da",
+                "reference": "0ea2907a1a3f650e1c6a354d87be9029d0c335da",
                 "shasum": ""
             },
             "require": {
-                "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0|~7.2.0|~7.3.0|~7.4.0"
+                "php": ">=7.2.0"
             },
             "type": "magento2-module",
             "autoload": {
@@ -28348,21 +28348,22 @@
             "description": "Scommerce Core Module for Magento 2.0",
             "support": {
                 "issues": "https://github.com/scommercemage/m2_core/issues",
-                "source": "https://github.com/scommercemage/m2_core/tree/2.0.2"
+                "source": "https://github.com/scommercemage/m2_core/tree/2.0.3"
             },
-            "time": "2020-10-05T14:50:27+00:00"
+            "time": "2022-04-21T18:01:12+00:00"
         },
         {
             "name": "scommerce/googletagmanagerpro",
-            "version": "2.0.41",
+            "version": "3.0.0",
             "dist": {
                 "type": "zip",
-                "url": "./packages/artifacts/scommerce-googletagmanagerpro-2.0.41_1.zip",
-                "shasum": "c7f5870494f381047dd77d7b00716f526c529cf0"
+                "url": "./packages/artifacts/scommerce-googletagmanagerpro-3.0.0.zip",
+                "shasum": "5341ad46c28068e6a702348607a86d45c8a71e3c"
             },
             "require": {
-                "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0|~7.2.0|~7.3.0|~7.4.0",
-                "scommerce/core": "2.0.*"
+                "php": ">=7.2.0",
+                "scommerce/core": "2.0.*",
+                "scommerce/trackingbase": "2.0.*"
             },
             "type": "magento2-module",
             "autoload": {
@@ -28383,6 +28384,38 @@
                 }
             ],
             "description": "Google Tag Manager Pro Module for Magento 2.0"
+        },
+        {
+            "name": "scommerce/trackingbase",
+            "version": "2.0.3",
+            "dist": {
+                "type": "zip",
+                "url": "./packages/artifacts/scommerce-trackingbase-2.0.3.zip",
+                "shasum": "08cec3be26df33b40ab5f036ee0d6c4b3b4167c3"
+            },
+            "require": {
+                "php": ">=7.2.0",
+                "scommerce/core": "2.0.*"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Scommerce\\TrackingBase\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "authors": [
+                {
+                    "name": "Scommerce Mage",
+                    "email": "core@scommerce-mage.com"
+                }
+            ],
+            "description": "Tracking Base Module for Magento 2.0"
         },
         {
             "name": "seld/jsonlint",
