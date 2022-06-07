@@ -583,7 +583,12 @@ return [
                 'css' => [
                     'minify_files' => '1'
                 ]
-            ]
+            ],
+            'advanced' => [
+                'modules_disable_output' => [
+                    'Magento_Banner' => '1'
+                ]
+            ],
         ]
     ]
 ];
