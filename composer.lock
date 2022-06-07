@@ -27094,16 +27094,10 @@
         {
             "name": "scommerce/core",
             "version": "2.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/scommercemage/m2_core.git",
-                "reference": "0ea2907a1a3f650e1c6a354d87be9029d0c335da"
-            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scommercemage/m2_core/zipball/0ea2907a1a3f650e1c6a354d87be9029d0c335da",
-                "reference": "0ea2907a1a3f650e1c6a354d87be9029d0c335da",
-                "shasum": ""
+                "url": "./packages/artifacts/scommerce-core-2.0.3.zip",
+                "shasum": "44110e973bf3636c35c3a0c1dbc9258f9d0e088f"
             },
             "require": {
                 "php": ">=7.2.0"
@@ -27117,7 +27111,6 @@
                     "Scommerce\\Core\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-3.0"
             ],
@@ -27127,20 +27120,15 @@
                     "email": "core@scommerce-mage.com"
                 }
             ],
-            "description": "Scommerce Core Module for Magento 2.0",
-            "support": {
-                "issues": "https://github.com/scommercemage/m2_core/issues",
-                "source": "https://github.com/scommercemage/m2_core/tree/2.0.3"
-            },
-            "time": "2022-04-21T18:01:12+00:00"
+            "description": "Scommerce Core Module for Magento 2.0"
         },
         {
             "name": "scommerce/googletagmanagerpro",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "dist": {
                 "type": "zip",
-                "url": "./packages/artifacts/scommerce-googletagmanagerpro-3.0.0.zip",
-                "shasum": "9860133aa31d5b57624546595a16f152db8926d4"
+                "url": "./packages/artifacts/scommerce-googletagmanagerpro-3.0.1.zip",
+                "shasum": "6fa71c8ffcd49a91136649f607b9c6acb25f95e2"
             },
             "require": {
                 "php": ">=7.2.0",
@@ -27169,11 +27157,11 @@
         },
         {
             "name": "scommerce/trackingbase",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "dist": {
                 "type": "zip",
-                "url": "./packages/artifacts/scommerce-trackingbase-2.0.3.zip",
-                "shasum": "15deae00cd7f8989e00b6772e4fb451923f4dfda"
+                "url": "./packages/artifacts/scommerce-trackingbase-2.0.4.zip",
+                "shasum": "7d1c5f9dfd10b3fa7a898879d81edf0fac19f9a8"
             },
             "require": {
                 "php": ">=7.2.0",
