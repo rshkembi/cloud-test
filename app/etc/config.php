@@ -588,7 +588,7 @@ return [
                 'modules_disable_output' => [
                     'Magento_Banner' => '1'
                 ]
-            ],
+            ]
         ]
     ]
 ];
