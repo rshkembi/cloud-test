@@ -13,4 +13,11 @@
             <column name="entity_id"/>
         </constraint>
     </table>
+    <table name="magenest_popup_layout">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
 </schema>
