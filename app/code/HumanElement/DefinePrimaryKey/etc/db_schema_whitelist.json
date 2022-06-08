@@ -6,13 +6,5 @@
         "constraint": {
             "PRIMARY": true
         }
-    },
-    "magenest_popup_layout": {
-        "column": {
-            "entity_id": true
-        },
-        "constraint": {
-            "PRIMARY": true
-        }
     }
 }
