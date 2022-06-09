@@ -53,11 +53,11 @@
         },
         {
             "name": "aheadworks/module-blog",
-            "version": "2.12.0",
+            "version": "2.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/aheadworks/module-blog/aheadworks-module-blog-2.12.0.0.zip",
-                "shasum": "b582fbf3d1867902a7a704f7dada9625c5e4ffd7"
+                "url": "https://repo.magento.com/archives/aheadworks/module-blog/aheadworks-module-blog-2.13.2.0.zip",
+                "shasum": "37d50c8b9dd606a571b737e5b8ac0c026a903a73"
             },
             "require": {
                 "magento/framework": ">100.0",
@@ -112,13 +112,13 @@
         },
         {
             "name": "amasty/base",
-            "version": "1.13.1",
+            "version": "1.13.4",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.amasty.com/enterprise/packages/base-1.13.1-ee.zip"
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/base-1.13.4-ee.zip"
             },
             "require": {
-                "php": ">=7.3.0"
+                "php": ">=7.3"
             },
             "type": "magento2-module",
             "autoload": {
@@ -161,14 +161,14 @@
         },
         {
             "name": "amasty/feed",
-            "version": "2.6.19",
+            "version": "2.6.21",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.amasty.com/enterprise/packages/feed-2.6.19-ee.zip"
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/feed-2.6.21-ee.zip"
             },
             "require": {
-                "amasty/base": ">=1.12.18",
-                "amasty/cron-schedule-list": ">=1.0.5",
+                "amasty/base": ">=1.13.3",
+                "amasty/cron-schedule-list": ">=1.0.1",
                 "php": ">=7.3"
             },
             "type": "magento2-module",
