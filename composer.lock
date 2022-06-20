@@ -2686,16 +2686,16 @@
         },
         {
             "name": "fastly/magento2",
-            "version": "1.2.179",
+            "version": "1.2.183",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fastly/fastly-magento2.git",
-                "reference": "43d5ae1efc4331fc52b289194858e8609e7a6d75"
+                "reference": "f0491bb44d363eb3b0bfbcb622c6b311686b74a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fastly/fastly-magento2/zipball/43d5ae1efc4331fc52b289194858e8609e7a6d75",
-                "reference": "43d5ae1efc4331fc52b289194858e8609e7a6d75",
+                "url": "https://api.github.com/repos/fastly/fastly-magento2/zipball/f0491bb44d363eb3b0bfbcb622c6b311686b74a1",
+                "reference": "f0491bb44d363eb3b0bfbcb622c6b311686b74a1",
                 "shasum": ""
             },
             "require": {
@@ -2723,9 +2723,9 @@
             "description": "Fastly CDN Module for Magento 2.3.x | 2.4.x",
             "support": {
                 "issues": "https://github.com/fastly/fastly-magento2/issues",
-                "source": "https://github.com/fastly/fastly-magento2/tree/1.2.179"
+                "source": "https://github.com/fastly/fastly-magento2/tree/1.2.183"
             },
-            "time": "2022-02-14T15:12:42+00:00"
+            "time": "2022-06-14T17:41:57+00:00"
         },
         {
             "name": "fgrosse/phpasn1",
