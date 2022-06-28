@@ -65,7 +65,7 @@
         "magento/module-elasticsearch-catalog-permissions-graph-ql": "^100.4",
         "magento/module-page-builder-product-recommendations": "^1.2",
         "magento/product-recommendations": "^3.3",
-        "mageworx/module-seosuiteultimate": "^2.35",
+        "mageworx/module-seosuiteultimate": "2.35.17",
         "mailchimp/mc-magento2": "^103.4",
         "scommerce/googletagmanagerpro": "^2.0",
         "shipperhq/module-address-autocomplete": "^20.6",
