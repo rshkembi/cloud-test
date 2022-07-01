@@ -6,5 +6,6 @@
         <container name="header-stickywrapper" label="Page Header Sticky Wrapper" as="header-stickywrapper" htmlTag="div" htmlClass="header-stickywrapper"/>
         <move element="header-stickywrapper" destination="header.container" before="header.search.container" />
         <move element="header-wrapper" destination="header-stickywrapper" before="-" />
+        <move element="top.search" destination="header.search.container" />
     </body>
 </layout>

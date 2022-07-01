@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32a4e9b3dc7c37d0a35f7601a97d6d4f",
+    "content-hash": "20626e6caf554360ecc0a93ffb8ee21a",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -112,13 +112,13 @@
         },
         {
             "name": "amasty/base",
-            "version": "1.13.1",
+            "version": "1.13.4",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.amasty.com/enterprise/packages/base-1.13.1-ee.zip"
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/base-1.13.4-ee.zip"
             },
             "require": {
-                "php": ">=7.3.0"
+                "php": ">=7.3"
             },
             "type": "magento2-module",
             "autoload": {
@@ -298,6 +298,33 @@
             "description": "Mega Menu Page Builder By Amasty"
         },
         {
+            "name": "amasty/module-elastic-search-lite",
+            "version": "1.18.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-elastic-search-lite-1.18.2.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.4",
+                "amasty/xsearch": "*",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\ElasticSearchLite\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Elastic Search Lite by Amasty",
+            "homepage": "https://amasty.com/"
+        },
+        {
             "name": "amasty/module-mega-menu-lite",
             "version": "1.2.0",
             "dist": {
@@ -350,6 +377,36 @@
                 "Commercial"
             ],
             "description": "Out Of Stock Notification by Amasty"
+        },
+        {
+            "name": "amasty/xsearch",
+            "version": "1.18.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/xsearch-1.18.2.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.4",
+                "magento/module-cms": "*",
+                "php": ">=7.3.0"
+            },
+            "suggest": {
+                "amasty/module-xsearch-mftf-2": "Install xsearch-mftf-2 module to be able to run Advanced Search MFTF tests for Magento 2.3.5+ version",
+                "amasty/module-xsearch-mftf-3": "Install xsearch-mftf-3 module to be able to run Advanced Search MFTF tests for Magento 2.4.0+ version"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\Xsearch\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Search Autocomplete by Amasty"
         },
         {
             "name": "amzn/amazon-pay-api-sdk-php",
