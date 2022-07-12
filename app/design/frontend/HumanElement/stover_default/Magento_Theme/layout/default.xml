@@ -5,7 +5,7 @@
  * See COPYING.txt for license details.
  */
 -->
-<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="default_head_blocks"/>
     <body>
         <referenceContainer name="header.panel">
@@ -16,12 +16,9 @@
             </block>
         </referenceContainer>
         <referenceBlock name="header.links" remove="true"/>
-        <referenceBlock name="top.search" remove="true"/>
 
         <referenceContainer name="header.container">
-            <container name="header.search.container" htmlTag="div" htmlClass="header-search" after="-">
-                <block class="Magento\LiveSearchStorefrontPopover\Block\Frontend\SaaSContext" name="top.search.new" as="topSearchNew" template="Magento_LiveSearchStorefrontPopover::search_as_you_type.phtml" />
-            </container>
+            <container name="header.search.container" htmlTag="div" htmlClass="header-search" after="-" />
         </referenceContainer>
 
         <referenceContainer name="header-wrapper">
@@ -87,7 +84,6 @@
         </referenceContainer>
 
         <move element="form.subscribe" destination="page.bottom" after="-"/>
-
         <referenceBlock name="b2blinks" remove="true"/>
     </body>
 </page>

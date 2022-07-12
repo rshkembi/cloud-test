@@ -1,0 +1,58 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .header-search {
+        .amsearch-wrapper-block {
+            .amsearch-form-block {
+                width: auto !important;
+                .amsearch-input-wrapper {
+                    width: 100%;
+                    .amsearch-input:focus {
+                        border: 2px solid @stover-primary-blue-stone;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-header {
+        .header-search {
+            border-top: none;
+            &.active {
+                border-top: none;
+            }
+            .amsearch-wrapper-block {
+                padding: 10px 5px;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .header-search {
+        .amsearch-wrapper-block {
+            float: none;
+            display: block;
+            max-width: 1280px;
+            margin: auto;
+            padding: 10px 22px;
+            .amsearch-form-block {
+                max-width: 900px;
+                margin: auto;
+            }
+        }
+    }
+}
