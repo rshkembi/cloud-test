@@ -503,7 +503,7 @@ return [
         'Amasty_CronScheduleList' => 1,
         'Amasty_ElasticSearchLite' => 1,
         'Dotdigitalgroup_Email' => 1,
-        'Amasty_InstagramFeed' => 1,
+        'Amasty_InstagramFeed' => 0,
         'Amasty_MegaMenuLite' => 1,
         'Amasty_MegaMenu' => 1,
         'Amasty_MegaMenuGraphQl' => 1,
