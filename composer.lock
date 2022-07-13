@@ -2224,10 +2224,16 @@
         {
             "name": "dotmailer/dotmailer-magento2-extension-enterprise",
             "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dotmailer/dotmailer-magento2-extension-enterprise.git",
+                "reference": "17813d7b1a2dafc789e76af395df95ec4d4cea1d"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/dotmailer/dotmailer-magento2-extension-enterprise/dotmailer-dotmailer-magento2-extension-enterprise-1.6.0.0.zip",
-                "shasum": "7a93fcdf85d7206cfc38f4d1377a2d9c5aa91a98"
+                "url": "https://api.github.com/repos/dotmailer/dotmailer-magento2-extension-enterprise/zipball/17813d7b1a2dafc789e76af395df95ec4d4cea1d",
+                "reference": "17813d7b1a2dafc789e76af395df95ec4d4cea1d",
+                "shasum": ""
             },
             "require": {
                 "dotmailer/dotmailer-magento2-extension": "^4.12.0",
@@ -2257,7 +2263,8 @@
             "license": [
                 "MIT"
             ],
-            "description": "Engagement Cloud integration for Magento Commerce"
+            "description": "Engagement Cloud integration for Magento Commerce",
+            "abandoned": "dotdigital/dotdigital-magento2-extension-enterprise"
         },
         {
             "name": "dotmailer/dotmailer-magento2-extension-enterprise-package",
@@ -25513,23 +25520,27 @@
         },
         {
             "name": "magento/quality-patches",
-            "version": "1.1.1",
+            "version": "1.1.14",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/magento/quality-patches/magento-quality-patches-1.1.1.0.zip",
-                "shasum": "df1ad2980954e746fc386f142ff8071f556850ae"
+                "url": "https://repo.magento.com/archives/magento/quality-patches/magento-quality-patches-1.1.14.0.zip",
+                "shasum": "e435ce8aa73e3d24001c752f0babe90956e7f6e6"
             },
             "require": {
                 "ext-json": "*",
                 "magento/magento-cloud-patches": "^1.0.11",
-                "php": "^7.0"
+                "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "codeception/codeception": "^2.5.3",
+                "codeception/codeception": "^4.1",
+                "codeception/module-asserts": "^1.2",
+                "codeception/module-db": "^1.0",
+                "codeception/module-phpbrowser": "^1.0",
+                "codeception/module-rest": "^1.2",
                 "composer/semver": "@stable",
                 "consolidation/robo": "^1.2",
                 "phpmd/phpmd": "@stable",
-                "phpunit/phpunit": "^6.2",
+                "phpunit/phpunit": "^8.5 || ^9.5",
                 "squizlabs/php_codesniffer": "^3.0"
             },
             "type": "magento2-component",
@@ -28747,7 +28758,7 @@
             "version": "22.7.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:webshopapps/module-calendar.git",
+                "url": "git@gitlab.com:ShipperHQ/Platform/M2/module-calendar.git",
                 "reference": "d8cc00a95655618b4451602d95acfbdbf2da2b18"
             },
             "dist": {
@@ -28933,7 +28944,7 @@
             "version": "20.5.3",
             "source": {
                 "type": "git",
-                "url": "git@github.com:webshopapps/module-option.git",
+                "url": "git@gitlab.com:ShipperHQ/Platform/M2/module-option.git",
                 "reference": "f33166a4f62fb4eb38b1a6460fcb06a39ec2d17f"
             },
             "dist": {
@@ -28997,7 +29008,7 @@
             "version": "22.4.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:webshopapps/module-pickup.git",
+                "url": "git@gitlab.com:ShipperHQ/Platform/M2/module-pickup.git",
                 "reference": "493f53127a223a1b08798b0ae13cb07e1ac18bf1"
             },
             "dist": {
@@ -29627,6 +29638,7 @@
                     "type": "tidelift"
                 }
             ],
+            "abandoned": "symfony/error-handler",
             "time": "2022-01-02T09:41:36+00:00"
         },
         {
