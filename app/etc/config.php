@@ -525,6 +525,7 @@ return [
         'Firebear_ImportExport' => 1,
         'Firebear_ImportExportMsi' => 1,
         'Yotpo_Yotpo' => 1,
+        'HumanElement_DefinePrimaryKey' => 1,
         'HumanElement_OutOfStockRecommendations' => 1,
         'HumanElement_QtyStepper' => 1,
         'HumanElement_RemoveDownloadable' => 1,
