@@ -25776,17 +25776,17 @@
         },
         {
             "name": "mageworx/module-htmlsitemap",
-            "version": "2.4.2",
+            "version": "2.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-htmlsitemap/mageworx-module-htmlsitemap-2.4.2.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-htmlsitemap/mageworx-module-htmlsitemap-2.4.4.zip"
             },
             "require": {
-                "magento/framework": ">=101.0.0 <104",
-                "magento/module-catalog": ">=102.0.0 <105",
-                "magento/module-cms": ">=102.0.0 <105",
-                "magento/module-store": ">=100.2.0 <102",
-                "magento/module-theme": ">=100.2.0 <102",
+                "magento/framework": ">=102.0.0 <104",
+                "magento/module-catalog": ">=103.0.0 <105",
+                "magento/module-cms": ">=103.0.0 <105",
+                "magento/module-store": ">=101.0.0 <102",
+                "magento/module-theme": ">=101.0.0 <102",
                 "mageworx/module-seoall": ">=2.9.0"
             },
             "type": "magento2-module",
@@ -25806,10 +25806,10 @@
         },
         {
             "name": "mageworx/module-info",
-            "version": "1.1.1",
+            "version": "1.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-info/mageworx-module-info-1.1.1.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-info/mageworx-module-info-1.1.3.zip"
             },
             "require": {
                 "magento/module-catalog": ">=100.0.0 <105",
@@ -25832,14 +25832,14 @@
         },
         {
             "name": "mageworx/module-seoall",
-            "version": "2.10.0",
+            "version": "2.10.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-seoall/mageworx-module-seoall-2.10.0.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seoall/mageworx-module-seoall-2.10.3.zip"
             },
             "require": {
-                "magento/module-catalog": ">=102.0.0 <105",
-                "magento/module-cms": ">=102.0.0 <105"
+                "magento/module-catalog": ">=103.0.0 <105",
+                "magento/module-cms": ">=103.0.0 <105"
             },
             "type": "magento2-module",
             "autoload": {
@@ -25858,20 +25858,20 @@
         },
         {
             "name": "mageworx/module-seobase",
-            "version": "2.13.2",
+            "version": "2.13.5",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-seobase/mageworx-module-seobase-2.13.2.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seobase/mageworx-module-seobase-2.13.5.zip"
             },
             "require": {
-                "magento/framework": ">=101.0.0 <104",
-                "magento/module-catalog": ">=102.0.0 <105",
-                "magento/module-cms": ">=102.0.0 <105",
-                "magento/module-eav": ">=101.0.0 <103",
+                "magento/framework": ">=102.0.0 <104",
+                "magento/module-catalog": ">=103.0.0 <105",
+                "magento/module-cms": ">=103.0.0 <105",
+                "magento/module-eav": ">=102.0.0 <103",
                 "magento/module-layered-navigation": ">=100.2.0 <101",
-                "magento/module-store": ">=100.2.0 <102",
-                "magento/module-theme": ">=100.2.0 <102",
-                "magento/module-ui": ">=101.0.0 <102",
+                "magento/module-store": ">=101.0.0 <102",
+                "magento/module-theme": ">=101.0.0 <102",
+                "magento/module-ui": ">=101.1.0 <102",
                 "mageworx/module-seoall": ">=2.10.0"
             },
             "type": "magento2-module",
@@ -25891,13 +25891,13 @@
         },
         {
             "name": "mageworx/module-seobreadcrumbs",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-seobreadcrumbs/mageworx-module-seobreadcrumbs-2.2.1.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seobreadcrumbs/mageworx-module-seobreadcrumbs-2.2.2.zip"
             },
             "require": {
-                "magento/framework": ">=100.0.0 <104",
+                "magento/framework": ">=102.0.0 <104",
                 "mageworx/module-seoall": ">=2.9.0"
             },
             "type": "magento2-module",
@@ -25945,17 +25945,17 @@
         },
         {
             "name": "mageworx/module-seocrosslinks",
-            "version": "2.5.3",
+            "version": "2.5.5",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-seocrosslinks/mageworx-module-seocrosslinks-2.5.3.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seocrosslinks/mageworx-module-seocrosslinks-2.5.5.zip"
             },
             "require": {
-                "magento/framework": ">=101.0.0 <104",
-                "magento/module-catalog": ">=102.0.0 <105",
-                "magento/module-cms": ">=102.0.0 <105",
-                "magento/module-store": ">=100.2.0 <102",
-                "magento/module-ui": ">=101.0.0 <102",
+                "magento/framework": ">=102.0.0 <104",
+                "magento/module-catalog": ">=103.0.0 <105",
+                "magento/module-cms": ">=103.0.0 <105",
+                "magento/module-store": ">=101.0.0 <102",
+                "magento/module-ui": ">=101.1.0 <102",
                 "mageworx/module-seoall": ">=2.9.0"
             },
             "type": "magento2-module",
@@ -25975,16 +25975,16 @@
         },
         {
             "name": "mageworx/module-seoextended",
-            "version": "2.7.0",
+            "version": "2.7.2",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-seoextended/mageworx-module-seoextended-2.7.0.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seoextended/mageworx-module-seoextended-2.7.2.zip"
             },
             "require": {
-                "magento/framework": ">=100.0.0 <104",
-                "magento/module-catalog": ">=100.0.0 <105",
+                "magento/framework": ">=102.0.0 <104",
+                "magento/module-catalog": ">=103.0.0 <105",
                 "magento/module-layered-navigation": ">=100.0.0 <101",
-                "magento/module-store": ">=100.0.0 <102",
+                "magento/module-store": ">=101.0.0 <102",
                 "mageworx/module-seoall": ">=2.10.0"
             },
             "type": "magento2-module",
@@ -26004,18 +26004,18 @@
         },
         {
             "name": "mageworx/module-seomarkup",
-            "version": "2.8.2",
+            "version": "2.8.9",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-seomarkup/mageworx-module-seomarkup-2.8.2.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seomarkup/mageworx-module-seomarkup-2.8.9.zip"
             },
             "require": {
-                "magento/framework": ">=101.0.0 <104",
-                "magento/module-catalog": ">=102.0.0 <105",
-                "magento/module-cms": ">=102.0.0 <105",
-                "magento/module-eav": ">=101.0.0 <103",
-                "magento/module-store": ">=100.2.0 <102",
-                "magento/module-ui": ">=101.0.0 <102",
+                "magento/framework": ">=102.0.0 <104",
+                "magento/module-catalog": ">=103.0.0 <105",
+                "magento/module-cms": ">=103.0.0 <105",
+                "magento/module-eav": ">=102.0.0 <103",
+                "magento/module-store": ">=101.0.0 <102",
+                "magento/module-ui": ">=101.1.0 <102",
                 "mageworx/module-seoall": ">=2.10.0"
             },
             "type": "magento2-module",
@@ -26035,16 +26035,16 @@
         },
         {
             "name": "mageworx/module-seoredirects",
-            "version": "2.6.4",
+            "version": "2.6.7",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-seoredirects/mageworx-module-seoredirects-2.6.4.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seoredirects/mageworx-module-seoredirects-2.6.7.zip"
             },
             "require": {
-                "magento/framework": ">=100.0.0 <104",
-                "magento/module-catalog": ">=100.0.0 <105",
-                "magento/module-store": ">=100.0.0 <102",
-                "magento/module-ui": ">=100.0.0 <102",
+                "magento/framework": ">=102.0.0 <104",
+                "magento/module-catalog": ">=103.0.0 <105",
+                "magento/module-store": ">=101.0.0 <102",
+                "magento/module-ui": ">=101.1.0 <102",
                 "mageworx/module-seoall": ">=2.9.0"
             },
             "type": "magento2-module",
@@ -26064,15 +26064,15 @@
         },
         {
             "name": "mageworx/module-seoreports",
-            "version": "1.1.0",
+            "version": "1.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-seoreports/mageworx-module-seoreports-1.1.0.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seoreports/mageworx-module-seoreports-1.1.3.zip"
             },
             "require": {
-                "magento/framework": ">=100.0.0 <104",
-                "magento/module-catalog": ">=100.0.0 <105",
-                "magento/module-ui": ">=100.0.0 <103",
+                "magento/framework": ">=102.0.0 <104",
+                "magento/module-catalog": ">=103.0.0 <105",
+                "magento/module-ui": ">=101.1.0 <103",
                 "mageworx/module-seoall": ">=2.9.0"
             },
             "type": "magento2-module",
@@ -26092,36 +26092,36 @@
         },
         {
             "name": "mageworx/module-seosuiteultimate",
-            "version": "2.35.4",
+            "version": "2.35.17",
             "dist": {
                 "type": "zip",
-                "url": "/mw-modules/MageWorx_SeoSuiteUltimate_v2.35.4.zip",
-                "shasum": "47dc7b78a230ef4f273794d5c64d6d72a009a80b"
+                "url": "/mw-modules/MageWorx_SeoSuiteUltimate_v2.35.17.zip",
+                "shasum": "10a08e8c424450f29aea21224a93c74f3e3ad6bc"
             },
             "require": {
-                "mageworx/module-htmlsitemap": "2.4.2",
+                "mageworx/module-htmlsitemap": "2.4.4",
                 "mageworx/module-info": ">=1.0.0",
-                "mageworx/module-seoall": "2.10.0",
-                "mageworx/module-seobase": "2.13.2",
-                "mageworx/module-seobreadcrumbs": "2.2.1",
+                "mageworx/module-seoall": "2.10.3",
+                "mageworx/module-seobase": "2.13.5",
+                "mageworx/module-seobreadcrumbs": "2.2.2",
                 "mageworx/module-seocategorygrid": "2.1.0",
-                "mageworx/module-seocrosslinks": "2.5.3",
-                "mageworx/module-seoextended": "2.7.0",
-                "mageworx/module-seomarkup": "2.8.2",
-                "mageworx/module-seoredirects": "2.6.4",
-                "mageworx/module-seoreports": "1.1.0",
-                "mageworx/module-seourls": "2.4.2",
-                "mageworx/module-seoxtemplates": "2.13.6",
-                "mageworx/module-xmlsitemap": "3.3.5"
+                "mageworx/module-seocrosslinks": "2.5.5",
+                "mageworx/module-seoextended": "2.7.2",
+                "mageworx/module-seomarkup": "2.8.9",
+                "mageworx/module-seoredirects": "2.6.7",
+                "mageworx/module-seoreports": "1.1.3",
+                "mageworx/module-seourls": "2.4.4",
+                "mageworx/module-seoxtemplates": "2.13.10",
+                "mageworx/module-xmlsitemap": "3.3.8"
             },
             "type": "metapackage"
         },
         {
             "name": "mageworx/module-seourls",
-            "version": "2.4.2",
+            "version": "2.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-seourls/mageworx-module-seourls-2.4.2.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seourls/mageworx-module-seourls-2.4.4.zip"
             },
             "require": {
                 "magento/framework": ">=100.0.0 <104",
@@ -26146,18 +26146,18 @@
         },
         {
             "name": "mageworx/module-seoxtemplates",
-            "version": "2.13.6",
+            "version": "2.13.10",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-seoxtemplates/mageworx-module-seoxtemplates-2.13.6.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-seoxtemplates/mageworx-module-seoxtemplates-2.13.10.zip"
             },
             "require": {
-                "magento/framework": ">=101.0.0 <104",
-                "magento/module-catalog": ">=102.0.0 <105",
+                "magento/framework": ">=102.0.0 <104",
+                "magento/module-catalog": ">=103.0.0 <105",
                 "magento/module-catalog-url-rewrite": ">=100.0.0 <101",
-                "magento/module-eav": ">=101.0.0 <103",
-                "magento/module-store": ">=100.2.0 <102",
-                "magento/module-ui": ">=101.0.0 <102",
+                "magento/module-eav": ">=102.0.0 <103",
+                "magento/module-store": ">=101.0.0 <102",
+                "magento/module-ui": ">=101.1.0 <102",
                 "mageworx/module-seoall": ">=2.9.0"
             },
             "type": "magento2-module",
@@ -26177,15 +26177,15 @@
         },
         {
             "name": "mageworx/module-xmlsitemap",
-            "version": "3.3.5",
+            "version": "3.3.8",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.mageworx.com//dist/mageworx/module-xmlsitemap/mageworx-module-xmlsitemap-3.3.5.zip"
+                "url": "https://packages.mageworx.com//dist/mageworx/module-xmlsitemap/mageworx-module-xmlsitemap-3.3.8.zip"
             },
             "require": {
-                "magento/framework": ">=101.0.0 <104",
-                "magento/module-catalog": ">=102.0.0 <105",
-                "magento/module-cms": ">=102.0.0 <105",
+                "magento/framework": ">=102.0.0 <104",
+                "magento/module-catalog": ">=103.0.0 <105",
+                "magento/module-cms": ">=103.0.0 <105",
                 "magento/module-sitemap": ">=100.2.2 <101",
                 "mageworx/module-seoall": ">=2.10.0"
             },
