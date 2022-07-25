@@ -20,12 +20,16 @@ $viewModel = $block->getViewModel();
                             children: <?= $escaper->escapeHtml($block->getJsComponents()) ?>,
                             settings: <?= $escaper->escapeHtml($block->getJsSettings()) ?>,
                             links: <?= $escaper->escapeHtml($block->getStoreLinks()) ?>,
-                            isMobile: <?= (int) $viewModel->isMobile() ?>
+                            isMobile: <?= 1 //(int) $viewModel->isMobile() //Force mobile mode  ?>
                         }
                     }
                 }
             }">
-    <?php // all conditionals removed to disable built-in 'on-load' mobile detect ?>
+    <?php
+    // The component above needs to always be in "mobile" mode so the hamburger menu will populate.
+    // This mode seems to have no noticeable impact on the desktop menu.
+    // All below conditionals removed to disable built-in 'on-load' mobile detect.
+    ?>
     <?php //if (!$viewModel->isHamburger() && !$viewModel->isMobile()): ?>
         <?= $block->getChildBlock('ammenu.top.menu')->setItems($block->getAllNodesData())->toHtml() ?>
     <?php //endif; ?>

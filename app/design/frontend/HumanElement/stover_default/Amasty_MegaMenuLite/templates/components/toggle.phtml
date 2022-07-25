@@ -8,7 +8,6 @@
 $viewModel = $block->getViewModel();
 ?>
 
-<?php if ($viewModel->isHamburger() || $viewModel->isMobile()): ?>
     <!-- ko scope: 'index = ammenu_hamburger_toggle' -->
         <button id="toggle_button"
                 class="ammenu-button loading -hamburger"
@@ -24,4 +23,3 @@ $viewModel = $block->getViewModel();
             <span class="ammenu-line"></span>
         </button>
     <!-- /ko -->
-<?php endif; ?>

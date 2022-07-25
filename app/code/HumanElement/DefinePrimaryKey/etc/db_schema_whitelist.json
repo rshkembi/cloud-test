@@ -1,0 +1,18 @@
+{
+    "aw_popup_block_segment": {
+        "column": {
+            "entity_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "magenest_popup_layout": {
+        "column": {
+            "entity_id": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

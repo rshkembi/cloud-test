@@ -503,7 +503,7 @@ return [
         'Amasty_CronScheduleList' => 1,
         'Amasty_ElasticSearchLite' => 1,
         'Dotdigitalgroup_Email' => 1,
-        'Amasty_InstagramFeed' => 1,
+        'Amasty_InstagramFeed' => 0,
         'Amasty_MegaMenuLite' => 1,
         'Amasty_MegaMenu' => 1,
         'Amasty_MegaMenuGraphQl' => 1,
@@ -525,6 +525,7 @@ return [
         'Firebear_ImportExport' => 1,
         'Firebear_ImportExportMsi' => 1,
         'Yotpo_Yotpo' => 1,
+        'HumanElement_DefinePrimaryKey' => 1,
         'HumanElement_OutOfStockRecommendations' => 1,
         'HumanElement_QtyStepper' => 1,
         'HumanElement_RemoveDownloadable' => 1,
@@ -584,6 +585,11 @@ return [
                 ],
                 'css' => [
                     'minify_files' => '1'
+                ]
+            ],
+            'advanced' => [
+                'modules_disable_output' => [
+                    'Magento_Banner' => '1'
                 ]
             ]
         ]
