@@ -1,0 +1,65 @@
+diff --git a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Category.php b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Category.php
+index 390bf71..ae65833 100644
+--- a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Category.php
++++ b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Category.php
+@@ -261,7 +261,7 @@
+             }
+         }
+
+-        return $description ? $this->escapeHtmlAttr(strip_tags($description)) : '';
++        return $description ? htmlspecialchars_decode(strip_tags($description)) : '';
+     }
+
+     /**
+@@ -309,7 +309,7 @@
+             }
+         }
+
+-        return $description ? $this->escapeHtmlAttr(strip_tags($description)) : '';
++        return $description ? htmlspecialchars_decode(strip_tags($description)) : '';
+     }
+
+     /**
+diff --git a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.php b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.php
+index 390bf71..ae65833 100644
+--- a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.php
++++ b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.php
+@@ -309,7 +309,7 @@
+             $description = $product->getShortDescription();
+         }
+
+-        return $description ? $this->escapeHtmlAttr(strip_tags($description)) : '';
++        return $description ? htmlspecialchars_decode(strip_tags($description)) : '';
+     }
+
+     /**
+@@ -349,6 +349,6 @@
+             $description = $product->getShortDescription();
+         }
+
+-        return $description ? $this->escapeHtmlAttr(strip_tags($description)) : '';
++        return $description ? htmlspecialchars_decode(strip_tags($description)) : '';
+     }
+ }
+diff --git a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php
+index 390bf71..ae65833 100644
+--- a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php
++++ b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php
+@@ -219,7 +219,7 @@
+             }
+         }
+
+-        return $description ? $this->escapeHtmlAttr(strip_tags((string)$description)) : '';
++        return $description ? htmlspecialchars_decode(strip_tags((string)$description)) : '';
+     }
+
+     /**
+@@ -265,7 +265,7 @@
+             }
+         }
+
+-        return $description ? $this->escapeHtmlAttr(strip_tags((string)$description)) : '';
++        return $description ? htmlspecialchars_decode(strip_tags((string)$description)) : '';
+     }
+
+     /**
