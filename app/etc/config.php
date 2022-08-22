@@ -531,6 +531,7 @@ return [
         'HumanElement_RemoveDownloadable' => 1,
         'HumanElement_RemoveGiftCard' => 1,
         'HumanElement_RemoveReward' => 1,
+        'HumanElement_ShowConfigurableOutOfStockPrice' => 1,
         'Klarna_Core' => 1,
         'Klarna_Ordermanagement' => 1,
         'Klarna_Kp' => 1,
