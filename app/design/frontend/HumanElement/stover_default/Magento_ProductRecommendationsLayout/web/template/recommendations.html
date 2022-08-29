@@ -67,7 +67,9 @@
                                             <!-- ko if: prices && prices.minimum && prices.minimum.final -->
                                             <span class="normal-price">
                                                 <span class="price-container price-final_price">
+                                                    <!-- ko ifnot: type === 'simple' -->
                                                     <span class="price-label">As low as</span>
+                                                    <!-- /ko -->
                                                     <span id="product-price" class="price-wrapper ">
                                                         <span class="price"
                                                               data-bind="text: $parents[1].priceUnits.formatPrice( prices.minimum.final, $parents[1].priceFormat)"
@@ -107,7 +109,12 @@
                                                                 class="action tocart primary"
                                                                 data-bind="attr : {'data-sku' : sku, 'data-unit-id': $parent.unitId }"
                                                         >
+                                                            <!-- ko if: type === 'simple' -->
+                                                            <span>Add to Cart</span>
+                                                            <!-- /ko -->
+                                                            <!-- ko ifnot: type === 'simple' -->
                                                             <span>Choose Options</span>
+                                                            <!-- /ko -->
                                                         </button>
                                                     </form>
                                                 </div>

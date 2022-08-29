@@ -27,6 +27,9 @@
                 <value id="instagram-com" type="host">*.instagram.com</value>
                 <value id="newrelic-nr-data" type="host">*.nr-data.net</value>
                 <value id="acsbapp" type="host">*.acsbapp.com</value>
+                <value id="google" type="host">*.google.com</value>
+                <value id="klarnaservices" type="host">*.klarnaservices.com</value>
+                <value id="googleapis" type="host">*.googleapis.com</value>
             </values>
         </policy>
         <policy id="font-src">
@@ -125,6 +128,8 @@
                 <value id="payments-amazon" type="host">*.payments-amazon.com</value>
                 <value id="bigcommerce" type="host">*.bigcommerce.com</value>
                 <value id="stovercompany" type="host">*.stovercompany.com</value>
+                <value id="klarna" type="host">*.klarna.com</value>
+                <value id="stovercompany" type="host">*.stovercompany.com</value>
             </values>
         </policy>
         <policy id="script-src">
@@ -171,6 +176,8 @@
                 <value id="newrelic-nr-data" type="host">*.nr-data.net</value>
                 <value id="klaviyo" type="host">*.klaviyo.com</value>
                 <value id="acsbapp" type="host">*.acsbapp.com</value>
+                <value id="acsbapp2" type="host">acsbapp.com</value>
+                <value id="klarnaservices" type="host">*.klarnaservices.com</value>
             </values>
         </policy>
         <policy id="style-src">

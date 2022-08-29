@@ -4,12 +4,12 @@
         <csp>
             <mode>
                 <storefront>
-                    <report_only>1</report_only>
-                    <report_uri>https://humanelement.report-uri.com/r/d/csp/reportOnly</report_uri>
+                    <report_only>0</report_only>
+                    <report_uri>https://humanelement.report-uri.com/r/d/csp/enforce</report_uri>
                 </storefront>
                 <admin>
-                    <report_only>1</report_only>
-                    <report_uri>https://humanelement.report-uri.com/r/d/csp/reportOnly</report_uri>
+                    <report_only>0</report_only>
+                    <report_uri>https://humanelement.report-uri.com/r/d/csp/enforce</report_uri>
                 </admin>
             </mode>
             <policies>
