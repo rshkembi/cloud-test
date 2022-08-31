@@ -56,6 +56,7 @@
                 <value id="data" type="host">data:</value>
                 <value id="blob" type="host">blob:</value>
                 <value id="paypal" type="host">*.paypal.com</value>
+                <value id="paypalobjects" type="host">*.paypalobjects.com</value>
                 <value id="cybersource" type="host">*.cybersource.com</value>
                 <value id="youtube" type="host">*.youtube.com</value>
                 <value id="facebook" type="host">*.facebook.com</value>
@@ -147,6 +148,7 @@
                 <value id="adobedtm-com" type="host">*.adobedtm.com</value>
                 <value id="authorize" type="host">*.authorize.net</value>
                 <value id="paypal" type="host">*.paypal.com</value>
+                <value id="paypalobjects" type="host">*.paypalobjects.com</value>
                 <value id="braintreegateway" type="host">*.braintreegateway.com</value>
                 <value id="google" type="host">*.google.com</value>
                 <value id="vimeo" type="host">*.vimeo.com</value>
