@@ -31,6 +31,7 @@
                 <value id="klarnaservices" type="host">*.klarnaservices.com</value>
                 <value id="googleapis" type="host">*.googleapis.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
         <policy id="font-src">
@@ -40,6 +41,7 @@
                 <value id="gstatic" type="host">*.gstatic.com</value>
                 <value id="klevu" type="host">*.klevu.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
         <policy id="form-action">
@@ -51,6 +53,7 @@
                 <value id="facebook" type="host">*.facebook.com</value>
                 <value id="cookielaw" type="host">*.cookielaw.org</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
         <policy id="frame-src">
@@ -67,6 +70,7 @@
                 <value id="kaptcha" type="host">*.kaptcha.com</value>
                 <value id="klarna" type="host">*.klarna.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
         <policy id="img-src">
@@ -134,6 +138,7 @@
                 <value id="klarna" type="host">*.klarna.com</value>
                 <value id="stovercompany" type="host">*.stovercompany.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
         <policy id="script-src">
@@ -183,6 +188,7 @@
                 <value id="acsbapp2" type="host">acsbapp.com</value>
                 <value id="klarnaservices" type="host">*.klarnaservices.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
         <policy id="style-src">
@@ -195,6 +201,7 @@
                 <value id="facebook" type="host">*.facebook.net</value>
                 <value id="cookielaw" type="host">*.cookielaw.org</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
     </policies>
