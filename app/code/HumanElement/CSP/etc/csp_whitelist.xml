@@ -30,6 +30,7 @@
                 <value id="google" type="host">*.google.com</value>
                 <value id="klarnaservices" type="host">*.klarnaservices.com</value>
                 <value id="googleapis" type="host">*.googleapis.com</value>
+                <value id="kaltura" type="host">*.kaltura.com</value>
             </values>
         </policy>
         <policy id="font-src">
