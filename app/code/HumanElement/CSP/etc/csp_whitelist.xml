@@ -30,7 +30,8 @@
                 <value id="google" type="host">*.google.com</value>
                 <value id="klarnaservices" type="host">*.klarnaservices.com</value>
                 <value id="googleapis" type="host">*.googleapis.com</value>
-                <value id="kaltura" type="host">*.kaltura.com</value>
+                <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
         <policy id="font-src">
@@ -40,6 +41,7 @@
                 <value id="gstatic" type="host">*.gstatic.com</value>
                 <value id="klevu" type="host">*.klevu.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
         <policy id="form-action">
@@ -50,6 +52,8 @@
                 <value id="cybersource" type="host">*.cybersource.com</value>
                 <value id="facebook" type="host">*.facebook.com</value>
                 <value id="cookielaw" type="host">*.cookielaw.org</value>
+                <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
         <policy id="frame-src">
@@ -57,6 +61,7 @@
                 <value id="data" type="host">data:</value>
                 <value id="blob" type="host">blob:</value>
                 <value id="paypal" type="host">*.paypal.com</value>
+                <value id="paypalobjects" type="host">*.paypalobjects.com</value>
                 <value id="cybersource" type="host">*.cybersource.com</value>
                 <value id="youtube" type="host">*.youtube.com</value>
                 <value id="facebook" type="host">*.facebook.com</value>
@@ -65,6 +70,8 @@
                 <value id="braintreegateway" type="host">*.braintreegateway.com</value>
                 <value id="kaptcha" type="host">*.kaptcha.com</value>
                 <value id="klarna" type="host">*.klarna.com</value>
+                <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
         <policy id="img-src">
@@ -131,6 +138,9 @@
                 <value id="stovercompany" type="host">*.stovercompany.com</value>
                 <value id="klarna" type="host">*.klarna.com</value>
                 <value id="stovercompany" type="host">*.stovercompany.com</value>
+                <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
+                <value id="kaltura" type="host">*.kaltura.com</value>
             </values>
         </policy>
         <policy id="script-src">
@@ -148,6 +158,7 @@
                 <value id="adobedtm-com" type="host">*.adobedtm.com</value>
                 <value id="authorize" type="host">*.authorize.net</value>
                 <value id="paypal" type="host">*.paypal.com</value>
+                <value id="paypalobjects" type="host">*.paypalobjects.com</value>
                 <value id="braintreegateway" type="host">*.braintreegateway.com</value>
                 <value id="google" type="host">*.google.com</value>
                 <value id="vimeo" type="host">*.vimeo.com</value>
@@ -179,6 +190,9 @@
                 <value id="acsbapp" type="host">*.acsbapp.com</value>
                 <value id="acsbapp2" type="host">acsbapp.com</value>
                 <value id="klarnaservices" type="host">*.klarnaservices.com</value>
+                <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
+                <value id="kaltura" type="host">*.kaltura.com</value>
             </values>
         </policy>
         <policy id="style-src">
@@ -191,6 +205,7 @@
                 <value id="facebook" type="host">*.facebook.net</value>
                 <value id="cookielaw" type="host">*.cookielaw.org</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
+                <value id="klarnaevt" type="host">*.klarnaevt.com</value>
             </values>
         </policy>
     </policies>
