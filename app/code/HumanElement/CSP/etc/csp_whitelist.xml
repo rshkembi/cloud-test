@@ -140,6 +140,7 @@
                 <value id="stovercompany" type="host">*.stovercompany.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
                 <value id="klarnaevt" type="host">*.klarnaevt.com</value>
+                <value id="kaltura" type="host">*.kaltura.com</value>
             </values>
         </policy>
         <policy id="script-src">
@@ -191,6 +192,7 @@
                 <value id="klarnaservices" type="host">*.klarnaservices.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
                 <value id="klarnaevt" type="host">*.klarnaevt.com</value>
+                <value id="kaltura" type="host">*.kaltura.com</value>
             </values>
         </policy>
         <policy id="style-src">
