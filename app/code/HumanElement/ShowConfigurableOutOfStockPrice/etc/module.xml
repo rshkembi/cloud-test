@@ -4,6 +4,7 @@
     <module name="HumanElement_ShowConfigurableOutOfStockPrice">
         <sequence>
             <module name="Magento_Catalog"/>
+            <module name="Magento_ConfigurableProduct"/>
             <module name="Magento_Swatches"/>
             <module name="Amasty_Xnotif"/>
         </sequence>
