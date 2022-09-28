@@ -8,8 +8,8 @@
 $viewModel = $block->getViewModel();
 ?>
 
-<?php if ($viewModel->isHamburger() || $viewModel->isMobile()): ?>
-    <!-- ko scope: 'index = ammenu_hamburger_toggle' -->
+<!-- ko scope: 'index = ammenu_hamburger_toggle' -->
+    <!-- ko if: $data.source.isMobile() || <?= /* @noEscape */ $viewModel->isHamburger() ? 'true' : 'false' ?> -->
         <button id="toggle_button"
                 class="ammenu-button loading -hamburger"
                 type="button"
@@ -24,4 +24,4 @@ $viewModel = $block->getViewModel();
             <span class="ammenu-line"></span>
         </button>
     <!-- /ko -->
-<?php endif; ?>
+<!-- /ko -->
