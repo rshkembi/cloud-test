@@ -31633,11 +31633,11 @@
         },
         {
             "name": "weltpixel/m2-weltpixel-backend",
-            "version": "1.11.1",
+            "version": "1.11.7",
             "dist": {
                 "type": "zip",
-                "url": "./packages/artifacts/weltpixel-m2-weltpixel-backend-1.11.1.zip",
-                "shasum": "7b259bfeffbe467cb3845a69654eb5ce75182c5a"
+                "url": "./packages/artifacts/weltpixel-m2-weltpixel-backend-1.11.7.zip",
+                "shasum": "9bf1b603a83072417323948abca820deb05d1360"
             },
             "require": {
                 "magento/module-admin-notification": "*"

@@ -518,7 +518,7 @@ return [
         'Amazon_Pay' => 1,
         'Auctane_Api' => 1,
         'Ebizmarts_MailChimp' => 1,
-        'Facebook_BusinessExtension' => 0,
+        'Facebook_BusinessExtension' => 1,
         'Fastly_Cdn' => 1,
         'Yotpo_Yotpo' => 1,
         'HumanElement_OutOfStockRecommendations' => 1,
