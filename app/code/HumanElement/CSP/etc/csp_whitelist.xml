@@ -27,6 +27,7 @@
                 <value id="instagram-com" type="host">*.instagram.com</value>
                 <value id="newrelic-nr-data" type="host">*.nr-data.net</value>
                 <value id="acsbapp" type="host">*.acsbapp.com</value>
+                <value id="pinterest" type="host">*.pinterest.com</value>
             </values>
         </policy>
         <policy id="font-src">
@@ -61,6 +62,7 @@
                 <value id="braintreegateway" type="host">*.braintreegateway.com</value>
                 <value id="kaptcha" type="host">*.kaptcha.com</value>
                 <value id="klarna" type="host">*.klarna.com</value>
+                <value id="pinterest" type="host">*.pinterest.com</value>
             </values>
         </policy>
         <policy id="img-src">
@@ -125,6 +127,7 @@
                 <value id="payments-amazon" type="host">*.payments-amazon.com</value>
                 <value id="bigcommerce" type="host">*.bigcommerce.com</value>
                 <value id="stovercompany" type="host">*.stovercompany.com</value>
+                <value id="pinterest" type="host">*.pinterest.com</value>
             </values>
         </policy>
         <policy id="script-src">
@@ -171,6 +174,9 @@
                 <value id="newrelic-nr-data" type="host">*.nr-data.net</value>
                 <value id="klaviyo" type="host">*.klaviyo.com</value>
                 <value id="acsbapp" type="host">*.acsbapp.com</value>
+                <value id="pinimg" type="host">*.pinimg.com</value>
+                <value id="pinterest" type="host">*.pinterest.com</value>
+                <value id="acsbapp-com" type="host">acsbapp.com</value>
             </values>
         </policy>
         <policy id="style-src">
