@@ -17,7 +17,6 @@ dependencies:
 runtime:
     extensions:
         - xsl
-        - json
         - newrelic
         - sodium
 
