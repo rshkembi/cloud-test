@@ -32,6 +32,7 @@
                 <value id="googleapis" type="host">*.googleapis.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
                 <value id="klarnaevt" type="host">*.klarnaevt.com</value>
+                <value id="pinterest" type="host">*.pinterest.com</value>
             </values>
         </policy>
         <policy id="font-src">
@@ -72,6 +73,7 @@
                 <value id="klarna" type="host">*.klarna.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
                 <value id="klarnaevt" type="host">*.klarnaevt.com</value>
+                <value id="pinterest" type="host">*.pinterest.com</value>
             </values>
         </policy>
         <policy id="img-src">
@@ -141,6 +143,7 @@
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
                 <value id="klarnaevt" type="host">*.klarnaevt.com</value>
                 <value id="kaltura" type="host">*.kaltura.com</value>
+                <value id="pinterest" type="host">*.pinterest.com</value>
             </values>
         </policy>
         <policy id="script-src">
@@ -193,6 +196,8 @@
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
                 <value id="klarnaevt" type="host">*.klarnaevt.com</value>
                 <value id="kaltura" type="host">*.kaltura.com</value>
+                <value id="pinimg" type="host">*.pinimg.com</value>
+                <value id="pinterest" type="host">*.pinterest.com</value>
             </values>
         </policy>
         <policy id="style-src">
