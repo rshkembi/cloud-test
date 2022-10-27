@@ -1,0 +1,22 @@
+diff --git a/vendor/magento/module-inventory-catalog/Plugin/Catalog/Block/ProductList/UpdateToolbarCount.php b/vendor/magento/module-inventory-catalog/Plugin/Catalog/Block/ProductList/UpdateToolbarCount.php
+--- a/vendor/magento/module-inventory-catalog/Plugin/Catalog/Block/ProductList/UpdateToolbarCount.php
++++ b/vendor/magento/module-inventory-catalog/Plugin/Catalog/Block/ProductList/UpdateToolbarCount.php
+@@ -104,7 +104,8 @@
+                 $defaultScopeId = $this->storeManager->getWebsite()->getCode();
+                 $stock_id = (int) $this->stockRegistry->getStock($defaultScopeId)->getStockId();
+                 $skus = [];
+-                $items = $category->getProductCollection()->getItems();
++                $collection = $subject->getCollection();
++                $items = $collection->getItems();
+                 array_walk(
+                     $items,
+                     function ($item) use (&$skus) {
+@@ -113,7 +114,7 @@
+                 );
+                 $salableProducts = $this->areProductsSalable->execute($skus, $stock_id);
+                 if ($salableProducts) {
+-                    $result = count($salableProducts);
++                    $result = $collection->getSize();
+                 }
+             } catch (\Exception $e) {
+                 $this->logger->critical($e->getMessage());
