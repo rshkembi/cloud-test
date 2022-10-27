@@ -11,7 +11,7 @@ index 390bf71..ae65833 100644
          }
 
          if (!$description) {
-@@ -261,7 +261,24 @@
+@@ -261,7 +261,25 @@
              }
          }
 
@@ -24,6 +24,7 @@ index 390bf71..ae65833 100644
 +     * @return false|string
 +     */
 +    protected function removeElementsByTagName($description) {
++        if (!$description) {return '';}
 +        $doc = new \DOMDocument();
 +        libxml_use_internal_errors(true);
 +        $doc->loadHTML($description);
@@ -37,7 +38,7 @@ index 390bf71..ae65833 100644
      }
 
      /**
-@@ -298,7 +315,7 @@
+@@ -298,7 +316,7 @@
          $description = '';
 
          if ($code && $this->getCategory()) {
@@ -46,7 +47,7 @@ index 390bf71..ae65833 100644
          }
 
          if (!$description) {
-@@ -309,7 +326,7 @@
+@@ -309,7 +327,7 @@
              }
          }
 
@@ -59,7 +60,7 @@ diff --git a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.ph
 index 390bf71..ae65833 100644
 --- a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.php
 +++ b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.php
-@@ -309,7 +309,24 @@
+@@ -309,7 +309,25 @@
              $description = $product->getShortDescription();
          }
 
@@ -72,6 +73,7 @@ index 390bf71..ae65833 100644
 +     * @return false|string
 +     */
 +    protected function removeElementsByTagName($description) {
++        if (!$description) {return '';}
 +        $doc = new \DOMDocument();
 +        libxml_use_internal_errors(true);
 +        $doc->loadHTML($description);
@@ -85,7 +87,7 @@ index 390bf71..ae65833 100644
      }
 
      /**
-@@ -349,6 +366,6 @@
+@@ -349,6 +367,6 @@
              $description = $product->getShortDescription();
          }
 
@@ -97,7 +99,7 @@ diff --git a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php b
 index 390bf71..ae65833 100644
 --- a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php
 +++ b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php
-@@ -219,7 +219,24 @@
+@@ -219,7 +219,25 @@
              }
          }
 
@@ -110,6 +112,7 @@ index 390bf71..ae65833 100644
 +     * @return false|string
 +     */
 +    protected function removeElementsByTagName($description) {
++        if (!$description) {return '';}
 +        $doc = new \DOMDocument();
 +        libxml_use_internal_errors(true);
 +        $doc->loadHTML($description);
@@ -123,7 +126,7 @@ index 390bf71..ae65833 100644
      }
 
      /**
-@@ -265,7 +282,7 @@
+@@ -265,7 +283,7 @@
              }
          }
 
@@ -136,7 +139,7 @@ diff --git a/vendor/mageworx/module-seomarkup/Helper/DataProvider/Product.php b/
 index 390bf71..ae65833 100644
 --- a/vendor/mageworx/module-seomarkup/Helper/DataProvider/Product.php
 +++ b/vendor/mageworx/module-seomarkup/Helper/DataProvider/Product.php
-@@ -159,13 +159,30 @@
+@@ -159,13 +159,31 @@
          }
 
          if ($this->helperData->getIsCropHtmlInDescription()) {
@@ -152,6 +155,7 @@ index 390bf71..ae65833 100644
 +     * @return false|string
 +     */
 +    protected function removeElementsByTagName($description) {
++        if (!$description) {return '';}
 +        $doc = new \DOMDocument();
 +        libxml_use_internal_errors(true);
 +        $doc->loadHTML($description);
