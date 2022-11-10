@@ -11,7 +11,7 @@ define([
             $(".yotpo.bottomLine").on('click' , function() {
                 $("#tab-label-yotpo_widget_div").trigger('click');
             });
-            $(".yotpo-review").on('click' , function() {
+            $("a[href=#tab-label-yotpo_widget_div]").on('click' , function() {
                 $("#tab-label-yotpo_widget_div").trigger('click');
             });
         }
