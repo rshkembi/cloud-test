@@ -72,7 +72,6 @@
         "mageworx/module-seosuiteultimate": "2.35.18",
         "mailchimp/mc-magento2": "^103.4",
         "salsify/json-streaming-parser": "^8.2",
-        "scommerce/googletagmanagerpro": "^3.0",
         "shipperhq/module-address-autocomplete": "^20.6",
         "shipperhq/module-option": "^20.5",
         "shipperhq/module-pickup": "^22.4",
