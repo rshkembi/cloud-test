@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffa6d82c310add0872adc1171f0c5334",
+    "content-hash": "17c1c6022ee4e793f38d053c8ebc6122",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -28009,102 +28009,6 @@
                 "source": "https://github.com/salsify/jsonstreamingparser/tree/master"
             },
             "time": "2020-05-22T20:10:04+00:00"
-        },
-        {
-            "name": "scommerce/core",
-            "version": "2.0.4",
-            "dist": {
-                "type": "zip",
-                "url": "./packages/artifacts/scommerce-core-2.0.4.zip",
-                "shasum": "3cae5e485cefe28d30e776c7543f89d619e050fb"
-            },
-            "require": {
-                "php": ">=7.2.0"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Scommerce\\Core\\": ""
-                }
-            },
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Scommerce Mage",
-                    "email": "core@scommerce-mage.com"
-                }
-            ],
-            "description": "Scommerce Core Module for Magento 2.0"
-        },
-        {
-            "name": "scommerce/googletagmanagerpro",
-            "version": "3.0.4",
-            "dist": {
-                "type": "zip",
-                "url": "./packages/artifacts/scommerce-googletagmanagerpro-3.0.4.zip",
-                "shasum": "2b3aa2147bb16ba36a281b7706362ca41218b129"
-            },
-            "require": {
-                "php": ">=7.2.0",
-                "scommerce/core": "2.0.*",
-                "scommerce/trackingbase": "2.0.*"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Scommerce\\GoogleTagManagerPro\\": ""
-                }
-            },
-            "license": [
-                "Commercial"
-            ],
-            "authors": [
-                {
-                    "name": "Scommerce Mage",
-                    "email": "core@scommerce-mage.com"
-                }
-            ],
-            "description": "Google Tag Manager Pro Module for Magento 2.0"
-        },
-        {
-            "name": "scommerce/trackingbase",
-            "version": "2.0.6",
-            "dist": {
-                "type": "zip",
-                "url": "./packages/artifacts/scommerce-trackingbase-2.0.6.zip",
-                "shasum": "b06ccf407396e71d8d73a535d0eac95a0531ec60"
-            },
-            "require": {
-                "php": ">=7.2.0",
-                "scommerce/core": "2.0.*"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Scommerce\\TrackingBase\\": ""
-                }
-            },
-            "license": [
-                "Commercial"
-            ],
-            "authors": [
-                {
-                    "name": "Scommerce Mage",
-                    "email": "core@scommerce-mage.com"
-                }
-            ],
-            "description": "Tracking Base Module for Magento 2.0"
         },
         {
             "name": "seld/jsonlint",
