@@ -26102,11 +26102,11 @@
         },
         {
             "name": "mailchimp/mc-magento2",
-            "version": "103.4.49",
+            "version": "103.4.50",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/mailchimp/mc-magento2/mailchimp-mc-magento2-103.4.49.0.zip",
-                "shasum": "1e57b93c8674a0bae10eb22dbf7bc2832e010441"
+                "url": "https://repo.magento.com/archives/mailchimp/mc-magento2/mailchimp-mc-magento2-103.4.50.0.zip",
+                "shasum": "046f38b126d1c979520cf7f8013b289b62afd0df"
             },
             "require": {
                 "ebizmarts/mailchimp-lib": ">=3.0.35",
