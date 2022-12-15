@@ -63,24 +63,28 @@ class OrderPlaceBefore implements ObserverInterface
         if($result = $connection->fetchRow($sql)){
             $logger->info('Duplicate order found! Quote: '.$quoteID);
             $from = "dublicateOrders@stovercompany.com";
-            $nameFrom = "Dublicate Orders";
+            $nameFrom = "Duplicate Orders";
             $nameTo = "Human Element Team";
-            $body = ' A new duplicate order was detected. Quote: '.$quoteID;
+            $body = ' A new duplicate order tentative was detected. Quote: '.$quoteID. '. The order process was stopped and the customer was redirected to home page.';
             $to = [
                 'rshkembi@human-element.com',
                 'pbriscoe@human-element.com',
                 'pbriscoe@human-element.com',
                 'rkroening@human-element.com',
                 'blorenz@human-element.com',
+                'ryanstover@stovercompany.com',
                 'kgardner@human-element.com'
             ];
             $email = new \Zend_Mail();
-            $email->setSubject("Stover Dublicate Order Detected!");
+            $email->setSubject("Stover Duplicate Order Detected!");
             $email->setBodyText($body);
             $email->setFrom($from, $nameFrom);
             $email->addTo($to, $nameTo);
             $email->send();
             $logger->info('Notification was triggered!');
+            $customerBeforeAuthUrl = $this->_url->getUrl('checkout/cart/index');
+            $this->_responseFactory->create()->setRedirect($customerBeforeAuthUrl)->sendResponse();
+            exit;
         }
 
     }
