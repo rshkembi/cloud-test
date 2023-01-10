@@ -10,14 +10,12 @@
 @fa-var-linkedin: "\f0e1";
 @fa-var-instagram-square: "\f16d";
 @fa-var-youtube: "\f167";
-
 @fa-var-arrow-right: "\f061";
-
 
 @font-face {
     font-family: 'icons-blank-theme';
     src: url('@{baseDir}fonts/Blank-Theme-Icons/Blank-Theme-Icons.woff2') format('woff2'),
-         url('@{baseDir}fonts/Blank-Theme-Icons/Blank-Theme-Icons.woff') format('woff');
+    url('@{baseDir}fonts/Blank-Theme-Icons/Blank-Theme-Icons.woff') format('woff');
 }
 
 //
@@ -25,6 +23,7 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+
     .facebook,
     .twitter,
     .linked-in,
@@ -37,15 +36,19 @@
     .americanExpress,
     .applePay,
     .amazonPay,
-    .payPal{
-        font-family: @font-family-name__FontAwesome5Brands;
-        color: @text__color;
+    .payPal {
+        .lib-css(color, @text__color);
+
+        &.fab {
+            .lib-css(font-weight, @font-weight__bold);
+        }
 
         &.large {
             font-size: 48px;
             margin-right: 20px;
         }
     }
+
     .facebook {
         &:before {
             content: @fa-var-facebook-f;
