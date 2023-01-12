@@ -48,11 +48,13 @@
 //
 //  Mobile
 //  _____________________________________________
+
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+
     .block.related {
         .products-grid {
             .product-item {
-                margin-bottom: 22px;
+                .lib-css(margin-bottom, @indent__base);
             }
         }
     }
@@ -64,6 +66,7 @@
             }
         }
     }
+
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
