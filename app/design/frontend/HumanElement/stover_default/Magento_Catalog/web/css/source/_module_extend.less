@@ -2,7 +2,6 @@
 //  * Copyright © Magento, Inc. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 @product-info-price: @color-gray20;
 
 //
@@ -64,6 +63,9 @@
 
             .box-tocart {
                 margin-bottom: 0;
+                button.action.primary {
+                    width: 100%;
+                }
             }
 
             .product-info-price {
@@ -182,6 +184,17 @@
             margin-bottom: 0;
         }
     }
+
+    .sidebar {
+        .action {
+            &.tocart {
+                letter-spacing: .15em;
+                text-transform: uppercase;
+                border: 2px solid transparent;
+            }
+        }
+    }
+
 }
 
 //
@@ -317,3 +330,15 @@
     }
 }
 
+// 1440 and up
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+
+    .sidebar {
+        .product-items {
+            .product-item-details {
+                margin-left: 50px;
+            }
+        }
+    }
+
+}

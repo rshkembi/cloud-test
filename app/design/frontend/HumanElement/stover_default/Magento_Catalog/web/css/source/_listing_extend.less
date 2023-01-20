@@ -70,7 +70,7 @@
             }
         }
 
-        .action.next {
+        .action.next,.action.previous {
             &:before {
                 font-size: @font-size__base;
                 margin: 7px 0 0 0;
@@ -104,7 +104,7 @@
                 .product-item {
                     background-color: @color-white;
                     padding: 10px;
-                    margin-bottom: 22px;
+                    .lib-css(margin-bottom, @indent__base);
                     text-align: center;
 
                     .tocart {
@@ -184,16 +184,13 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
     .page-products {
         .products-grid {
             .product-items {
                 .product-item {
                     width: 49%;
-
-                    &-info {
-                        width: auto;
-                        padding: 10px;
-                    }
+                    .lib-css(margin-bottom, @indent__base);
 
                     &:hover {
                         .product-item-info {
@@ -201,10 +198,25 @@
                         }
                     }
                 }
+
+                .product-item-info {
+                    display: flex;
+                    flex-direction: column;
+                    width: auto;
+                    height: 100%;
+                    .lib-css(padding, @indent__s);
+                    border: 1px solid transparent;
+                }
             }
 
-            .product-item-info {
-                border: 1px solid transparent;
+            .product-item-details {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .product-item-inner {
+                margin-top: auto;
             }
 
             .product-item-actions {
@@ -228,6 +240,21 @@
             }
         }
     }
+
+    .block-products-list.grid {
+        .products-grid {
+            .product-item-details {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            .product-item-inner {
+                margin-top: auto;
+            }
+        }
+    }
+
 }
 
 //
