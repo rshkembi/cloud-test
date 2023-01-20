@@ -32082,11 +32082,11 @@
         },
         {
             "name": "weltpixel/m2-social-login",
-            "version": "1.11.7",
+            "version": "1.11.11",
             "dist": {
                 "type": "zip",
-                "url": "./packages/artifacts/weltpixel-m2-social-login-1.11.7.zip",
-                "shasum": "5e6d70b7567c46ab6e238312a06f407f14835b71"
+                "url": "./packages/artifacts/weltpixel-m2-social-login-1.11.11.zip",
+                "shasum": "8be2beda52830e783f15cf8dad1f804f2aa32749"
             },
             "require": {
                 "magento/module-admin-notification": "*",
@@ -32109,11 +32109,11 @@
         },
         {
             "name": "weltpixel/m2-weltpixel-backend",
-            "version": "1.11.7",
+            "version": "1.11.11",
             "dist": {
                 "type": "zip",
-                "url": "./packages/artifacts/weltpixel-m2-weltpixel-backend-1.11.7.zip",
-                "shasum": "9bf1b603a83072417323948abca820deb05d1360"
+                "url": "./packages/artifacts/weltpixel-m2-weltpixel-backend-1.11.11.zip",
+                "shasum": "57d2010595e0c9c499aad404161f6b8b00491cac"
             },
             "require": {
                 "magento/module-admin-notification": "*"
