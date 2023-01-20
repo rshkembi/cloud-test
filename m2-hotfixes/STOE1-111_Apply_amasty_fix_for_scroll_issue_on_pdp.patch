@@ -1,0 +1,27 @@
+diff --git a/vendor/amasty/xnotif/view/frontend/web/js/validation-mixin.js b/vendor/amasty/xnotif/view/frontend/web/js/validation-mixin.js
+index 9c6c8868ec783975f64a7c09a57d52297f6f290c..4a028d45e3e0823324250fc0ed1dadf8d19eccc7 100644
+--- a/vendor/amasty/xnotif/view/frontend/web/js/validation-mixin.js
++++ b/vendor/amasty/xnotif/view/frontend/web/js/validation-mixin.js
+@@ -10,12 +10,11 @@
+             listenFormValidateHandler: function (event, validation) {
+                 var firstActive = $(validation.errorList[0].element || []),
+                     lastActive = $(validation.findLastActive() || validation.errorList.length && validation.errorList[0].element || []),
+-                    parent, windowHeight, successList,
++                    parent, windowHeight = $(window).height(), successList,
+                     noFocus = validation.currentForm.dataset.nofocus ? validation.currentForm.dataset.nofocus : false;
+
+                 if (lastActive.is(':hidden')) {
+                     parent = lastActive.parent();
+-                    windowHeight = $(window).height();
+                     $('html, body').animate({
+                         scrollTop: parent.offset().top - windowHeight / 2
+                     });
+@@ -35,7 +34,7 @@
+                 // Override -- Added focus status for form to include disabling focus functionality //
+                 if (firstActive.length && !noFocus) {
+                     $('html, body').stop().animate({
+-                        scrollTop: firstActive.offset().top
++                        scrollTop: firstActive.parent().offset().top - windowHeight / 2
+                     });
+                     firstActive.focus();
+                 } else {
