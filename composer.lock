@@ -32086,7 +32086,7 @@
             "dist": {
                 "type": "zip",
                 "url": "./packages/artifacts/weltpixel-m2-social-login-1.11.11.zip",
-                "shasum": "8be2beda52830e783f15cf8dad1f804f2aa32749"
+                "shasum": "8f7c69f87063a91502571702adb6dedba254d04f"
             },
             "require": {
                 "magento/module-admin-notification": "*",
@@ -32113,7 +32113,7 @@
             "dist": {
                 "type": "zip",
                 "url": "./packages/artifacts/weltpixel-m2-weltpixel-backend-1.11.11.zip",
-                "shasum": "57d2010595e0c9c499aad404161f6b8b00491cac"
+                "shasum": "3218c3fe85a83268df82e8843f9ce2ff35d53cbe"
             },
             "require": {
                 "magento/module-admin-notification": "*"
