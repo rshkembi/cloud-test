@@ -43,6 +43,7 @@
                 <value id="klevu" type="host">*.klevu.com</value>
                 <value id="klarnacdn" type="host">*.klarnacdn.net</value>
                 <value id="klarnaevt" type="host">*.klarnaevt.com</value>
+                <value id="acsbapp" type="host">*.acsbapp.com</value>
             </values>
         </policy>
         <policy id="form-action">
@@ -144,6 +145,7 @@
                 <value id="klarnaevt" type="host">*.klarnaevt.com</value>
                 <value id="kaltura" type="host">*.kaltura.com</value>
                 <value id="pinterest" type="host">*.pinterest.com</value>
+                <value id="acsbapp" type="host">*.acsbapp.com</value>
             </values>
         </policy>
         <policy id="script-src">
