@@ -1,117 +1,90 @@
 <?php
-
 namespace HumanElement\DuplicateOrders\Observer;
 
-use Magento\Checkout\Model\Session;
-use Magento\Framework\Api\FilterBuilder;
 use Magento\Framework\App\ResponseFactory;
-use Magento\Framework\Api\SearchCriteriaBuilder;
-use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\UrlInterface;
-use Magento\Sales\Api\OrderRepositoryInterface;
-use Psr\Log\LoggerInterface;
 
 class OrderPlaceBefore implements ObserverInterface
 {
-    /**
-     * @var OrderRepositoryInterface
-     */
-    private $orderRepository;
+    protected $_responseFactory;
+    protected $_url;
 
-    /**
-     * @var FilterBuilder
-     */
-    private $filterBuilder;
-
-    /**
-     * @var SearchCriteriaBuilder
-     */
-    private $searchCriteriaBuilder;
-
-    /**
-     * @var LoggerInterface
-     */
-    private $logger;
-
-    /**
-     * @var ResponseFactory
-     */
-    private $responseFactory;
-
-    /**
-     * @var UrlInterface
-     */
-    private $url;
-
-    /**
-     * @var Session
-     */
-    private $checkoutSession;
-
-    /**
-     * @param OrderRepositoryInterface $orderRepository
-     * @param FilterBuilder $filterBuilder
-     * @param SearchCriteriaBuilder $searchCriteriaBuilder
-     * @param ResponseFactory $responseFactory
-     * @param UrlInterface $url
-     * @param LoggerInterface $logger
-     */
     public function __construct(
-        OrderRepositoryInterface $orderRepository,
-        FilterBuilder $filterBuilder,
-        SearchCriteriaBuilder $searchCriteriaBuilder,
         ResponseFactory $responseFactory,
-        UrlInterface $url,
-        LoggerInterface $logger,
-        Session $checkoutSession
-
+        UrlInterface $url
     ) {
-        $this->orderRepository = $orderRepository;
-        $this->filterBuilder = $filterBuilder;
-        $this->searchCriteriaBuilder = $searchCriteriaBuilder;
-        $this->responseFactory = $responseFactory;
-        $this->url = $url;
-        $this->logger = $logger;
-        $this->checkoutSession = $checkoutSession;
+        $this->_responseFactory = $responseFactory;
+        $this->_url = $url;
     }
 
     /**
-     * @param Observer $observer
-     * @return void
+     * @param \Magento\Framework\Event\Observer $observer
      */
-    public function execute(Observer $observer)
+    public function execute(\Magento\Framework\Event\Observer $observer)
     {
+
+        $writer = new \Zend_Log_Writer_Stream(BP . '/var/log/order-process-notification-logs.log');
+        $logger = new \Zend_Log();
+        $logger->addWriter($writer);
+
+        $logger->info('Duplicate Order checker started.');
+
+        /**
+         *
+         * NOTE THIS IS JUST A SAMPLE PULLED FROM THE ISSUE THAT IS IN GITHUB:
+         * https://github.com/magento/magento2/issues/13952
+         *
+         * We can adjust the $endTime to be more than 15 seconds or try to account for orders placed at the
+         * same time as well
+         *
+         * Cleanup instances of object manager
+         *
+         * Validate with other senior devs if there is a better way to achieve this
+         *
+         * (Mike, Steven, Carlos, Chris Nanninga)
+         *
+         */
+
+        $event = $observer->getEvent();
+
         $order = $observer->getEvent()->getOrder();
         $quoteID = $order->getQuoteId();
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $resource = $objectManager->get('Magento\Framework\App\ResourceConnection');
+        $connection = $resource->getConnection();
+        $tableName = $resource->getTableName('sales_order');
         $selectedTime = date('Y-m-d h:i:s');
         $endTime = strtotime("-600 seconds", strtotime($selectedTime));
-        $last600Sec = date('Y-m-d h:i:s', $endTime);
+        $last15Sec = date('Y-m-d h:i:s', $endTime);
 
-        $filterEq = $this->filterBuilder
-            ->setField("quote_id")
-            ->setConditionType('eq')
-            ->setValue($quoteID)
-            ->create();
-        $filterGteq = $this->filterBuilder
-            ->setField("created_at")
-            ->setConditionType('gteq')
-            ->setValue($last600Sec)
-            ->create();
-        $this->searchCriteriaBuilder->addFilters([$filterEq]);
-        $this->searchCriteriaBuilder->addFilters([$filterGteq]);
-        $searchCriteria = $this->searchCriteriaBuilder->create();
-
-        $orderRepository = $this->orderRepository->getList($searchCriteria);
-
-        if($orderRepository->getTotalCount()){
-            $this->logger->warning('Duplicate order found! Quote: '. $quoteID);
-            $this->checkoutSession->setLastSuccessQuoteId($quoteID);
-            $this->checkoutSession->setLastQuoteId($quoteID);
-            foreach ($orderRepository as $order) {
-                $this->checkoutSession->setLastOrderId($order->getId());
-            }
-            exit();
+        $sql = "SELECT * FROM `".$tableName."` WHERE `quote_id` = ".$quoteID." and `created_at` >= '$last15Sec'";
+        $logger->info('Query: '.$sql);
+        if($result = $connection->fetchRow($sql)){
+            $logger->info('Duplicate order found! Quote: '.$quoteID);
+            $from = "dublicateOrders@stovercompany.com";
+            $nameFrom = "Duplicate Orders";
+            $nameTo = "Human Element Team";
+            $body = ' A new duplicate order tentative was detected. Quote: '.$quoteID. '. The order process was stopped and the customer was redirected to home page.';
+            $to = [
+                'rshkembi@human-element.com',
+                'pbriscoe@human-element.com',
+                'pbriscoe@human-element.com',
+                'rkroening@human-element.com',
+                'blorenz@human-element.com',
+                'ryanstover@stovercompany.com',
+                'kgardner@human-element.com'
+            ];
+            $email = new \Zend_Mail();
+            $email->setSubject("Stover Duplicate Order Detected!");
+            $email->setBodyText($body);
+            $email->setFrom($from, $nameFrom);
+            $email->addTo($to, $nameTo);
+            $email->send();
+            $logger->info('Notification was triggered!');
+            $customerBeforeAuthUrl = $this->_url->getUrl('checkout/cart/index');
+            $this->_responseFactory->create()->setRedirect($customerBeforeAuthUrl)->sendResponse();
+            exit;
         }
 
     }
