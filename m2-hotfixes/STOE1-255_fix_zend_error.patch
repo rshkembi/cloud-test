@@ -1,0 +1,91 @@
+diff --git a/vendor/aheadworks/module-blog/Model/Validator/UrlKey.php b/vendor/aheadworks/module-blog/Model/Validator/UrlKey.php
+index 9c6c8868ec783975f64a7c09a57d52297f6f290c..4a028d45e3e0823324250fc0ed1dadf8d19eccc7 100644
+--- a/vendor/aheadworks/module-blog/Model/Validator/UrlKey.php
++++ b/vendor/aheadworks/module-blog/Model/Validator/UrlKey.php
+@@ -19,7 +19,7 @@
+ /**
+  * Validate Url-keys
+  */
+-class UrlKey extends \Zend_Validate_Abstract
++class UrlKey extends \Laminas\Validator\AbstractValidator
+ {
+     const IS_EMPTY = 'isEmpty';
+     const IS_NUMBER = 'isNumber';
+diff --git a/vendor/aheadworks/module-blog/ViewModel/Author/Badge.php b/vendor/aheadworks/module-blog/ViewModel/Author/Badge.php
+index 9c6c8868ec783975f64a7c09a57d52297f6f290c..4a028d45e3e0823324250fc0ed1dadf8d19eccc7 100644
+--- a/vendor/aheadworks/module-blog/ViewModel/Author/Badge.php
++++ b/vendor/aheadworks/module-blog/ViewModel/Author/Badge.php
+@@ -31,12 +31,12 @@
+      * Badge constructor.
+      * @param Url $url
+      * @param ImageInfo $imageInfo
+-     * @param \Zend_Filter_Interface $templateProcessor
++     * @param \Laminas\Filter\FilterInterface $templateProcessor
+      */
+     public function __construct(
+         Url $url,
+         ImageInfo $imageInfo,
+-        \Zend_Filter_Interface $templateProcessor
++        \Laminas\Filter\FilterInterface $templateProcessor
+     ) {
+         parent::__construct($url, $imageInfo, $templateProcessor);
+     }
+diff --git a/vendor/aheadworks/module-blog/ViewModel/Author.php b/vendor/aheadworks/module-blog/ViewModel/Author.php
+index 9c6c8868ec783975f64a7c09a57d52297f6f290c..4a028d45e3e0823324250fc0ed1dadf8d19eccc7 100644
+--- a/vendor/aheadworks/module-blog/ViewModel/Author.php
++++ b/vendor/aheadworks/module-blog/ViewModel/Author.php
+@@ -37,7 +37,7 @@
+     private $imageInfo;
+
+     /**
+-     * @var \Zend_Filter_Interface
++     * @var \Laminas\Filter\FilterInterface
+      */
+     private $templateProcessor;
+
+@@ -45,12 +45,12 @@
+      * Author constructor.
+      * @param Url $url
+      * @param ImageInfo $imageInfo
+-     * @param \Zend_Filter_Interface $templateProcessor
++     * @param \Laminas\Filter\FilterInterface $templateProcessor
+      */
+     public function __construct(
+         Url $url,
+         ImageInfo $imageInfo,
+-        \Zend_Filter_Interface $templateProcessor
++        \Laminas\Filter\FilterInterface $templateProcessor
+     ) {
+         $this->url = $url;
+         $this->imageInfo = $imageInfo;
+diff --git a/vendor/aheadworks/module-blog/Block/Author.php b/vendor/aheadworks/module-blog/Block/Author.php
+index 9c6c8868ec783975f64a7c09a57d52297f6f290c..4a028d45e3e0823324250fc0ed1dadf8d19eccc7 100644
+--- a/vendor/aheadworks/module-blog/Block/Author.php
++++ b/vendor/aheadworks/module-blog/Block/Author.php
+@@ -83,7 +83,7 @@
+     private $imageInfo;
+
+     /**
+-     * @var \Zend_Filter_Interface
++     * @var \Laminas\Filter\FilterInterface
+      */
+     private $templateProcessor;
+
+@@ -94,7 +94,7 @@
+      * @param Config $config
+      * @param Url $url
+      * @param ImageInfo $imageInfo
+-     * @param \Zend_Filter_Interface $templateProcessor
++     * @param \Laminas\Filter\FilterInterface $templateProcessor
+      * @param array $data
+      */
+     public function __construct(
+@@ -103,7 +103,7 @@
+         Config $config,
+         Url $url,
+         ImageInfo $imageInfo,
+-        \Zend_Filter_Interface $templateProcessor,
++        \Laminas\Filter\FilterInterface $templateProcessor,
+         array $data = []
+     ) {
+         $this->authorRepository = $authorRepository;
