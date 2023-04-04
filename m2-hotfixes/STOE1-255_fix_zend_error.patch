@@ -89,3 +89,16 @@ index 9c6c8868ec783975f64a7c09a57d52297f6f290c..4a028d45e3e0823324250fc0ed1dadf8
          array $data = []
      ) {
          $this->authorRepository = $authorRepository;
+diff --git a/vendor/aheadworks/module-blog/Model/Disqus/Api.php b/vendor/aheadworks/module-blog/Model/Disqus/Api.php
+index 9c6c8868ec783975f64a7c09a57d52297f6f290c..4a028d45e3e0823324250fc0ed1dadf8d19eccc7 100644
+--- a/vendor/aheadworks/module-blog/Model/Disqus/Api.php
++++ b/vendor/aheadworks/module-blog/Model/Disqus/Api.php
+@@ -64,7 +64,7 @@
+     /**
+      * Request method
+      */
+-    const METHOD = \Zend_Http_Client::GET;
++    const METHOD = \Laminas\Http\Request::METHOD_GET;
+
+     /**
+      * Output type
