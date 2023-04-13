@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7fe690a59e5bef18b3fe74c6f1cc45fd",
+    "content-hash": "32068d5b2ab7a9ccef44b4df32a41e20",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -335,6 +335,31 @@
             "description": "Mega Menu Page Builder By Amasty"
         },
         {
+            "name": "amasty/module-advanced-conditions",
+            "version": "1.5.8",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-advanced-conditions-1.5.8.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.14.6",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\Conditions\\": ""
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "Advanced Conditions by Amasty"
+        },
+        {
             "name": "amasty/module-elastic-search-lite",
             "version": "1.19.0",
             "dist": {
@@ -360,6 +385,37 @@
             ],
             "description": "Elastic Search Lite by Amasty",
             "homepage": "https://amasty.com/"
+        },
+        {
+            "name": "amasty/module-extra-fee",
+            "version": "1.6.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-extra-fee-1.6.7.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.13.6",
+                "amasty/module-advanced-conditions": ">=1.3.0",
+                "php": ">=7.3"
+            },
+            "suggest": {
+                "amasty/extra-fee-graph-ql": "Install extra-fee-graph-ql module to be able to use Extra Fee GraphQL queries.",
+                "amasty/module-extra-fee-mftf-2": "Install module-extra-fee-mftf-2 module to be able to run Extra Fee MFTF tests for Magento 2.3.5+ version.",
+                "amasty/module-extra-fee-mftf-3": "Install module-extra-fee-mftf-3 module to be able to run Extra Fee MFTF tests for Magento 2.4.0+ version."
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\Extrafee\\": ""
+                }
+            },
+            "license": [
+                "Commercial"
+            ],
+            "description": "Extra Fee by Amasty"
         },
         {
             "name": "amasty/module-mega-menu-lite",
