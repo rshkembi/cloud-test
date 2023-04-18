@@ -1,0 +1,13 @@
+diff --git a/vendor/magento/module-saas-common/Model/Http/Command/SubmitFeed.php b/vendor/magento/module-saas-common/Model/Http/Command/SubmitFeed.php
+index 17903941..d222dc02 100644
+--- a/vendor/magento/module-saas-common/Model/Http/Command/SubmitFeed.php
++++ b/vendor/magento/module-saas-common/Model/Http/Command/SubmitFeed.php
+@@ -131,7 +131,7 @@ class SubmitFeed
+             ];
+ 
+             if ($this->servicesConfig->isApiKeySet()) {
+-                $response = $client->request(\Zend_Http_Client::POST, $this->getUrl($feedName), $options);
++                $response = $client->request(\Laminas\Http\Request::METHOD_POST, $this->getUrl($feedName), $options);
+                 $result = !($response->getStatusCode() >= 500);
+                 if ($response->getStatusCode() !== 200) {
+                     $this->logger->error(
