@@ -1,0 +1,12 @@
+diff --git a/vendor/magento/module-page-builder/view/adminhtml/web/template/page-builder.html b/vendor/magento/module-page-builder/view/adminhtml/web/template/page-builder.html
+index 7833588e..7cc826eb 100644
+--- a/vendor/magento/module-page-builder/view/adminhtml/web/template/page-builder.html
++++ b/vendor/magento/module-page-builder/view/adminhtml/web/template/page-builder.html
+@@ -31,6 +31,6 @@
+         <with args="stage">
+             <render></render>
+         </with>
+-        <iframe width="1" height="1" attr="id: 'render_frame_' + id" sandbox="allow-scripts" style="display: none;"></iframe>
++        <iframe width="1" height="1" attr="id: 'render_frame_' + id" sandbox="allow-scripts allow-same-origin" style="display: none;"></iframe>
+     </if>
+ </div>
