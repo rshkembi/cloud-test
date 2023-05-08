@@ -521,6 +521,8 @@ return [
         'Magento_WishlistGiftCardGraphQl' => 1,
         'Magento_GiftCardRequisitionListGraphQl' => 1,
         'Aheadworks_Blog' => 1,
+        'Aheadworks_BlogGraphQl' => 1,
+        'Aheadworks_BlogSearch' => 1,
         'Aheadworks_Popup' => 1,
         'Amasty_Base' => 1,
         'Amasty_Conditions' => 1,

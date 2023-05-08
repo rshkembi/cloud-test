@@ -49,7 +49,9 @@
         }
     },
     "require": {
-        "aheadworks/module-blog": "^2.13",
+        "aheadworks/module-blog": "^2.15",
+        "aheadworks/module-blog-graph-ql": "^1.2",
+        "aheadworks/module-blog-search": "^1.1",
         "aheadworks/module-popup": "^1.2",
         "amasty/feed": "^2.6",
         "amasty/instagram-feed": "^2.1",
@@ -78,7 +80,7 @@
         "shipperhq/module-pickup": "^22.4",
         "shipperhq/module-shipper": "^20.45",
         "weltpixel/m2-social-login": "^1.11",
-        "yotpo/module-yotpo": "^4.0"
+        "yotpo/module-yotpo": "3.3.0"
     },
     "suggest": {
         "ext-pcntl": "Need for run processes in parallel mode"
