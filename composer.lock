@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a04bddee72f55aaf871a693fad80d91",
+    "content-hash": "3b38002cbf0ad2e2f436384f63a30aa5",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -29725,23 +29725,23 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.9.0",
+            "version": "v2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "234f8fd1023c9158e2314fa9d7d0e6a83db42910"
+                "reference": "f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/234f8fd1023c9158e2314fa9d7d0e6a83db42910",
-                "reference": "234f8fd1023c9158e2314fa9d7d0e6a83db42910",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38",
+                "reference": "f913fb8cceba1e6644b7b90c4bfb678ed8a3ef38",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.3 || ^5.7 || ^4.8.36"
+                "phpunit/phpunit": "^9.5 || ^5.7 || ^4.8.36"
             },
             "type": "library",
             "autoload": {
@@ -29785,19 +29785,15 @@
             ],
             "support": {
                 "issues": "https://github.com/reactphp/promise/issues",
-                "source": "https://github.com/reactphp/promise/tree/v2.9.0"
+                "source": "https://github.com/reactphp/promise/tree/v2.10.0"
             },
             "funding": [
                 {
-                    "url": "https://github.com/WyriHaximus",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/clue",
-                    "type": "github"
+                    "url": "https://opencollective.com/reactphp",
+                    "type": "open_collective"
                 }
             ],
-            "time": "2022-02-11T10:27:51+00:00"
+            "time": "2023-05-02T15:15:43+00:00"
         },
         {
             "name": "sabberworm/php-css-parser",
@@ -34231,19 +34227,27 @@
             "time": "2023-02-03T06:43:41+00:00"
         },
         {
-            "name": "yotpo/module-yotpo",
-            "version": "3.3.0",
+            "name": "yotpo/module-yotpo-core",
+            "version": "4.0.32",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/YotpoLtd/magento2-module-core.git",
+                "reference": "282cd80002eac5eb0ffe815fbf7c1f8b48017f74"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/yotpo/module-yotpo/yotpo-module-yotpo-3.3.0.0.zip",
-                "shasum": "23f0d9b77571158526fd0bdc1b8b92041f5fc4ae"
+                "url": "https://api.github.com/repos/YotpoLtd/magento2-module-core/zipball/282cd80002eac5eb0ffe815fbf7c1f8b48017f74",
+                "reference": "282cd80002eac5eb0ffe815fbf7c1f8b48017f74",
+                "shasum": ""
             },
             "require": {
-                "magento/framework": ">=101.0.0",
+                "magento/framework": ">=102.0.0",
                 "php": "~5.6.0|^7.0|^8.0"
             },
             "replace": {
-                "yotpo/magento2-module-yotpo-reviews": "*"
+                "yotpo/magento2-module-yotpo-reviews": "*",
+                "yotpo/module-review": "*",
+                "yotpo/module-yotpo": "*"
             },
             "type": "magento2-module",
             "autoload": {
@@ -34251,14 +34255,19 @@
                     "registration.php"
                 ],
                 "psr-4": {
-                    "Yotpo\\Yotpo\\": ""
+                    "Yotpo\\Core\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "OSL-3.0",
                 "AFL-3.0"
             ],
-            "description": "Yotpo Reviews extension for Magento2"
+            "description": "Yotpo Reviews core extension for Magento2",
+            "support": {
+                "source": "https://github.com/YotpoLtd/magento2-module-core/tree/4.0.32"
+            },
+            "time": "2022-12-04T09:00:45+00:00"
         },
         {
             "name": "zordius/lightncandy",
