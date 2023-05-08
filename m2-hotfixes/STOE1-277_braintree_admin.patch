@@ -1,0 +1,15 @@
+diff --git a/vendor/paypal/module-braintree-core/view/adminhtml/web/js/braintree.js b/vendor/paypal/module-braintree-core/view/adminhtml/web/js/braintree.js
+index 3cdba715f..f4c7b2e07 100644
+--- a/vendor/paypal/module-braintree-core/view/adminhtml/web/js/braintree.js
++++ b/vendor/paypal/module-braintree-core/view/adminhtml/web/js/braintree.js
+@@ -22,8 +22,8 @@
+             $selector: null,
+             selector: 'edit_form',
+             container: 'payment_form_braintree',
+-            active: false,
+-            scriptLoaded: false,
++            active: true,
++            scriptLoaded: true,
+             braintree: null,
+             selectedCardType: null,
+             imports: {
