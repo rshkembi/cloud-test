@@ -542,7 +542,7 @@ return [
         'Ebizmarts_MailChimp' => 1,
         'Facebook_BusinessExtension' => 1,
         'Fastly_Cdn' => 1,
-        'Yotpo_Yotpo' => 1,
+        'HumanElement_CSP' => 1,
         'HumanElement_DefinePrimaryKey' => 1,
         'HumanElement_DuplicateOrders' => 1,
         'HumanElement_OutOfStockRecommendations' => 1,
@@ -589,7 +589,9 @@ return [
         'Temando_ShippingRemover' => 1,
         'WeltPixel_Backend' => 1,
         'WeltPixel_SocialLogin' => 1,
-        'HumanElement_CSP' => 1
+        'Yotpo_Core' => 1,
+        'Yotpo_Reviews' => 1,
+        'Yotpo_SmsBump' => 1
     ],
     'system' => [
         'default' => [
