@@ -1,0 +1,14 @@
+diff --git a/vendor/paypal/module-braintree-core/view/adminhtml/web/js/braintree.js b/vendor/paypal/module-braintree-core/view/adminhtml/web/js/braintree.js
+index 9dfecea1..ecbb82ad 100644
+--- a/vendor/paypal/module-braintree-core/view/adminhtml/web/js/braintree.js
++++ b/vendor/paypal/module-braintree-core/view/adminhtml/web/js/braintree.js
+@@ -221,6 +221,9 @@ define([
+          * Trigger order submit
+          */
+         submitOrder: function () {
++            if (!$('#p_method_braintree').prop('checked')) {
++                return;
++            }
+             this.$selector.validate().form();
+             this.$selector.trigger('afterValidate.beforeSubmit');
+             $('body').trigger('processStop');
