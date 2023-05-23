@@ -10,6 +10,7 @@
         <referenceBlock name="view.addto.compare" remove="true"/>
 
         <referenceContainer name="content">
+            <block name="show.product.info.review" template="Magento_Catalog::product/view/inforeview.phtml" />
             <container name="main.content.wrap" htmlTag="div" htmlClass="top-content-wrap" after="stock.suggestions"></container>
 
             <container name="details.full.bleed" htmlTag="div" htmlClass="details-full-bleed" after="main.content.wrap"></container>
