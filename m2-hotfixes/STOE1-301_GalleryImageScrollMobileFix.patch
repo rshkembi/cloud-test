@@ -1,0 +1,18 @@
+diff --git a/lib/web/fotorama/fotorama.js b/lib/web/fotorama/fotorama.js
+index a60999ef..4e374c43 100644
+--- a/lib/web/fotorama/fotorama.js
++++ b/lib/web/fotorama/fotorama.js
+@@ -1140,7 +1140,12 @@ fotoramaVersion = '4.6.4';
+
+     function addEvent(el, e, fn, bool) {
+         if (!e) return;
+-        el.addEventListener ? el.addEventListener(e, fn, !!bool) : el.attachEvent('on' + e, fn);
++        const options = {
++            get passive(){
++                return e === 'wheel';
++            }
++        }
++        el.addEventListener ? el.addEventListener(e, fn, options) : el.attachEvent('on' + e, fn);
+     }
+
+     /**
