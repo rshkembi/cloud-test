@@ -1,5 +1,5 @@
 diff --git a/vendor/auctane/api/Model/Action/Export.php b/vendor/auctane/api/Model/Action/Export.php
-index 6773e4ce..f76355ab 100644
+index 3cdba715f..f4c7b2e07 100644
 --- a/vendor/auctane/api/Model/Action/Export.php
 +++ b/vendor/auctane/api/Model/Action/Export.php
 @@ -12,6 +12,7 @@ use Magento\Sales\Api\Data\OrderInterface;
@@ -7,13 +7,13 @@ index 6773e4ce..f76355ab 100644
  use Magento\Sales\Model\Order;
  use Magento\Sales\Model\ResourceModel\Order\Collection;
 +use Amasty\Extrafee\Model\ResourceModel\ExtrafeeOrder\Collection as ExtraFee;
-
-
+ 
+ 
  /**
 @@ -124,6 +125,9 @@ class Export
      /** @var WeightAdapter */
      private $weightAdapter;
-
+ 
 +    /** @var ExtraFee */
 +    private $extraFee;
 +
@@ -40,32 +40,25 @@ index 6773e4ce..f76355ab 100644
          $this->orderCollectionFactory = $order;
 @@ -181,6 +187,7 @@ class Export
          $this->_typeBundle = Type::TYPE_BUNDLE;
-
+ 
          $this->weightAdapter = $weightAdapter;
 +        $this->_extraFee = $extraFee;
      }
-
+ 
      /**
-@@ -281,9 +288,21 @@ class Export
-         $this->addXmlElement("OrderTotal", $orderTotal);
-         $this->addXmlElement("TaxAmount", $orderTax);
-         $this->addXmlElement("ShippingAmount", $orderShipping);
--        $this->addXmlElement("InternalNotes", "<![CDATA[{$order->getCustomerNote()}]]>");
+@@ -284,6 +291,15 @@ class Export
+         $this->addXmlElement("InternalNotes", "<![CDATA[{$order->getCustomerNote()}]]>");
          $this->addXmlElement("StoreCode", $order->getStore()->getCode());
-
+ 
 +        try {
 +            $feeAmount = $this->_extraFee->addFilterByOrderId($order->getEntityId())->fetchItem();
 +            $this->addXmlElement("CustomField1", $feeAmount->getTotalAmount() ?? '0.00');
-+            $note = ($order->getCustomerNote() ?? '')." - COLDPACK SELECTED";
-+            $this->addXmlElement("InternalNotes", "<![CDATA[{$note}]]>");
 +        } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
 +            $this->addXmlElement("CustomField1", '0.00');
-+            $this->addXmlElement("InternalNotes", "<![CDATA[{$order->getCustomerNote()}]]>");
 +        } catch (\Error $e) {
 +            $this->addXmlElement("CustomField1", '0.00');
-+            $this->addXmlElement("InternalNotes", "<![CDATA[{$order->getCustomerNote()}]]>");
 +        }
 +
          $this->_getGiftMessageInfo($order);
-
+ 
          $this->_xmlData .= "\t<Customer>\n";

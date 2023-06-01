@@ -545,6 +545,7 @@ return [
         'HumanElement_CSP' => 1,
         'HumanElement_DefinePrimaryKey' => 1,
         'HumanElement_DuplicateOrders' => 1,
+        'HumanElement_OrderColdPackDetail' => 1,
         'HumanElement_OutOfStockRecommendations' => 1,
         'HumanElement_QtyStepper' => 1,
         'HumanElement_RemoveDownloadable' => 1,
