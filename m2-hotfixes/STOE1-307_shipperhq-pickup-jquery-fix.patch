@@ -1,0 +1,13 @@
+diff --git a/vendor/shipperhq/module-pickup/src/view/adminhtml/templates/order/create/shipping/method/shqextra/form.phtml b/vendor/shipperhq/module-pickup/src/view/adminhtml/templates/order/create/shipping/method/shqextra/form.phtml
+index 9dfj2pa1..ec22f2ad 179244
+--- a/vendor/shipperhq/module-pickup/src/view/adminhtml/templates/order/create/shipping/method/shqextra/form.phtml
++++ b/vendor/shipperhq/module-pickup/src/view/adminhtml/templates/order/create/shipping/method/shqextra/form.phtml
+@@ -46,7 +46,7 @@
+                 processLocation();
+             });
+
+-            $(window).load(function () {
++            $(window).on('load', function () {
+                 // Run one time to process pre-selected location
+                 processLocation();
+             });

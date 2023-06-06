@@ -77,7 +77,7 @@
         "salsify/json-streaming-parser": "^8.2",
         "shipperhq/module-address-autocomplete": "^20.6",
         "shipperhq/module-option": "^20.5",
-        "shipperhq/module-pickup": "^22.4",
+        "shipperhq/module-pickup": "^22.7",
         "shipperhq/module-shipper": "^20.45",
         "weltpixel/m2-social-login": "^1.11",
         "yotpo/module-yotpo": "4.0.32",

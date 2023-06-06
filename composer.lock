@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01ac6fbc53e2b0b5bef9ecec43eafc2b",
+    "content-hash": "30323b7695f4ccad239ca62b70ce6f1b",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -30592,17 +30592,17 @@
         },
         {
             "name": "shipperhq/module-pickup",
-            "version": "22.6.0",
+            "version": "22.7.0",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.com:ShipperHQ/Platform/M2/module-pickup.git",
-                "reference": "f84d03004ccf30ddc01fe1d21d7ba0c7a254d4b3"
+                "reference": "84c2f50afbc7c4f31e30ae5228e89eca3ed6c753"
             },
             "dist": {
                 "type": "tar",
-                "url": "https://packages.shipperhq.com/dist/shipperhq/module-pickup/shipperhq-module-pickup-f84d03004ccf30ddc01fe1d21d7ba0c7a254d4b3-zip-d68666.tar",
-                "reference": "f84d03004ccf30ddc01fe1d21d7ba0c7a254d4b3",
-                "shasum": "17bb3fe9b12ea846438de5316f82de3160c9fa86"
+                "url": "https://packages.shipperhq.com/dist/shipperhq/module-pickup/shipperhq-module-pickup-84c2f50afbc7c4f31e30ae5228e89eca3ed6c753-zip-8313d1.tar",
+                "reference": "84c2f50afbc7c4f31e30ae5228e89eca3ed6c753",
+                "shasum": "a2afb4430660311cabb59a1a269f8e94bea04ba7"
             },
             "require": {
                 "shipperhq/library-shipper": "^20.12",
@@ -30637,7 +30637,7 @@
                 "documentation": "http://docs.shipperhq.com",
                 "issues": "https://gitlab.com/api/v4/projects/34912903/issues"
             },
-            "time": "2022-10-10T11:21:00+01:00"
+            "time": "2023-04-04T10:56:23+01:00"
         },
         {
             "name": "shipperhq/module-shipper",
