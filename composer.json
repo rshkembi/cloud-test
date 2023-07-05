@@ -71,6 +71,7 @@
         "magento/magento-cloud-metapackage": ">=2.4.6 <2.4.7",
         "magento/module-elasticsearch-catalog-permissions-graph-ql": "^100.4",
         "magento/module-page-builder-product-recommendations": "^1.2",
+        "magento/product-enterprise-edition": "2.4.6-p1",
         "magento/product-recommendations": "^4.0",
         "mageworx/module-seosuiteultimate": "2.35.18",
         "mailchimp/mc-magento2": "^103.4",
