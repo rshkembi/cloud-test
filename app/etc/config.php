@@ -532,6 +532,7 @@ return [
         'Amasty_Extrafee' => 1,
         'Amasty_Feed' => 1,
         'Amasty_InstagramFeed' => 1,
+        'Amasty_LibSwiperJs' => 1,
         'Amasty_MegaMenuLite' => 1,
         'Amasty_MegaMenu' => 1,
         'Amasty_MegaMenuGraphQl' => 1,

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0c2d289b872794cedebea95e84944b7",
+    "content-hash": "e9f3cfe43ed23b51a62e0ca1f881fbe4",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -250,10 +250,10 @@
         },
         {
             "name": "amasty/feed",
-            "version": "2.7.2",
+            "version": "2.7.4",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.amasty.com/enterprise/packages/amasty/feed-2.7.2.zip"
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/feed-2.7.4.zip"
             },
             "require": {
                 "amasty/base": ">=1.14.6",
@@ -276,13 +276,14 @@
         },
         {
             "name": "amasty/instagram-feed",
-            "version": "2.2.2",
+            "version": "3.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.amasty.com/enterprise/packages/amasty/instagram-feed-2.2.2.zip"
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/instagram-feed-3.0.0.zip"
             },
             "require": {
-                "amasty/base": ">=1.13.6",
+                "amasty/base": ">=1.14.6",
+                "amasty/module-lib-swiper-js": ">=9.1.1",
                 "php": ">=7.3"
             },
             "suggest": {
@@ -298,20 +299,20 @@
                 }
             },
             "license": [
-                "Commercial"
+                "proprietary"
             ],
             "description": "Instagram Feed By Amasty"
         },
         {
             "name": "amasty/mega-menu",
-            "version": "2.4.3",
+            "version": "2.5.0",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.amasty.com/enterprise/packages/amasty/mega-menu-2.4.3.zip"
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/mega-menu-2.5.0.zip"
             },
             "require": {
-                "amasty/base": ">=1.14.5",
-                "amasty/module-mega-menu-lite": ">=1.4.3",
+                "amasty/base": ">=1.14.6",
+                "amasty/module-mega-menu-lite": ">=1.4.4",
                 "magento/module-review": "*",
                 "php": ">=7.3.0"
             },
@@ -330,19 +331,19 @@
                 }
             },
             "license": [
-                "Commercial"
+                "proprietary"
             ],
             "description": "Mega Menu By Amasty"
         },
         {
             "name": "amasty/mega-menu-graphql",
-            "version": "1.0.11",
+            "version": "1.0.12",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.amasty.com/enterprise/packages/amasty/mega-menu-graphql-1.0.11.zip"
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/mega-menu-graphql-1.0.12.zip"
             },
             "require": {
-                "amasty/base": ">=1.14.3",
+                "amasty/base": ">=1.14.6",
                 "amasty/mega-menu": ">=1.9.0",
                 "magento/framework": ">=103.0.3",
                 "magento/module-graph-ql": "*",
@@ -358,7 +359,7 @@
                 }
             },
             "license": [
-                "Commercial"
+                "proprietary"
             ],
             "description": "Mega Menu Graphql By Amasty"
         },
@@ -416,13 +417,13 @@
         },
         {
             "name": "amasty/module-elastic-search-lite",
-            "version": "1.19.0",
+            "version": "1.20.0",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-elastic-search-lite-1.19.0.zip"
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-elastic-search-lite-1.20.0.zip"
             },
             "require": {
-                "amasty/base": ">=1.14.5",
+                "amasty/base": ">=1.14.6",
                 "amasty/xsearch": "*",
                 "php": ">=7.3"
             },
@@ -436,7 +437,7 @@
                 }
             },
             "license": [
-                "Commercial"
+                "proprietary"
             ],
             "description": "Elastic Search Lite by Amasty",
             "homepage": "https://amasty.com/"
@@ -473,14 +474,40 @@
             "description": "Extra Fee by Amasty"
         },
         {
-            "name": "amasty/module-mega-menu-lite",
-            "version": "1.4.3",
+            "name": "amasty/module-lib-swiper-js",
+            "version": "9.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-mega-menu-lite-1.4.3.zip"
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-lib-swiper-js-9.1.1.zip"
             },
             "require": {
-                "amasty/base": ">=1.14.5",
+                "amasty/base": ">=1.14.6",
+                "php": ">=7.3"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Amasty\\LibSwiperJs\\": ""
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "Lib Swiper Js by Amasty",
+            "homepage": "https://amasty.com/"
+        },
+        {
+            "name": "amasty/module-mega-menu-lite",
+            "version": "1.5.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/module-mega-menu-lite-1.5.0.zip"
+            },
+            "require": {
+                "amasty/base": ">=1.14.6",
                 "magento/module-catalog": "*",
                 "php": ">=7.3.0"
             },
@@ -494,17 +521,17 @@
                 }
             },
             "license": [
-                "Commercial"
+                "proprietary"
             ],
             "description": "Mega Menu Lite by Amasty",
             "homepage": "https://amasty.com/"
         },
         {
             "name": "amasty/xnotif",
-            "version": "1.14.4",
+            "version": "1.14.6",
             "dist": {
                 "type": "zip",
-                "url": "https://composer.amasty.com/enterprise/packages/amasty/xnotif-1.14.4.zip"
+                "url": "https://composer.amasty.com/enterprise/packages/amasty/xnotif-1.14.6.zip"
             },
             "require": {
                 "amasty/base": ">=1.14.6",
