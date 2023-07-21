@@ -2,7 +2,7 @@ diff --git a/vendor/auctane/api/Model/Action/Export.php b/vendor/auctane/api/Mod
 index 3cdba715f..f4c7b2e07 100644
 --- a/vendor/auctane/api/Model/Action/Export.php
 +++ b/vendor/auctane/api/Model/Action/Export.php
-@@ -12,6 +12,7 @@ use Magento\Sales\Api\Data\OrderInterface;
+@@ -12,6 +12,7 @@
  use Magento\Sales\Api\Data\OrderItemInterface;
  use Magento\Sales\Model\Order;
  use Magento\Sales\Model\ResourceModel\Order\Collection;
@@ -10,17 +10,19 @@ index 3cdba715f..f4c7b2e07 100644
  
  
  /**
-@@ -124,6 +125,9 @@ class Export
+@@ -124,6 +125,11 @@
      /** @var WeightAdapter */
      private $weightAdapter;
  
 +    /** @var ExtraFee */
 +    private $extraFee;
 +
++    const COLD_PACK_MESSAGE = 'COLDPACK SELECTED';
++
      /**
       * Export class constructor
       *
-@@ -134,6 +138,7 @@ class Export
+@@ -134,6 +140,7 @@
       * @param \Auctane\Api\Helper\Data $dataHelper helper object
       * @param \Magento\GiftMessage\Helper\Message $giftMessage The gift message.
       * @param WeightAdapter $weightAdapter
@@ -28,7 +30,7 @@ index 3cdba715f..f4c7b2e07 100644
       */
      public function __construct(
          \Magento\Sales\Model\ResourceModel\Order\CollectionFactory $order,
-@@ -142,7 +147,8 @@ class Export
+@@ -142,7 +149,8 @@
          \Magento\Eav\Model\Config $eavConfig,
          \Auctane\Api\Helper\Data $dataHelper,
          \Magento\GiftMessage\Helper\Message $giftMessage,
@@ -38,7 +40,7 @@ index 3cdba715f..f4c7b2e07 100644
      )
      {
          $this->orderCollectionFactory = $order;
-@@ -181,6 +187,7 @@ class Export
+@@ -181,6 +189,7 @@
          $this->_typeBundle = Type::TYPE_BUNDLE;
  
          $this->weightAdapter = $weightAdapter;
@@ -46,13 +48,34 @@ index 3cdba715f..f4c7b2e07 100644
      }
  
      /**
-@@ -284,6 +291,15 @@ class Export
+@@ -241,7 +250,11 @@
+ 
+         /** @var Order $order */
+         foreach ($orders as $order) {
+-            $this->writeOrderXml($order);
++            $cpFee = $this->_extraFee->addFilterByOrderId($order->getEntityId())->getFirstItem();
++            if (($cpFee && $cpFee->getDataByKey('total_amount') > 0) || $this->checkOrderItemsForColdPack($order)) {
++                $order->setData('customer_note', self::COLD_PACK_MESSAGE);
++            }
++            $this->writeOrderXml($order, $cpFee);
+         }
+ 
+         $this->_xmlData .= "</Orders>";
+@@ -254,7 +267,7 @@
+      * @param Order $order
+      * @return $this
+      */
+-    private function writeOrderXml(Order $order): self
++    private function writeOrderXml(Order $order, $cpFee = null): self
+     {
+         $this->_xmlData .= "\t<Order>\n";
+         $this->addXmlElement("OrderNumber", $order->getIncrementId());
+@@ -284,6 +297,14 @@
          $this->addXmlElement("InternalNotes", "<![CDATA[{$order->getCustomerNote()}]]>");
          $this->addXmlElement("StoreCode", $order->getStore()->getCode());
  
 +        try {
-+            $feeAmount = $this->_extraFee->addFilterByOrderId($order->getEntityId())->fetchItem();
-+            $this->addXmlElement("CustomField1", $feeAmount->getTotalAmount() ?? '0.00');
++            $this->addXmlElement("CustomField1", $cpFee->getTotalAmount() ?? '0.00');
 +        } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
 +            $this->addXmlElement("CustomField1", '0.00');
 +        } catch (\Error $e) {
@@ -62,3 +85,24 @@ index 3cdba715f..f4c7b2e07 100644
          $this->_getGiftMessageInfo($order);
  
          $this->_xmlData .= "\t<Customer>\n";
+@@ -639,4 +660,20 @@
+         $this->addXmlElement("UnitPrice", $order->getDiscountAmount());
+         $this->_xmlData .= "\t</Item>\n";
+     }
++
++    /**
++     * Reviews order items purchased and looks for the presence of a cold pack item
++     * @param $order
++     * @return bool
++     */
++    private function checkOrderItemsForColdPack($order): bool
++    {
++        foreach ($order->getItems() as $item) {
++            if ($item->getSku() != self::COLD_PACK_SKU) {
++                continue;
++            }
++            return true;
++        }
++        return false;
++    }
+ }
