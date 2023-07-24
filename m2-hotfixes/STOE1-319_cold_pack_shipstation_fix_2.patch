@@ -1,0 +1,20 @@
+diff --git a/vendor/auctane/api/Controller/Auctane/Index.php b/vendor/auctane/api/Controller/Auctane/Index.php
+index 3cdba715f..f4c7b2e07 100644
+--- a/vendor/auctane/api/Controller/Auctane/Index.php
++++ b/vendor/auctane/api/Controller/Auctane/Index.php
+@@ -171,6 +171,15 @@
+             $this->logger->error($fault->getMessage());
+         }
+ 
++        try {
++            $writer = new \Zend_Log_Writer_Stream(BP . '/var/log/shipstation-custom.log');
++            $logger = new \Zend_Log();
++            $logger->addWriter($writer);
++            $logger->info($result);
++        } catch (Exception $fault) {
++            // PASS
++        }
++
+         $response->setBody($result);
+     }
+ }
