@@ -57,11 +57,12 @@ index 3cdba715f..f4c7b2e07 100644
      }
  
      /**
-@@ -241,7 +252,11 @@
+@@ -241,7 +252,12 @@
  
          /** @var Order $order */
          foreach ($orders as $order) {
 -            $this->writeOrderXml($order);
++            $this->_extraFee->clear()->getSelect()->reset('where');
 +            $cpFee = $this->_extraFee->addFilterByOrderId($order->getEntityId())->getFirstItem();
 +            if (($cpFee && $cpFee->getDataByKey('total_amount') > 0) || $this->checkOrderItemsForColdPack($order)) {
 +                $order->setData('customer_note', self::COLD_PACK_MESSAGE);
@@ -70,7 +71,7 @@ index 3cdba715f..f4c7b2e07 100644
          }
  
          $this->_xmlData .= "</Orders>";
-@@ -254,7 +269,7 @@
+@@ -254,7 +270,7 @@
       * @param Order $order
       * @return $this
       */
@@ -79,7 +80,7 @@ index 3cdba715f..f4c7b2e07 100644
      {
          $this->_xmlData .= "\t<Order>\n";
          $this->addXmlElement("OrderNumber", $order->getIncrementId());
-@@ -284,6 +299,14 @@
+@@ -284,6 +300,14 @@
          $this->addXmlElement("InternalNotes", "<![CDATA[{$order->getCustomerNote()}]]>");
          $this->addXmlElement("StoreCode", $order->getStore()->getCode());
  
@@ -94,7 +95,7 @@ index 3cdba715f..f4c7b2e07 100644
          $this->_getGiftMessageInfo($order);
  
          $this->_xmlData .= "\t<Customer>\n";
-@@ -639,4 +662,20 @@
+@@ -639,4 +663,20 @@
          $this->addXmlElement("UnitPrice", $order->getDiscountAmount());
          $this->_xmlData .= "\t</Item>\n";
      }
