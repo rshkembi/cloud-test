@@ -1,0 +1,103 @@
+diff --git a/vendor/magento/module-google-tag-manager/Observer/SetGoogleAnalyticsOnCheckoutObserver.php b/vendor/magento/module-google-tag-manager/Observer/SetGoogleAnalyticsOnCheckoutObserver.php
+index 390bf71..ae65833 100644
+--- a/vendor/magento/module-google-tag-manager/Observer/SetGoogleAnalyticsOnCheckoutObserver.php
++++ b/vendor/magento/module-google-tag-manager/Observer/SetGoogleAnalyticsOnCheckoutObserver.php
+@@ -12,6 +12,7 @@
+ use Magento\Framework\Serialize\SerializerInterface;
+ use Magento\GoogleTagManager\Block\ListJson;
+ use Magento\GoogleTagManager\Helper\Data;
++use Magento\Framework\UrlInterface;
+ 
+ /**
+  * Set Gtag on checkout observer
+@@ -39,6 +40,8 @@
+      */
+     protected $scopeConfig;
+ 
++    protected $_urlInterface;
++
+     /**
+      * @param Data $helper
+      * @param Session $checkoutSession
+@@ -49,11 +52,13 @@
+         Data $helper,
+         Session $checkoutSession,
+         SerializerInterface $jsonHelper,
++        UrlInterface $urlInterface,
+         ScopeConfigInterface $scopeConfig
+     ) {
+         $this->helper = $helper;
+         $this->checkoutSession = $checkoutSession;
+         $this->jsonHelper = $jsonHelper;
++        $this->_urlInterface = $urlInterface;
+         $this->scopeConfig = $scopeConfig;
+     }
+ 
+@@ -68,33 +73,41 @@
+      */
+     public function execute(Observer $observer)
+     {
+-        if (!$this->helper->isTagManagerAvailable()) {
++        try {
++            if (!$this->helper->isTagManagerAvailable() || str_contains($this->_urlInterface->getCurrentUrl(), '/checkout/klarna/cookie/')) {
++                return $this;
++            } else if (!method_exists(get_class($controllerAction),'getRequest')) {
++                return $this;
++            }
++            /** @var \Magento\Checkout\Controller\Onepage $controllerAction */
++            $controllerAction = $observer->getEvent()->getControllerAction();
++            $action = $controllerAction->getRequest()->getActionName();
++            $body = [];
++            switch ($action) {
++                case 'saveBilling':
++                    $encodedBody = $controllerAction->getResponse()->getBody();
++                    if ($encodedBody) {
++                        $body = $this->jsonHelper->unserialize($encodedBody);
++                    }
++
++                    if ($body['goto_section'] == 'shipping') {
++                        $shippingBlock = $controllerAction->getLayout()
++                            ->createBlock(ListJson::class)
++                            ->setTemplate('Magento_GoogleTagManager::checkout/step.phtml')
++                            ->setStepName('shipping');
++                        $body['update_section']['name'] = 'shipping';
++                        $body['update_section']['html'] = '<div id="checkout-shipping-load"></div>'
++                            . $shippingBlock->toHtml();
++                        $controllerAction->getResponse()->setBody($this->jsonHelper->serialize($body));
++                    }
++                    break;
++            }
++
++            return $this;
++        } catch (\Error $e) {
++            return $this;
++        } catch (\Throwable $t) {
+             return $this;
+         }
+-        /** @var \Magento\Checkout\Controller\Onepage $controllerAction */
+-        $controllerAction = $observer->getEvent()->getControllerAction();
+-        $action = $controllerAction->getRequest()->getActionName();
+-        $body = [];
+-        switch ($action) {
+-            case 'saveBilling':
+-                $encodedBody = $controllerAction->getResponse()->getBody();
+-                if ($encodedBody) {
+-                    $body = $this->jsonHelper->unserialize($encodedBody);
+-                }
+-
+-                if ($body['goto_section'] == 'shipping') {
+-                    $shippingBlock = $controllerAction->getLayout()
+-                        ->createBlock(ListJson::class)
+-                        ->setTemplate('Magento_GoogleTagManager::checkout/step.phtml')
+-                        ->setStepName('shipping');
+-                    $body['update_section']['name'] = 'shipping';
+-                    $body['update_section']['html'] = '<div id="checkout-shipping-load"></div>'
+-                        . $shippingBlock->toHtml();
+-                    $controllerAction->getResponse()->setBody($this->jsonHelper->serialize($body));
+-                }
+-                break;
+-        }
+-
+-        return $this;
+     }
+ }
