@@ -64,7 +64,7 @@
         "auctane/api": "^2.2",
         "facebook/facebook-for-magento2": "^1.4.4",
         "klarna/m2-checkout": "*",
-        "klarna/m2-klarna": "2.0.4",
+        "klarna/m2-klarna": "^2.0",
         "magento/composer-root-update-plugin": "^2.0.3",
         "magento/extension-b2b": "^1.3",
         "magento/magento-cloud-metapackage": ">=2.4.6 <2.4.7",

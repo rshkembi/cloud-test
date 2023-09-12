@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9f3cfe43ed23b51a62e0ca1f881fbe4",
+    "content-hash": "b36133fba8527f011435d7e9de74e7b1",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -3684,24 +3684,24 @@
         },
         {
             "name": "klarna/m2-klarna",
-            "version": "2.0.4",
+            "version": "2.0.14",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/m2-klarna/klarna-m2-klarna-2.0.4.0.zip",
-                "shasum": "f42b3713b351b4eac38412d5a1902618d6971ec1"
+                "url": "https://repo.magento.com/archives/klarna/m2-klarna/klarna-m2-klarna-2.0.14.0.zip",
+                "shasum": "50e9011b42f5d2f2b3ded37ba293186f474f98ba"
             },
             "require": {
-                "klarna/module-backend": "^10.0.3",
-                "klarna/module-base": "^10.0.3",
-                "klarna/module-kco": "^11.0.4",
-                "klarna/module-keb": "^2.0.3",
-                "klarna/module-kss": "^2.0.4",
-                "klarna/module-logger": "^2.0.1",
-                "klarna/module-orderlines": "^2.0.4",
-                "klarna/module-osm": "^3.0.1",
-                "klarna/module-payments": "^9.0.4",
-                "klarna/module-payments-graph-ql": "^2.0.4",
-                "klarna/module-support": "^2.0.3"
+                "klarna/module-backend": "10.0.7",
+                "klarna/module-base": "10.0.7",
+                "klarna/module-kco": "11.0.9",
+                "klarna/module-keb": "2.0.11",
+                "klarna/module-kss": "2.0.9",
+                "klarna/module-logger": "2.0.3",
+                "klarna/module-orderlines": "2.0.9",
+                "klarna/module-osm": "3.0.4",
+                "klarna/module-payments": "9.0.14",
+                "klarna/module-payments-graph-ql": "2.0.14",
+                "klarna/module-support": "2.0.7"
             },
             "replace": {
                 "klarna/m2-checkout": "*"
@@ -3714,15 +3714,15 @@
         },
         {
             "name": "klarna/module-backend",
-            "version": "10.0.3",
+            "version": "10.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-backend/klarna-module-backend-10.0.3.0.zip",
-                "shasum": "579ec97daae78c9f179c6f79da7b2805eced2550"
+                "url": "https://repo.magento.com/archives/klarna/module-backend/klarna-module-backend-10.0.7.0.zip",
+                "shasum": "3274ffeb70493ea70937ccb0334aef290d38b145"
             },
             "require": {
-                "klarna/module-base": "^10.0.3",
-                "klarna/module-logger": "^2.0.1",
+                "klarna/module-base": "10.0.7",
+                "klarna/module-logger": "2.0.3",
                 "magento/framework": "^103",
                 "magento/module-payment": "^100.1|^100.4",
                 "magento/module-quote": "^101.0|^101.2",
@@ -3778,15 +3778,15 @@
         },
         {
             "name": "klarna/module-base",
-            "version": "10.0.3",
+            "version": "10.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-base/klarna-module-base-10.0.3.0.zip",
-                "shasum": "6b705fc4a927ddc13ceeda8b2eb1d114e5155bb1"
+                "url": "https://repo.magento.com/archives/klarna/module-base/klarna-module-base-10.0.7.0.zip",
+                "shasum": "1787b0ff58fdbc752eb9cfb976f2d9eece15a4b5"
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.3.0",
-                "klarna/module-logger": "^2.0.1",
+                "klarna/module-logger": "2.0.3",
                 "magento/framework": "^103",
                 "magento/module-bundle": "^100.1|^101.0",
                 "magento/module-catalog": "^103.0|^104.0",
@@ -3850,18 +3850,18 @@
         },
         {
             "name": "klarna/module-kco",
-            "version": "11.0.4",
+            "version": "11.0.9",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-kco/klarna-module-kco-11.0.4.0.zip",
-                "shasum": "2edf5138eb945743f6e15b355a247845b0fb9cca"
+                "url": "https://repo.magento.com/archives/klarna/module-kco/klarna-module-kco-11.0.9.0.zip",
+                "shasum": "d4b737a5daa99ca29bbdcb52c00f4dd6a5cb7500"
             },
             "require": {
                 "ext-json": "*",
-                "klarna/module-base": "^10.0.3",
-                "klarna/module-kss": "^2.0.4",
-                "klarna/module-logger": "^2.0.1",
-                "klarna/module-orderlines": "^2.0.4",
+                "klarna/module-base": "10.0.7",
+                "klarna/module-kss": "2.0.9",
+                "klarna/module-logger": "2.0.3",
+                "klarna/module-orderlines": "2.0.9",
                 "magento/framework": "^103",
                 "monolog/monolog": "^2.3",
                 "php": "~7.4.0||~8.1.0||~8.2.0"
@@ -3919,14 +3919,15 @@
         },
         {
             "name": "klarna/module-keb",
-            "version": "2.0.3",
+            "version": "2.0.11",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-keb/klarna-module-keb-2.0.3.0.zip",
-                "shasum": "6851bb9747676f26e39392a893a6abd849642f74"
+                "url": "https://repo.magento.com/archives/klarna/module-keb/klarna-module-keb-2.0.11.0.zip",
+                "shasum": "eaa0cfd8fc308c044f9b991b0c24f279a465fc47"
             },
             "require": {
-                "klarna/module-base": "^10.0.3",
+                "klarna/module-base": "10.0.7",
+                "klarna/module-payments": "9.0.14",
                 "magento/framework": "^103",
                 "php": "~7.4.0||~8.1.0||~8.2.0"
             },
@@ -3958,15 +3959,15 @@
         },
         {
             "name": "klarna/module-kss",
-            "version": "2.0.4",
+            "version": "2.0.9",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-kss/klarna-module-kss-2.0.4.0.zip",
-                "shasum": "46a83dc15c7bd04186abbb671241f6611b93d1ef"
+                "url": "https://repo.magento.com/archives/klarna/module-kss/klarna-module-kss-2.0.9.0.zip",
+                "shasum": "db483ddfe55f2895b51e523ea036b6e4aada569d"
             },
             "require": {
-                "klarna/module-base": "^10.0.3",
-                "klarna/module-orderlines": "^2.0.4",
+                "klarna/module-base": "10.0.7",
+                "klarna/module-orderlines": "2.0.9",
                 "magento/framework": "^103",
                 "php": "~7.4.0||~8.1.0||~8.2.0"
             },
@@ -3998,11 +3999,11 @@
         },
         {
             "name": "klarna/module-logger",
-            "version": "2.0.1",
+            "version": "2.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-logger/klarna-module-logger-2.0.1.0.zip",
-                "shasum": "14dc4552968f2fb2466cbb80962287a872295975"
+                "url": "https://repo.magento.com/archives/klarna/module-logger/klarna-module-logger-2.0.3.0.zip",
+                "shasum": "ce5eaa622668534690ba858fb096e063d624a0cb"
             },
             "require": {
                 "ext-json": "*",
@@ -4063,14 +4064,15 @@
         },
         {
             "name": "klarna/module-orderlines",
-            "version": "2.0.4",
+            "version": "2.0.9",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-orderlines/klarna-module-orderlines-2.0.4.0.zip",
-                "shasum": "0c0ab1d859446524ac89a55c0aec3335d0293924"
+                "url": "https://repo.magento.com/archives/klarna/module-orderlines/klarna-module-orderlines-2.0.9.0.zip",
+                "shasum": "06d96ca5d73bb3c20bd999260268cae4e27cd79e"
             },
             "require": {
-                "klarna/module-base": "^10.0.3",
+                "klarna/module-base": "10.0.7",
+                "klarna/module-logger": "2.0.3",
                 "magento/framework": "^103",
                 "magento/module-payment": "^100.1|^100.4",
                 "magento/module-quote": "^101.0|^101.2",
@@ -4131,13 +4133,14 @@
         },
         {
             "name": "klarna/module-osm",
-            "version": "3.0.1",
+            "version": "3.0.4",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-osm/klarna-module-osm-3.0.1.0.zip",
-                "shasum": "be119c45b1be7c7d23215fd6cab629571361dafc"
+                "url": "https://repo.magento.com/archives/klarna/module-osm/klarna-module-osm-3.0.4.0.zip",
+                "shasum": "4c96b7a707f24b5c2d8320bdfa0a030eaf3d42e6"
             },
             "require": {
+                "klarna/module-base": "10.0.7",
                 "magento/framework": "^103",
                 "magento/module-catalog": "^103.0|^104.0",
                 "magento/module-checkout": "^100.1",
@@ -4172,15 +4175,15 @@
         },
         {
             "name": "klarna/module-payments",
-            "version": "9.0.4",
+            "version": "9.0.14",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-payments/klarna-module-payments-9.0.4.0.zip",
-                "shasum": "e75584935cb5f2775c33341e65fb0cb125b349af"
+                "url": "https://repo.magento.com/archives/klarna/module-payments/klarna-module-payments-9.0.14.0.zip",
+                "shasum": "69724a066f72dedf3df30de580042a5b730b23ea"
             },
             "require": {
-                "klarna/module-base": "^10.0.3",
-                "klarna/module-logger": "^2.0.1",
+                "klarna/module-base": "10.0.7",
+                "klarna/module-logger": "2.0.3",
                 "magento/framework": "^103",
                 "magento/module-backend": "^101.0|^102.0",
                 "magento/module-checkout": "^100.1",
@@ -4250,15 +4253,15 @@
         },
         {
             "name": "klarna/module-payments-graph-ql",
-            "version": "2.0.4",
+            "version": "2.0.14",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-payments-graph-ql/klarna-module-payments-graph-ql-2.0.4.0.zip",
-                "shasum": "fbbf38c9a3fe6e1d4c0823159f20a3fa698a8033"
+                "url": "https://repo.magento.com/archives/klarna/module-payments-graph-ql/klarna-module-payments-graph-ql-2.0.14.0.zip",
+                "shasum": "e5c95316544ab13bc0cb7bdec0e7b4e2d299db8c"
             },
             "require": {
-                "klarna/module-base": "^10.0.3",
-                "klarna/module-payments": "^9.0.4",
+                "klarna/module-base": "10.0.7",
+                "klarna/module-payments": "9.0.14",
                 "magento/framework": "^103",
                 "magento/module-quote-graph-ql": "^100",
                 "magento/module-store": "^101.0",
@@ -4297,14 +4300,14 @@
         },
         {
             "name": "klarna/module-support",
-            "version": "2.0.3",
+            "version": "2.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://repo.magento.com/archives/klarna/module-support/klarna-module-support-2.0.3.0.zip",
-                "shasum": "d385b8ca165109d78e3d9bb29c57e957a013943e"
+                "url": "https://repo.magento.com/archives/klarna/module-support/klarna-module-support-2.0.7.0.zip",
+                "shasum": "4ca5c47d237b30156ebd1cc36d4758e1826da104"
             },
             "require": {
-                "klarna/module-base": "^10.0.3",
+                "klarna/module-base": "10.0.7",
                 "magento/framework": "^103",
                 "php": "~7.4.0||~8.1.0||~8.2.0"
             },
