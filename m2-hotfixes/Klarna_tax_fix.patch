@@ -1,0 +1,16 @@
+diff --git a/vendor/klarna/module-orderlines/Model/Calculator/Item.php b/vendor/klarna/module-orderlines/Model/Calculator/Item.php
+index 390bf71..ae65833 100644
+--- a/vendor/klarna/module-orderlines/Model/Calculator/Item.php
++++ b/vendor/klarna/module-orderlines/Model/Calculator/Item.php
+@@ -99,6 +99,11 @@
+         $itemResult['total_amount'] = $this->helper->toApiFloat(
+             $item['base_row_total'] - $item['base_discount_amount']
+         );
++        if ($this->taxConfig->priceIncludesTax($item['store'])) {
++            $itemResult['total_amount'] = $this->helper->toApiFloat(
++                $item['base_row_total_incl_tax'] - $item['base_discount_amount'] - $item['base_tax_amount']
++            );
++        }
+         $itemResult['total_discount_amount'] = $this->helper->toApiFloat($item['base_discount_amount']);
+ 
+         if (!$this->klarnaConfig->isSeparateTaxLine($store)) {
