@@ -49,10 +49,6 @@
         }
     },
     "require": {
-        "aheadworks/module-blog": "^2.13",
-        "aheadworks/module-blog-graph-ql": "^1.2",
-        "aheadworks/module-blog-search": "^1.1",
-        "aheadworks/module-popup": "^1.2",
         "amasty/feed": "^2.7",
         "amasty/instagram-feed": "^3.0",
         "amasty/mega-menu-graphql": "^1.0",
