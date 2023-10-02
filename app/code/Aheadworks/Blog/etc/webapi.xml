@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Blog Category -->
+    <route url="/V1/blogCategory/get/:categoryId" method="GET">
+        <service class="Aheadworks\Blog\Api\CategoryRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/blogCategory/create" method="POST">
+        <service class="Aheadworks\Blog\Api\CategoryRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::categories"/>
+        </resources>
+    </route>
+    <route url="/V1/blogCategory/update/:id" method="PUT">
+        <service class="Aheadworks\Blog\Api\CategoryRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::categories"/>
+        </resources>
+    </route>
+    <route url="/V1/blogCategory/delete/:categoryId" method="DELETE">
+        <service class="Aheadworks\Blog\Api\CategoryRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::categories"/>
+        </resources>
+    </route>
+    <route url="/V1/blogCategory/search" method="GET">
+        <service class="Aheadworks\Blog\Api\CategoryRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <!-- Blog Post -->
+    <route url="/V1/blogPost/get/:postId" method="GET">
+        <service class="Aheadworks\Blog\Api\PostRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/blogPost/getWithRelatedPosts" method="POST">
+        <service class="Aheadworks\Blog\Api\PostRepositoryInterface" method="getWithRelatedPosts"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::posts"/>
+        </resources>
+    </route>
+    <route url="/V1/blogPost/create" method="POST">
+        <service class="Aheadworks\Blog\Api\PostRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::posts"/>
+        </resources>
+    </route>
+    <route url="/V1/blogPost/update/:id" method="PUT">
+        <service class="Aheadworks\Blog\Api\PostRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::posts"/>
+        </resources>
+    </route>
+    <route url="/V1/blogPost/delete/:postId" method="DELETE">
+        <service class="Aheadworks\Blog\Api\PostRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::posts"/>
+        </resources>
+    </route>
+    <route url="/V1/blogPost/search" method="GET">
+        <service class="Aheadworks\Blog\Api\PostRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <!-- Admin comment management START -->
+    <route url="/V1/blogComment/comment/:commentId" method="GET">
+        <service class="Aheadworks\Blog\Api\CommentRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::comments_builtin"/>
+        </resources>
+    </route>
+    <route url="/V1/blogComment/comment/search" method="GET">
+        <service class="Aheadworks\Blog\Api\CommentRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::comments_builtin"/>
+        </resources>
+    </route>
+
+    <route url="/V1/blogComment/comment/update" method="PUT">
+        <service class="Aheadworks\Blog\Api\CommentManagementInterface" method="updateComment"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::comments_builtin"/>
+        </resources>
+    </route>
+    <route url="/V1/blogComment/comment/delete/:commentId" method="DELETE">
+        <service class="Aheadworks\Blog\Api\CommentManagementInterface" method="deleteCommentById"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::comments_builtin"/>
+        </resources>
+    </route>
+
+    <route url="/V1/blogComment/email/queue/deleteProcessed" method="GET">
+        <service class="Aheadworks\Blog\Api\EmailQueueManagementInterface" method="deleteProcessedItems"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::email_queue_item"/>
+        </resources>
+    </route>
+    <route url="/V1/blogComment/email/queue/sendScheduled" method="GET">
+        <service class="Aheadworks\Blog\Api\EmailQueueManagementInterface" method="sendScheduledItems"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::email_queue_item"/>
+        </resources>
+    </route>
+
+    <route url="/V1/blogComment/email/recipient/isSubscribedToNotification" method="GET">
+        <service class="Aheadworks\Blog\Api\EmailRecipientManagementInterface" method="isSubscribedToNotification"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::email_queue_item"/>
+        </resources>
+    </route>
+    <route url="/V1/blogComment/email/recipient/subscribeToNotification" method="PUT">
+        <service class="Aheadworks\Blog\Api\EmailRecipientManagementInterface" method="subscribeToNotification"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::email_queue_item"/>
+        </resources>
+    </route>
+    <route url="/V1/blogComment/email/recipient/unsubscribeFromNotification" method="PUT">
+        <service class="Aheadworks\Blog\Api\EmailRecipientManagementInterface" method="unsubscribeFromNotification"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::email_queue_item"/>
+        </resources>
+    </route>
+    <!-- Admin comment management END -->
+    <!-- Storefront visitor comment management START -->
+    <route url="/V1/blogComment/comment/create" method="POST">
+        <service class="Aheadworks\Blog\Api\CommentManagementInterface" method="createComment"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!-- Storefront visitor comment management END -->
+    <!-- Blog Tag Cloud Items -->
+    <route url="/V1/blogTagCloudItem/tag/:tagId/store/:storeId" method="GET">
+        <service class="Aheadworks\Blog\Api\TagCloudItemRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/blogTagCloudItem/search" method="GET">
+        <service class="Aheadworks\Blog\Api\TagCloudItemRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <!-- Blog Author -->
+    <route url="/V1/blogAuthor/get/:authorId" method="GET">
+        <service class="Aheadworks\Blog\Api\AuthorRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/blogAuthor/create" method="POST">
+        <service class="Aheadworks\Blog\Api\AuthorRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::authors"/>
+        </resources>
+    </route>
+    <route url="/V1/blogAuthor/update/:id" method="PUT">
+        <service class="Aheadworks\Blog\Api\AuthorRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::authors"/>
+        </resources>
+    </route>
+    <route url="/V1/blogAuthor/delete/:authorId" method="DELETE">
+        <service class="Aheadworks\Blog\Api\AuthorRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Aheadworks_Blog::authors"/>
+        </resources>
+    </route>
+    <route url="/V1/blogAuthor/search" method="GET">
+        <service class="Aheadworks\Blog\Api\AuthorRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,8 @@
+<!-- ko if: visible() -->
+    <!-- ko if: urlValue() -->
+        <a href="#" class="admin__field-value" data-bind="attr: {href: urlValue()}, text: urlLabel()"></a>
+    <!-- /ko -->
+    <!-- ko if: !urlValue() -->
+        <label class="admin__field-value" text="urlLabel()"></label>
+    <!-- /ko -->
+<!-- /ko -->

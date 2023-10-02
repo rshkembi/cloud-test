@@ -1,0 +1,21 @@
+<?php
+
+use Magento\Framework\View\Element\Template;
+use Aheadworks\Blog\ViewModel\Post\Comment\Sorter;
+use Magento\Framework\Escaper;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+/** @var Sorter $viewModel */
+
+$viewModel = $block->getViewModel();
+?>
+
+<div class="aw-blog-comment-toolbar-sorter sorter" data-mage-init='{"awBlogBuiltinCommentSorter": <?= /* @noEscape */ $viewModel->getWidgetOptionsJson($block) ?>}'>
+    <div class="aw-blog-comment-sorter-wrapper">
+        <a href="#builtin_thread" id="aw-blog-comment-sorter" class="action">
+            <span class="sort"><?= $escaper->escapeHtml(__('Sort By Date')) ?></span>
+        </a>
+    </div>
+    <div id="sorter-error-massages"></div>
+</div>

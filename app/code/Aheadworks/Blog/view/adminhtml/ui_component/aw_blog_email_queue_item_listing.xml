@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">
+                aw_blog_email_queue_item_listing.aw_blog_email_queue_item_listing_data_source
+            </item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>aw_blog_email_queue_item_listing_columns</spinner>
+        <deps>
+            <dep>aw_blog_email_queue_item_listing.aw_blog_email_queue_item_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="aw_blog_email_queue_item_listing_data_source"
+                component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Aheadworks_Blog::email_queue_item</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider"
+                      name="aw_blog_email_queue_item_listing_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <paging name="listing_paging"/>
+        <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="templates" xsi:type="array">
+                        <item name="filters" xsi:type="array">
+                            <item name="select" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
+                                <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+            <filterSelect name="store_id">
+                <argument name="optionsProvider" xsi:type="configurableObject">
+                    <argument name="class" xsi:type="string">Magento\Store\Ui\Component\Listing\Column\Store\Options
+                    </argument>
+                </argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="provider" xsi:type="string">${ $.parentName }</item>
+                        <item name="dataScope" xsi:type="string">store_id</item>
+                        <item name="caption" xsi:type="string" translate="true">All Store Views</item>
+                        <item name="label" xsi:type="string" translate="true">Store View</item>
+                    </item>
+                </argument>
+            </filterSelect>
+        </filters>
+        <massaction name="listing_massaction"
+                    component="Magento_Ui/js/grid/tree-massactions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+            <action name="send">
+                <settings>
+                    <confirm>
+                        <title translate="true">Send Emails</title>
+                        <message translate="true">Are you sure you want to send selected emails?</message>
+                    </confirm>
+                    <url path="aw_blog_admin/email_queue_item/massSend"/>
+                    <type>send</type>
+                    <label translate="true">Send Now</label>
+                </settings>
+            </action>
+            <action name="cancel">
+                <settings>
+                    <confirm>
+                        <title translate="true">Cancel Emails</title>
+                        <message translate="true">Are you sure you want to cancel selected emails? Click 'OK' to
+                            proceed.
+                        </message>
+                    </confirm>
+                    <url path="aw_blog_admin/email_queue_item/massCancel"/>
+                    <type>cancel</type>
+                    <label translate="true">Cancel</label>
+                </settings>
+            </action>
+        </massaction>
+    </listingToolbar>
+    <columns name="aw_blog_email_queue_item_listing_columns">
+        <selectionsColumn name="ids"
+                          sortOrder="0">
+            <settings>
+                <indexField>entity_id</indexField>
+                <preserveSelectionsOnFilter>true</preserveSelectionsOnFilter>
+            </settings>
+        </selectionsColumn>
+        <column name="entity_id"
+                sortOrder="10">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="recipient_name"
+                sortOrder="20">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Recipient Name</label>
+            </settings>
+        </column>
+        <column name="recipient_email"
+                sortOrder="30">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Recipient Email</label>
+            </settings>
+        </column>
+        <column name="store_id"
+                sortOrder="40"
+                class="Magento\Store\Ui\Component\Listing\Column\Store">
+            <argument name="storeKey" xsi:type="string">store_id</argument>
+            <settings>
+                <options class="Magento\Store\Ui\Component\Listing\Column\Store\Options"/>
+                <sortable>false</sortable>
+                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
+                <label translate="true">Store View</label>
+            </settings>
+        </column>
+        <column name="type"
+                sortOrder="50"
+                component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <options class="Aheadworks\Blog\Model\Source\Email\Queue\Item\Type"/>
+                <filter>select</filter>
+                <dataType>select</dataType>
+                <label translate="true">Type of the notification</label>
+            </settings>
+        </column>
+        <column name="status"
+                sortOrder="60"
+                component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <options class="Aheadworks\Blog\Model\Source\Email\Queue\Item\Status"/>
+                <filter>select</filter>
+                <dataType>select</dataType>
+                <label translate="true">Status</label>
+            </settings>
+        </column>
+        <column name="created_at"
+                sortOrder="70"
+                class="Magento\Ui\Component\Listing\Columns\Date"
+                component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <dataType>date</dataType>
+                <filter>dateRange</filter>
+                <label translate="true">Created At</label>
+            </settings>
+        </column>
+        <column name="scheduled_at"
+                sortOrder="80"
+                class="Magento\Ui\Component\Listing\Columns\Date"
+                component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <dataType>date</dataType>
+                <filter>dateRange</filter>
+                <label translate="true">Scheduled For</label>
+            </settings>
+        </column>
+        <column name="sent_at"
+                sortOrder="90"
+                class="Magento\Ui\Component\Listing\Columns\Date"
+                component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <dataType>date</dataType>
+                <filter>dateRange</filter>
+                <label translate="true">Sent At</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions"
+                       class="Aheadworks\Blog\Ui\Component\Listing\Column\Actions"
+                       sortOrder="360">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/actions</item>
+                    <item name="actions" xsi:type="array">
+                        <item name="send" xsi:type="array">
+                            <item name="url_route" xsi:type="string">aw_blog_admin/email_queue_item/send</item>
+                            <item name="id_key" xsi:type="string">entity_id</item>
+                            <item name="label" xsi:type="string" translate="true">Send Now</item>
+                            <item name="confirm" xsi:type="array">
+                                <item name="title" xsi:type="string" translate="true">Send Email</item>
+                                <item name="message" xsi:type="string" translate="true">Are you sure you want to send
+                                    email immediately?
+                                </item>
+                            </item>
+                        </item>
+                        <item name="cancel" xsi:type="array">
+                            <item name="url_route" xsi:type="string">aw_blog_admin/email_queue_item/cancel</item>
+                            <item name="id_key" xsi:type="string">entity_id</item>
+                            <item name="label" xsi:type="string" translate="true">Cancel</item>
+                            <item name="confirm" xsi:type="array">
+                                <item name="title" xsi:type="string" translate="true">Cancel Email</item>
+                                <item name="message" xsi:type="string" translate="true">Are you sure you want to cancel
+                                    email? Click 'OK' to proceed.
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>

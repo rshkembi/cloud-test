@@ -1,0 +1,61 @@
+<?php
+
+use Aheadworks\Blog\Block\Post\Comment\Renderer;
+use Aheadworks\Blog\ViewModel\Post\Comment\Listing\CommentRenderer;
+use Magento\Framework\Escaper;
+
+/** @var Renderer $block */
+/** @var CommentRenderer $viewModel */
+/** @var Escaper $escaper */
+
+$viewModel = $block->getViewModel();
+$commentData = $block->getCommentData();
+$commentReplyListData = $viewModel->getCommentReplyListData($commentData);
+
+?>
+<div class="comment-item-wrapper" id="comment-item-<?= $escaper->escapeHtmlAttr($viewModel->getCommentId($commentData)) ?>"
+    <?php if ($viewModel->isNeedToDisplayCommentReplyList($commentReplyListData)): ?>
+        data-mage-init='{
+            "collapsible":{
+                "animate":{ "duration" :500, "easing":"easeOutCubic"},
+                "active": true,
+                "openedState": "opened"
+            }
+        }'
+    <?php endif; ?>
+>
+    <div class="comment-item" data-role="title">
+        <?php if ($viewModel->isNeedToDisplayCommentReplyList($commentReplyListData)): ?>
+            <div class="comment-item-collapsible-trigger"
+                 data-role="trigger">
+            </div>
+        <?php endif; ?>
+        <div class="comment-author">
+            <?= $escaper->escapeHtml($viewModel->getAuthorName($commentData)) ?>
+        </div>
+        <div class="comment-details">
+            <?= $escaper->escapeHtml($viewModel->getCreationDate($commentData)) ?>
+        </div>
+        <div class="comment-content">
+            <?= $escaper->escapeHtml($viewModel->getContent($commentData)) ?>
+        </div>
+        <div>
+            <?= /* @noEscape */
+            $viewModel->getReplyFormRenderedHtml(
+                $block,
+                'aw_blog_comment_root_reply_form',
+                $viewModel->getCommentId($commentData)
+            ) ?>
+        </div>
+    </div>
+
+    <?php if ($viewModel->isNeedToDisplayCommentReplyList($commentReplyListData)): ?>
+        <div class="comment-reply-list" data-role="content">
+            <?= $viewModel->getCommentReplyListingHtml(
+                $block,
+                'aw_blog.builtin.comment.reply.listing',
+                $commentReplyListData
+            ) ?>
+        </div>
+    <?php endif; ?>
+</div>

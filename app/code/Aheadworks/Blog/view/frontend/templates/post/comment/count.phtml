@@ -1,0 +1,11 @@
+<?php
+
+use Aheadworks\Blog\Block\Post\Comment;
+
+/* @var $block Comment */
+
+?>
+<?php if ($block->isCommentsEnabled()): ?>
+    <?php $commentType = $block->getCommentType() ?>
+    <?= $block->getChildHtml('aw_blog.' . $commentType . '.comments_count') ?>
+<?php endif; ?>

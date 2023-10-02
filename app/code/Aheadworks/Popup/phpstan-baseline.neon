@@ -1,0 +1,27 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Class Aheadworks\\\\CustomerSegmentation\\\\Model\\\\ResourceModel\\\\Segment\\\\Collection not found\\.$#"
+			count: 1
+			path: Model/Source/CustomerSegments.php
+
+		-
+			message: "#^Parameter \\$result of method Aheadworks\\\\Popup\\\\Model\\\\ThirdPartyModule\\\\AwCustomerSegment\\\\Plugin\\\\ResourceModel\\\\Segment\\:\\:afterDelete\\(\\) has invalid type Aheadworks\\\\CustomerSegmentation\\\\Model\\\\ResourceModel\\\\Segment\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/AwCustomerSegment/Plugin/ResourceModel/Segment.php
+
+		-
+			message: "#^Parameter \\$segment of method Aheadworks\\\\Popup\\\\Model\\\\ThirdPartyModule\\\\AwCustomerSegment\\\\Plugin\\\\ResourceModel\\\\Segment\\:\\:afterDelete\\(\\) has invalid type Aheadworks\\\\CustomerSegmentation\\\\Model\\\\Segment\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/AwCustomerSegment/Plugin/ResourceModel/Segment.php
+
+		-
+			message: "#^Parameter \\$subject of method Aheadworks\\\\Popup\\\\Model\\\\ThirdPartyModule\\\\AwCustomerSegment\\\\Plugin\\\\ResourceModel\\\\Segment\\:\\:afterDelete\\(\\) has invalid type Aheadworks\\\\CustomerSegmentation\\\\Model\\\\ResourceModel\\\\Segment\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/AwCustomerSegment/Plugin/ResourceModel/Segment.php
+
+		-
+			message: "#^Access to constant CONTEXT_AW_CS_SEGMENT_IDS on an unknown class Aheadworks\\\\CustomerSegmentation\\\\Model\\\\Customer\\\\Context\\.$#"
+			count: 1
+			path: Model/ThirdPartyModule/AwCustomerSegment/Resolver.php
+

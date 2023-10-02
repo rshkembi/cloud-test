@@ -1,0 +1,23 @@
+<?php
+
+use Aheadworks\Blog\Block\Post\Comment\Reply\Form;
+use Magento\Framework\Escaper;
+
+/** @var Form $block */
+/** @var Escaper $escaper */
+?>
+
+<div data-role="aw-blog-comment-reply-form-<?= $escaper->escapeHtmlAttr($block->getCommentId()) ?>"
+     class="aw-blog__comment-reply-form <?= $block->isLoggedIn() ? 'logged-in' : '' ?>"
+     data-bind="scope: 'awBlogCommentReplyForm-<?= $escaper->escapeHtmlAttr($block->getCommentId()) ?>'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "[data-role=aw-blog-comment-reply-form-<?= $escaper->escapeHtmlAttr($block->getCommentId()) ?>]": {
+            "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+        }
+    }
+</script>
+
+<?= /* @noEscape */ $block->getChildHtml('', false) ?>

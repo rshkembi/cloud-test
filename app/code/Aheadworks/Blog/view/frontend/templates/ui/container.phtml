@@ -1,0 +1,21 @@
+<?php
+
+use Aheadworks\Blog\Block\Base;
+use Magento\Framework\Escaper;
+
+/** @var Base $block */
+/** @var Escaper $escaper */
+?>
+
+<div data-role="<?= $escaper->escapeHtmlAttr($block->getDataRoleAttributeValue()) ?>"
+     class="<?= $escaper->escapeHtmlAttr($block->getClassAttributeValue()) ?>"
+     data-bind="scope: '<?= $escaper->escapeHtmlAttr($block->getDataBindScopeValue()) ?>'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "[data-role=<?= $escaper->escapeHtmlAttr($block->getDataRoleAttributeValue()) ?>]": {
+            "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+        }
+    }
+</script>

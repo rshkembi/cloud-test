@@ -1,0 +1,4 @@
+parameters:
+    excludePaths:
+        - 'Model/Validator/UrlKey.php'
+        - 'Model/ResourceModel/Indexer/ProductPost/DataProcessor/BatchingProcessor.php'

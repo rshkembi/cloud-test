@@ -1,0 +1,23 @@
+<?php
+
+use Aheadworks\Blog\ViewModel\Post\Comment\Header;
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+/** @var Header $viewModel */
+/** @var Escaper $escaper */
+
+$viewModel = $block->getViewModel();
+?>
+
+<div class="comments-title">
+    <h3 class="heading"><?= $escaper->escapeHtml(__(
+            'Comments (%1)',
+            $viewModel->getCountComments($block),
+        )) ?>
+    </h3>
+    <?= $block->getChildHtml('aw_blog_post_page_comment_sorter', false) ?>
+</div>
+<?= $block->getChildHtml('aw_blog_comment_form_visibility_button', false) ?>
+<?= $block->getChildHtml('aw_blog_comment_listing_post_comment_form', false) ?>

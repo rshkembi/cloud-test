@@ -1,0 +1,22 @@
+<?php
+
+use Aheadworks\Blog\Block\Post\Comment\Disqus;
+use Magento\Framework\Escaper;
+
+/* @var Disqus $block*/
+/* @var Escaper $escaper */
+?>
+    <div id="disqus_thread" class="blog-post-comments"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.identifier = <?php /* @noEscape */ echo $block->escapeQuote($escaper->escapeHtml($block->getPageIdentifier())) ?>;
+            this.page.url = '<?php /* @noEscape */ echo $block->escapeXssInUrl($block->getPageUrl()) ?>';
+            this.page.title = '<?php /* @noEscape */ echo $block->escapeQuote($escaper->escapeHtml($block->getPageTitle())) ?>';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = '<?php /* @noEscape */ echo $block->getEmbedScriptUrl() ?>';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>

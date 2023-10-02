@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="aw_blog_sidebar"/>
+    <update handle="aw_blog_comments"/>
+    <update handle="aw_blog_post_comment_listing"/>
+    <head>
+        <css src="Aheadworks_Blog::css/styles.css"/>
+        <css src="Aheadworks_Blog::css/slider.css"/>
+    </head>
+    <body>
+        <move element="aw_blog.builtin.comment.listing" destination="aw_blog.builtin.embed" as="aw.blog.comment.listing"/>
+        <referenceBlock name="page.main.title" remove="true"/>
+        <referenceContainer name="content">
+            <block class="Aheadworks\Blog\Block\Post" name="aw_blog_post.view">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\Post</argument>
+                    <argument name="social_icons_block" xsi:type="string">Aheadworks\Blog\Block\Sharethis</argument>
+                </arguments>
+
+                <block class="Aheadworks\Blog\Block\PostImage" name="aw_blog_post.post_image">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\PostImage</argument>
+                        <argument name="img_class" xsi:type="string">blog-post-featured-image</argument>
+                    </arguments>
+                </block>
+
+                <block name="aw_blog_post.author_badge" template="Aheadworks_Blog::author/badge.phtml">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\Author\Badge</argument>
+                    </arguments>
+                </block>
+
+                <block class="Aheadworks\Blog\Block\Post\PrevNext" name="aw_blog.prev_next" as="prev_next" template="post/prev_next.phtml">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\Post</argument>
+                    </arguments>
+                    <block class="Aheadworks\Blog\Block\PostImage" name="aw_blog.prev_next_post_image">
+                        <arguments>
+                            <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\PostImage</argument>
+                            <argument name="img_class" xsi:type="string">post-featured-image</argument>
+                        </arguments>
+                    </block>
+                </block>
+
+                <block class="Aheadworks\Blog\Block\Post\RelatedPost" name="aw_blog.related_post" as="related_post" template="post/related_post.phtml">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\Post</argument>
+                    </arguments>
+                    <block class="Aheadworks\Blog\Block\PostImage" name="aw_blog.related_post_image">
+                        <arguments>
+                            <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\PostImage</argument>
+                            <argument name="img_class" xsi:type="string">recent-post-featured-image</argument>
+                        </arguments>
+                    </block>
+                </block>
+
+                <block class="Aheadworks\Blog\Block\Post\Comment" name="aw_blog.comment" as="comment_embed"
+                       template="Aheadworks_Blog::post/comment/embed.phtml">
+                    <block class="Aheadworks\Blog\Block\Post\Comment\Disqus" name="aw_blog.disqus.embed"
+                           as="disqus_embed"
+                           template="Aheadworks_Blog::post/comment/disqus/embed.phtml">
+                    </block>
+                    <block class="Aheadworks\Blog\Block\Post\Comment\Builtin" name="aw_blog.builtin.embed"
+                           as="built-in_embed" template="Aheadworks_Blog::post/comment/builtin/embed.phtml">
+                        <block name="aw.blog.post.page.comment.header" as="aw_blog_post_comment_header"
+                               template="Aheadworks_Blog::post/comment/builtin/comment/header.phtml">
+                            <arguments>
+                                <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\Post\Comment\Header</argument>
+                            </arguments>
+                            <block class="Aheadworks\Blog\Block\Base"
+                                   name="aw.blog.comment.form.visibility.button"
+                                   as="aw_blog_comment_form_visibility_button"
+                                   template="Aheadworks_Blog::ui/container.phtml">
+                                <arguments>
+                                    <argument name="data_role_attribute_value" xsi:type="string">aw-blog-comment-form-visibility-button</argument>
+                                    <argument name="class_attribute_value" xsi:type="string">aw-blog__comment-form-visibility-button</argument>
+                                    <argument name="data_bind_scope_value" xsi:type="string">awBlogCommentFormVisibilityButton</argument>
+                                    <argument name="jsLayout" xsi:type="array">
+                                        <item name="components" xsi:type="array">
+                                            <item name="awBlogCommentFormVisibilityButton" xsi:type="array">
+                                                <item name="component" xsi:type="string">Aheadworks_Blog/js/ui/form/visibility-button</item>
+                                                <item name="buttonLabel" xsi:type="string" translate="true">Post Comment</item>
+                                                <item name="formUiComponentName" xsi:type="string">awBlogCommentForm</item>
+                                                <item name="formUiElementNameToFocus" xsi:type="string">author_name</item>
+                                                <item name="configProvider" xsi:type="string">awBlogCommentConfigProvider</item>
+                                                <item name="imports" xsi:type="array">
+                                                    <item name="visible" xsi:type="string">${ $.configProvider }:data.is_need_to_render_form</item>
+                                                </item>
+                                                <item name="deps" xsi:type="array">
+                                                    <item name="0" xsi:type="string">awBlogCommentForm</item>
+                                                    <item name="1" xsi:type="string">awBlogCommentFormProvider</item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </argument>
+                                </arguments>
+                            </block>
+                            <block name="aw.blog.post.page.comment.sorter"
+                                   as="aw_blog_post_page_comment_sorter"
+                                   template="Aheadworks_Blog::post/comment/builtin/comment/header/sorter.phtml">
+                                <arguments>
+                                    <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\Post\Comment\Sorter</argument>
+                                </arguments>
+                            </block>
+                            <block class="Aheadworks\Blog\Block\Post\Comment\Listing\Post\Comment\Form"
+                                   name="aw.blog.comment.listing.post.comment.form"
+                                   as="aw_blog_comment_listing_post_comment_form"
+                                   template="Aheadworks_Blog::/post/comment/builtin/comment/header/form.phtml">
+                                <arguments>
+                                    <argument name="jsLayout" xsi:type="array">
+                                        <item name="components" xsi:type="array">
+
+                                            <item name="awBlogCommentForm" xsi:type="array">
+                                                <item name="sortOrder" xsi:type="string">10</item>
+                                                <item name="component" xsi:type="string">Aheadworks_Blog/js/ui/form</item>
+                                                <item name="buttonLabel" xsi:type="string" translate="true">Post Comment</item>
+                                                <item name="formId" xsi:type="string">comment-form</item>
+                                                <item name="formCss" xsi:type="string">aw-blog-comment-form</item>
+                                                <item name="isVisible" xsi:type="boolean">false</item>
+                                                <item name="formUiComponentName" xsi:type="string">awBlogCommentFormVisibilityButton</item>
+                                                <item name="isDisplayCancel" xsi:type="boolean">true</item>
+                                                <item name="imports" xsi:type="array">
+                                                    <item name="isNeedToRender" xsi:type="string">${ $.configProvider }:data.is_need_to_render_form</item>
+                                                </item>
+
+                                                <item name="deps" xsi:type="array">
+                                                    <item name="0" xsi:type="string">awBlogCommentFormProvider</item>
+                                                    <item name="1" xsi:type="string">awBlogCommentConfigProvider</item>
+                                                </item>
+
+                                                <item name="dataScope" xsi:type="string">data</item>
+                                                <item name="provider" xsi:type="string">awBlogCommentFormProvider</item>
+                                                <item name="configProvider" xsi:type="string">awBlogCommentConfigProvider</item>
+                                                <item name="namespace" xsi:type="string">aw_blog_post_comment_form</item>
+
+                                                <item name="additionalDataFormPartSelectorList" xsi:type="array">
+                                                    <item name="1" xsi:type="string">[name=g-recaptcha-response]</item>
+                                                    <item name="2" xsi:type="string">[name=captcha_string]</item>
+                                                    <item name="3" xsi:type="string">[data-role=aw-blog__agreements] input</item>
+                                                </item>
+
+                                                <item name="children" xsi:type="array">
+                                                    <item name="author_name" xsi:type="array">
+                                                        <item name="displayArea" xsi:type="string">fieldset</item>
+                                                        <item name="component" xsi:type="string">Aheadworks_Blog/js/ui/form/element/input/visitor-name</item>
+                                                        <item name="dataScope" xsi:type="string">author_name</item>
+                                                        <item name="provider" xsi:type="string">awBlogCommentFormProvider</item>
+                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                        <item name="label" xsi:type="string" translate="true">Name</item>
+                                                        <item name="validation" xsi:type="array">
+                                                            <item name="required-entry" xsi:type="boolean">true</item>
+                                                        </item>
+                                                        <item name="sortOrder" xsi:type="number">10</item>
+                                                    </item>
+                                                    <item name="author_email" xsi:type="array">
+                                                        <item name="displayArea" xsi:type="string">fieldset</item>
+                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                        <item name="dataScope" xsi:type="string">author_email</item>
+                                                        <item name="provider" xsi:type="string">awBlogCommentFormProvider</item>
+                                                        <item name="configProvider" xsi:type="string">awBlogCommentConfigProvider</item>
+                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                        <item name="elementTmpl" xsi:type="string">ui/form/element/email</item>
+                                                        <item name="label" xsi:type="string" translate="true">Email</item>
+                                                        <item name="validation" xsi:type="array">
+                                                            <item name="validate-email" xsi:type="boolean">true</item>
+                                                            <item name="required-entry" xsi:type="boolean">true</item>
+                                                        </item>
+                                                        <item name="imports" xsi:type="array">
+                                                            <item name="visible" xsi:type="string">!${ $.configProvider }:data.is_customer_logged_in</item>
+                                                        </item>
+                                                        <item name="sortOrder" xsi:type="number">15</item>
+                                                    </item>
+                                                    <item name="content" xsi:type="array">
+                                                        <item name="displayArea" xsi:type="string">fieldset</item>
+                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/textarea</item>
+                                                        <item name="dataScope" xsi:type="string">content</item>
+                                                        <item name="provider" xsi:type="string">awBlogCommentFormProvider</item>
+                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                        <item name="label" xsi:type="string" translate="true">Text comment here</item>
+                                                        <item name="validation" xsi:type="array">
+                                                            <item name="required-entry" xsi:type="boolean">true</item>
+                                                        </item>
+                                                        <item name="sortOrder" xsi:type="number">20</item>
+                                                    </item>
+                                                    <item name="agreements" xsi:type="array">
+                                                        <item name="displayArea" xsi:type="string">additional-field-list</item>
+                                                        <item name="component" xsi:type="string">Aheadworks_Blog/js/post/comment/agreements/view</item>
+                                                        <item name="configProvider" xsi:type="string">awBlogCommentConfigProvider</item>
+                                                        <item name="imports" xsi:type="array">
+                                                            <item name="areAgreementsEnabled" xsi:type="string">${ $.configProvider }:data.agreements_config.are_agreements_enabled</item>
+                                                            <item name="isNeedToShowForGuests" xsi:type="string">${ $.configProvider }:data.agreements_config.is_need_to_show_for_guests</item>
+                                                            <item name="isNeedToShowForCustomers" xsi:type="string">${ $.configProvider }:data.agreements_config.is_need_to_show_for_customers</item>
+                                                            <item name="isCustomerLoggedIn" xsi:type="string">${ $.configProvider }:data.is_customer_logged_in</item>
+                                                            <item name="agreementsData" xsi:type="string">${ $.configProvider }:data.agreements_config.agreements_data</item>
+                                                        </item>
+                                                        <item name="sortOrder" xsi:type="number">25</item>
+                                                    </item>
+                                                    <item name="post_id" xsi:type="array">
+                                                        <item name="displayArea" xsi:type="string">fieldset</item>
+                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                        <item name="dataScope" xsi:type="string">post_id</item>
+                                                        <item name="provider" xsi:type="string">awBlogCommentFormProvider</item>
+                                                        <item name="template" xsi:type="string">ui/form/field</item>
+                                                        <item name="visible" xsi:type="boolean">false</item>
+                                                        <item name="sortOrder" xsi:type="number">30</item>
+                                                    </item>
+                                                </item>
+                                            </item>
+
+                                            <item name="awBlogCommentFormProvider" xsi:type="array">
+                                                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+                                                <item name="config" xsi:type="array">
+                                                    <item name="submit_url" xsi:type="url" path="aw_blog/post_comment/submit"/>
+                                                </item>
+                                            </item>
+
+                                            <item name="awBlogCommentConfigProvider" xsi:type="array">
+                                                <item name="component" xsi:type="string">uiComponent</item>
+                                            </item>
+
+                                        </item>
+                                    </argument>
+                                </arguments>
+
+                            </block>
+                        </block>
+                    </block>
+                </block>
+                <block class="Aheadworks\Blog\Block\Post\RelatedProduct" name="aw_blog.related_product" as="post_related_product" />
+            </block>
+        </referenceContainer>
+        <referenceBlock name="head.additional">
+            <block class="Aheadworks\Blog\Block\Post\MetaData" name="aw_blog.meta_data" as="post_meta_data" template="post/meta_data.phtml" />
+            <block class="Magento\Framework\View\Element\Template"
+                   name="aw_blog.structured_data"
+                   template="Aheadworks_Blog::post/structured_data.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\Post\StructuredData</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
