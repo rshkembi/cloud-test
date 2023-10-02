@@ -49,6 +49,8 @@
         }
     },
     "require": {
+        "aheadworks/module-popup": "1.2.8",
+        "aheadworks/module-popup-graph-ql": "^1.0",
         "amasty/feed": "^2.7",
         "amasty/instagram-feed": "^3.0",
         "amasty/mega-menu-graphql": "^1.0",

@@ -525,6 +525,7 @@ return [
         'Aheadworks_BlogGraphQl' => 1,
         'Aheadworks_BlogSearch' => 1,
         'Aheadworks_Popup' => 1,
+        'Aheadworks_PopupGraphQl' => 1,
         'Amasty_Base' => 1,
         'Amasty_Conditions' => 1,
         'Amasty_CronScheduleList' => 1,
