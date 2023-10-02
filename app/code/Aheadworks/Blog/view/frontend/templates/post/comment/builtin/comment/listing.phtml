@@ -1,0 +1,40 @@
+<?php
+
+use Magento\Framework\View\Element\Template;
+use Aheadworks\Blog\ViewModel\Post\Comment\CommentList;
+use Magento\Framework\Escaper;
+
+/** @var Template $block */
+/** @var CommentList $viewModel */
+/** @var Escaper $escaper */
+
+$viewModel = $block->getViewModel();
+$commentListData = $viewModel->getCommentListData($block);
+
+?>
+<?php if ($viewModel->isCommentListEmpty($commentListData)): ?>
+    <div class="empty-list info-message">
+        <?= $escaper->escapeHtml(__('No comments.')) ?>
+    </div>
+<?php else: ?>
+    <div id="comment-listing">
+        <div class="aw-blog-comment-list wrapper">
+            <?php foreach ($commentListData as $commentDataRow) : ?>
+                <?= $viewModel->getCommentRenderedHtml(
+                    $block,
+                    'aw_blog.builtin.comment_renderer',
+                    $commentDataRow
+                ) ?>
+            <?php endforeach; ?>
+        </div>
+        <?php if ($viewModel->isShowButtonMore()): ?>
+            <div class="aw-blog-comment-button">
+                <button id="aw-blog-builtin-comment-show-more"
+                        class="action primary"
+                        data-mage-init='{"awBlogBuiltinCommentShowMore":<?= /* @noEscape */ $viewModel->getConfig($block) ?>}'>
+                    Show More
+                </button>
+            </div>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>

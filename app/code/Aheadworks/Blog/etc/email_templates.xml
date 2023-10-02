@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="aw_blog_notification_new_comment_to_admin_template"
+              label="AW Blog - New Comment To Admin"
+              file="aw_blog_new_comment_to_admin.html"
+              type="html"
+              module="Aheadworks_Blog"
+              area="frontend"
+    />
+    <template id="aw_blog_notification_new_reply_comment_to_admin_template"
+              label="AW Blog - New Reply Comment To Admin"
+              file="aw_blog_new_reply_comment_to_admin.html"
+              type="html"
+              module="Aheadworks_Blog"
+              area="frontend"
+    />
+    <template id="aw_blog_notification_comment_status_change_to_customer_template"
+              label="AW Blog - Comment Published To Subscriber"
+              file="aw_blog_comment_status_change_to_customer.html"
+              type="html"
+              module="Aheadworks_Blog"
+              area="frontend"
+    />
+    <template id="aw_blog_notification_new_reply_comment_to_customer_template"
+              label="AW Blog - Reply Comment To Subscriber"
+              file="aw_blog_new_reply_comment_to_customer.html"
+              type="html"
+              module="Aheadworks_Blog"
+              area="frontend"
+    />
+    <template id="aw_blog_notification_template_for_subscriber_comment_rejected"
+              label="AW Blog - Comment Rejected To Subscriber"
+              file="aw_blog_template_for_subscriber_comment_rejected.html"
+              type="html"
+              module="Aheadworks_Blog"
+              area="frontend"
+    />
+</config>

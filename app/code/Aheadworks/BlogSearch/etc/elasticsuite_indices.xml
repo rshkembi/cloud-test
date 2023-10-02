@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<indices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Smile_ElasticsuiteCore:etc/elasticsuite_indices.xsd">
+
+    <index identifier="aheadworks_blogsearch_post_fulltext" defaultSearchType="post">
+        <type name="post" idFieldName="id">
+            <mapping>
+                <!-- Post metadata -->
+                <field name="id" type="integer" />
+                <field name="title" type="text">
+                    <isSearchable>1</isSearchable>
+                    <isUsedInSpellcheck>0</isUsedInSpellcheck>
+                    <isFilterable>0</isFilterable>
+                </field>
+                <field name="content" type="text">
+                    <isSearchable>1</isSearchable>
+                    <isUsedInSpellcheck>0</isUsedInSpellcheck>
+                    <isFilterable>0</isFilterable></field>
+                <field name="author" type="text">
+                    <isSearchable>1</isSearchable>
+                    <isUsedInSpellcheck>1</isUsedInSpellcheck>
+                    <isFilterable>0</isFilterable>
+                </field>
+                <field name="tag_names" type="text" >
+                    <isSearchable>1</isSearchable>
+                    <isUsedInSpellcheck>0</isUsedInSpellcheck>
+                    <isFilterable>0</isFilterable>
+                </field>
+                <field name="meta_title" type="text">
+                    <isSearchable>1</isSearchable>
+                    <isUsedInSpellcheck>0</isUsedInSpellcheck>
+                    <isFilterable>0</isFilterable>
+                </field>
+                <field name="meta_keywords" type="text" >
+                    <isSearchable>1</isSearchable>
+                    <isUsedInSpellcheck>0</isUsedInSpellcheck>
+                    <isFilterable>0</isFilterable>
+                </field>
+                <field name="meta_description" type="text">
+                    <isSearchable>1</isSearchable>
+                    <isUsedInSpellcheck>0</isUsedInSpellcheck>
+                    <isFilterable>0</isFilterable>
+                </field>
+            </mapping>
+        </type>
+    </index>
+</indices>

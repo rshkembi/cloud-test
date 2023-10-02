@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <block class="Aheadworks\Blog\Block\Post\Comment\Reply\Listing" name="aw_blog.builtin.comment.reply.listing"
+           template="Aheadworks_Blog::post/comment/builtin/comment/reply/listing.phtml">
+        <arguments>
+            <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\Post\Comment\Reply\CommentList</argument>
+        </arguments>
+        <block class="Aheadworks\Blog\Block\Post\Comment\Reply\Renderer"
+               name="aw_blog_builtin_comment_reply_renderer"
+               template="Aheadworks_Blog::post/comment/builtin/comment/reply/renderer/reply_comment.phtml">
+            <arguments>
+                <argument name="view_model" xsi:type="object">Aheadworks\Blog\ViewModel\Post\Comment\Listing\CommentRenderer</argument>
+            </arguments>
+            <block class="Aheadworks\Blog\Block\Post\Comment\Listing\Comment\Reply\Form"
+                   name="aw.blog.post.comment.reply.form"
+                   as="aw_blog_comment_reply_form"
+                   template="Aheadworks_Blog::post/comment/builtin/comment/reply/form.phtml">
+
+                <block
+                    class="Aheadworks\Blog\Block\Post\Comment\Listing\Comment\Reply\Form\VirtualVisibilityButtonBlock"
+                    name="aw.blog.post.comment.reply.form.visibility.button"
+                    as="aw_blog_comment_reply_form_visibility_button"
+                    template="Aheadworks_Blog::ui/container.phtml">
+                </block>
+            </block>
+        </block>
+    </block>
+</layout>

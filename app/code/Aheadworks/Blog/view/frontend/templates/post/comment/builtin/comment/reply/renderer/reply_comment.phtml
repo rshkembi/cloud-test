@@ -1,0 +1,36 @@
+<?php
+
+use Aheadworks\Blog\Block\Post\Comment\Reply\Renderer;
+use Aheadworks\Blog\ViewModel\Post\Comment\Listing\CommentRenderer;
+use Magento\Framework\Escaper;
+
+/** @var Renderer $block */
+/** @var CommentRenderer $viewModel */
+/** @var Escaper $escaper */
+
+$viewModel = $block->getViewModel();
+$commentReplyData = $block->getCommentReplyData();
+
+?>
+<div class="comment-reply-item" id="comment-item-<?= $escaper->escapeHtmlAttr($viewModel->getCommentId($commentReplyData)) ?>">
+    <div class="comment-reply-author">
+        <?= $escaper->escapeHtml($viewModel->getAuthorName($commentReplyData)) ?>
+    </div>
+    <div class="comment-reply-details">
+        <?= $escaper->escapeHtml(__('In reply to')) ?>
+        <a href="#comment-item-<?= $escaper->escapeHtml($viewModel->getReplyToCommentId($commentReplyData))?> ">
+            <?= $escaper->escapeHtml($viewModel->getParentAuthorName($commentReplyData)) ?>
+        </a>
+        <?= $escaper->escapeHtml($viewModel->getCreationDate($commentReplyData))?>
+    </div>
+    <div class="comment-reply-content">
+        <?= $escaper->escapeHtml($viewModel->getContent($commentReplyData)) ?>
+    </div>
+    <div>
+        <?= /* @noEscape */ $viewModel->getReplyFormRenderedHtml(
+            $block,
+            'aw_blog_comment_reply_form',
+            $viewModel->getCommentId($commentReplyData)
+        ) ?>
+    </div>
+</div>

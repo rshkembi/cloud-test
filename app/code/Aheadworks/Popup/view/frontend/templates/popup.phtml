@@ -1,0 +1,28 @@
+<?php
+// @codingStandardsIgnoreFile
+
+/* @var $block \Aheadworks\Popup\Block\Popup */
+
+$viewModel = $block->getPopupViewModel();
+$blockType = $block->getBlockType();
+$popups = $viewModel->prepareJsonPopups($blockType);
+?>
+<div class="<?php echo $block->escapeHtml($block->getNameInLayout()) ?>"></div>
+<script type="text/javascript">
+    require(['jquery', 'awPopupManager', 'cookieViewedPageCount'], function(){
+        jQuery.awPopupManager.ajaxAddCookieUrl = '<?php echo $block->escapeHtml($block->getUrl('popup/ajax/addCookie', ['_secure' => $viewModel->isSecure()])) ?>';
+        var popups = <?php /* @noEscape */ echo $popups ?>;
+
+        jQuery.cookieViewedPageCount.initAddCookieProcess(
+            '<?php echo $block->escapeHtml($block->getUrl('*/*/*', ['_current' => true, '_secure' => $viewModel->isSecure()])) ?>',
+            '<?php echo $block->escapeHtml(\Aheadworks\Popup\Model\Source\Event::VIEWED_PAGE_COUNT_COOKIE_NAME);?>',
+            '<?php echo $block->escapeHtml($viewModel->getDefaultCookieLifetime()); ?>',
+            '<?php echo $block->escapeHtml($viewModel->getCookiePath()); ?>',
+            '<?php echo $block->escapeHtml($viewModel->getCookieDomain()); ?>'
+        );
+
+        jQuery(function(){
+            jQuery.awPopupManager.initObserversForPopup(popups);
+        });
+    });
+</script>

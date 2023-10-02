@@ -1,0 +1,25 @@
+<!--@subject {{trans 'New comment on %post_title' post_title=$post_title}} @-->
+<!--@vars {
+"var post_title":"Post Title",
+"var post_url":"Post Storefront Url",
+"var comment_content":"Comment Content",
+"var comment_author_name":"Comment Author Name",
+"var comment_author_email":"Comment Author Email",
+"var comment_edit_backend_url": "Comment Edit Backend Url"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<div class="notification-content">
+    {{trans 'There is a new comment on '}}<a href="{{var post_url}}">{{var post_title|raw}}</a>
+    <br>
+    <br>
+    <b>{{trans 'Author:'}}</b> {{var comment_author_name}}<br>
+    <div><b>{{trans 'Comment:'}}</b></div>
+    <p class="comment-content">
+        <i>{{var comment_content}}</i>
+    </p>
+    <br>
+    {{trans 'Click '}}<a href="{{var comment_edit_backend_url}}">{{trans 'here'}}</a>{{trans ' to view it.'}}
+</div>
+
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\UrlRewriteGraphQl\Model\RoutableInterfaceTypeResolver">
+        <arguments>
+            <argument name="productTypeNameResolvers" xsi:type="array">
+                <item name="aw_blog_category_type_resolver" xsi:type="object">Aheadworks\BlogGraphQl\Model\Resolver\CategoryTypeResolver</item>
+                <item name="aw_blog_post_type_resolver" xsi:type="object">Aheadworks\BlogGraphQl\Model\Resolver\PostTypeResolver</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\ProductFilterProcessor" type="Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor">
+        <arguments>
+            <argument name="customFilters" xsi:type="array">
+                <item name="category_id" xsi:type="object">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\ProductCategoryFilter</item>
+                <item name="store" xsi:type="object">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\ProductStoreFilter</item>
+                <item name="store_id" xsi:type="object">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\ProductStoreFilter</item>
+                <item name="website_id" xsi:type="object">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\ProductWebsiteFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magento\Catalog\Model\Api\SearchCriteria\ProductCollectionProcessor" type="Magento\Eav\Model\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="filters" xsi:type="object">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\ProductFilterProcessor</item>
+                <item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Catalog\Model\ProductRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Magento\Catalog\Model\Api\SearchCriteria\ProductCollectionProcessor</argument>
+        </arguments>
+    </type>
+
+    <!-- Data Processor -->
+    <virtualType name="Aheadworks\BlogGraphQl\Model\DataProcessor\Post" type="Aheadworks\BlogGraphQl\Model\DataProcessor\CompositeProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="related_products_sku" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\RelatedProductsSku</item>
+                <item name="categories" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\Categories</item>
+                <item name="tags" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\Tags</item>
+                <item name="related_posts" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\RelatedPosts</item>
+                <item name="comments" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\Comments</item>
+                <item name="next_previous_post" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\NextPreviousPost</item>
+                <item name="content" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\Content</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Processors Pool -->
+    <type name="Aheadworks\BlogGraphQl\Model\DataProcessor\Pool">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="Aheadworks\Blog\Api\Data\PostInterface" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Aheadworks\BlogGraphQl\Model\DataProcessor\Pool">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="Aheadworks\Blog\Api\Data\PostInterface" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Aheadworks\BlogGraphQl\Model\DataProcessor\RelatedPost" type="Aheadworks\BlogGraphQl\Model\DataProcessor\CompositeProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="related_products_sku" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\RelatedProductsSku</item>
+                <item name="categories" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\Categories</item>
+                <item name="tags" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\Tags</item>
+                <item name="comments" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\Comments</item>
+                <item name="next_previous_post" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\NextPreviousPost</item>
+                <item name="content" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\Post\Content</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Aheadworks\BlogGraphQl\Model\RelatedPostsVirtualDataProcessorPool" type="Aheadworks\BlogGraphQl\Model\DataProcessor\Pool">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="Aheadworks\Blog\Api\Data\PostInterface" xsi:type="object">Aheadworks\BlogGraphQl\Model\DataProcessor\RelatedPost</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Aheadworks\BlogGraphQl\Model\RelatedPostsVirtualObjectConverter" type="Aheadworks\BlogGraphQl\Model\ObjectConverter">
+        <arguments>
+            <argument name="processorsPool" xsi:type="object">Aheadworks\BlogGraphQl\Model\RelatedPostsVirtualDataProcessorPool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Aheadworks\BlogGraphQl\Model\DataProcessor\Post\RelatedPosts">
+        <arguments>
+            <argument name="converter" xsi:type="object">Aheadworks\BlogGraphQl\Model\RelatedPostsVirtualObjectConverter</argument>
+        </arguments>
+    </type>
+</config>

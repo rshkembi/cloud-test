@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Aheadworks\Blog\Model\Rss\Post\RssItemProvider">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="common" xsi:type="object">Aheadworks\Blog\Model\Rss\Post\Processor\Common</item>
+                <item name="link" xsi:type="object">Aheadworks\Blog\Model\Rss\Post\Processor\Link</item>
+                <item name="description" xsi:type="object">Aheadworks\Blog\Model\Rss\Post\Processor\Description</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Aheadworks\Blog\Model\Service\CommentService\Processor\Creation"
+                 type="Aheadworks\Blog\Model\Entity\CompositeProcessor">
+        <arguments>
+            <argument name="processorList" xsi:type="array">
+                <item name="status" xsi:type="object">Aheadworks\Blog\Model\Entity\Comment\Creation\Status</item>
+                <item name="reply_to_comment_id" xsi:type="object">Aheadworks\Blog\Model\Entity\Comment\Creation\ReplyToCommentId</item>
+                <item name="path" xsi:type="object">Aheadworks\Blog\Model\Entity\Comment\Creation\Path</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Aheadworks\Blog\Model\Service\CommentService">
+        <arguments>
+            <argument name="creationProcessor" xsi:type="object">Aheadworks\Blog\Model\Service\CommentService\Processor\Creation</argument>
+        </arguments>
+    </type>
+
+    <!-- Comment Form START -->
+    <virtualType name="Aheadworks\Blog\Model\Layout\Processor\Captcha\Comment\Form\VirtualMetadataProvider"
+                 type="Aheadworks\Blog\Model\Layout\Processor\Captcha\MetadataProvider">
+        <arguments>
+            <argument name="formPath" xsi:type="string">components/awBlogCommentForm</argument>
+            <argument name="formProvider" xsi:type="string">awBlogCommentFormProvider</argument>
+            <argument name="displayArea" xsi:type="string">additional-field-list</argument>
+            <argument name="captchaId" xsi:type="string">captcha-aw-blog-comment-submit</argument>
+            <argument name="entityInterfaceName" xsi:type="string">Aheadworks\Blog\Api\Data\CommentInterface</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Aheadworks\Blog\Block\Post\Comment\Listing\Post\Comment\Form\LayoutProcessorProvider"
+                 type="Aheadworks\Blog\Model\Layout\LayoutProcessorProvider">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="formDataProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Form\DataProvider</item>
+                <item name="configDataProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Form\ConfigDataProvider</item>
+                <item name="captchaMetaDataProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Captcha\Comment\Form\VirtualMetadataProvider</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Aheadworks\Blog\Block\Post\Comment\Listing\Post\Comment\Form"
+                 type="Aheadworks\Blog\Block\Post\Comment\Form">
+        <arguments>
+            <argument name="postResolver" xsi:type="object">Aheadworks\Blog\Model\Post\Resolver\Page\CommentListing</argument>
+            <argument name="layoutProcessorProvider" xsi:type="object">Aheadworks\Blog\Block\Post\Comment\Listing\Post\Comment\Form\LayoutProcessorProvider</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Comment Form END -->
+
+    <!-- Comment Reply Form START -->
+    <virtualType name="Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Reply\Form\VirtualElementNameUpdater"
+                 type="Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Reply\Form\ElementNameUpdater">
+        <arguments>
+            <argument name="fieldListToUpdateName" xsi:type="array">
+                <item name="commentIdProvider" xsi:type="string">components/awBlogCommentReplyForm/children/comment_id/provider</item>
+                <item name="postIdProvider" xsi:type="string">components/awBlogCommentReplyForm/children/post_id/provider</item>
+                <item name="contentProvider" xsi:type="string">components/awBlogCommentReplyForm/children/content/provider</item>
+                <item name="authorEmailProvider" xsi:type="string">components/awBlogCommentReplyForm/children/author_email/provider</item>
+                <item name="authorNameProvider" xsi:type="string">components/awBlogCommentReplyForm/children/author_name/provider</item>
+                <item name="formDataProviderName" xsi:type="string">components/awBlogCommentReplyForm/provider</item>
+                <item name="formDataProviderDeps" xsi:type="string">components/awBlogCommentReplyForm/deps/0</item>
+                <item name="formId" xsi:type="string">components/awBlogCommentReplyForm/formId</item>
+                <item name="formNamespace" xsi:type="string">components/awBlogCommentReplyForm/namespace</item>
+                <item name="authorEmailConfigProvider" xsi:type="string">components/awBlogCommentReplyForm/children/author_email/configProvider</item>
+                <item name="formConfigProviderName" xsi:type="string">components/awBlogCommentReplyForm/configProvider</item>
+                <item name="formConfigProviderDeps" xsi:type="string">components/awBlogCommentReplyForm/deps/1</item>
+                <item name="formDataProvider" xsi:type="string">components/awBlogCommentReplyFormProvider</item>
+                <item name="formConfigProvider" xsi:type="string">components/awBlogCommentReplyConfigProvider</item>
+                <item name="form" xsi:type="string">components/awBlogCommentReplyForm</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Aheadworks\Blog\Model\Layout\Processor\Captcha\Comment\Reply\Form\VirtualMetadataProvider"
+                 type="Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Reply\Form\Captcha\MetadataProvider">
+        <arguments>
+            <argument name="formPath" xsi:type="string">components/awBlogCommentReplyForm</argument>
+            <argument name="formProvider" xsi:type="string">awBlogCommentReplyFormProvider</argument>
+            <argument name="displayArea" xsi:type="string">additional-field-list</argument>
+            <argument name="captchaId" xsi:type="string">captcha-aw-blog-comment-reply-submit</argument>
+            <argument name="entityInterfaceName" xsi:type="string">ReplyCommentInterface</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Aheadworks\Blog\Block\Post\Comment\Reply\Form\LayoutProcessorProvider"
+                 type="Aheadworks\Blog\Model\Layout\LayoutProcessorProvider">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="elementNameUpdater" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Reply\Form\VirtualElementNameUpdater</item>
+                <item name="formDataProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Reply\Form\DataProvider</item>
+                <item name="configDataProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Reply\Form\ConfigDataProvider</item>
+                <item name="captchaMetaDataProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Captcha\Comment\Reply\Form\VirtualMetadataProvider</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Aheadworks\Blog\Block\Post\Comment\Reply\Form">
+        <arguments>
+            <argument name="layoutProcessorProvider" xsi:type="object">Aheadworks\Blog\Block\Post\Comment\Reply\Form\LayoutProcessorProvider</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Aheadworks\Blog\Block\Post\Comment\Listing\Comment\Reply\Form"
+                 type="Aheadworks\Blog\Block\Post\Comment\Reply\Form">
+        <arguments>
+            <argument name="postResolver" xsi:type="object">Aheadworks\Blog\Model\Post\Resolver\Page\CommentListing</argument>
+        </arguments>
+    </virtualType>
+    <!-- Comment Reply Form END -->
+
+    <!-- Comment Reply Form Visibility Button START -->
+    <virtualType name="Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Reply\Form\VisibilityButton\VirtualElementNameUpdater"
+                 type="Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Reply\Form\ElementNameUpdater">
+        <arguments>
+            <argument name="fieldListToUpdateName" xsi:type="array">
+                <item name="visibilityButtonFormUiComponentName" xsi:type="string">components/awBlogCommentReplyFormVisibilityButton/formUiComponentName</item>
+                <item name="visibilityButtonFormUiDeps" xsi:type="string">components/awBlogCommentReplyFormVisibilityButton/deps/0</item>
+                <item name="visibilityButtonComponentName" xsi:type="string">components/awBlogCommentReplyFormVisibilityButton</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Aheadworks\Blog\Block\Post\Comment\Reply\Form\VisibilityButton\VirtualLayoutProcessorProvider"
+                 type="Aheadworks\Blog\Model\Layout\LayoutProcessorProvider">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="elementNameUpdater" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Reply\Form\VisibilityButton\VirtualElementNameUpdater</item>
+                <item name="componentMetadataProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Post\Comment\Reply\Form\VisibilityButton\MetadataProvider</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Aheadworks\Blog\Block\Post\Comment\Reply\Form\VisibilityButton">
+        <arguments>
+            <argument name="layoutProcessorProvider" xsi:type="object">Aheadworks\Blog\Block\Post\Comment\Reply\Form\VisibilityButton\VirtualLayoutProcessorProvider</argument>
+        </arguments>
+    </type>
+    <virtualType name="Aheadworks\Blog\Block\Post\Comment\Listing\Comment\Reply\Form\VirtualVisibilityButtonBlock"
+                 type="Aheadworks\Blog\Block\Post\Comment\Reply\Form\VisibilityButton">
+        <arguments>
+            <argument name="postResolver" xsi:type="object">Aheadworks\Blog\Model\Post\Resolver\Page\CommentListing</argument>
+        </arguments>
+    </virtualType>
+    <!-- Comment Reply Form Visibility Button END -->
+
+    <virtualType name="Aheadworks\Blog\Controller\Post\Comment\Submit\PostDataProcessor"
+                 type="Aheadworks\Blog\Model\Data\Processor\Composite">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="store_id" xsi:type="object">Aheadworks\Blog\Model\Data\Processor\Comment\StoreId</item>
+                <item name="status" xsi:type="object">Aheadworks\Blog\Model\Data\Processor\Comment\Status</item>
+                <item name="author_email" xsi:type="object">Aheadworks\Blog\Model\Data\Processor\Comment\AuthorEmail</item>
+                <item name="path" xsi:type="object">Aheadworks\Blog\Model\Data\Processor\Comment\Path</item>
+                <item name="comment_id" xsi:type="object">Aheadworks\Blog\Model\Data\Processor\Comment\CommentId</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Aheadworks\Blog\Controller\Post\Comment\Submit">
+        <arguments>
+            <argument name="postDataProcessor" xsi:type="object">Aheadworks\Blog\Controller\Post\Comment\Submit\PostDataProcessor</argument>
+            <argument name="dataOperation" xsi:type="object">Aheadworks\Blog\Model\Data\Operation\Comment\Create</argument>
+        </arguments>
+    </type>
+
+    <type name="Aheadworks\Blog\Model\Post\CommentRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Aheadworks\Blog\Model\Api\SearchCriteria\FrontendConfigCollectionProcessor</argument>
+        </arguments>
+    </type>
+    <virtualType name="Aheadworks\Blog\Model\Api\SearchCriteria\FrontendConfigCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="currentPage" xsi:type="object">Aheadworks\Blog\Model\Api\SearchCriteria\CollectionProcessor\Frontend\ConfigProvider</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Email Notification Settings Form START -->
+    <virtualType name="Aheadworks\Blog\Block\Email\Subscriber\Settings\VirtualCustomerPageForm\VirtualLayoutProcessorProvider"
+                 type="Aheadworks\Blog\Model\Layout\LayoutProcessorProvider">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="dataProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Email\Subscriber\Notification\DataProvider\CustomerPage</item>
+                <item name="configProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Email\Subscriber\Notification\ConfigDataProvider</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Aheadworks\Blog\Block\Email\Subscriber\Settings\VirtualCustomerPageForm"
+                 type="Aheadworks\Blog\Block\Email\Subscriber\Notification\Form">
+        <arguments>
+            <argument name="layoutProcessorProvider" xsi:type="object">Aheadworks\Blog\Block\Email\Subscriber\Settings\VirtualCustomerPageForm\VirtualLayoutProcessorProvider</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Aheadworks\Blog\Model\Layout\Processor\Captcha\Email\Subscriber\Settings\Form\VirtualMetadataProvider"
+                 type="Aheadworks\Blog\Model\Layout\Processor\Captcha\MetadataProvider">
+        <arguments>
+            <argument name="formPath" xsi:type="string">components/awBlogEmailSubscriberNotificationForm</argument>
+            <argument name="formProvider" xsi:type="string">awBlogEmailSubscriberNotificationFormProvider</argument>
+            <argument name="displayArea" xsi:type="string">additional-field-list</argument>
+            <argument name="captchaId" xsi:type="string">captcha-aw-blog-email-subscriber-settings-submit</argument>
+            <argument name="entityInterfaceName" xsi:type="string">Aheadworks\Blog\Api\Data\Email\Subscriber\DataRowInterface</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Aheadworks\Blog\Block\Email\Subscriber\Settings\VirtualSecurityCodeForm\VirtualLayoutProcessorProvider"
+                 type="Aheadworks\Blog\Model\Layout\LayoutProcessorProvider">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="dataProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Email\Subscriber\Notification\DataProvider\SecurityCode</item>
+                <item name="configProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Email\Subscriber\Notification\ConfigDataProvider</item>
+                <item name="captchaMetaDataProvider" xsi:type="string">Aheadworks\Blog\Model\Layout\Processor\Captcha\Email\Subscriber\Settings\Form\VirtualMetadataProvider</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Aheadworks\Blog\Block\Email\Subscriber\Settings\VirtualSecurityCodeForm"
+                 type="Aheadworks\Blog\Block\Email\Subscriber\Notification\Form">
+        <arguments>
+            <argument name="layoutProcessorProvider" xsi:type="object">Aheadworks\Blog\Block\Email\Subscriber\Settings\VirtualSecurityCodeForm\VirtualLayoutProcessorProvider</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Aheadworks\Blog\Controller\Email\Notification\Settings\Save">
+        <arguments>
+            <argument name="dataOperation" xsi:type="object">Aheadworks\Blog\Model\Data\Operation\Email\Notification\Settings\Save</argument>
+        </arguments>
+    </type>
+
+    <!-- Email Notification Settings Form END -->
+</config>

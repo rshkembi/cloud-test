@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="aw_blog_customer_section"
+              class="Aheadworks\Blog\Ui\Component\Form\Customer\CommentSection\Tab">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="additionalClasses" xsi:type="string">aw-blog__customer_section</item>
+            </item>
+            <item name="acl_resource" xsi:type="string">Aheadworks_Blog::comments_builtin</item>
+        </argument>
+        <settings>
+            <label translate="true">Blog by Aheadworks</label>
+        </settings>
+        <fieldset name="customer_notification_settings"
+                  class="Aheadworks\Blog\Ui\Component\Form\Customer\CommentSection\AclResourceFieldset">
+            <argument name="data" xsi:type="array">
+                <item name="acl_resource" xsi:type="string">Aheadworks_Blog::comments_builtin</item>
+            </argument>
+            <settings>
+                <collapsible>false</collapsible>
+                <label translate="true">Manage Notification List</label>
+            </settings>
+            <field name="subscriber_notification_group" formElement="multiselect">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="source" xsi:type="string">customer</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Subscribe to</label>
+                    <dataType>int</dataType>
+                    <dataScope>subscriber_notification_group</dataScope>
+                </settings>
+                <formElements>
+                    <multiselect>
+                        <settings>
+                            <options class="Aheadworks\Blog\Model\Source\Email\Subscriber\Notification\Group"/>
+                        </settings>
+                    </multiselect>
+                </formElements>
+            </field>
+        </fieldset>
+    </fieldset>
+</form>

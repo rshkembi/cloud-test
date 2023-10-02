@@ -1,0 +1,14 @@
+<?php
+
+use Aheadworks\Blog\Block\Post\Comment\Builtin;
+use Magento\Framework\Escaper;
+
+/* @var Builtin $block */
+/* @var Escaper $escaper */
+
+?>
+<?= /* @noEscape */ $block->getCommentHeaderHtml() ?>
+<div id="builtin_thread" class="aw-blog-post__comments-listing aw-blog-comment-list">
+    <div id="aw-blog-post-comment-error-massages"></div>
+    <?= /* @noEscape */  $block->getCommentListingHtml() ?>
+</div>

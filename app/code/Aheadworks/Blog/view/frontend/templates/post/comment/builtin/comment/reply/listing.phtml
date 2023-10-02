@@ -1,0 +1,38 @@
+<?php
+
+use Aheadworks\Blog\Block\Post\Comment\Reply\Listing;
+use Aheadworks\Blog\ViewModel\Post\Comment\Reply\CommentList;
+use Magento\Framework\Escaper;
+
+/** @var Listing $block */
+/** @var CommentList $viewModel */
+/** @var Escaper $escaper */
+
+$viewModel = $block->getViewModel();
+$parentId = $viewModel->getParentCommentId($block);
+$commentReplyListData = $viewModel->getCommentReplyListData($block);
+
+?>
+<?php if ($viewModel->isNeedToDisplayCommentReplyList($commentReplyListData)): ?>
+<div>
+    <div class="comment-reply-list-inner">
+        <?php foreach ($commentReplyListData as $commentReplyDataRow) : ?>
+            <?= $viewModel->getCommentReplyRenderedHtml(
+                $block,
+                'aw_blog_builtin_comment_reply_renderer',
+                $commentReplyDataRow
+            ) ?>
+        <?php endforeach; ?>
+
+    </div>
+    <?php if ($viewModel->isShowButtonMore($parentId)): ?>
+        <div class="aw-blog-comment-button">
+            <button id="aw-blog-builtin-comment-show-more"
+                    class="action primary"
+                    data-mage-init='{"awBlogBuiltinCommentShowMore": <?= /* @noEscape */ $viewModel->getConfig($block) ?>}'>
+                Show More
+            </button>
+        </div>
+    <?php endif; ?>
+</div>
+<?php endif; ?>

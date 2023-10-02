@@ -1,0 +1,31 @@
+<!--@subject {{trans 'Your comment on %post_title has been rejected.' post_title=$post_title}} @-->
+<!--@vars {
+"var subscriber_name":"Subscriber Name",
+"var subscriber_email":"Subscriber Email",
+"var comment_content":"Comment Content",
+"var comment_author_name":"Comment Author Name",
+"var comment_author_email":"Comment Author Email",
+"var post_title":"Post Title",
+"var post_url":"Post Storefront Url",
+"var unsubscribe_url":"Email Notifications Unsubscribe Url"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<div class="notification-content">
+    {{trans 'Hello, %subscriber_name!' subscriber_name=$subscriber_name}}
+    <br>
+    <br>
+    {{trans 'Your comment status regarding '}}<a href="{{var post_url}}">{{var post_title|raw}}</a>{{trans ' has been changed to Rejected.'}}
+    <br>
+    <br>
+    <b>{{trans 'Comment:'}}</b>
+    <p class="comment-content">
+        <i>{{var comment_content}}</i>
+    </p>
+    <br>
+    <p class="unsubscribe-link info-text">
+        {{trans 'If you don't want these updates anymore, you can unsubscribe '}}<a href="{{var unsubscribe_url}}">{{trans 'here.'}}</a>
+    </p>
+</div>
+
+{{template config_path="design/email/footer_template"}}
