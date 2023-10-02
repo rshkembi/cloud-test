@@ -2,15 +2,15 @@ diff --git a/vendor/auctane/api/Model/Action/Export.php b/vendor/auctane/api/Mod
 index 3cdba715f..f4c7b2e07 100644
 --- a/vendor/auctane/api/Model/Action/Export.php
 +++ b/vendor/auctane/api/Model/Action/Export.php
-@@ -12,6 +12,7 @@
- use Magento\Sales\Api\Data\OrderItemInterface;
- use Magento\Sales\Model\Order;
+@@ -22,6 +22,7 @@
  use Magento\Sales\Model\ResourceModel\Order\Collection;
+ use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
+ use Magento\Store\Model\ScopeInterface;
 +use Amasty\Extrafee\Model\ResourceModel\ExtrafeeOrder\Collection as ExtraFee;
  
  
  /**
-@@ -30,6 +31,10 @@
+@@ -40,6 +41,10 @@
       */
      const EXPORT_SIZE = '100';
  
@@ -18,12 +18,12 @@ index 3cdba715f..f4c7b2e07 100644
 +
 +    const COLD_PACK_SKU = 'CP';
 +
+ 
      /**
-      * Order collection factory
-      *
-@@ -124,6 +129,9 @@
-     /** @var WeightAdapter */
-     private $weightAdapter;
+      * Scope config
+@@ -112,6 +117,9 @@
+     /** @var RegionCollectionFactory */
+     private $regionCollectionFactory;
  
 +    /** @var ExtraFee */
 +    private $extraFee;
@@ -31,47 +31,46 @@ index 3cdba715f..f4c7b2e07 100644
      /**
       * Export class constructor
       *
-@@ -134,6 +142,7 @@
-      * @param \Auctane\Api\Helper\Data $dataHelper helper object
-      * @param \Magento\GiftMessage\Helper\Message $giftMessage The gift message.
+@@ -122,6 +130,8 @@
+      * @param Message $giftMessage The gift message.
       * @param WeightAdapter $weightAdapter
+      * @param RegionCollectionFactory $regionCollectionFactory
 +     * @param ExtraFee $extraFee
++     *
       */
      public function __construct(
-         \Magento\Sales\Model\ResourceModel\Order\CollectionFactory $order,
-@@ -142,7 +151,8 @@
-         \Magento\Eav\Model\Config $eavConfig,
-         \Auctane\Api\Helper\Data $dataHelper,
-         \Magento\GiftMessage\Helper\Message $giftMessage,
--        WeightAdapter $weightAdapter
-+        WeightAdapter $weightAdapter,
+         CollectionFactory $orderCollectionFactory,
+@@ -130,7 +140,8 @@
+         Data $dataHelper,
+         Message $giftMessage,
+         WeightAdapter $weightAdapter,
+-        RegionCollectionFactory $regionCollectionFactory
++        RegionCollectionFactory $regionCollectionFactory,
 +        ExtraFee $extraFee
      )
      {
-         $this->orderCollectionFactory = $order;
-@@ -181,6 +191,7 @@
-         $this->_typeBundle = Type::TYPE_BUNDLE;
- 
-         $this->weightAdapter = $weightAdapter;
+         $this->_scopeConfig = $scopeConfig;
+@@ -155,6 +166,7 @@
+         //Check for the import child items for the bundle product
+         $attributes = 'shipstation_general/shipstation/attribute';
+         $this->_attributes = $this->_scopeConfig->getValue($attributes, ScopeInterface::SCOPE_STORE);
 +        $this->_extraFee = $extraFee;
      }
  
      /**
-@@ -241,7 +252,12 @@
+@@ -215,6 +227,11 @@
  
          /** @var Order $order */
          foreach ($orders as $order) {
--            $this->writeOrderXml($order);
 +            $this->_extraFee->clear()->getSelect()->reset('where');
 +            $cpFee = $this->_extraFee->addFilterByOrderId($order->getEntityId())->getFirstItem();
 +            if (($cpFee && $cpFee->getDataByKey('total_amount') > 0) || $this->checkOrderItemsForColdPack($order)) {
 +                $order->setData('customer_note', self::COLD_PACK_MESSAGE);
 +            }
-+            $this->writeOrderXml($order, $cpFee);
+             $this->writeOrderXml($order);
          }
  
-         $this->_xmlData .= "</Orders>";
-@@ -254,7 +270,7 @@
+@@ -228,7 +245,7 @@
       * @param Order $order
       * @return $this
       */
@@ -79,10 +78,10 @@ index 3cdba715f..f4c7b2e07 100644
 +    private function writeOrderXml(Order $order, $cpFee = null): self
      {
          $this->_xmlData .= "\t<Order>\n";
-         $this->addXmlElement("OrderNumber", $order->getIncrementId());
-@@ -284,6 +300,14 @@
-         $this->addXmlElement("InternalNotes", "<![CDATA[{$order->getCustomerNote()}]]>");
-         $this->addXmlElement("StoreCode", $order->getStore()->getCode());
+         $this->addXmlElement("OrderNumber", "<![CDATA[{$order->getIncrementId()}]]>");
+@@ -258,6 +275,14 @@
+         $this->_getInternalNotes($order);
+         $this->addXmlElement("StoreCode", "<![CDATA[{$order->getStore()->getCode()}]]>");
  
 +        try {
 +            $this->addXmlElement("CustomField1", $cpFee->getTotalAmount() ?? '0.00');
@@ -95,8 +94,8 @@ index 3cdba715f..f4c7b2e07 100644
          $this->_getGiftMessageInfo($order);
  
          $this->_xmlData .= "\t<Customer>\n";
-@@ -639,4 +663,20 @@
-         $this->addXmlElement("UnitPrice", $order->getDiscountAmount());
+@@ -630,4 +655,20 @@
+         $this->addXmlElement("UnitPrice", "<![CDATA[{$order->getDiscountAmount()}]]>");
          $this->_xmlData .= "\t</Item>\n";
      }
 +
