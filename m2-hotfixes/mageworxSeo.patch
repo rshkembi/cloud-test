@@ -1,0 +1,194 @@
+diff --git a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Category.php b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Category.php
+index 390bf71..ae65833 100644
+--- a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Category.php
++++ b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Category.php
+@@ -250,7 +250,7 @@
+         $description = '';
+ 
+         if ($code && $this->getCategory()) {
+-            $description = strip_tags($this->helperDataProvider->getAttributeValueByCode($this->getCategory(), $code));
++            $description = strip_tags($this->removeElementsByTagName($this->helperDataProvider->getAttributeValueByCode($this->getCategory(), $code)));
+         }
+ 
+         if (!$description) {
+@@ -271,7 +271,7 @@
+             );
+         }
+ 
+-        return $description;
++        return $description ? $this->escapeHtmlAttr(strip_tags($this->removeElementsByTagName($description))) : '';
+     }
+ 
+     /**
+@@ -308,7 +308,7 @@
+         $description = '';
+ 
+         if ($code && $this->getCategory()) {
+-            $description = strip_tags($this->helperDataProvider->getAttributeValueByCode($this->getCategory(), $code));
++            $description = strip_tags($this->removeElementsByTagName($this->helperDataProvider->getAttributeValueByCode($this->getCategory(), $code)));
+         }
+ 
+         if (!$description) {
+@@ -328,7 +328,25 @@
+             );
+         }
+ 
+-        return $description;
++        return $description ? $this->escapeHtmlAttr(strip_tags($this->removeElementsByTagName($description))) : '';
++    }
++
++    /**
++     * @param $description
++     * @return false|string
++     */
++    protected function removeElementsByTagName($description) {
++        if (!$description) {return '';}
++        $doc = new \DOMDocument();
++        libxml_use_internal_errors(true);
++        $doc->loadHTML($description);
++        libxml_clear_errors();
++        $nodeList = $doc->getElementsByTagName('style');
++        for ($nodeIdx = $nodeList->length; --$nodeIdx >= 0; ) {
++            $node = $nodeList->item($nodeIdx);
++            $node->parentNode->removeChild($node);
++        }
++        return $doc->saveHtml();
+     }
+ 
+     /**
+diff --git a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.php b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.php
+index 390bf71..ae65833 100644
+--- a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.php
++++ b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Product.php
+@@ -322,7 +322,25 @@
+             );
+         }
+
+-        return $description;
++        return $description ? $this->escapeHtmlAttr(strip_tags($this->removeElementsByTagName($description))) : '';
++    }
++
++    /**
++     * @param $description
++     * @return false|string
++     */
++    protected function removeElementsByTagName($description) {
++        if (!$description) {return '';}
++        $doc = new \DOMDocument();
++        libxml_use_internal_errors(true);
++        $doc->loadHTML($description);
++        libxml_clear_errors();
++        $nodeList = $doc->getElementsByTagName('style');
++        for ($nodeIdx = $nodeList->length; --$nodeIdx >= 0; ) {
++            $node = $nodeList->item($nodeIdx);
++            $node->parentNode->removeChild($node);
++        }
++        return $doc->saveHtml();
+     }
+
+     /**
+@@ -375,6 +393,6 @@
+             );
+         }
+
+-        return $description;
++        return $description ? $this->escapeHtmlAttr(strip_tags($this->removeElementsByTagName($description))) : '';
+     }
+ }
+diff --git a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php
+index 390bf71..ae65833 100644
+--- a/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php
++++ b/vendor/mageworx/module-seomarkup/Block/Head/SocialMarkup/Page.php
+@@ -219,7 +219,25 @@
+             }
+         }
+
+-        return $description ? $this->escapeHtmlAttr(strip_tags((string)$description)) : '';
++        return $description ? $this->escapeHtmlAttr(strip_tags((string)$this->removeElementsByTagName($description))) : '';
++    }
++
++    /**
++     * @param $description
++     * @return false|string
++     */
++    protected function removeElementsByTagName($description) {
++        if (!$description) {return '';}
++        $doc = new \DOMDocument();
++        libxml_use_internal_errors(true);
++        $doc->loadHTML($description);
++        libxml_clear_errors();
++        $nodeList = $doc->getElementsByTagName('style');
++        for ($nodeIdx = $nodeList->length; --$nodeIdx >= 0; ) {
++            $node = $nodeList->item($nodeIdx);
++            $node->parentNode->removeChild($node);
++        }
++        return $doc->saveHtml();
+     }
+
+     /**
+@@ -265,7 +283,7 @@
+             }
+         }
+
+-        return $description ? $this->escapeHtmlAttr(strip_tags((string)$description)) : '';
++        return $description ? $this->escapeHtmlAttr(strip_tags((string)$this->removeElementsByTagName($description))) : '';
+     }
+
+     /**
+diff --git a/vendor/mageworx/module-seomarkup/Helper/DataProvider/Product.php b/vendor/mageworx/module-seomarkup/Helper/DataProvider/Product.php
+index 390bf71..ae65833 100644
+--- a/vendor/mageworx/module-seomarkup/Helper/DataProvider/Product.php
++++ b/vendor/mageworx/module-seomarkup/Helper/DataProvider/Product.php
+@@ -166,13 +166,31 @@
+         }
+
+         if ($this->helperData->getIsCropHtmlInDescription()) {
+-            $description = strip_tags($description);
++            $description = strip_tags($this->removeElementsByTagName($description));
+         }
+
+         return $description;
+     }
+
+     /**
++    +     * @param $description
++    +     * @return false|string
++    +     */
++    protected function removeElementsByTagName($description) {
++        if (!$description) {return '';}
++        $doc = new \DOMDocument();
++        libxml_use_internal_errors(true);
++        $doc->loadHTML($description);
++        libxml_clear_errors();
++        $nodeList = $doc->getElementsByTagName('style');
++        for ($nodeIdx = $nodeList->length; --$nodeIdx >= 0; ) {
++            $node = $nodeList->item($nodeIdx);
++            $node->parentNode->removeChild($node);
++        }
++        return $doc->saveHtml();
++    }
++
++    /**
+      * Retrieve attribute value by attribute code
+      *
+      * @param \Magento\Catalog\Model\Product $product
+diff --git a/vendor/mageworx/module-seomarkup/Block/Head/Json/Product.php b/vendor/mageworx/module-seomarkup/Block/Head/Json/Product.php
+index 390bf71..ae65833 100644
+--- a/vendor/mageworx/module-seomarkup/Block/Head/Json/Product.php
++++ b/vendor/mageworx/module-seomarkup/Block/Head/Json/Product.php
+@@ -128,10 +128,12 @@
+                                                         ->getImageUrl();
+
+         $offers = $this->getOfferData();
+-        if (!empty($offers['price']) || !empty($offers[0]['price'])) {
+-            $data['offers'] = $offers;
+-        }
++        //if (!empty($offers['price']) || !empty($offers[0]['price'])) {
++        //    $data['offers'] = $offers;
++        //}
+
++        $data['offers'] = $offers;
++
+         $aggregateRatingData = $this->helperDataProvider->getAggregateRatingData($this->_product, false);
+
+         if (!empty($aggregateRatingData)) {
