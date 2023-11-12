@@ -1,0 +1,22 @@
+diff --git a/vendor/amasty/module-extra-fee/view/frontend/web/js/view/payment/kp-mixin.js b/vendor/amasty/module-extra-fee/view/frontend/web/js/view/payment/kp-mixin.js
+index 0de1ac4..e08afca 100644
+--- a/vendor/amasty/module-extra-fee/view/frontend/web/js/view/payment/kp-mixin.js
++++ b/vendor/amasty/module-extra-fee/view/frontend/web/js/view/payment/kp-mixin.js
+@@ -19,7 +19,7 @@ define([
+                 return elem.code === "amasty_extrafee"
+             })
+
+-            if (extraFee.value > 0) {
++            if (extraFee) {
+                 var ajax_params = {
+                     shipping_country_id: quote.shippingAddress() ? quote.shippingAddress().countryId : '',
+                     shipping_company: quote.shippingAddress() ? quote.shippingAddress().company : '',
+@@ -31,6 +31,8 @@ define([
+                     .done(function (result) {
+                         _super();
+                     });
++            } else {
++                _super();
+             }
+         },
+     };
