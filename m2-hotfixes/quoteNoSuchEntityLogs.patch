@@ -1,0 +1,28 @@
+diff --git a/vendor/magento/module-quote/Model/QuoteRepository.php b/vendor/magento/module-quote/Model/QuoteRepository.php
+index 0de1ac4..e08afca 100644
+--- a/vendor/magento/module-quote/Model/QuoteRepository.php
++++ b/vendor/magento/module-quote/Model/QuoteRepository.php
+@@ -235,6 +235,23 @@
+         }
+         $quote->setStoreId($this->storeManager->getStore()->getId())->$loadMethod($identifier);
+         if (!$quote->getId()) {
++            try {
++                $writer = new \Zend_Log_Writer_Stream(BP . '/var/log/no-such-entity.log');
++                $logger = new \Zend_Log();
++                $logger->addWriter($writer);
++
++                $logger->info('Quote ID: '.$quote->getId());
++                $logger->info('Store: '.$this->storeManager->getStore()->getId());
++                $logger->info('Load Method: '.$loadMethod);
++                $logger->info('Load Field: '.$loadField);
++                $logger->info('Shared Store Ids: ');
++                $logger->info(print_r($sharedStoreIds));
++                $logger->info('Quote Data: ');
++                $logger->info(print_r($quote->getData()));
++
++            } catch (Exception $fault) {
++                // PASS
++            }
+             throw NoSuchEntityException::singleField($loadField, $identifier);
+         }
+         return $quote;
