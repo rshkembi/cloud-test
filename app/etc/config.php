@@ -598,6 +598,7 @@ return [
         'ShipperHQ_Shipper' => 1,
         'ShipperHQ_Pickup' => 1,
         'ShipperHQ_Option' => 1,
+        'Stover_PreOrder' => 1,
         'Temando_ShippingRemover' => 1,
         'WeltPixel_Backend' => 1,
         'WeltPixel_SocialLogin' => 1,
