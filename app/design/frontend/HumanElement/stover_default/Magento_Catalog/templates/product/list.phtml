@@ -112,7 +112,14 @@ $_helper = $block->getData('outputHelper');
                                                        $postParams['data'][Action::PARAM_NAME_URL_ENCODED]
                                                        ?>">
                                                 <?= $block->getBlockHtml('formkey') ?>
-                                                <?php if ($_product->getTypeId() == 'simple'): ?>
+                                                <?php if ($_product->getPreOrder()): ?>
+                                                    <button type="submit"
+                                                            title="<?= $escaper->escapeHtmlAttr(__('PRE-ORDER NOW')) ?>"
+                                                            class="action tocart primary"
+                                                            disabled>
+                                                        <span><?= $escaper->escapeHtml(__('PRE-ORDER NOW')) ?></span>
+                                                    </button>
+                                                <?php elseif ($_product->getTypeId() == 'simple'): ?>
                                                     <button type="submit"
                                                             title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
                                                             class="action tocart primary"

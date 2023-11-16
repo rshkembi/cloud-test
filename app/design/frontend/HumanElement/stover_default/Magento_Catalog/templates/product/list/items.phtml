@@ -254,7 +254,13 @@ $_item = null;
                                                                            name="<?= /* @noEscape */ ActionInterface::PARAM_NAME_URL_ENCODED?>"
                                                                            value="<?= /* @noEscape */ $value ?>">
                                                                     <?= $block->getBlockHtml('formkey') ?>
-                                                                    <?php if($_item->getTypeId() == 'simple'):?>
+                                                                    <?php if($_item->getPreOrder()):?>
+                                                                    <button type="submit"
+                                                                            title="<?= $block->escapeHtmlAttr(__('PRE-ORDER NOW')) ?>"
+                                                                            class="action tocart primary">
+                                                                        <span><?= $block->escapeHtml(__('PRE-ORDER NOW')) ?></span>
+                                                                    </button>
+                                                                    <?php elseif($_item->getTypeId() == 'simple'):?>
                                                                     <button type="submit"
                                                                             title="<?= $block->escapeHtmlAttr(__('Add to Cart')) ?>"
                                                                             class="action tocart primary">
