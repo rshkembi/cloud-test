@@ -1,0 +1,18 @@
+diff --git a/vendor/magento/module-sales/view/adminhtml/web/order/create/scripts.js b/vendor/magento/module-sales/view/adminhtml/web/order/create/scripts.js
+index 3cdba715f..f4c7b2e07 100644
+--- a/vendor/magento/module-sales/view/adminhtml/web/order/create/scripts.js
++++ b/vendor/magento/module-sales/view/adminhtml/web/order/create/scripts.js
+@@ -1041,10 +1041,12 @@
+          * @param itemsFilter
+          */
+         productConfigureSubmit: function (listType, area, fieldsPrepare, itemsFilter) {
++            var randomString = Math.random().toString(36).slice(2, 15);
++
+             // prepare loading areas and build url
+             area = this.prepareArea(area);
+             this.loadingAreas = area;
+-            var url = this.loadBaseUrl + 'block/' + area + '?isAjax=true';
++            var url = this.loadBaseUrl + 'block/' + area + '?isAjax=true&cache=' + randomString;
+ 
+             // prepare additional fields
+             fieldsPrepare = this.prepareParams(fieldsPrepare);
