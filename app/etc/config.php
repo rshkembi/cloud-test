@@ -9,6 +9,7 @@ return [
         'Magento_AdminGwsConfigurableProduct' => 1,
         'Magento_AdminGwsStaging' => 1,
         'Magento_Theme' => 1,
+        'Magento_AdobeCommerceOutOfProcessExtensibility' => 1,
         'Magento_AdobeIms' => 1,
         'Magento_AdobeIoEventsClient' => 1,
         'Magento_AdobeCommerceEventsClient' => 1,
